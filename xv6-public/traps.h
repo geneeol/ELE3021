@@ -36,3 +36,5 @@
 #define IRQ_ERROR       19
 #define IRQ_SPURIOUS    31
 
+// User-defined (For online practice)
+#define  T_PRAC2		128 // Just user-defined number. It has no meaning.
