@@ -71,14 +71,14 @@ myproc(void) {
 // state required to run in the kernel.
 // Otherwise return 0.
 static struct proc*
-allocproc(void)
+allocproc(void) //h userinit(첫번째 프로세스 생성)과 fork에서 호출
 {
   struct proc *p;
   char *sp;
 
   acquire(&ptable.lock);
 
-  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
+  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) //h 해당 프로세스가 ptable에서 빈 슬롯에 프로세스 할당
     if(p->state == UNUSED)
       goto found;
 
@@ -210,11 +210,11 @@ fork(void)
 
   safestrcpy(np->name, curproc->name, sizeof(curproc->name));
 
-  pid = np->pid;
+  pid = np->pid; //h 자식프로세스의 pid값을 반환하다.
 
   acquire(&ptable.lock);
 
-  np->state = RUNNABLE;
+  np->state = RUNNABLE; //h 생성한 프로세스를 이곳에서 RUNNABLE 상태로 변경
 
   release(&ptable.lock);
 
@@ -253,6 +253,7 @@ exit(void)
   wakeup1(curproc->parent);
 
   // Pass abandoned children to init.
+  //h 고아 프로세스가 되지 않게끔, 현재 종료하려는 프로세스의 부모를 initproc로 바꾸어 준다
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
     if(p->parent == curproc){
       p->parent = initproc;
@@ -262,8 +263,10 @@ exit(void)
   }
 
   // Jump into the scheduler, never to return.
-  curproc->state = ZOMBIE;
-  sched();
+  curproc->state = ZOMBIE; //h 현재 프로세스를 ZOMBIE 상태로 변경한다,
+                           //h 따라서 해당 프로세스는 더 이상 스케줄링 되지 않는다.
+                           //h 이후 부모프로세스의 wait호출을 통해 회수된다
+  sched(); //h scheduler로 컨텍스트 스위치가 되고나면 두 번 다시 이 프로세스는 선택되지 않는다
   panic("zombie exit");
 }
 
