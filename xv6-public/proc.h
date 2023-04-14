@@ -34,6 +34,7 @@ struct context {
 
 enum procstate { UNUSED, EMBRYO, SLEEPING, RUNNABLE, RUNNING, ZOMBIE };
 
+// TODO: 프로세스 구조체에 정보 추가 priority, qlev, elapesed_ticks
 // Per-process state
 struct proc {
   uint sz;                     // Size of process memory (bytes)

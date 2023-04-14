@@ -23,6 +23,7 @@ tvinit(void)
     SETGATE(idt[i], 0, SEG_KCODE<<3, vectors[i], 0);
   SETGATE(idt[T_SYSCALL], 1, SEG_KCODE<<3, vectors[T_SYSCALL], DPL_USER);
   SETGATE(idt[T_PRAC2], 1, SEG_KCODE<<3, vectors[T_PRAC2], DPL_USER);
+  // TODO: 129, 130번 인터럽트를 위한 idt 설정
 
   initlock(&tickslock, "time");
 }
@@ -81,6 +82,8 @@ trap(struct trapframe *tf)
   case T_PRAC2: // The line added
     cprintf("user interrupt 128 called\n");
     break;
+  
+  // TODO: 인터럽트 129, 130을 통해 schedulerLock(), schedulerUnlock() 호출
 
   //PAGEBREAK: 13
   default:
@@ -104,7 +107,10 @@ trap(struct trapframe *tf)
   if(myproc() && myproc()->killed && (tf->cs&3) == DPL_USER)
     exit();
 
-  // TODO: 이 부분이 CPU를 yield 하는 부분
+  // TODO: 이 부분이 CPU를 yield 하는 부분, 
+  // ticks가 100이면 boosting후 tick 0으로 설정하는 분기 추가 
+  // (tick 변수 락으로 관리할 것, 멀티코어 관련)
+
   // Force process to give up CPU on clock tick.
   // If interrupts were on while locks held, would need to check nlock.
   if(myproc() && myproc()->state == RUNNING &&
