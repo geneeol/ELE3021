@@ -37,7 +37,7 @@ sys_kill(void)
 }
 
 int
-sys_getpid(void)
+sys_getpid(void) //h 디버깅용 pid값 체크
 {
   return myproc()->pid;
 }
@@ -80,7 +80,7 @@ sys_sleep(void)
 // return how many clock tick interrupts have occurred
 // since start.
 int
-sys_uptime(void)
+sys_uptime(void) //h 디버깅용 틱 체크 시스템콜
 {
   uint xticks;
 
