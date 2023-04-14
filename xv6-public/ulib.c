@@ -50,7 +50,7 @@ strchr(const char *s, char c)
 }
 
 char*
-gets(char *buf, int max)
+gets(char *buf, int max) //h 해당 함수에서 stdin으로부터 입력을 받는다
 {
   int i, cc;
   char c;

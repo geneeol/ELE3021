@@ -166,7 +166,7 @@ main(void)
     }
     if(fork1() == 0)
       runcmd(parsecmd(buf));
-    wait();
+    wait(); //h 회수후 다시 반복문을 돈다
   }
   exit();
 }
