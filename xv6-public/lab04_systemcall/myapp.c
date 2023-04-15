@@ -9,9 +9,9 @@ int	main(int argc, char *argv[])
 	// The number of arguments should be at least two.
 	if (argc <= 1)
 		exit();
-	// Passing argv[1] to myfunction (We've made it before)
-	// then myfunction will print argv[1].
-	ret_val = myfunction(argv[1]);
+	// Passing argv[1] to safeprint (We've made it before)
+	// then safeprint will print argv[1].
+	ret_val = safeprint(argv[1]);
 	printf(1, "Return value: 0x%x\n", ret_val);
 	exit();
 }

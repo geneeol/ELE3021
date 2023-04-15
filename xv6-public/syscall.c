@@ -82,6 +82,7 @@ argstr(int n, char **pp)
   return fetchstr(addr, pp);
 }
 
+// TODO: 시스템콜 외부 프로토타입 선번
 extern int sys_chdir(void);
 extern int sys_close(void);
 extern int sys_dup(void);
@@ -128,7 +129,8 @@ static int (*syscalls[])(void) = {
 [SYS_link]    sys_link,
 [SYS_mkdir]   sys_mkdir,
 [SYS_close]   sys_close,
-[SYS_myfunction] sys_myfunction,
+[SYS_safeprint] sys_safeprint,
+[SYS_yield]  sys_yield,
 };
 
 void

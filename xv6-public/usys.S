@@ -8,6 +8,7 @@
     int $T_SYSCALL; \
     ret
 
+// TODO: 시스템콜 새 매크로 추가
 SYSCALL(fork)
 SYSCALL(exit)
 SYSCALL(wait)

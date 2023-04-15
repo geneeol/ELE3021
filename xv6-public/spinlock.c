@@ -22,9 +22,9 @@ initlock(struct spinlock *lk, char *name)
 // Holding a lock for a long time may cause
 // other CPUs to waste time spinning to acquire it.
 void
-acquire(struct spinlock *lk)
+acquire(struct spinlock *lk) 
 {
-  pushcli(); // disable interrupts to avoid deadlock.
+  pushcli(); // disable interrupts to avoid deadlock. //h 락을 획득할 때 인터럽트를 무시한다
   if(holding(lk))
     panic("acquire");
 

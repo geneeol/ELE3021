@@ -1,6 +1,7 @@
 struct stat;
 struct rtcdate;
 
+// TODO: 시스템콜 헤더 추가, makefile에 추가
 // system calls
 int fork(void);
 int exit(void) __attribute__((noreturn));

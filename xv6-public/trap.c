@@ -48,6 +48,7 @@ trap(struct trapframe *tf)
     return;
   }
 
+  // TODO: 인터럽트 129, 130을 통해 schedulerLock(), schedulerUnlock() 호출
   switch(tf->trapno){
   case T_IRQ0 + IRQ_TIMER:
     if(cpuid() == 0){
@@ -83,7 +84,6 @@ trap(struct trapframe *tf)
     cprintf("user interrupt 128 called\n");
     break;
   
-  // TODO: 인터럽트 129, 130을 통해 schedulerLock(), schedulerUnlock() 호출
 
   //PAGEBREAK: 13
   default:
