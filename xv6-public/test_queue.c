@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define NPROC 5
+#define NPROC 64
 
 
 typedef struct queue {
@@ -63,6 +63,14 @@ dequeue(t_queue *q, int *item)
   return (0);
 }
 
+int
+dist(int iter1, int iter2)
+{
+  if (iter2 >= iter1)
+    return (iter2 - iter1);
+  return (NPROC + 1 - (iter1 - iter2)); //h 여기 에러 가능성 높음
+}
+
 int	main(void)
 {
   t_queue q;
@@ -73,7 +81,7 @@ int	main(void)
   q.rear = 0;
  
   i = 0;
-  while (i < 3)
+  while (i < 7)
   {
 	enqueue(&q, i);
 	i++;
@@ -84,7 +92,7 @@ int	main(void)
   printf("q.front: %d\n", q.front);
   printf("q.rear: %d\n\n", q.rear);
   i = 0;
-  while (i < 3)
+  while (i < 7)
   {
 	if (dequeue(&q, &item) == -1)
 	  printf("queue is empty\n");
@@ -95,16 +103,24 @@ int	main(void)
   printf("q.rear: %d\n", q.rear);
   printf("q.size: %d\n", get_size(&q));
   printf("\n");
-  enqueue(&q, 1);
-  enqueue(&q, 2);
-  enqueue(&q, 3);
-  enqueue(&q, 4);
+  i = 0;
+  while (i < 10)
+    enqueue(&q, i++);
+
   printf("q.front: %d\n", q.front);
   printf("q.rear: %d\n", q.rear);
-  printf("q.size: %d\n\n", get_size(&q));
+  printf("q.size: %d\n", get_size(&q));
+  printf("get_front: %d\n", get_front(&q));
+  printf("get_rear: %d\n\n", get_rear(&q));
 
   for (int i = 0; i < NPROC + 1; i++)
-	printf("q.items[%d]: %d\n", i, q.items[i]);
+    printf("q.items[%d]: %d\n", i, q.items[i]);
+  printf("\n\n");
+
+  // printf("dist 3: %d\n", dist(2, 5));
+  // printf("dist 5: %d\n", dist(8, 2));
+  printf("dist 29: %d\n", dist(50, 14));
+
   
   return (0);
 

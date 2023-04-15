@@ -53,7 +53,7 @@ struct proc {
   //h mlfq 관련 정보 추가
   int priority;
   int qlev;
-  int elapsed_ticks;
+  int used_ticks;
 };
 
 // Process memory is laid out contiguously, low addresses first:
