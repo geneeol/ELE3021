@@ -34,7 +34,6 @@ struct context {
 
 enum procstate { UNUSED, EMBRYO, SLEEPING, RUNNABLE, RUNNING, ZOMBIE };
 
-// TODO: 프로세스 구조체에 정보 추가 priority, qlev, elapesed_ticks
 // Per-process state
 struct proc {
   uint sz;                     // Size of process memory (bytes)
@@ -50,6 +49,11 @@ struct proc {
   struct file *ofile[NOFILE];  // Open files
   struct inode *cwd;           // Current directory
   char name[16];               // Process name (debugging)
+
+  //h mlfq 관련 정보 추가
+  int priority;
+  int qlev;
+  int elapsed_ticks;
 };
 
 // Process memory is laid out contiguously, low addresses first:

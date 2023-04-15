@@ -3,7 +3,7 @@ struct rtcdate;
 
 // TODO: 시스템콜 헤더 추가, makefile에 추가
 // system calls
-int fork(void);
+int	fork(void);
 int exit(void) __attribute__((noreturn));
 int wait(void);
 int pipe(int*);
@@ -25,7 +25,9 @@ char* sbrk(int);
 int sleep(int);
 int uptime(void);
 int	safeprint(char *);
+// project1 추가한 시스템콜
 int yield(void);
+int getLevel(void);
 
 // ulib.c
 int stat(const char*, struct stat*);

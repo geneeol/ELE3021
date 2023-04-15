@@ -119,7 +119,9 @@ void            sleep(void*, struct spinlock*);
 void            userinit(void);
 int             wait(void);
 void            wakeup(void*);
+// project1 추가한 시스템콜
 void            yield(void);
+int				getLevel(void);
 
 // swtch.S
 void            swtch(struct context**, struct context*);

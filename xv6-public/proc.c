@@ -91,6 +91,9 @@ allocproc(void) //h userinit(첫번째 프로세스 생성)과 fork에서 호출
 found:
   p->state = EMBRYO;
   p->pid = nextpid++;
+  p->priority = 3;
+  p->qlev = 0;
+  p->elapsed_ticks = 0;
 
   release(&ptable.lock);
 
@@ -555,3 +558,24 @@ procdump(void)
     cprintf("\n");
   }
 }
+
+/***** system calls for project1 *****/
+
+int
+getLevel(void)
+{
+	struct proc	*p;
+
+	p = myproc();
+  if (!p)
+    return (-1); // proc 정보를 받을 수 없는 경우
+  return (p->qlev);
+}
+
+// void
+// setPriority(int pid, int priority)
+// {
+//   acquire(&ptable.lock);
+//   int pid;
+//   int priority;
+// }
