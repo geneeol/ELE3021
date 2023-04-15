@@ -87,7 +87,7 @@
 //   release(&ptable.lock);
 //   return 0;
 
-// // TODO: qlev, priority, elapsed_ticks 정보 초기화 (락을 한 상태에서 초기화 해야함)
+// // TODO: qlev, priority, used_ticks 정보 초기화 (락을 한 상태에서 초기화 해야함)
 // found:
 //   p->state = EMBRYO;
 //   p->pid = nextpid++;
@@ -322,15 +322,15 @@
 //   }
 // }
 
-// // TODO:
-// //PAGEBREAK: 42
-// // Per-CPU process scheduler.
-// // Each CPU calls scheduler() after setting itself up.
-// // Scheduler never returns.  It loops, doing:
-// //  - choose a process to run
-// //  - swtch to start running that process
-// //  - eventually that process transfers control
-// //      via swtch back to the scheduler.
+// TODO:
+//PAGEBREAK: 42
+// Per-CPU process scheduler.
+// Each CPU calls scheduler() after setting itself up.
+// Scheduler never returns.  It loops, doing:
+//  - choose a process to run
+//  - swtch to start running that process
+//  - eventually that process transfers control
+//      via swtch back to the scheduler.
 // void
 // scheduler(void)
 // {

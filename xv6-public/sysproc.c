@@ -57,7 +57,7 @@ sys_sbrk(void)
 }
 
 int
-sys_sleep(void)
+sys_sleep(void) //h 슬립함수가 몇틱만큼 자는지 구현원리 확인 (슬립함수 인자)
 {
   int n;
   uint ticks0;

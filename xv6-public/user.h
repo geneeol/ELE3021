@@ -20,9 +20,9 @@ int link(const char*, const char*);
 int mkdir(const char*);
 int chdir(const char*);
 int dup(int);
-int getpid(void);
+int getpid(void); // TODO: getpid 구현
 char* sbrk(int);
-int sleep(int);
+int sleep(int); // TODO: sleep 구현
 int uptime(void);
 int	safeprint(char *);
 // project1 추가한 시스템콜
