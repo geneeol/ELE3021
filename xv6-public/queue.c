@@ -29,19 +29,19 @@ queue_is_full(t_queue *q)
 }
 
 struct proc *
-queue_get_front(t_queue *q)
+queue_front(t_queue *q)
 {
   return (q->items[(q->front + 1) % (NPROC + 1)]);
 }
 
 struct proc *
-queue_get_rear(t_queue *q)
+queue_rear(t_queue *q)
 {
   return (q->items[q->rear]);
 }
 
 int
-enqueue(t_queue *q, struct proc *item)
+queue_push_back(t_queue *q, struct proc *item)
 {
   if (queue_is_full(q))
     return (-1);
@@ -51,12 +51,32 @@ enqueue(t_queue *q, struct proc *item)
 }
 
 int
-dequeue(t_queue *q, struct proc **item)
+queue_pop(t_queue *q)
 {
   if (queue_is_empty(q))
     return (-1);
   q->front = (q->front + 1) % (NPROC + 1);
-  *item = q->items[q->front];
   q->items[q->front] = 0;
   return (0);
+}
+
+int
+queue_push_front(t_queue *q, struct proc *item)
+{
+  if (queue_is_full(q))
+    return (-1);
+  q->items[q->front] = item;
+  if (q->front == 0)
+    q->front = NPROC + 1;
+  else
+    q->front--;
+  return (0);
+}
+
+int
+len_from_begin(int begin, int iter)
+{
+  if (iter >= begin)
+    return (iter - begin);
+  return (NPROC + 1 - (begin - iter));
 }
