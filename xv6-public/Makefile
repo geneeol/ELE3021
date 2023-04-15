@@ -185,6 +185,7 @@ UPROGS=\
 	_myapp\
 	_prac2_usercall\
 	_test_yield\
+	_usertests\
 
 fs.img: mkfs README $(UPROGS)
 	./mkfs fs.img README $(UPROGS)
@@ -255,7 +256,7 @@ EXTRA=\
 	mkfs.c ulib.c user.h cat.c echo.c forktest.c grep.c kill.c\
 	ln.c ls.c mkdir.c rm.c stressfs.c wc.c zombie.c\
 	printf.c umalloc.c prac_myuserapp.c myapp.c prac2_usercall.c\
-	test_yield.c \
+	test_yield.c usertests.c\
 	README dot-bochsrc *.pl toc.* runoff runoff1 runoff.list\
 	.gdbinit.tmpl gdbutil\
 
