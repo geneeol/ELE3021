@@ -6,11 +6,14 @@
 #include "x86.h"
 #include "proc.h"
 #include "spinlock.h"
+#include "mlfq.h"
 
 struct {
   struct spinlock lock;
   struct proc proc[NPROC];
 } ptable;
+
+t_queue mlfq[NMLFQ];
 
 static struct proc *initproc;
 
@@ -79,7 +82,6 @@ allocproc(void) //h userinit(첫번째 프로세스 생성)과 fork에서 호출
 
   acquire(&ptable.lock);
 
-  // TODO: ptable 순회 대신 모든 큐를 순회하게 변경해야한다
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) //h 해당 프로세스가 ptable에서 빈 슬롯에 프로세스 할당
     if(p->state == UNUSED)
       goto found;
@@ -87,7 +89,6 @@ allocproc(void) //h userinit(첫번째 프로세스 생성)과 fork에서 호출
   release(&ptable.lock);
   return 0;
 
-// TODO: qlev, priority, elapsed_ticks 정보 초기화 (락을 한 상태에서 초기화 해야함)
 found:
   p->state = EMBRYO;
   p->pid = nextpid++;
