@@ -177,52 +177,52 @@
 //   return 0;
 // }
 
-// // Create a new process copying p as the parent.
-// // Sets up stack to return as if from system call.
-// // Caller must set state of returned proc to RUNNABLE.
-// int
-// fork(void)
-// {
-//   int i, pid;
-//   struct proc *np;
-//   struct proc *curproc = myproc();
+// Create a new process copying p as the parent.
+// Sets up stack to return as if from system call.
+// Caller must set state of returned proc to RUNNABLE.
+int
+fork(void)
+{
+  int i, pid;
+  struct proc *np;
+  struct proc *curproc = myproc();
 
-//   // Allocate process.
-//   if((np = allocproc()) == 0){
-//     return -1;
-//   }
+  // Allocate process.
+  if((np = allocproc()) == 0){
+    return -1;
+  }
 
-//   // Copy process state from proc.
-//   if((np->pgdir = copyuvm(curproc->pgdir, curproc->sz)) == 0){
-//     kfree(np->kstack);
-//     np->kstack = 0;
-//     np->state = UNUSED;
-//     return -1;
-//   }
-//   np->sz = curproc->sz;
-//   np->parent = curproc;
-//   *np->tf = *curproc->tf;
+  // Copy process state from proc.
+  if((np->pgdir = copyuvm(curproc->pgdir, curproc->sz)) == 0){
+    kfree(np->kstack);
+    np->kstack = 0;
+    np->state = UNUSED;
+    return -1;
+  }
+  np->sz = curproc->sz;
+  np->parent = curproc;
+  *np->tf = *curproc->tf;
 
-//   // Clear %eax so that fork returns 0 in the child.
-//   np->tf->eax = 0;
+  // Clear %eax so that fork returns 0 in the child.
+  np->tf->eax = 0;
 
-//   for(i = 0; i < NOFILE; i++)
-//     if(curproc->ofile[i])
-//       np->ofile[i] = filedup(curproc->ofile[i]);
-//   np->cwd = idup(curproc->cwd);
+  for(i = 0; i < NOFILE; i++)
+    if(curproc->ofile[i])
+      np->ofile[i] = filedup(curproc->ofile[i]);
+  np->cwd = idup(curproc->cwd);
 
-//   safestrcpy(np->name, curproc->name, sizeof(curproc->name));
+  safestrcpy(np->name, curproc->name, sizeof(curproc->name));
 
-//   pid = np->pid; //h 자식프로세스의 pid값을 반환하다.
+  pid = np->pid; //h 자식프로세스의 pid값을 반환하다.
 
-//   acquire(&ptable.lock);
+  acquire(&ptable.lock);
 
-//   np->state = RUNNABLE; //h 생성한 프로세스를 이곳에서 RUNNABLE 상태로 변경
+  np->state = RUNNABLE; //h 생성한 프로세스를 이곳에서 RUNNABLE 상태로 변경
 
-//   release(&ptable.lock);
+  release(&ptable.lock);
 
-//   return pid;
-// }
+  return pid;
+}
 
 // // TODO:
 // //h 모든 프로세스는 종료전 exit을 명시적으로 호출해야하는 것 같다
@@ -322,53 +322,53 @@
 //   }
 // }
 
-// TODO:
-//PAGEBREAK: 42
-// Per-CPU process scheduler.
-// Each CPU calls scheduler() after setting itself up.
-// Scheduler never returns.  It loops, doing:
-//  - choose a process to run
-//  - swtch to start running that process
-//  - eventually that process transfers control
-//      via swtch back to the scheduler.
-// void
-// scheduler(void)
-// {
-//   struct proc *p;
-//   struct cpu *c = mycpu();
-//   c->proc = 0;
+TODO:
+PAGEBREAK: 42
+Per-CPU process scheduler.
+Each CPU calls scheduler() after setting itself up.
+Scheduler never returns.  It loops, doing:
+ - choose a process to run
+ - swtch to start running that process
+ - eventually that process transfers control
+     via swtch back to the scheduler.
+void
+scheduler(void)
+{
+  struct proc *p;
+  struct cpu *c = mycpu();
+  c->proc = 0;
   
-//   for(;;){
-//     // Enable interrupts on this processor.
-//     sti();
+  for(;;){
+    // Enable interrupts on this processor.
+    sti();
 
-//     // TODO: 당연히 순회방식 변경
-//     // Loop over process table looking for process to run.
-//     acquire(&ptable.lock);
-//     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-//       if(p->state != RUNNABLE)
-//         continue;
+    // TODO: 당연히 순회방식 변경
+    // Loop over process table looking for process to run.
+    acquire(&ptable.lock);
+    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+      if(p->state != RUNNABLE)
+        continue;
 
-//       //h 선택된 프로세스가 lock을 해제하는 것 같다
-//       // Switch to chosen process.  It is the process's job
-//       // to release ptable.lock and then reacquire it
-//       // before jumping back to us.
-//       c->proc = p;
-//       switchuvm(p);
-//       p->state = RUNNING;
+      //h 선택된 프로세스가 lock을 해제하는 것 같다
+      // Switch to chosen process.  It is the process's job
+      // to release ptable.lock and then reacquire it
+      // before jumping back to us.
+      c->proc = p;
+      switchuvm(p);
+      p->state = RUNNING;
 
-//       swtch(&(c->scheduler), p->context);
-//       switchkvm(); 
-//       //h 스케쥴러로 다시 컨텐스트 스위칭이 일어나면 이 부분부터 코드가 실행된다
+      swtch(&(c->scheduler), p->context);
+      switchkvm(); 
+      //h 스케쥴러로 다시 컨텐스트 스위칭이 일어나면 이 부분부터 코드가 실행된다
 
-//       // Process is done running for now.
-//       // It should have changed its p->state before coming back.
-//       c->proc = 0;
-//     }
-//     release(&ptable.lock);
+      // Process is done running for now.
+      // It should have changed its p->state before coming back.
+      c->proc = 0;
+    }
+    release(&ptable.lock);
 
-//   }
-// }
+  }
+}
 
 // // Enter scheduler.  Must hold only ptable.lock
 // // and have changed proc->state. Saves and restores

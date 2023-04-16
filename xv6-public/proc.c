@@ -97,6 +97,7 @@ found:
   p->priority = 3;
   p->qlev = 0;
   p->used_ticks = 0;
+  // cprintf("allocproc: pid %d\n", p->pid);
 
   release(&ptable.lock);
 
@@ -197,6 +198,8 @@ fork(void)
   int i, pid;
   struct proc *np;
   struct proc *curproc = myproc();
+
+  // cprintf("fork is called\n");
 
   // Allocate process.
   if((np = allocproc()) == 0){
@@ -345,14 +348,14 @@ find_runnable_in_rr(struct queue *q)
   begin = (q->front + 1) % (NPROC + 1);
   end = (q->rear + 1) % (NPROC + 1);
 
+  //cprintf("find_runnable_in_rr: begin: %d, end: %d\n", begin, end);
   for (int iter = begin; iter != end; iter = (iter + 1) % (NPROC + 1))
   {
     p = queue_front(q); // queue가 empty인 상황은 앞에서 걸러진다
+    queue_pop(q);
+    //cprintf("rr pid: %d, iter: %d\n", p->pid, iter);
     if (p->state == RUNNABLE)
-    {
-      queue_pop(q);
       return p;
-    }
     queue_push_back(q, p); // sleeping 혹은 zombie 상태의 프로세스는 큐 맨뒤로 보낸다
                            // 정상적이라면 zombie 프로세스는 큐에 존재해선 안된다
   }
@@ -368,28 +371,41 @@ find_runnable_in_fcfs_priority(struct queue *q)
   int begin;
   int end;
   int rotate_cnt; 
+  static int  flag;
 
+  p = 0;
   lowest_priority = 4;
   begin = (q->front + 1) % (NPROC + 1);
   end = (q->rear + 1) % (NPROC + 1);
+  rotate_cnt = 0;
+  flag++;
+  // cprintf("find_runnable_in_fcfs: begin: %d, end: %d\n", begin, end);
   for (int iter = begin; iter != end; iter = (iter + 1) % (NPROC + 1))
   {
     tmp = q->items[iter]; // queue가 empty인 상황은 앞에서 걸러진다
-    if (tmp == RUNNABLE && tmp->priority < lowest_priority)
+    // if (flag > 30)
+    //   cprintf("fcfs tmp pid: %d, iter: %d\n", tmp->pid, iter);
+    if (tmp->state == RUNNABLE && tmp->priority < lowest_priority)
     {
+      // if (flag > 30)
+      //   cprintf("find candidate\n pid: %d\n", tmp->pid);
       lowest_priority = tmp->priority;
       p = tmp; // 큐를 전부 탐색하며 우선순위가 가장 낮은 프로세스를 찾는다
-      rotate_cnt = len_from_begin(begin, iter); // 만약 맨 앞에 있는 프로세스가 아니면, 
-                                                // 맨 앞으로 보내기 위해 필요한 큐 회전 횟수를 기록한다
+      // 만약 맨 앞에 있는 프로세스가 아니면, 
+      // 맨 앞으로 보내기 위해 필요한 큐 회전 횟수를 기록한다
+      rotate_cnt = len_from_begin(begin, iter); 
     }
   }
+  // cprintf("after fcfs info\n\n");
+  // cprintf("rotate_cnt: %d\n", rotate_cnt);
   for (int i = 0; i < rotate_cnt; i++) // 선택한 프로세스를 큐 맨 앞으로 보낸다
   {
     tmp = queue_front(q);
     queue_pop(q);
     queue_push_back(q, tmp);
   }
-  queue_pop(q);
+  if (!p)
+    queue_pop(q);
   return (p);
 }
 
@@ -411,6 +427,7 @@ scheduler(void)
   int is_demoted;
   c->proc = 0;
   
+  // cprintf("scheduler starts\n");
   for(;;)
   {
     // Enable interrupts on this processor.
@@ -421,11 +438,13 @@ scheduler(void)
     acquire(&ptable.lock);
 
     is_demoted = 0;
+
     //h 원래 for문 중괄호 시작
     for (int qlev = 0; qlev < 3; qlev++)
     {
       if (!queue_is_empty(&mlfq[qlev]))
       {
+        // cprintf("find runnable: qlev:%d\n", qlev);
         if (qlev == 2)
           p = find_runnable_in_fcfs_priority(&mlfq[qlev]);
         else
@@ -434,9 +453,13 @@ scheduler(void)
           break;
       }
     }
+    // procdump();
+    // cprintf("p: %d\n", p->pid);
     if (!p) // 이런 상황 절대 발생하지 않음. 디버깅용 로그
     {
-      cprintf("panic: no runnable process");
+      // TODO: 아무것도 출력하지 않고 아래만 출력하면 여기서 러너블프로세스 없다고 뜸
+      // cprintf("Fatal: no runnable process\n");
+      release(&ptable.lock); //h 아 여기 락 해제를 안해서 ........ 
       continue ;
     }
 
@@ -448,9 +471,12 @@ scheduler(void)
     switchuvm(p);
     p->state = RUNNING;
 
+    //cprintf("before swtch\n");
     swtch(&(c->scheduler), p->context);
     switchkvm(); //h 스케쥴러로 다시 컨텐스트 스위칭이 일어나면 이 부분부터 코드가 실행된다
 
+    //cprintf("after switch\n");
+    p->used_ticks++;
     if (p->used_ticks >= mlfq_time_quantum[p->qlev]) // 직전에 실행된 프로세스의 타임퀀텀을 확인
     {
       p->used_ticks = 0;
@@ -462,22 +488,62 @@ scheduler(void)
         is_demoted = 1;
       }
     }
+
     if (p->state != ZOMBIE) // 좀비 상태라면 레디큐에 존재할 필요가 없다. 슬립 상태는 다시 runnable로 바뀔 수 있으므로 큐 안에 보관한다
     {
       if (p->qlev == 2 && !is_demoted)
+      {
+        // cprintf("push front\n");
         queue_push_front(&mlfq[p->qlev], p); // 원래 l2큐에 있던 녀석이라면, 해당 큐의 맨앞으로 보낸다
+      }
       else
         queue_push_back(&mlfq[p->qlev], p);
     }
-
     // Process is done running for now.
     // It should have changed its p->state before coming back.
     c->proc = 0;
-
-    //h 원래 중괄호 경계
     release(&ptable.lock);
   }
 }
+
+// void
+// scheduler(void)
+// {
+//   struct proc *p;
+//   struct cpu *c = mycpu();
+//   c->proc = 0;
+  
+//   for(;;){
+//     // Enable interrupts on this processor.
+//     sti();
+
+//     // TODO: 당연히 순회방식 변경
+//     // Loop over process table looking for process to run.
+//     acquire(&ptable.lock);
+//     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+//       if(p->state != RUNNABLE)
+//         continue;
+
+//       //h 선택된 프로세스가 lock을 해제하는 것 같다
+//       // Switch to chosen process.  It is the process's job
+//       // to release ptable.lock and then reacquire it
+//       // before jumping back to us.
+//       c->proc = p;
+//       switchuvm(p);
+//       p->state = RUNNING;
+
+//       swtch(&(c->scheduler), p->context);
+//       switchkvm(); 
+//       //h 스케쥴러로 다시 컨텐스트 스위칭이 일어나면 이 부분부터 코드가 실행된다
+
+//       // Process is done running for now.
+//       // It should have changed its p->state before coming back.
+//       c->proc = 0;
+//     }
+//     release(&ptable.lock);
+
+//   }
+// }
 
 // Enter scheduler.  Must hold only ptable.lock
 // and have changed proc->state. Saves and restores
