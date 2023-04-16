@@ -2,10 +2,12 @@
 # define MLFQ_H
 
 # define NMLFQ 3
-# define L0 0
-# define L1 1
-# define L2 2
 
+enum QLEVEL {
+  L0 = 0,
+  L1 = 1,
+  L2 = 2
+};
 typedef struct queue {
   struct proc *items[NPROC + 1];
   int         front;

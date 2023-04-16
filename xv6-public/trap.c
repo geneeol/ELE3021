@@ -15,7 +15,7 @@ struct spinlock tickslock;
 uint ticks;
 
 // project1
-uint globalticks;
+uint global_ticks;
 
 void
 tvinit(void)
@@ -57,7 +57,10 @@ trap(struct trapframe *tf)
     if(cpuid() == 0){
       acquire(&tickslock);
       ticks++;
-      globalticks++;
+      global_ticks++;
+      // cprintf("timer interuppt occur\n");
+      // procdump();
+      // cprintf("\n");
       wakeup(&ticks);
       release(&tickslock);
     }
@@ -115,10 +118,20 @@ trap(struct trapframe *tf)
   // ticks가 100이면 boosting후 tick 0으로 설정하는 분기 추가 
   // (tick 변수 락으로 관리할 것, 멀티코어 관련)
 
+  //h 타이머 인터럽트 발생시
+  // if (tikcs > 50 && tf->trapno == T_IRQ0+IRQ_TIMER) 
+  // {
+  //   procdump();
+  //   if (myproc())
+  //     cprintf("myproc state: pid: %d, state: %d\n", myproc()->pid, myproc()->state);
+  //   else
+  //     cprintf("my proc returns null\n");
+  // }
+
   // Force process to give up CPU on clock tick.
   // If interrupts were on while locks held, would need to check nlock.
-  if(myproc() && myproc()->state == RUNNING &&
-     tf->trapno == T_IRQ0+IRQ_TIMER)
+  if(myproc() && myproc()->state == RUNNING && 
+      tf->trapno == T_IRQ0+IRQ_TIMER) //h 확인결과 myproc가 널이거나, myproc 상태는 항상 running 같음
     yield();
 
   // Check if the process has been killed since we yielded
