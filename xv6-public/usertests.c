@@ -551,9 +551,15 @@ fourfiles(void)
     }
   }
 
+  //h
+  printf(1, "\npassing loop1, wait start\n\n");
+
   for(pi = 0; pi < 4; pi++){
     wait();
   }
+
+  //h
+  printf(1, "\npassing loop2, wait finish\n\n");
 
   for(i = 0; i < 2; i++){
     fname = names[i];
@@ -575,6 +581,9 @@ fourfiles(void)
     }
     unlink(fname);
   }
+
+  //h
+  printf(1, "\npassing loop3\n\n");
 
   printf(1, "fourfiles ok\n");
 }
@@ -619,9 +628,15 @@ createdelete(void)
     }
   }
 
+  //h
+  printf(1, "\npassing loop1, wait start\n\n");
+
   for(pi = 0; pi < 4; pi++){
     wait();
   }
+
+  //h
+  printf(1, "\npassing loop2, wait success\n\n");
 
   name[0] = name[1] = name[2] = 0;
   for(i = 0; i < N; i++){
@@ -641,6 +656,9 @@ createdelete(void)
     }
   }
 
+  //h
+  printf(1, "\npassing loop3\n\n");
+
   for(i = 0; i < N; i++){
     for(pi = 0; pi < 4; pi++){
       name[0] = 'p' + i;
@@ -648,6 +666,8 @@ createdelete(void)
       unlink(name);
     }
   }
+
+  printf(1, "\npassing loop4\n\n");
 
   printf(1, "createdelete ok\n");
 }
@@ -779,11 +799,11 @@ concreate(void)
     file[1] = '0' + i;
     unlink(file);
     pid = fork();
-    if(pid && (i % 3) == 1){
+    if(pid && (i % 3) == 1){ // 부모이고 i가 3으로 나눈 나머지가 1일 때
       link("C0", file);
-    } else if(pid == 0 && (i % 5) == 1){
+    } else if(pid == 0 && (i % 5) == 1){ // 자식이고 i를 5로 나눈 나머지가 1일 때
       link("C0", file);
-    } else {
+    } else { // 부모든 자식이든 위를 제외한 경우
       fd = open(file, O_CREATE | O_RDWR);
       if(fd < 0){
         printf(1, "concreate create %s failed\n", file);
@@ -796,6 +816,9 @@ concreate(void)
     else
       wait();
   }
+
+  //h
+  printf(1, "\npassing loop1\n\n");
 
   memset(fa, 0, sizeof(fa));
   fd = open(".", 0);
@@ -817,6 +840,9 @@ concreate(void)
       n++;
     }
   }
+  //h
+  printf(1, "\npassing loop2\n\n");
+
   close(fd);
 
   if(n != 40){
@@ -848,6 +874,9 @@ concreate(void)
     else
       wait();
   }
+
+  //h
+  printf(1, "\npassing loop3\n\n");
 
   printf(1, "concreate ok\n");
 }

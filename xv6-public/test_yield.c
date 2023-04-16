@@ -13,16 +13,16 @@ int	main(void)
 	{
 		for (int i = 0; i < 10; i++)
 		{
-			yield();
 			safeprint("child process\n"); // 출력을 보장
+			yield();
 		}
 	}
 	else
 	{
 		for (int i = 0; i < 10; i++)
 		{
-			yield();
 			safeprint("parent process\n");
+			yield();
 		}
 		wait();
 	}
