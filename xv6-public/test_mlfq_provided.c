@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
   {
     for (i = 0; i < NUM_LOOP; i++)
     {
-      int x = getlev();
+      int x = getLev();
       if (x < 0 || x > 4)
       {
         printf(1, "Wrong level: %d\n", x);
