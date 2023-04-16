@@ -124,7 +124,7 @@ void 			priority_boosting(void);
 // project1 추가한 시스템콜
 void            yield(void);
 int				getLevel(void);
-void			setPriority(int pid, int priority);
+int				setPriority(int pid, int priority);
 
 // swtch.S
 void            swtch(struct context**, struct context*);

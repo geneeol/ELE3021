@@ -532,9 +532,11 @@ scheduler(void)
     swtch(&(c->scheduler), p->context);
     switchkvm(); //h 스케쥴러로 다시 컨텐스트 스위칭이 일어나면 이 부분부터 코드가 실행된다
 
-    //cprintf("after switch\n");
+    //h 틱은 항상 4, 6, 8로 떨어지는 것 확인함
     if (p->used_ticks >= mlfq_time_quantum[p->qlev]) // 직전에 실행된 프로세스의 타임퀀텀을 확인
     {
+      // if (ticks > 1000)
+      //   cprintf("pid: %d, used_ticks: %d\n", p->pid, p->used_ticks);
       p->used_ticks = 0;
       if (p->qlev == L2 && p->priority > 0)
           p->priority--;
@@ -881,11 +883,11 @@ getLevel(void)
   return (p->qlev);
 }
 
-void
+int
 setPriority(int pid, int priority)
 {
   struct proc *p;
-  int invalid_pid = 1;
+  // int invalid_pid = 1;
 
   // priority가 0~3 사이가 아닌 경우에 대한 예외처리
   if (priority > 3)
@@ -898,11 +900,16 @@ setPriority(int pid, int priority)
     if (p->pid == pid)
     {
       p->priority = priority;
-      invalid_pid = 0;
-      break ;
+
+      release(&ptable.lock);
+      return (0);
+
+      // invalid_pid = 0;
+      // break ;
     }
   }
-  if (invalid_pid)
-    cprintf("setPriority Error: invalid pid!\n");
+  // if (invalid_pid)
+  //   cprintf("setPriority Error: invalid pid!\n");
   release(&ptable.lock);
+  return (-1);
 }

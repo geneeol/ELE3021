@@ -136,7 +136,7 @@ trap(struct trapframe *tf)
   if(myproc() && myproc()->state == RUNNING
       && tf->trapno == T_IRQ0+IRQ_TIMER)
   {
-    myproc()->used_ticks++;
+    myproc()->used_ticks++; //h 현재 프로세스가 running이고 타이머 인터럽트를 받았다면, 한틱동안 큐에 머문 것
     yield();
   }
 

@@ -1,0 +1,27 @@
+[Test 1] default
+Process 5
+L0: 723
+L1: 1035
+L2: 98242
+L3: 0
+L4: 0
+Process 6
+L0: 577
+L1: 1079
+L2: 98344
+L3: 0
+L4: 0
+Process 7
+L0: 769
+L1: 957
+L2: 98274
+L3: 0
+L4: 0
+Process 8
+L0: 669
+L1: 1019
+L2: 98312
+L3: 0
+L4: 0
+[Test 1] finished
+done

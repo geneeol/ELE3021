@@ -26,10 +26,7 @@ acquire(struct spinlock *lk)
 {
   pushcli(); // disable interrupts to avoid deadlock. //h 락을 획득할 때 인터럽트를 무시한다
   if(holding(lk))
-  {
-    cprintf("spinlock panic: must be here\n");
     panic("acquire");
-  }
 
   // The xchg is atomic.
   while(xchg(&lk->locked, 1) != 0)

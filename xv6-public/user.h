@@ -28,7 +28,7 @@ int	safeprint(char *);
 // project1 추가한 시스템콜
 int yield(void);
 int	getLevel(void);
-void setPriority(int pid, int priority); 
+int setPriority(int pid, int priority); // TODO: void로 정정할 것
 
 // ulib.c
 int stat(const char*, struct stat*);
