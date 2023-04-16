@@ -95,7 +95,7 @@ found:
   p->state = EMBRYO;
   p->pid = nextpid++;
   p->priority = 3;
-  p->qlev = 0;
+  p->qlev = L0;
   p->used_ticks = 0;
   // cprintf("allocproc: pid %d\n", p->pid);
 
@@ -235,13 +235,7 @@ fork(void)
   // 새로운 자식은 항상 L0큐에 진입한다. 
   // 락이 걸린 상태에서 큐에 push해야 인터럽트에 방해받지 않는다
   if (queue_push_back(&mlfq[L0], np) == -1)
-    cprintf("fork: queue_push failed");
-  // else
-  // {
-  //   cprintf("np qlev, priority: %d, %d\n", np->qlev, np->priority);
-  //   cprintf("push forked process: %d to L0 queue", np->pid);
-
-  // }
+    cprintf("fork: queue_push failed\n");
 
   release(&ptable.lock);
 
@@ -410,18 +404,10 @@ find_runnable_in_fcfs_priority(struct queue *q)
       p = tmp; // 큐를 전부 탐색하며 우선순위가 가장 낮은 프로세스를 찾는다
       // 만약 맨 앞에 있는 프로세스가 아니면, 
       // 맨 앞으로 보내기 위해 필요한 큐 회전 횟수를 기록한다
-      rotate_cnt = len_from_begin(begin, iter); 
+      rotate_cnt = dist_between_iters(begin, iter); 
     }
   }
-  // cprintf("after fcfs info\n\n");
-  // if (flag >= 0)
-  //   cprintf("rotate_cnt: %d\n", rotate_cnt);
-  for (int i = 0; i < rotate_cnt; i++) // 선택한 프로세스를 큐 맨 앞으로 보낸다
-  {
-    tmp = queue_front(q);
-    queue_pop(q);
-    queue_push_back(q, tmp);
-  }
+
   // if (!p)
   // {
   //   if (flag >=0)
@@ -429,6 +415,15 @@ find_runnable_in_fcfs_priority(struct queue *q)
   // }
   if (p) // 아 여기를 왜 !p로 했지..
   {
+    // cprintf("after fcfs info\n\n");
+    // if (flag >= 0)
+    //   cprintf("rotate_cnt: %d\n", rotate_cnt);
+    for (int i = 0; i < rotate_cnt; i++) // 선택한 프로세스를 큐 맨 앞으로 보낸다
+    {
+      tmp = queue_front(q);
+      queue_pop(q);
+      queue_push_back(q, tmp);
+    }
     // if (flag >= 0)
     //   cprintf("q front: %d is poped\n", queue_front(q)->pid);
     queue_pop(q);
@@ -438,9 +433,39 @@ find_runnable_in_fcfs_priority(struct queue *q)
   return (p);
 }
 
+// All process are move to the L0 queue
+// Every process's priority is set to 3
+// Every process's time slice is set to 0
+void
+priority_boosting(void)
+{
+  int begin;
+  int end;
+  struct proc *poped;
+
+  for (int qlev = L0; qlev <= L2; qlev++)
+  {
+
+    begin = (mlfq[qlev].front + 1) % (NPROC + 1);
+    end = (mlfq[qlev].rear + 1) % (NPROC + 1);
+    for (int iter = begin; iter != end; iter = (iter + 1) % (NPROC + 1))
+    {
+      mlfq[qlev].items[iter]->priority = 3;
+      mlfq[qlev].items[iter]->used_ticks = 0;
+      if (qlev > L0)
+      {
+        poped = queue_front(&mlfq[qlev]);
+        queue_pop(&mlfq[qlev]);
+        queue_push_back(&mlfq[L0], poped);
+      }
+    }
+  }
+  // cprintf("priority boosting is done!\n");
+  // procdump();
+}
 
 // TODO:
-//PAGEBREAK: 42
+// PAGEBREAK: 42
 // Per-CPU process scheduler.
 // Each CPU calls scheduler() after setting itself up.
 // Scheduler never returns.  It loops, doing:
@@ -469,13 +494,16 @@ scheduler(void)
     is_demoted = 0;
 
     //h 원래 for문 중괄호 시작
-    for (int qlev = 0; qlev < 3; qlev++)
+    for (int qlev = L0; qlev <= L2; qlev++)
     {
       if (!queue_is_empty(&mlfq[qlev]))
       {
         // cprintf("find runnable: qlev:%d\n", qlev);
         if (qlev == 2)
+        {
           p = find_runnable_in_fcfs_priority(&mlfq[qlev]);
+          //p = find_runnable_in_fcfs_priority(&mlfq[qlev]);
+        }
         else
           p = find_runnable_in_rr(&mlfq[qlev]);
         if (p) // 찾았으면 p는 널포인터가 아니다
@@ -505,13 +533,12 @@ scheduler(void)
     switchkvm(); //h 스케쥴러로 다시 컨텐스트 스위칭이 일어나면 이 부분부터 코드가 실행된다
 
     //cprintf("after switch\n");
-    p->used_ticks++; // TODO: used_ticks 오버플로우 문제
     if (p->used_ticks >= mlfq_time_quantum[p->qlev]) // 직전에 실행된 프로세스의 타임퀀텀을 확인
     {
       p->used_ticks = 0;
-      if (p->qlev == 2 && p->priority > 0)
+      if (p->qlev == L2 && p->priority > 0)
           p->priority--;
-      if (p->qlev < 2)
+      if (p->qlev < L2)
       {
         p->qlev++;
         is_demoted = 1;
@@ -520,26 +547,39 @@ scheduler(void)
 
     if (p->state != ZOMBIE) // 좀비 상태라면 레디큐에 존재할 필요가 없다. 슬립 상태는 다시 runnable로 바뀔 수 있으므로 큐 안에 보관한다
     {
-      if (p->qlev == 2 && !is_demoted)
+      if (p->qlev == L2 && !is_demoted)
       {
-        // cprintf("p: %d is pushed front\n", p->pid);
+        // cprintf(">>>>>>>>>>>>>>>>>>>>>>>>\n");
+        // cprintf(">>>>>before repush>>>>>>\n");
+        // cprintf("push front (L2), cur id: %d\n", p->pid);
+        // procdump();
+        // queue_push_back(&mlfq[p->qlev], p);
         queue_push_front(&mlfq[p->qlev], p); // 원래 l2큐에 있던 녀석이라면, 해당 큐의 맨앞으로 보낸다
+        // procdump();
+        // cprintf(">>>>>repush done>>>>>>\n");
+        // cprintf("@@@@@@@@@@@@@@@@@@@@@@@\n");
+        // cprintf("\n\n");
         // queue_push_back(&mlfq[p->qlev], p);
       }
       else
       {
+        // cprintf(">>>>>>>>>>>>>>>>>>>>>>>>\n");
+        // cprintf(">>>>>before repush>>>>>>\n");
+        // cprintf("push back, cur id: %d\n", p->pid);
+        // procdump();
         queue_push_back(&mlfq[p->qlev], p);
-        // if (p->qlev == 2)
-          // cprintf("p: %d is firstly pushed back in L2\n", p->pid);
+        // procdump();
+        // cprintf(">>>>>repush done>>>>>>\n");
+        // cprintf("@@@@@@@@@@@@@@@@@@@@@@@\n");
+        // cprintf("\n\n");
       }
     }
-    // else
-    // {
-    //   cprintf("why is it zombie?\n");
-    // }
+
     // Process is done running for now.
     // It should have changed its p->state before coming back.
     c->proc = 0;
+
+    //h 이전 중괄호 경계
     release(&ptable.lock);
   }
 }
@@ -573,6 +613,19 @@ scheduler(void)
 //       swtch(&(c->scheduler), p->context);
 //       switchkvm(); 
 //       //h 스케쥴러로 다시 컨텐스트 스위칭이 일어나면 이 부분부터 코드가 실행된다
+
+//       // acquire(&tickslock);
+
+//       // cprintf("switched to scheduler\n");
+//       // cprintf("global_ticks: %d\n", global_ticks);
+//       // cprintf("ticks: %d\n\n", ticks);
+//       // if (global_ticks >= 100)
+//       // {
+//       //   global_ticks = 0;
+//       //   priority_boosting();
+//       // }
+
+//       // release(&tickslock);
 
 //       // Process is done running for now.
 //       // It should have changed its p->state before coming back.
@@ -726,6 +779,40 @@ kill(int pid)
   return -1;
 }
 
+void
+mlfq_print(void)
+{
+  static char *states[] = {
+  [UNUSED]    "unused",
+  [EMBRYO]    "embryo",
+  [SLEEPING]  "sleep ",
+  [RUNNABLE]  "runble",
+  [RUNNING]   "run   ",
+  [ZOMBIE]    "zombie"
+  };
+  int qlev;
+  int iter;
+  int begin, end;
+
+  for(qlev = L0; qlev <= L2; qlev++)
+  {
+    cprintf("queue Level: %d, size: %d\n", qlev, queue_get_size(&mlfq[qlev]));
+    cprintf("front:%d, rear:%d\n", mlfq[qlev].front, mlfq[qlev].rear);
+
+    begin = (mlfq[qlev].front + 1) % (NPROC + 1);
+    end = (mlfq[qlev].rear + 1) % (NPROC + 1);
+    for(iter = begin; iter != end; iter = (iter + 1) % (NPROC + 1))
+    {
+      cprintf("items[%d], id: %d, %s %s\n",
+              iter,
+              mlfq[qlev].items[iter]->pid,
+              states[mlfq[qlev].items[iter]->state],
+              mlfq[qlev].items[iter]->name);
+    }
+    cprintf("\n");
+  }
+}
+
 // TODO: 
 //h 프로세스 정보를 출력해주는 디버깅용 함수
 //PAGEBREAK: 36
@@ -748,7 +835,8 @@ procdump(void)
   char *state;
   uint pc[10];
 
-  // TODO: 디버깅용 함수, 큐 순서대로 순회하게 변경
+  cprintf(">======procdmp start======<\n");
+
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
     if(p->state == UNUSED)
       continue;
@@ -764,16 +852,19 @@ procdump(void)
     }
     cprintf("\n");
   }
-  for (int qlev = 0; qlev < 3; qlev++)
-  {
-    cprintf("qlev: %d\n", qlev);
-    for (int i = 0; i < NPROC + 1; i++)
-    {
-      if (mlfq[qlev].items[i] != 0)
-        cprintf("q->items[%d], pid: %d, priority: %d\n", i, mlfq[qlev].items[i]->pid, mlfq[qlev].items[i]->priority);
-    }
-    cprintf("q front: %d, rear: %d\n\n", mlfq[qlev].front, mlfq[qlev].rear);
-  }
+  cprintf("\n*****mlfq info*****\n");
+  mlfq_print();
+  // for (int qlev = L0; qlev <= L2; qlev++)
+  // {
+  //   cprintf("qlev: %d\n", qlev);
+  //   for (int i = 0; i < NPROC + 1; i++)
+  //   {
+  //     if (mlfq[qlev].items[i] != 0)
+  //       cprintf("q->items[%d], pid: %d, priority: %d\n", i, mlfq[qlev].items[i]->pid, mlfq[qlev].items[i]->priority);
+  //   }
+  //   cprintf("q front: %d, rear: %d\n\n", mlfq[qlev].front, mlfq[qlev].rear);
+  // }
+  cprintf(">======procdmp finish======<\n");
   cprintf("\n\n");
 }
 

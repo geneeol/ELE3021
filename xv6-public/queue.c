@@ -79,16 +79,16 @@ queue_push_front(t_queue *q, struct proc *item)
   }
   q->items[q->front] = item;
   if (q->front == 0)
-    q->front = NPROC + 1;
+    q->front = NPROC;
   else
     q->front--;
   return (0);
 }
 
 int
-len_from_begin(int begin, int iter)
+dist_between_iters(int begin, int iter)
 {
   if (iter >= begin)
     return (iter - begin);
-  return (NPROC + 1 - (begin - iter));
+  return ((NPROC + 1 - begin) + iter);
 }

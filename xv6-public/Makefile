@@ -1,3 +1,4 @@
+#proc.o, proc_backup.o 중 하나 추가
 OBJS = \
 	bio.o\
 	console.o\

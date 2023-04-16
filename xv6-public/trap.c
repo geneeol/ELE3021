@@ -58,9 +58,11 @@ trap(struct trapframe *tf)
       acquire(&tickslock);
       ticks++;
       global_ticks++;
-      // cprintf("timer interuppt occur\n");
-      // procdump();
-      // cprintf("\n");
+      if (global_ticks == 100)
+      {
+        global_ticks = 0;
+        priority_boosting();
+      }
       wakeup(&ticks);
       release(&tickslock);
     }
@@ -128,11 +130,15 @@ trap(struct trapframe *tf)
   //     cprintf("my proc returns null\n");
   // }
 
+  //h 확인결과 myproc가 널이거나, myproc 상태는 항상 running 같음
   // Force process to give up CPU on clock tick.
   // If interrupts were on while locks held, would need to check nlock.
-  if(myproc() && myproc()->state == RUNNING && 
-      tf->trapno == T_IRQ0+IRQ_TIMER) //h 확인결과 myproc가 널이거나, myproc 상태는 항상 running 같음
+  if(myproc() && myproc()->state == RUNNING
+      && tf->trapno == T_IRQ0+IRQ_TIMER)
+  {
+    myproc()->used_ticks++;
     yield();
+  }
 
   // Check if the process has been killed since we yielded
   if(myproc() && myproc()->killed && (tf->cs&3) == DPL_USER)

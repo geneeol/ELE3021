@@ -22,6 +22,6 @@ struct proc	*queue_rear(t_queue *q);
 int	queue_push_back(t_queue *q, struct proc *item);
 int queue_pop(t_queue *q);
 int queue_push_front(t_queue *q, struct proc *item);
-int len_from_begin(int begin, int iter);
+int dist_between_iters(int begin, int iter);
 
 #endif

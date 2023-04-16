@@ -119,6 +119,8 @@ void            sleep(void*, struct spinlock*);
 void            userinit(void);
 int             wait(void);
 void            wakeup(void*);
+void 			priority_boosting(void);
+
 // project1 추가한 시스템콜
 void            yield(void);
 int				getLevel(void);
