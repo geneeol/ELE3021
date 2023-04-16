@@ -24,3 +24,4 @@
 #define SYS_safeprint 22 // user defined system call
 #define SYS_yield 23
 #define SYS_getLevel 24
+#define SYS_setPriority 25

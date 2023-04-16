@@ -20,14 +20,15 @@ int link(const char*, const char*);
 int mkdir(const char*);
 int chdir(const char*);
 int dup(int);
-int getpid(void); // TODO: getpid 구현
+int getpid(void); // TODO: getpid 구현 //h 이미 구현이 돼 있는 것 같은데..?
 char* sbrk(int);
 int sleep(int); // TODO: sleep 구현
 int uptime(void);
 int	safeprint(char *);
 // project1 추가한 시스템콜
 int yield(void);
-int getLevel(void);
+int	getLevel(void);
+void setPriority(int pid, int priority); 
 
 // ulib.c
 int stat(const char*, struct stat*);
