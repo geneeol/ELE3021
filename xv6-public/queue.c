@@ -44,7 +44,11 @@ int
 queue_push_back(t_queue *q, struct proc *item)
 {
   if (queue_is_full(q))
+  {
+    cprintf("Failed to push back: queue is full\n");
     return (-1);
+
+  }
   q->rear = (q->rear + 1) % (NPROC + 1);
   q->items[q->rear] = item;
   // cprintf("process init: %d, %s\n", item->pid, item->name);
@@ -56,7 +60,10 @@ int
 queue_pop(t_queue *q)
 {
   if (queue_is_empty(q))
+  {
+    cprintf("Failed to pop: queue is empty\n");
     return (-1);
+  }
   q->front = (q->front + 1) % (NPROC + 1);
   q->items[q->front] = 0;
   return (0);
@@ -66,7 +73,10 @@ int
 queue_push_front(t_queue *q, struct proc *item)
 {
   if (queue_is_full(q))
+  {
+    cprintf("Failed to push front: queue is full\n");
     return (-1);
+  }
   q->items[q->front] = item;
   if (q->front == 0)
     q->front = NPROC + 1;

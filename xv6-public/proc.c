@@ -236,6 +236,12 @@ fork(void)
   // 락이 걸린 상태에서 큐에 push해야 인터럽트에 방해받지 않는다
   if (queue_push_back(&mlfq[L0], np) == -1)
     cprintf("fork: queue_push failed");
+  // else
+  // {
+  //   cprintf("np qlev, priority: %d, %d\n", np->qlev, np->priority);
+  //   cprintf("push forked process: %d to L0 queue", np->pid);
+
+  // }
 
   release(&ptable.lock);
 
@@ -379,16 +385,27 @@ find_runnable_in_fcfs_priority(struct queue *q)
   end = (q->rear + 1) % (NPROC + 1);
   rotate_cnt = 0;
   flag++;
+  // if (flag >= 0)
+  // {
+  //   for (int i = 0; i < NPROC + 1; i++)
+  //   {
+  //     if (q->items[i] != 0)
+  //       cprintf("q->items[%d], pid: %d, priority: %d\n", i, q->items[i]->pid, q->items[i]->priority);
+  //   }
+  //   cprintf("q front: %d, rear: %d\n", q->front, q->rear);
+  //   // cprintf("\n\n");
+  // }
+  // cprintf("q size: %d, begin: %d, end: %d\n", queue_get_size(q), begin, end);
   // cprintf("find_runnable_in_fcfs: begin: %d, end: %d\n", begin, end);
   for (int iter = begin; iter != end; iter = (iter + 1) % (NPROC + 1))
   {
     tmp = q->items[iter]; // queue가 empty인 상황은 앞에서 걸러진다
     // if (flag > 30)
-    //   cprintf("fcfs tmp pid: %d, iter: %d\n", tmp->pid, iter);
+    // cprintf("fcfs tmp pid: %d, iter: %d\n", tmp->pid, iter);
     if (tmp->state == RUNNABLE && tmp->priority < lowest_priority)
     {
       // if (flag > 30)
-      //   cprintf("find candidate\n pid: %d\n", tmp->pid);
+        // cprintf("find candidate pid: %d\n\n", tmp->pid);
       lowest_priority = tmp->priority;
       p = tmp; // 큐를 전부 탐색하며 우선순위가 가장 낮은 프로세스를 찾는다
       // 만약 맨 앞에 있는 프로세스가 아니면, 
@@ -397,15 +414,27 @@ find_runnable_in_fcfs_priority(struct queue *q)
     }
   }
   // cprintf("after fcfs info\n\n");
-  // cprintf("rotate_cnt: %d\n", rotate_cnt);
+  // if (flag >= 0)
+  //   cprintf("rotate_cnt: %d\n", rotate_cnt);
   for (int i = 0; i < rotate_cnt; i++) // 선택한 프로세스를 큐 맨 앞으로 보낸다
   {
     tmp = queue_front(q);
     queue_pop(q);
     queue_push_back(q, tmp);
   }
-  if (!p)
+  // if (!p)
+  // {
+  //   if (flag >=0)
+  //     cprintf("can't find candidate\n");
+  // }
+  if (p) // 아 여기를 왜 !p로 했지..
+  {
+    // if (flag >= 0)
+    //   cprintf("q front: %d is poped\n", queue_front(q)->pid);
     queue_pop(q);
+    // if (flag >= 0)
+    //   cprintf("after pop q front: %d, rear: %d\n\n", q->front, q->rear);
+  }
   return (p);
 }
 
@@ -476,7 +505,7 @@ scheduler(void)
     switchkvm(); //h 스케쥴러로 다시 컨텐스트 스위칭이 일어나면 이 부분부터 코드가 실행된다
 
     //cprintf("after switch\n");
-    p->used_ticks++;
+    p->used_ticks++; // TODO: used_ticks 오버플로우 문제
     if (p->used_ticks >= mlfq_time_quantum[p->qlev]) // 직전에 실행된 프로세스의 타임퀀텀을 확인
     {
       p->used_ticks = 0;
@@ -493,12 +522,21 @@ scheduler(void)
     {
       if (p->qlev == 2 && !is_demoted)
       {
-        // cprintf("push front\n");
+        // cprintf("p: %d is pushed front\n", p->pid);
         queue_push_front(&mlfq[p->qlev], p); // 원래 l2큐에 있던 녀석이라면, 해당 큐의 맨앞으로 보낸다
+        // queue_push_back(&mlfq[p->qlev], p);
       }
       else
+      {
         queue_push_back(&mlfq[p->qlev], p);
+        // if (p->qlev == 2)
+          // cprintf("p: %d is firstly pushed back in L2\n", p->pid);
+      }
     }
+    // else
+    // {
+    //   cprintf("why is it zombie?\n");
+    // }
     // Process is done running for now.
     // It should have changed its p->state before coming back.
     c->proc = 0;
@@ -692,7 +730,7 @@ kill(int pid)
 //h 프로세스 정보를 출력해주는 디버깅용 함수
 //PAGEBREAK: 36
 // Print a process listing to console.  For debugging.
-// Runs when user types ^P on console.
+//h Runs when user types ^P on console.
 // No lock to avoid wedging a stuck machine further.
 void
 procdump(void)
@@ -726,6 +764,17 @@ procdump(void)
     }
     cprintf("\n");
   }
+  for (int qlev = 0; qlev < 3; qlev++)
+  {
+    cprintf("qlev: %d\n", qlev);
+    for (int i = 0; i < NPROC + 1; i++)
+    {
+      if (mlfq[qlev].items[i] != 0)
+        cprintf("q->items[%d], pid: %d, priority: %d\n", i, mlfq[qlev].items[i]->pid, mlfq[qlev].items[i]->priority);
+    }
+    cprintf("q front: %d, rear: %d\n\n", mlfq[qlev].front, mlfq[qlev].rear);
+  }
+  cprintf("\n\n");
 }
 
 /***** system calls for project1 *****/
