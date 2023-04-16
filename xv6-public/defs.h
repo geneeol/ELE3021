@@ -164,6 +164,7 @@ void            timerinit(void);
 // trap.c
 void            idtinit(void);
 extern uint     ticks;
+extern uint		global_ticks;
 void            tvinit(void);
 extern struct spinlock tickslock;
 

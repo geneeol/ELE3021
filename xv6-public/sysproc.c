@@ -57,8 +57,8 @@ sys_sbrk(void)
 }
 
 int
-sys_sleep(void) //h 슬립함수가 몇틱만큼 자는지 구현원리 확인 (슬립함수 인자)
-{
+sys_sleep(void) //h ticks 를 사용해슬립함수가 몇틱만큼 자는지 구현원리 확인 (슬립함수 인자)
+{               //h ticks 오버플로우에 대한 에러처리가 방지돼 있지 않다
   int n;
   uint ticks0;
 
@@ -71,7 +71,7 @@ sys_sleep(void) //h 슬립함수가 몇틱만큼 자는지 구현원리 확인 (
       release(&tickslock);
       return -1;
     }
-    sleep(&ticks, &tickslock);
+    sleep(&ticks, &tickslock); //h ticks를 chan인자로 하여 sleep한다
   }
   release(&tickslock);
   return 0;
