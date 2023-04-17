@@ -189,7 +189,11 @@ UPROGS=\
 	_test_yield\
 	_usertests\
 	_test_mlfq\
+	_test_lock\
 	_test_mlfq2\
+	_test_mlfq3\
+	_test_origin1\
+	# TODO: 위 테스트코드 주석처리하고 usertests 돌리면 에러안뜸 왜?
 
 fs.img: mkfs README $(UPROGS)
 	./mkfs fs.img README $(UPROGS)
@@ -261,7 +265,8 @@ EXTRA=\
 	mkfs.c ulib.c user.h cat.c echo.c forktest.c grep.c kill.c\
 	ln.c ls.c mkdir.c rm.c stressfs.c wc.c zombie.c\
 	printf.c umalloc.c prac_myuserapp.c myapp.c prac2_usercall.c\
-	test_yield.c usertests.c test_mlfq.c test_mlfq2.c\
+	test_yield.c usertests.c test_mlfq.c test_mlfq2.c test_lock\
+	test_mlfq3.c test_origin1.c\
 	README dot-bochsrc *.pl toc.* runoff runoff1 runoff.list\
 	.gdbinit.tmpl gdbutil\
 

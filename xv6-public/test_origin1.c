@@ -6,8 +6,8 @@
 #define NUM_YIELD 20000
 #define NUM_SLEEP 1000
 
-#define NUM_THREAD 6
-#define MAX_LEVEL 3
+#define NUM_THREAD 4
+#define MAX_LEVEL 5
 
 int parent;
 
@@ -39,7 +39,7 @@ int fork_children2()
       int r = setPriority(p, i);
       if (r < 0)
       {
-        printf(1, "setPriority returned %d\n", r);
+        printf(1, "setpriority returned %d\n", r);
         exit();
       }
     }
@@ -70,7 +70,6 @@ void exit_children()
   while (wait() != -1);
 }
 
-
 int main(int argc, char *argv[])
 {
   int i, pid;
@@ -86,19 +85,19 @@ int main(int argc, char *argv[])
 
   if (pid != parent)
   {
-	if (pid % 2 == 0)
-	{
-		for (i = 0; i < NUM_LOOP; i++)
-			count[getLevel()]++;
-	}
-  else
-  {
-    for (i = 0; i < NUM_LOOP / 100; i++)
-			count[getLevel()]++;
-  }
-  printf(1, "Process %d\n", pid);
-  for (i = 0; i < MAX_LEVEL; i++)
-    printf(1, "L%d: %d\n", i, count[i]);
+    for (i = 0; i < NUM_LOOP; i++)
+    {
+      int x = getLevel();
+      if (x < 0 || x > 4)
+      {
+        printf(1, "Wrong level: %d\n", x);
+        exit();
+      }
+      count[x]++;
+    }
+    printf(1, "Process %d\n", pid);
+    for (i = 0; i < MAX_LEVEL; i++)
+      printf(1, "L%d: %d\n", i, count[i]);
   }
   exit_children();
   printf(1, "[Test 1] finished\n");
