@@ -46,7 +46,7 @@ trap(struct trapframe *tf)
       exit();
     myproc()->tf = tf;
     syscall();
-    if(myproc()->killed)
+    if(myproc()->killed) //h 시스템콜 호출됐는데 상태가 killed면 종료
       exit();
     return;
   }
@@ -113,22 +113,12 @@ trap(struct trapframe *tf)
   // Force process exit if it has been killed and is in user space.
   // (If it is still executing in the kernel, let it keep running
   // until it gets to the regular system call return.)
-  if(myproc() && myproc()->killed && (tf->cs&3) == DPL_USER)
+  if(myproc() && myproc()->killed && (tf->cs&3) == DPL_USER) // 실행됐는데 killed 상태면 종료
     exit();
 
   // TODO: 이 부분이 CPU를 yield 하는 부분, 
   // ticks가 100이면 boosting후 tick 0으로 설정하는 분기 추가 
   // (tick 변수 락으로 관리할 것, 멀티코어 관련)
-
-  //h 타이머 인터럽트 발생시
-  // if (tikcs > 50 && tf->trapno == T_IRQ0+IRQ_TIMER) 
-  // {
-  //   procdump();
-  //   if (myproc())
-  //     cprintf("myproc state: pid: %d, state: %d\n", myproc()->pid, myproc()->state);
-  //   else
-  //     cprintf("my proc returns null\n");
-  // }
 
   //h 확인결과 myproc가 널이거나, myproc 상태는 항상 running 같음
   // Force process to give up CPU on clock tick.
