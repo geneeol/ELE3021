@@ -1,0 +1,223 @@
+test_boosting occur
+lock
+child: pid: 4, try lock
+user interrupt 128 called
+child: pid: 4, get lock
+child elapsed: 0
+child elapsed: 100
+child elapsed: 200
+child elapsed: 300
+child elapsed: 400
+child elapsed: 500
+child elapsed: 600
+child elapsed: 700
+child elapsed: 800
+child elapsed: 900
+child elapboosting occur # //h 여기서 부스팅에 의해 언락 발생, 여전히 자식이 서비스되는게 맞음
+sed: 1000
+child elapsed: 1parent: pid: 3 # //h 라운드 로빈이라 부모도 일부 서비스됨
+100
+parent elapsed: i: 0
+parent elapschild elapsed: 1200
+ed: i: 100
+child elapseparent eld: 1300
+apsed: i: 200
+child elapsparent elapsed: i: 300
+ed: 1400
+parent echild elapsed: 1500 # //h 여기서 모두 L2큐에 도달듯
+child elapsed: 1600
+child elapsed: 1700
+child elapsed: 1800
+child elapsed: 1900
+child elapsed: 2000
+child elapsed: 2100
+child elapsed: 2200
+child elapsed: 2300
+child elapsed: 2400
+child elapsed: 2500
+child elapsed: 2600
+child elapsed: 2700
+child elapsed: 2800
+child elapsed: 2900
+child elapsed: 3000
+child elapsed: 3100
+child elapsed: 3200
+child elapsed: 3300
+child elapsed: 3400
+child elapsed: 3500
+child elapsed: 3600
+child elapsed: 3700
+child elapsed: 3800
+child elapsed: 3900
+child elapsed: 4000
+child elapsed: 4100
+child elapsed: 4200
+child elapsed: 4300
+child elapsed: 4400
+child elapsed: 4500
+child elapsed: 4600
+child elapsed: 4700
+child elapsed: 4800
+child elapsed: 4900
+child elapsed: 5000
+child elapsed: 5100
+child elapsed: 5200
+child elapsed: 5300
+child elapsed: 5400
+cboosting occur
+hild elapsed: 5500
+lapsed: i: 400 # //h 위에 부모 출력이 지금 밑에 찍힌거..
+child elparent elapsed: 5600
+child elaapsed: i: 500
+parent elapsed: i: 600
+psed: 5700
+parent elapsed: i: 700
+child parent elapsed: i: 800
+elapsed: 5800
+parent elapsed: i: 900
+child elapsed: 5900
+parent elapsed: i: 1000 //h 이때 부스팅은 언락을 유발한게 아니므로 부모가 다시 서비스
+parent elapsed: i: 1100
+parent elapsed: i: 1200
+parent elapsed: i: 1300
+parent elapsed: i: 1400
+parent elapsed: i: 1500
+parent elapsed: i: 1600
+parent elapsed: i: 1700
+parent elapsed: i: 1800
+parent elapsed: i: 1900
+parent elapsed: i: 2000
+parent elapsed: i: 2100
+parent elapsed: i: 2200
+parent elapsed: i: 2300
+parent elapsed: i: 2400
+parent elapsed: i: 2500
+parent elapsed: i: 2600
+parent elapsed: i: 2700
+parent elapsed: i: 2800
+parent elapsed: i: 2900
+parent elapsed: i: 3000
+parent elapsed: i: 3100
+parent elapsed: i: 3200
+parent elapsed: i: 3300
+parent elapsed: i: 3400
+parent elapsed: i: 3500
+parent elapsed: i: 3600
+parent elapsed: i: 3700
+parent elapsed: i: 3800
+parent elapsed: i: 3900
+parent elapsed: i: 4000
+parent elapsed: i: 4100
+parent elapsed: i: 4200
+parent elapsed: iboosting occur //h 왜 계속 부모가 서비스되지?
+c: 4300
+hild elapsed: 6000
+parechild elant elapsed: i: 4400
+psed: 6100
+pachild elarent elapsed: i: 450psed: 6200
+0
+child elapsparent elapsed: i: 4600
+ed: 6300
+parent elapsed: child elai: 4700
+psed: 6400
+parent elapsed: i: 4800
+parent elapsed: i: 4900
+parent elapsed: i: 5000
+parent elapsed: i: 5100
+parent elapsed: i: 5200
+parent elapsed: i: 5300
+parent elapsed: i: 5400
+parent elapsed: i: 5500
+parent elapsed: i: 5600
+parent elapsed: i: 5700
+parent elapsed: i: 5800
+parent elapsed: i: 5900
+parent elapsed: i: 6000
+parent elapsed: i: 6100
+parent elapsed: i: 6200
+parent elapsed: i: 6300
+parent elapsed: i: 6400
+parent elapsed: i: 6500
+parent elapsed: i: 6600
+parent elapsed: i: 6700
+parent elapsed: i: 6800
+parent elapsed: i: 6900
+parent elapsed: i: 7000
+parent elapsed: i: 7100
+parent elapsed: i: 7200
+parent elapsed: i: 7300
+parent elapsed: i: 7400
+parent elapsed: i: 7500
+parent elapsed: i: 7600
+parent elapsed: i: 7700
+parent elapsed: i: 7800
+parent elapsed: i: 7900
+parent elapsed: i: 8000
+parent elapsed: i: 8100
+parent elapsed: i: 8200
+parent elapsed: i: 8300
+parent elapsed: i: 8400
+parent elapsed: iboosting occur
+: 8500
+child elapsed: 6500
+parent elapsed: ichild elapsed: 6: 8600
+parent elapsed: i: 8700
+600
+parent elapchild elapsed: 67sed: i: 8800
+00
+parentchild elapsed: 6800
+ elapsed: i: 8900
+child elapsedparent el: 6900
+child elapsed: 7000
+child elapsed: 7100
+child elapsed: 7200
+child elapsed: 7300
+child elapsed: 7400
+child elapsed: 7500
+child elapsed: 7600
+child elapsed: 7700
+child elapsed: 7800
+child elapsed: 7900
+child elapsed: 8000
+child elapsed: 8100
+child elapsed: 8200
+child elapsed: 8300
+child elapsed: 8400
+child elapsed: 8500
+child elapsed: 8600
+child elapsed: 8700
+child elapsed: 8800
+child elapsed: 8900
+child elapsed: 9000
+child elapsed: 9100
+child elapsed: 9200
+child elapsed: 9300
+child elapsed: 9400
+child elapsed: 9500
+child elapsed: 9600
+child elapsed: 9700
+child elapsed: 9800
+child elapsed: 9900
+loop finishedProcess 4
+L0: 624
+L1: 1593
+L2: 7783
+user interrupt 128 called
+child: pid: 4, try unlock
+apsed: i: 9000
+parent elapsed: i: 9100
+parent elapsed: i: 9200
+parent elapsed: i: 9300
+parent elapsed: i: 9400
+parent elapsed: i: 9boosting occur
+500
+parent elapsed: i: 9600
+parent elapsed: i: 9700
+parent elapsed: i: 9800
+parent elapsed: i: 9900
+Process 3
+L0: 901
+L1: 1403
+L2: 7696
+$ boosting occur
+boosting occur
