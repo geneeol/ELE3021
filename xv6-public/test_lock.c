@@ -52,7 +52,7 @@ void lock_test1(void) //h 100 번에 1번 프린트, 토탈 3번 프린트하는
 
 int	main(void)
 {
-
+	bp_tracer("test_lock starts");
 	lock_test1();
 	exit();
 }

@@ -78,6 +78,7 @@ int main(int argc, char *argv[])
 
   parent = getpid();
 
+  bp_tracer("test_origin1 starts");
   printf(1, "MLFQ test start\n");
 
   printf(1, "[Test 1] default\n");
@@ -100,6 +101,7 @@ int main(int argc, char *argv[])
       printf(1, "L%d: %d\n", i, count[i]);
   }
   exit_children();
+  bp_tracer("test_origin1 ends");
   printf(1, "[Test 1] finished\n");
   printf(1, "done\n");
   exit();

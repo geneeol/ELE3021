@@ -64,6 +64,7 @@ forktest(void)
 int
 main(void)
 {
+  bp_tracer("test_mlfq3 starts");
   forktest();
   exit();
 }
