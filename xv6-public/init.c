@@ -32,6 +32,6 @@ main(void)
       exit();
     }
     while((wpid=wait()) >= 0 && wpid != pid) //h 자식프로세스 sh가 종료될 때까지 대기한다.
-      printf(1, "zombie!, orphan: %d\n", wpid);                //h sh를 회수하면 반복문을 바로 탈출한다
+      printf(1, "zombie!, orphan: %d\n", wpid); //h 만약 sh가 아닌 다른 자식을 회수하면 zombie를 출력한다 (즉 발생하면 안됨)
   }
 }

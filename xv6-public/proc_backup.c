@@ -1,11 +1,11 @@
-// #include "types.h"
-// #include "defs.h"
-// #include "param.h"
-// #include "memlayout.h"
-// #include "mmu.h"
-// #include "x86.h"
-// #include "proc.h"
-// #include "spinlock.h"
+// #include "typ"
+// #include "de"
+// #include "par"
+// #include "memlayo"
+// #include "m"
+// #include "x"
+// #include "pr"
+// #include "spinlo"
 
 // struct {
 //   struct spinlock lock;
@@ -71,23 +71,23 @@
 // // state required to run in the kernel.
 // // Otherwise return 0.
 // static struct proc*
-// allocproc(void) //h userinit(첫번째 프로세스 생성)과 fork에서 호출
-//                 //h 새로 생성된 프로세스의 정보를 첫번째로 초기화하는 곳
+// allocproc(void) userinit(첫번째 프로세스 생성)과 fork에서 호출
+//                 새로 생성된 프로세스의 정보를 첫번째로 초기화하는 곳
 // {
 //   struct proc *p;
 //   char *sp;
 
 //   acquire(&ptable.lock);
 
-//   // TODO: ptable 순회 대신 모든 큐를 순회하게 변경해야한다
-//   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) //h 해당 프로세스가 ptable에서 빈 슬롯에 프로세스 할당
+//   // : ptable 순회 대신 모든 큐를 순회하게 변경해야한다
+//   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) 해당 프로세스가 ptable에서 빈 슬롯에 프로세스 할당
 //     if(p->state == UNUSED)
 //       goto found;
 
 //   release(&ptable.lock);
 //   return 0;
 
-// // TODO: qlev, priority, used_ticks 정보 초기화 (락을 한 상태에서 초기화 해야함)
+// // : qlev, priority, used_ticks 정보 초기화 (락을 한 상태에서 초기화 해야함)
 // found:
 //   p->state = EMBRYO;
 //   p->pid = nextpid++;
@@ -128,7 +128,7 @@
 
 //   p = allocproc();
   
-//   initproc = p; //h initproc를 첫번째 프로세스인 init으로 초기화
+//   initproc = p; initproc를 첫번째 프로세스인 init으로 초기화
 //   if((p->pgdir = setupkvm()) == 0)
 //     panic("userinit: out of memory?");
 //   inituvm(p->pgdir, _binary_initcode_start, (int)_binary_initcode_size);
@@ -151,7 +151,7 @@
 //   // because the assignment might not be atomic.
 //   acquire(&ptable.lock);
 
-//   p->state = RUNNABLE; //h allocproc로 ptable에 프로세스 할당후 runnable로 바꿈으로서 스케쥴러가 실행가능하게 함
+//   p->state = RUNNABLE; allocproc로 ptable에 프로세스 할당후 runnable로 바꿈으로서 스케쥴러가 실행가능하게 함
 
 //   release(&ptable.lock);
 // }
@@ -213,19 +213,19 @@
 
 //   safestrcpy(np->name, curproc->name, sizeof(curproc->name));
 
-//   pid = np->pid; //h 자식프로세스의 pid값을 반환하다.
+//   pid = np->pid; 자식프로세스의 pid값을 반환하다.
 
 //   acquire(&ptable.lock);
 
-//   np->state = RUNNABLE; //h 생성한 프로세스를 이곳에서 RUNNABLE 상태로 변경
+//   np->state = RUNNABLE; 생성한 프로세스를 이곳에서 RUNNABLE 상태로 변경
 
 //   release(&ptable.lock);
 
 //   return pid;
 // }
 
-// // TODO:
-// //h 모든 프로세스는 종료전 exit을 명시적으로 호출해야하는 것 같다
+// // :
+// 모든 프로세스는 종료전 exit을 명시적으로 호출해야하는 것 같다
 // // Exit the current process.  Does not return.
 // // An exited process remains in the zombie state
 // // until its parent calls wait() to find out it exited.
@@ -252,14 +252,14 @@
 //   end_op();
 //   curproc->cwd = 0;
 
-//   // TODO: 순회 방식 변경, 모든 큐를 순회하며 현재 프로세스의 자식프로스가 있는지 검사한다
+//   // : 순회 방식 변경, 모든 큐를 순회하며 현재 프로세스의 자식프로스가 있는지 검사한다
 //   acquire(&ptable.lock);
 
 //   // Parent might be sleeping in wait().
 //   wakeup1(curproc->parent);
 
 //   // Pass abandoned children to init.
-//   //h 고아 프로세스가 되지 않게끔, 현재 종료하려는 프로세스의 부모를 initproc로 바꾸어 준다
+//   고아 프로세스가 되지 않게끔, 현재 종료하려는 프로세스의 부모를 initproc로 바꾸어 준다
 //   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
 //     if(p->parent == curproc){
 //       p->parent = initproc;
@@ -269,14 +269,14 @@
 //   }
 
 //   // Jump into the scheduler, never to return.
-//   curproc->state = ZOMBIE; //h 현재 프로세스를 ZOMBIE 상태로 변경한다,
-//                            //h 따라서 해당 프로세스는 더 이상 스케줄링 되지 않는다.
-//                            //h 이후 부모프로세스의 wait호출을 통해 회수된다
-//   sched(); //h scheduler로 컨텍스트 스위치가 되고 나면 두 번 다시 이 프로세스는 선택되지 않는다
+//   curproc->state = ZOMBIE; 현재 프로세스를 ZOMBIE 상태로 변경한다,
+//                            따라서 해당 프로세스는 더 이상 스케줄링 되지 않는다.
+//                            이후 부모프로세스의 wait호출을 통해 회수된다
+//   sched(); scheduler로 컨텍스트 스위치가 되고 나면 두 번 다시 이 프로세스는 선택되지 않는다
 //   panic("zombie exit");
 // }
 
-// // TODO:
+// // :
 // // Wait for a child process to exit and return its pid.
 // // Return -1 if this process has no children.
 // int
@@ -286,7 +286,7 @@
 //   int havekids, pid;
 //   struct proc *curproc = myproc();
   
-//   // TODO: 순회 방식 변경 테이블에서 회수할 때 모든 큐를 순회하게 해야한다
+//   // : 순회 방식 변경 테이블에서 회수할 때 모든 큐를 순회하게 해야한다
 //   acquire(&ptable.lock);
 //   for(;;){
 //     // Scan through table looking for exited children.
@@ -322,7 +322,7 @@
 //   }
 // }
 
-// // TODO:
+// // :
 // // PAGEBREAK: 42
 // // Per-CPU process scheduler.
 // // Each CPU calls scheduler() after setting itself up.
@@ -342,14 +342,14 @@
 //     // Enable interrupts on this processor.
 //     sti();
 
-//     // TODO: 당연히 순회방식 변경
+//     // : 당연히 순회방식 변경
 //     // Loop over process table looking for process to run.
 //     acquire(&ptable.lock);
 //     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
 //       if(p->state != RUNNABLE)
 //         continue;
 
-//       //h 선택된 프로세스가 lock을 해제하는 것 같다
+//       선택된 프로세스가 lock을 해제하는 것 같다
 //       // Switch to chosen process.  It is the process's job
 //       // to release ptable.lock and then reacquire it
 //       // before jumping back to us.
@@ -359,7 +359,7 @@
 
 //       swtch(&(c->scheduler), p->context);
 //       switchkvm(); 
-//       //h 스케쥴러로 다시 컨텐스트 스위칭이 일어나면 이 부분부터 코드가 실행된다
+//       스케쥴러로 다시 컨텐스트 스위칭이 일어나면 이 부분부터 코드가 실행된다
 
 //       // Process is done running for now.
 //       // It should have changed its p->state before coming back.
@@ -406,7 +406,7 @@
 //   release(&ptable.lock);
 // }
 
-// //h 자식 프로세스는 항상 여기에서 시작한다.
+// 자식 프로세스는 항상 여기에서 시작한다.
 // // 자식 프로세스에서도 테이블 락을 해제해주어야 한다.
 // // A fork child's very first scheduling by scheduler()
 // // will swtch here.  "Return" to user space.
@@ -468,7 +468,7 @@
 //   }
 // }
 
-// // TODO: 큐를 순회하는 방식을 바꾸어야 한다
+// // : 큐를 순회하는 방식을 바꾸어야 한다
 // //PAGEBREAK!
 // // Wake up all processes sleeping on chan.
 // // The ptable lock must be held.
@@ -491,7 +491,7 @@
 //   release(&ptable.lock);
 // }
 
-// // TODO:
+// // :
 // // Kill the process with the given pid.
 // // Process won't exit until it returns
 // // to user space (see trap in trap.c).
@@ -500,7 +500,7 @@
 // {
 //   struct proc *p;
 
-//   // TODO: 모든 큐를 순회하게 변경
+//   // : 모든 큐를 순회하게 변경
 //   acquire(&ptable.lock);
 //   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
 //     if(p->pid == pid){
@@ -516,8 +516,8 @@
 //   return -1;
 // }
 
-// // TODO: 
-// //h 프로세스 정보를 출력해주는 디버깅용 함수
+// // : 
+// 프로세스 정보를 출력해주는 디버깅용 함수
 // //PAGEBREAK: 36
 // // Print a process listing to console.  For debugging.
 // // Runs when user types ^P on console.
@@ -538,7 +538,7 @@
 //   char *state;
 //   uint pc[10];
 
-//   // TODO: 디버깅용 함수, 모든 큐를 순회하게 변경
+//   // : 디버깅용 함수, 모든 큐를 순회하게 변경
 //   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
 //     if(p->state == UNUSED)
 //       continue;

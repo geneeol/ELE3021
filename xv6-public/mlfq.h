@@ -1,4 +1,4 @@
-#ifndef MLFQ_H // TODO: 헤더가드 유효한지 확인
+#ifndef MLFQ_H //h 헤더가드가 유효한걸까?
 # define MLFQ_H
 
 # define NMLFQ 3

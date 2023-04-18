@@ -5,6 +5,7 @@
 #define ID 2019035587
 #define N_LOOP 300000
 
+//h 중요! 터미널 출력이 자식, 부모 한쪽에 몰려있어도 실제로는 그 시간 사이에 부스팅 및 스위칭 발생함. gdb로 확인됨
 void	distribution(int *freq)
 {
 	printf(1, "Process %d\n", getpid());
@@ -28,7 +29,7 @@ void lock_test1(void) //h 100 번에 1번 프린트, 토탈 3번 프린트하는
 		for (int i = 0; i < N_LOOP; i++) // 루프 1만번 정도에 부스팅 1회 발생
 		{
 			freq[getLevel()]++;
-			if (i % 100 == 0)
+			if (i % 800 == 0)
 				printf(1, "c elapsed: %d\n", i);
 		}
 		printf(1, "loop finished");
@@ -45,7 +46,7 @@ void lock_test1(void) //h 100 번에 1번 프린트, 토탈 3번 프린트하는
 		for (int i = 0; i < N_LOOP; i++)
 		{
 			freq[getLevel()]++;
-			if (i % 100 == 0)
+			if (i % 800 == 0)
 				printf(1, "p elapsed: %d\n", i);
 		}
 		distribution(freq);

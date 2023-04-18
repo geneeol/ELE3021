@@ -16,7 +16,7 @@ uint ticks;
 
 // project1
 uint global_ticks;
-int boosting_occur;
+int boosting_occured;
 
 void
 tvinit(void)
@@ -25,12 +25,11 @@ tvinit(void)
 
   for(i = 0; i < 256; i++)
     SETGATE(idt[i], 0, SEG_KCODE<<3, vectors[i], 0);
+  // 시스템콜외 추가로 별도의 인터럽트 게이트 오픈
   SETGATE(idt[T_SYSCALL], 1, SEG_KCODE<<3, vectors[T_SYSCALL], DPL_USER);
   SETGATE(idt[T_PRAC2], 1, SEG_KCODE<<3, vectors[T_PRAC2], DPL_USER);
-  //h 129, 130번 인터럽트 게이트 오픈
   SETGATE(idt[SCHED_LOCK], 1, SEG_KCODE<<3, vectors[SCHED_LOCK], DPL_USER);
   SETGATE(idt[SCHED_UNLOCK], 1, SEG_KCODE<<3, vectors[SCHED_UNLOCK], DPL_USER);
-  // TODO: 129, 130번 인터럽트를 위한 idt 설정
 
   initlock(&tickslock, "time");
 }
@@ -55,7 +54,6 @@ trap(struct trapframe *tf)
     return;
   }
 
-  // TODO: 인터럽트 129, 130을 통해 schedulerLock(), schedulerUnlock() 호출
   switch(tf->trapno){
   case T_IRQ0 + IRQ_TIMER: //h 여기서 부스팅하기전에 yield부터 하는게 맞는듯
     if(cpuid() == 0){
@@ -66,7 +64,7 @@ trap(struct trapframe *tf)
       {
         global_ticks = 0;
         priority_boosting();
-        boosting_occur = 1;
+        boosting_occured = 1;
       }
       wakeup(&ticks); //h 타이머 인터럽트 발생시 ticks를 채널로 sleep하던 프로세스 깨움
       release(&tickslock);
@@ -128,11 +126,9 @@ trap(struct trapframe *tf)
   if(myproc() && myproc()->killed && (tf->cs&3) == DPL_USER) // 실행됐는데 killed 상태면 종료
     exit();
 
-  // TODO: 이 부분이 CPU를 yield 하는 부분, 
-  // ticks가 100이면 boosting후 tick 0으로 설정하는 분기 추가 
-  // (tick 변수 락으로 관리할 것, 멀티코어 관련)
-
   //h 확인결과 myproc가 널이거나, myproc 상태는 항상 running 같음
+  //  즉 모든 프로세스가 sleep이어도 인터럽트는 발생해서 trap에 도달한다.
+  //  그 외 일반적으로 프로세스사 running중에 인터럽트를 당해서 trap에 도달한다.
   // Force process to give up CPU on clock tick.
   // If interrupts were on while locks held, would need to check nlock.
   if(myproc() && myproc()->state == RUNNING

@@ -2358,8 +2358,6 @@ items[3], id: 5, runble test_mlfq
 
 >======procdmp finish======<
 
-# //h 여기서 3이 락중임
-# //h 3이 언락을 해야하는데..?
 sched is locked
 pid: 3, state: sleep
 
@@ -2384,7 +2382,6 @@ items[3], id: 5, runble test_mlfq
 
 >======procdmp finish======<
 
-# TODO: 찾았다...! 언락 발생할 때 원소 잃어버
 unlock_occured
 pid: 5, state: runble
 
@@ -2414,7 +2411,7 @@ spend time for priority boosting while running
 spend time for priority boosting while running
 spend time for priority boosting while running
 Before try Lock Again Process : 5
-sched is locked # //h 여기서 pid 5가 락 획득!
+sched is locked
 pid: 5, state: runble
 
 >======procdmp start======<

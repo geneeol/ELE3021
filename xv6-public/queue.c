@@ -51,8 +51,6 @@ queue_push_back(t_queue *q, struct proc *item)
   }
   q->rear = (q->rear + 1) % (NPROC + 1);
   q->items[q->rear] = item;
-  // cprintf("process init: %d, %s\n", item->pid, item->name);
-  // TODO 이 줄 추가하면 왜 실행되지?
   return (0);
 }
 

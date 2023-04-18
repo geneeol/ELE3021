@@ -205,7 +205,6 @@ writetest1(void) //h makefile에서 유저프로그램 개수가 달라지면 �
     }
   }
 
-  //h
   printf(1, "\npassing loop1\n\n");
 
   close(fd);
@@ -237,7 +236,6 @@ writetest1(void) //h makefile에서 유저프로그램 개수가 달라지면 �
     n++;
   }
 
-  //h
   printf(1, "\npassing loop2\n\n");
 
   close(fd);
@@ -558,14 +556,12 @@ fourfiles(void)
     }
   }
 
-  //h
   printf(1, "\npassing loop1, wait start\n\n");
 
   for(pi = 0; pi < 4; pi++){
     wait();
   }
 
-  //h
   printf(1, "\npassing loop2, wait finish\n\n");
 
   for(i = 0; i < 2; i++){
@@ -589,7 +585,6 @@ fourfiles(void)
     unlink(fname);
   }
 
-  //h
   printf(1, "\npassing loop3\n\n");
 
   printf(1, "fourfiles ok\n");
@@ -635,14 +630,12 @@ createdelete(void)
     }
   }
 
-  //h
   printf(1, "\npassing loop1, wait start\n\n");
 
   for(pi = 0; pi < 4; pi++){
     wait();
   }
 
-  //h
   printf(1, "\npassing loop2, wait success\n\n");
 
   name[0] = name[1] = name[2] = 0;
@@ -663,7 +656,6 @@ createdelete(void)
     }
   }
 
-  //h
   printf(1, "\npassing loop3\n\n");
 
   for(i = 0; i < N; i++){
@@ -824,7 +816,6 @@ concreate(void)
       wait();
   }
 
-  //h
   printf(1, "\npassing loop1\n\n");
 
   memset(fa, 0, sizeof(fa));
@@ -847,7 +838,6 @@ concreate(void)
       n++;
     }
   }
-  //h
   printf(1, "\npassing loop2\n\n");
 
   close(fd);
@@ -882,7 +872,6 @@ concreate(void)
       wait();
   }
 
-  //h
   printf(1, "\npassing loop3\n\n");
 
   printf(1, "concreate ok\n");
@@ -1202,7 +1191,6 @@ bigfile(void)
   }
   close(fd);
 
-  //h
   printf(1, "\npassing loop1\n\n");
 
   fd = open("bigfile", 0);
@@ -1236,7 +1224,6 @@ bigfile(void)
   }
   unlink("bigfile");
 
-  //h
   printf(1, "\npassing loop2\n\n");
 
   printf(1, "bigfile test ok\n");
@@ -1505,7 +1492,7 @@ sbrktest(void)
   #pragma GCC diagnostic ignored "-Wstringop-overflow"
   *lastaddr = 99;
   #pragma GCC diagnostic pop
-  //h
+  //h 여기까지
   // can one de-allocate
   a = sbrk(0);
   c = sbrk(-4096);

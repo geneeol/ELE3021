@@ -50,7 +50,7 @@ struct proc {
   struct inode *cwd;           // Current directory
   char name[16];               // Process name (debugging)
 
-  //h mlfq 관련 정보 추가
+  // project1 mlfq 관련 정보 추가
   int priority;
   int qlev;
   int used_ticks;
