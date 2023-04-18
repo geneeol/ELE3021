@@ -1,0 +1,2541 @@
+MLFQ test start
+[Test 7] schedulerLock & Unlock Test
+Else
+Before Lock Process : 4
+Aftesched is locked
+pid: 4, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 runble test_mlfq
+5 embryo
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:5, rear:6
+items[6], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:16, rear:18
+items[17], id: 2, sleep  sh
+items[18], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+r Lock Process sched is locked
+pid: 4, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 runble test_mlfq
+5 embryo
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:5, rear:6
+items[6], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:16, rear:18
+items[17], id: 2, sleep  sh
+items[18], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+: sched is locked
+pid: 4, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 runble test_mlfq
+5 embryo
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:5, rear:6
+items[6], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:16, rear:18
+items[17], id: 2, sleep  sh
+items[18], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+4
+sched is locked
+pid: 4, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 runble test_mlfq
+5 embryo
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:5, rear:6
+items[6], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:16, rear:18
+items[17], id: 2, sleep  sh
+items[18], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+ CHILD : 4
+sched is locked
+pid: 4, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 runble test_mlfq
+5 embryo
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:5, rear:6
+items[6], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:16, rear:18
+items[17], id: 2, sleep  sh
+items[18], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+Before try Unlocksched is locked
+pid: 4, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 runble test_mlfq
+5 embryo
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:5, rear:6
+items[6], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:16, rear:18
+items[17], id: 2, sleep  sh
+items[18], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+ Psched is locked
+pid: 4, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 runble test_mlfq
+5 embryo
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:5, rear:6
+items[6], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:16, rear:18
+items[17], id: 2, sleep  sh
+items[18], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+rosched is locked
+pid: 4, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 runble test_mlfq
+5 embryo
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:5, rear:6
+items[6], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:16, rear:18
+items[17], id: 2, sleep  sh
+items[18], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+cesched is locked
+pid: 4, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 runble test_mlfq
+5 embryo
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:5, rear:6
+items[6], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:16, rear:18
+items[17], id: 2, sleep  sh
+items[18], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+ss sched is locked
+pid: 4, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 runble test_mlfq
+5 embryo
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:5, rear:6
+items[6], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:16, rear:18
+items[17], id: 2, sleep  sh
+items[18], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+: 4
+sched is locked
+pid: 4, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 runble test_mlfq
+5 embryo
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:5, rear:6
+items[6], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:16, rear:18
+items[17], id: 2, sleep  sh
+items[18], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+After try Ununlock_occured
+pid: 4, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 runble test_mlfq
+5 embryo
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:5, rear:6
+items[6], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:16, rear:18
+items[17], id: 2, sleep  sh
+items[18], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+lock Process : 4
+Process : 4 still work
+Process : 4
+ CHILD2 : 5
+Before try Lock Process : 5
+After try Lsched is locked
+pid: 5, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:12, rear:13
+items[13], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:19, rear:21
+items[20], id: 2, sleep  sh
+items[21], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+ock Psched is locked
+pid: 5, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:12, rear:13
+items[13], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:19, rear:21
+items[20], id: 2, sleep  sh
+items[21], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 5, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:12, rear:13
+items[13], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:19, rear:21
+items[20], id: 2, sleep  sh
+items[21], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+rocsched is locked
+pid: 5, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:12, rear:13
+items[13], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:19, rear:21
+items[20], id: 2, sleep  sh
+items[21], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+esssched is locked
+pid: 5, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:12, rear:13
+items[13], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:19, rear:21
+items[20], id: 2, sleep  sh
+items[21], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+ : 5sched is locked
+pid: 5, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:12, rear:13
+items[13], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:19, rear:21
+items[20], id: 2, sleep  sh
+items[21], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+
+sched is locked
+pid: 5, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:12, rear:13
+items[13], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:19, rear:21
+items[20], id: 2, sleep  sh
+items[21], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 5, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 sleep  test_mlfq 801043ec 801061d2 801054a9 80106625 8010635c
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:12, rear:13
+items[13], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:19, rear:21
+items[20], id: 2, sleep  sh
+items[21], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 5, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 sleep  test_mlfq 801043ec 801061d2 801054a9 80106625 8010635c
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:12, rear:13
+items[13], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:19, rear:21
+items[20], id: 2, sleep  sh
+items[21], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+spend time for prsched is locked
+pid: 5, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:12, rear:13
+items[13], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:19, rear:21
+items[20], id: 2, sleep  sh
+items[21], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+iority boosting sched is locked
+pid: 5, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:12, rear:13
+items[13], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:19, rear:21
+items[20], id: 2, sleep  sh
+items[21], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+while running
+sched is locked
+pid: 5, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:12, rear:13
+items[13], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:19, rear:21
+items[20], id: 2, sleep  sh
+items[21], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 5, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:12, rear:13
+items[13], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:19, rear:21
+items[20], id: 2, sleep  sh
+items[21], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 5, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:12, rear:13
+items[13], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:19, rear:21
+items[20], id: 2, sleep  sh
+items[21], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 5, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:12, rear:13
+items[13], id: 1, sleep  init
+
+queue Level: 1, size: 2
+front:19, rear:21
+items[20], id: 2, sleep  sh
+items[21], id: 3, runble test_mlfq
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+unlock_occured
+pid: 3, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:15, rear:17
+items[16], id: 1, sleep  init
+items[17], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:21, rear:21
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+ PARENT : 3
+Parent before try Lock Process : 3
+Parent aftsched is locked
+pid: 3, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+esched is locked
+pid: 3, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+r trysched is locked
+pid: 3, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+ Lock Process : 3sched is locked
+pid: 3, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+ sched is locked
+pid: 3, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+
+testsched is locked
+pid: 3, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+ bsched is locked
+pid: 3, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+efore for ssched is locked
+pid: 3, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+lsched is locked
+pid: 3, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+eep priority Boosched is locked
+pid: 3, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+ssched is locked
+pid: 3, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+t
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801043ec 801061d2 801054a9 80106625 8010635c
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+test after forsched is locked
+pid: 3, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+ slesched is locked
+pid: 3, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+ep sched is locked
+pid: 3, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+priority Boossched is locked
+pid: 3, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+t
+Psched is locked
+pid: 3, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+rsched is locked
+pid: 3, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+ocess : 3
+sched is locked
+pid: 3, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+4 zombie test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: runble
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 runble test_mlfq
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+sched is locked
+pid: 3, state: sleep
+
+>======procdmp start======<
+1 sleep  init 801042b3 801054a9 80106625 8010635c
+2 sleep  sh 801042b3 801054a9 80106625 8010635c
+3 sleep  test_mlfq 801042b3 801054a9 80106625 8010635c
+5 runble test_mlfq
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
