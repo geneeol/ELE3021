@@ -16,6 +16,7 @@ uint ticks;
 
 // project1
 uint global_ticks;
+int boosting_occur;
 
 void
 tvinit(void)
@@ -56,7 +57,7 @@ trap(struct trapframe *tf)
 
   // TODO: 인터럽트 129, 130을 통해 schedulerLock(), schedulerUnlock() 호출
   switch(tf->trapno){
-  case T_IRQ0 + IRQ_TIMER:
+  case T_IRQ0 + IRQ_TIMER: //h 여기서 부스팅하기전에 yield부터 하는게 맞는듯
     if(cpuid() == 0){
       acquire(&tickslock);
       ticks++;
@@ -65,6 +66,7 @@ trap(struct trapframe *tf)
       {
         global_ticks = 0;
         priority_boosting();
+        boosting_occur = 1;
       }
       wakeup(&ticks); //h 타이머 인터럽트 발생시 ticks를 채널로 sleep하던 프로세스 깨움
       release(&tickslock);
@@ -103,7 +105,7 @@ trap(struct trapframe *tf)
     cprintf("int 129 occured!\n");
     schedulerUnlock(PASSWORD);
     break ;
-
+  
   //PAGEBREAK: 13
   default:
     if(myproc() == 0 || (tf->cs&3) == 0){

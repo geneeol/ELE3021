@@ -19,6 +19,7 @@ static const int mlfq_time_quantum[NMLFQ] = {4, 6, 8};
 
 int sched_locked = 0;
 int unlock_occured = 0;
+extern int boosting_occur;
 // static char *states2[] = {
 //   [UNUSED]    "unused",
 //   [EMBRYO]    "embryo",
@@ -510,6 +511,37 @@ scheduler(void)
 
     //h 세가지 경우중 하나 1. 스케쥴러가 락됨 2. 방금 언락됨 3. 일반적인 상황
     //h unlock을 호출후 exit할 때 큐에서 제거된다, 따라서 lock한 프로세스가 좀비면 절대 안된다
+
+    // 부스팅은 인터럽트가 발생햇을때만 가능, 즉 실행중이던 프로세스가 타임퀀텀 안에 안끝났을때만 발생
+    if (boosting_occur) //h 부스팅 발생하면 현재 픽한 프로세스(mlfq에 없는)는 무조건 L0 맨앞에 넣자
+    {
+      boosting_occur = 0;
+      if (unlock_occured) //h 부스팅에 의해 언락 발생했을시, 해당 프로세스는 다시 큐 맨앞으로 가야한다
+      {
+        unlock_occured = 0;
+        if (p->state != ZOMBIE) // unlock 발생했는데 종료되지 않았다면 mlfq 맨 앞에 삽입한다
+        {
+          p->priority = 3;
+          p->qlev = L0;
+          p->used_ticks = 0;
+          queue_push_front(&mlfq[L0], p);
+        }
+      }
+      else
+      {
+        if (p->state != ZOMBIE) //h 인터럽트 발생햇으면 p가 running에서 yield후에 이 스케쥴러로 돌아옴(p는 runnable일듯)
+        {
+          p->priority = 3;
+          p->qlev = L0;
+          p->used_ticks = 0;
+          queue_push_back(&mlfq[L0], p); // 공평성을 위해 부스팅이 발생하면 L0맨 뒤에 넣는다
+        }
+      }
+      c->proc = 0;
+      release(&ptable.lock);
+      continue ;
+    }
+
     if (sched_locked)
     {
       // cprintf("sched is locked\n");
