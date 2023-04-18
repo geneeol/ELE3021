@@ -440,6 +440,7 @@ priority_boosting(void) //h 부스팅은 반드시 tickslock이 걸렸을 때 �
       if (qlev > L0)
       {
         poped = queue_front(&mlfq[qlev]);
+        poped->qlev = L0; //h 와 이라인을 빼먹고 잇엇네;;
         queue_pop(&mlfq[qlev]);
         queue_push_back(&mlfq[L0], poped);
       }
