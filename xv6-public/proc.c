@@ -426,14 +426,20 @@ priority_boosting(void) //h 부스팅은 반드시 tickslock이 걸렸을 때 �
 {
   int begin;
   int end;
+  // int is_demoted;
   struct proc *poped;
+  // struct proc *p;
 
-  cprintf("boosting occur\n");
+  // cprintf("boosting occur\n");
+  // procdump();
+  // cprintf("@@@@@@@@@@@@@@@@@\n\n");
   schedulerUnlock(PASSWORD);
+
   for (int qlev = L0; qlev <= L2; qlev++)
   {
     begin = (mlfq[qlev].front + 1) % (NPROC + 1);
     end = (mlfq[qlev].rear + 1) % (NPROC + 1);
+    // cprintf("qlev: %d, begin %d, end %d\n\n", qlev, begin, end);
     for (int iter = begin; iter != end; iter = (iter + 1) % (NPROC + 1))
     {
       mlfq[qlev].items[iter]->priority = 3;
@@ -469,7 +475,7 @@ scheduler(void)
   for(;;)
   {
     // Enable interrupts on this processor.
-    sti();
+    sti(); //h 타이머 인터럽트는 이 후에만 발생해야 하는데 지금은 왜 아닌 것처럼 보이지?
     //h 이 사이에서 인터럽트로 인한 부스팅이 발생할 수 있다
 
     // Loop over process table looking for process to run.
@@ -483,7 +489,7 @@ scheduler(void)
       {
         if (queue_is_empty(&mlfq[qlev]))
           continue ;
-        if (qlev == 2)
+        if (qlev == L2)
           p = find_runnable_in_fcfs_priority(&mlfq[qlev]);
         else
           p = find_runnable_in_rr(&mlfq[qlev]);
@@ -509,7 +515,7 @@ scheduler(void)
     switchkvm(); //h 스케쥴러로 다시 컨텐스트 스위칭이 일어나면 이 부분부터 코드가 실행된다
     //h 스케쥴러 락이 걸려있거나 직전에 unlock했으면 별도 분기 처리
 
-    //h 세가지 경우중 하나 1. 스케쥴러가 락됨 2. 방금 언락됨 3. 일반적인 상황
+    //h 4가지 경우중 하나 1. 스케쥴러가 락됨 2. 방금 언락됨 3. 일반적인 상황 4. 부스팅 발생
     //h unlock을 호출후 exit할 때 큐에서 제거된다, 따라서 lock한 프로세스가 좀비면 절대 안된다
 
     // 부스팅은 인터럽트가 발생햇을때만 가능, 즉 실행중이던 프로세스가 타임퀀텀 안에 안끝났을때만 발생
@@ -544,21 +550,16 @@ scheduler(void)
 
     if (sched_locked)
     {
-      // cprintf("sched is locked\n");
-      // cprintf("pid: %d, state: %s\n\n", p->pid, states2[p->state]);
-      // procdump();
       if (p->state == ZOMBIE)
       {
-        cprintf("sched is locked and pid is zombie: %d\n", p->pid);
+        cprintf("pid: %d, sched is locked and zombie state\n", p->pid);
         sched_locked = 0;
       }
-        // panic("Should unlock scheduler before exit\n");
     }
+    //h unlock은 락이 존재할 때만 occured 변수값을 1로 한다
+    //h 즉 부스팅이 발생해도 해당값이 0일수 있다
     else if (unlock_occured) //h 직전에 unlock을 호출했다면
     {
-      // cprintf("unlock_occured\n");
-      // cprintf("pid: %d, state: %s\n\n", p->pid, states2[p->state]);
-      // procdump();
       unlock_occured = 0;
       if (p->state != ZOMBIE) // unlock 발생했는데 종료되지 않았다면 mlfq 맨 앞에 삽입한다
       {
@@ -570,9 +571,11 @@ scheduler(void)
     }
     else //h 일반적인 스케쥴러 동작
     {
+      // TODO: 이 부분 따로 함수로 구현
       // 현재 큐에서 타임 퀀텀을 전부 소모했다면
       if (p->used_ticks >= mlfq_time_quantum[p->qlev])
       {
+        // cprintf("pid: %d, used_tick: %d, qlev: %d\n", p->pid, p->used_ticks, p->qlev);
         p->used_ticks = 0;
         if (p->qlev == L2 && p->priority > 0)
             p->priority--;
@@ -880,7 +883,7 @@ procdump(void)
   //   }
   //   cprintf("q front: %d, rear: %d\n\n", mlfq[qlev].front, mlfq[qlev].rear);
   // }
-  cprintf(">======procdmp finish======<\n");
+  cprintf("\n>======procdmp finish======<\n");
   cprintf("\n\n");
 }
 
@@ -966,10 +969,10 @@ schedulerUnlock(int password)
   struct proc *p;
 
   acquire(&ptable.lock); //h 스케쥴언락이 호출됐을 때, 작업이 종료되기 전 interrupt를 방지한다
-  p = myproc();
   //h 암호가 일치하지 않더라도 강제종료를 해야하니, 락을 풀어주는게 타당함
   if (password != PASSWORD)
   {
+    p = myproc();
     sched_locked = 0; 
     cprintf("Error: schedulerUnlock: invalid password!\n");
     cprintf("pid: %d, used_ticks: %d, qlev: %d\n\n", p->pid, p->used_ticks, p->qlev);
