@@ -125,6 +125,8 @@ void 			priority_boosting(void);
 void            yield(void);
 int				getLevel(void);
 int				setPriority(int pid, int priority);
+void			schedulerLock(int password);
+void			schedulerUnlock(int password);
 
 // swtch.S
 void            swtch(struct context**, struct context*);

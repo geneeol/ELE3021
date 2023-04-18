@@ -66,7 +66,7 @@ sys_sleep(void) //h ticks 를 사용해슬립함수가 몇틱만큼 자는지 �
     return -1;
   acquire(&tickslock);
   ticks0 = ticks;
-  while(ticks - ticks0 < n){
+  while(ticks - ticks0 < n){ //h n틱만큼 흐르길 기다림, 이때 busy wait이 아닌 진짜 sleep을 호출
     if(myproc()->killed){
       release(&tickslock);
       return -1;
@@ -116,4 +116,26 @@ sys_setPriority(void)
   if (argint(1, &priority) < 0)
     return (-1);
   return (setPriority(pid, priority));
+}
+
+int
+sys_schedulerLock(void)
+{
+  int password;
+
+  if (argint(0, &password) < 0)
+    return (-1);
+  schedulerLock(password);
+  return (0);
+}
+
+int
+sys_schedulerUnlock(void)
+{
+  int password;
+
+  if (argint(0, &password) < 0)
+    return (-1);
+  schedulerUnlock(password);
+  return (0);
 }

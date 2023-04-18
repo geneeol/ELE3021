@@ -13,9 +13,21 @@ struct {
   struct proc proc[NPROC];
 } ptable;
 
+// project 1
 t_queue mlfq[NMLFQ];
-
 static const int mlfq_time_quantum[NMLFQ] = {4, 6, 8};
+
+int sched_locked = 0;
+int unlock_occured = 0;
+// static char *states2[] = {
+//   [UNUSED]    "unused",
+//   [EMBRYO]    "embryo",
+//   [SLEEPING]  "sleep ",
+//   [RUNNABLE]  "runble",
+//   [RUNNING]   "run   ",
+//   [ZOMBIE]    "zombie"
+//   };
+
 
 static struct proc *initproc;
 
@@ -277,6 +289,7 @@ exit(void)
 
   // Pass abandoned children to init.
   //h 고아 프로세스가 되지 않게끔, 현재 종료하려는 프로세스의 부모를 initproc로 바꾸어 준다
+  //h 만약 현재 exit을 호출한 프로세스를 부모프로세스로 하는 자식이 있다면 wait이 호출되기 전에 exit이 호출된 것이다
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
     if(p->parent == curproc){
       p->parent = initproc;
@@ -348,16 +361,14 @@ find_runnable_in_rr(struct queue *q)
   begin = (q->front + 1) % (NPROC + 1);
   end = (q->rear + 1) % (NPROC + 1);
 
-  //cprintf("find_runnable_in_rr: begin: %d, end: %d\n", begin, end);
   for (int iter = begin; iter != end; iter = (iter + 1) % (NPROC + 1))
   {
     p = queue_front(q); // queue가 empty인 상황은 앞에서 걸러진다
     queue_pop(q);
-    //cprintf("rr pid: %d, iter: %d\n", p->pid, iter);
     if (p->state == RUNNABLE)
       return p;
     queue_push_back(q, p); // sleeping 혹은 zombie 상태의 프로세스는 큐 맨뒤로 보낸다
-                           // 정상적이라면 zombie 프로세스는 큐에 존재해선 안된다
+                           // 단 정상적이라면 zombie 프로세스는 큐에 존재해선 안된다
   }
   return 0;
 }
@@ -379,73 +390,47 @@ find_runnable_in_fcfs_priority(struct queue *q)
   end = (q->rear + 1) % (NPROC + 1);
   rotate_cnt = 0;
   flag++;
-  // if (flag >= 0)
-  // {
-  //   for (int i = 0; i < NPROC + 1; i++)
-  //   {
-  //     if (q->items[i] != 0)
-  //       cprintf("q->items[%d], pid: %d, priority: %d\n", i, q->items[i]->pid, q->items[i]->priority);
-  //   }
-  //   cprintf("q front: %d, rear: %d\n", q->front, q->rear);
-  //   // cprintf("\n\n");
-  // }
-  // cprintf("q size: %d, begin: %d, end: %d\n", queue_get_size(q), begin, end);
-  // cprintf("find_runnable_in_fcfs: begin: %d, end: %d\n", begin, end);
   for (int iter = begin; iter != end; iter = (iter + 1) % (NPROC + 1))
   {
     tmp = q->items[iter]; // queue가 empty인 상황은 앞에서 걸러진다
-    // if (flag > 30)
-    // cprintf("fcfs tmp pid: %d, iter: %d\n", tmp->pid, iter);
     if (tmp->state == RUNNABLE && tmp->priority < lowest_priority)
     {
-      // if (flag > 30)
-        // cprintf("find candidate pid: %d\n\n", tmp->pid);
+      // 큐를 전부 탐색하며 우선순위가 가장 낮은 프로세스를 찾는다
+      // 해당 프로세스를 큐의 맨 앞으로 보내기 위해 필요한 큐 회전 횟수를 기록한다
       lowest_priority = tmp->priority;
-      p = tmp; // 큐를 전부 탐색하며 우선순위가 가장 낮은 프로세스를 찾는다
-      // 만약 맨 앞에 있는 프로세스가 아니면, 
-      // 맨 앞으로 보내기 위해 필요한 큐 회전 횟수를 기록한다
+      p = tmp;
       rotate_cnt = dist_between_iters(begin, iter); 
     }
   }
-
-  // if (!p)
-  // {
-  //   if (flag >=0)
-  //     cprintf("can't find candidate\n");
-  // }
-  if (p) // 아 여기를 왜 !p로 했지..
+  if (p)
   {
-    // cprintf("after fcfs info\n\n");
-    // if (flag >= 0)
-    //   cprintf("rotate_cnt: %d\n", rotate_cnt);
-    for (int i = 0; i < rotate_cnt; i++) // 선택한 프로세스를 큐 맨 앞으로 보낸다
+    // 선택한 프로세스를 큐 맨 앞으로 보낸다
+    for (int i = 0; i < rotate_cnt; i++) 
     {
       tmp = queue_front(q);
       queue_pop(q);
       queue_push_back(q, tmp);
     }
-    // if (flag >= 0)
-    //   cprintf("q front: %d is poped\n", queue_front(q)->pid);
     queue_pop(q);
-    // if (flag >= 0)
-    //   cprintf("after pop q front: %d, rear: %d\n\n", q->front, q->rear);
   }
   return (p);
 }
 
+// TODO: schedulerlock, unlock 로직 추가
 // All process are move to the L0 queue
 // Every process's priority is set to 3
 // Every process's time slice is set to 0
 void
-priority_boosting(void)
+priority_boosting(void) //h 부스팅은 반드시 tickslock이 걸렸을 때 발생하기에 인터럽트 당하지 않는다
 {
   int begin;
   int end;
   struct proc *poped;
 
+  cprintf("boosting occur\n");
+  schedulerUnlock(PASSWORD);
   for (int qlev = L0; qlev <= L2; qlev++)
   {
-
     begin = (mlfq[qlev].front + 1) % (NPROC + 1);
     end = (mlfq[qlev].rear + 1) % (NPROC + 1);
     for (int iter = begin; iter != end; iter = (iter + 1) % (NPROC + 1))
@@ -460,8 +445,6 @@ priority_boosting(void)
       }
     }
   }
-  // cprintf("priority boosting is done!\n");
-  // procdump();
 }
 
 // TODO:
@@ -481,46 +464,38 @@ scheduler(void)
   int is_demoted;
   c->proc = 0;
   
-  // cprintf("scheduler starts\n");
   for(;;)
   {
     // Enable interrupts on this processor.
     sti();
+    //h 이 사이에서 인터럽트로 인한 부스팅이 발생할 수 있다
 
-    // TODO: 당연히 순회방식 변경
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
 
     is_demoted = 0;
-
-    //h 원래 for문 중괄호 시작
-    for (int qlev = L0; qlev <= L2; qlev++)
+    if (!sched_locked && !unlock_occured) // 현재 스케쥴러가 락돼있거나, 직전에 언락된 경우가 아닐 때만 큐를 순회하며 찾는다
     {
-      if (!queue_is_empty(&mlfq[qlev]))
+      p = 0; //h 이전에 사용한 p가 남아있을 수 있으므로 널로 리셋해준다
+      for (int qlev = L0; qlev <= L2; qlev++)
       {
-        // cprintf("find runnable: qlev:%d\n", qlev);
+        if (queue_is_empty(&mlfq[qlev]))
+          continue ;
         if (qlev == 2)
-        {
           p = find_runnable_in_fcfs_priority(&mlfq[qlev]);
-          //p = find_runnable_in_fcfs_priority(&mlfq[qlev]);
-        }
         else
           p = find_runnable_in_rr(&mlfq[qlev]);
         if (p) // 찾았으면 p는 널포인터가 아니다
           break;
       }
     }
-    // procdump();
-    // cprintf("p: %d\n", p->pid);
-    if (!p) // 이런 상황 절대 발생하지 않음. 디버깅용 로그
+    if (!p) //h 모든 유저프로세스가 sleep이어도 스케쥴러는 돌아가기에 이 분기 발생
     {
-      // TODO: 아무것도 출력하지 않고 아래만 출력하면 여기서 러너블프로세스 없다고 뜸
-      // cprintf("Fatal: no runnable process\n");
-      release(&ptable.lock); //h 아 여기 락 해제를 안해서 ........ 
+      release(&ptable.lock);
       continue ;
     }
 
-    //h 스케쥴러에서 락한 것은 아마 선택된 프로세스가 lock을 릴리즈하는 것 같다 (릴리즈 후 다시 락)
+    //h 스케쥴러에서 락한 것은 아마 선택된 프로세스가 lock을 릴리즈하는 것 같다
     // Switch to chosen process.  It is the process's job
     // to release ptable.lock and then reacquire it
     // before jumping back to us.
@@ -528,60 +503,66 @@ scheduler(void)
     switchuvm(p);
     p->state = RUNNING;
 
-    //cprintf("before swtch\n");
     swtch(&(c->scheduler), p->context);
     switchkvm(); //h 스케쥴러로 다시 컨텐스트 스위칭이 일어나면 이 부분부터 코드가 실행된다
+    //h 스케쥴러 락이 걸려있거나 직전에 unlock했으면 별도 분기 처리
 
-    //h 틱은 항상 4, 6, 8로 떨어지는 것 확인함
-    if (p->used_ticks >= mlfq_time_quantum[p->qlev]) // 직전에 실행된 프로세스의 타임퀀텀을 확인
+    //h 세가지 경우중 하나 1. 스케쥴러가 락됨 2. 방금 언락됨 3. 일반적인 상황
+    //h unlock을 호출후 exit할 때 큐에서 제거된다, 따라서 lock한 프로세스가 좀비면 절대 안된다
+    if (sched_locked)
     {
-      // if (ticks > 1000)
-      //   cprintf("pid: %d, used_ticks: %d\n", p->pid, p->used_ticks);
-      p->used_ticks = 0;
-      if (p->qlev == L2 && p->priority > 0)
-          p->priority--;
-      if (p->qlev < L2)
+      // cprintf("sched is locked\n");
+      // cprintf("pid: %d, state: %s\n\n", p->pid, states2[p->state]);
+      // procdump();
+      if (p->state == ZOMBIE)
       {
-        p->qlev++;
-        is_demoted = 1;
+        cprintf("sched is locked and pid is zombie: %d\n", p->pid);
+        sched_locked = 0;
+      }
+        // panic("Should unlock scheduler before exit\n");
+    }
+    else if (unlock_occured) //h 직전에 unlock을 호출했다면
+    {
+      // cprintf("unlock_occured\n");
+      // cprintf("pid: %d, state: %s\n\n", p->pid, states2[p->state]);
+      // procdump();
+      unlock_occured = 0;
+      if (p->state != ZOMBIE) // unlock 발생했는데 종료되지 않았다면 mlfq 맨 앞에 삽입한다
+      {
+        p->priority = 3;
+        p->qlev = L0;
+        p->used_ticks = 0;
+        queue_push_front(&mlfq[L0], p);
       }
     }
-
-    if (p->state != ZOMBIE) // 좀비 상태라면 레디큐에 존재할 필요가 없다. 슬립 상태는 다시 runnable로 바뀔 수 있으므로 큐 안에 보관한다
+    else //h 일반적인 스케쥴러 동작
     {
-      if (p->qlev == L2 && !is_demoted)
+      // 현재 큐에서 타임 퀀텀을 전부 소모했다면
+      if (p->used_ticks >= mlfq_time_quantum[p->qlev])
       {
-        // cprintf(">>>>>>>>>>>>>>>>>>>>>>>>\n");
-        // cprintf(">>>>>before repush>>>>>>\n");
-        // cprintf("push front (L2), cur id: %d\n", p->pid);
-        // procdump();
-        // queue_push_back(&mlfq[p->qlev], p);
-        queue_push_front(&mlfq[p->qlev], p); // 원래 l2큐에 있던 녀석이라면, 해당 큐의 맨앞으로 보낸다
-        // procdump();
-        // cprintf(">>>>>repush done>>>>>>\n");
-        // cprintf("@@@@@@@@@@@@@@@@@@@@@@@\n");
-        // cprintf("\n\n");
-        // queue_push_back(&mlfq[p->qlev], p);
+        p->used_ticks = 0;
+        if (p->qlev == L2 && p->priority > 0)
+            p->priority--;
+        if (p->qlev < L2)
+        {
+          p->qlev++;
+          is_demoted = 1;
+        }
       }
-      else
+      //h 좀비 상태라면 레디큐에 존재할 필요가 없다. 슬립 상태는 다시 runnable로 바뀔 수 있으므로 큐 안에 보관한다
+      //h 스케쥴러 락돼있거나, 방금 언락됐으면 따로 처리
+      if (p->state != ZOMBIE) 
       {
-        // cprintf(">>>>>>>>>>>>>>>>>>>>>>>>\n");
-        // cprintf(">>>>>before repush>>>>>>\n");
-        // cprintf("push back, cur id: %d\n", p->pid);
-        // procdump();
-        queue_push_back(&mlfq[p->qlev], p);
-        // procdump();
-        // cprintf(">>>>>repush done>>>>>>\n");
-        // cprintf("@@@@@@@@@@@@@@@@@@@@@@@\n");
-        // cprintf("\n\n");
+        if (p->qlev == L2 && !is_demoted)
+          queue_push_front(&mlfq[p->qlev], p); // 원래 l2큐에 있던 녀석이라면, 해당 큐의 맨앞으로 보낸다
+        else
+          queue_push_back(&mlfq[p->qlev], p);
       }
     }
-
     // Process is done running for now.
     // It should have changed its p->state before coming back.
     c->proc = 0;
 
-    //h 이전 중괄호 경계
     release(&ptable.lock);
   }
 }
@@ -668,10 +649,10 @@ sched(void)
 void
 yield(void)
 {
-  acquire(&ptable.lock);  //DOC: yieldlock
+  acquire(&ptable.lock);  //DOC: yieldlock //h 스케쥴러로 돌아가기 전에 락을 다시 잡아둔다
   myproc()->state = RUNNABLE;
-  sched();
-  release(&ptable.lock);
+  sched(); //h 이 부분에서 스케쥴러가 락을 잡아뒀다, 아랫줄이 실행되는 상황에서 스케쥴러는 락을 해제하지 않는다
+  release(&ptable.lock); //h scheduler에서 걸어뒀던 락을 여기에서 풀어준다
 }
 
 //h 자식 프로세스는 항상 여기에서 시작한다.
@@ -700,7 +681,7 @@ forkret(void)
 // Atomically release lock and sleep on chan.
 // Reacquires lock when awakened.
 void
-sleep(void *chan, struct spinlock *lk)
+sleep(void *chan, struct spinlock *lk) // 커널에서 프로세스를 재울 때 쓰는 함수, 유저랑 상관 없어보임
 {
   struct proc *p = myproc();
   
@@ -722,7 +703,7 @@ sleep(void *chan, struct spinlock *lk)
   }
   // Go to sleep.
   p->chan = chan;
-  p->state = SLEEPING;
+  p->state = SLEEPING; // TODO: 여기 이해해야..
 
   sched();
 
@@ -912,4 +893,65 @@ setPriority(int pid, int priority)
   //   cprintf("setPriority Error: invalid pid!\n");
   release(&ptable.lock);
   return (-1);
+}
+
+void
+schedulerLock(int password)
+{
+  struct proc *p;
+
+  acquire(&ptable.lock); //h 스케쥴락이 호출됐을 때, 작업이 종료되기 전 interrupt를 방지한다
+  p = myproc();
+  if (sched_locked) // 락을 두번 시도하면 패스워드가 틀렸을지라도 반드시 해제하고 exit해야 한다
+  {
+    // TODO: fpp 값 설정
+    sched_locked = 0;
+    cprintf("Fatal: schedulerLock: Already locked!\n");
+    cprintf("pid: %d, used_ticks: %d, qlev: %d\n\n", p->pid, p->used_ticks, p->qlev);
+    release(&ptable.lock); //h 만약 락 해제하자마자 인터럽트 당하면..?
+    while (wait() != -1)
+      ;
+    exit();
+  }
+  if (password != PASSWORD)
+  {
+    sched_locked = 0;
+    cprintf("Error: schedulerLock: invalid password!\n");
+    cprintf("pid: %d, used_ticks: %d, qlev: %d\n\n", p->pid, p->used_ticks, p->qlev);
+    release(&ptable.lock);
+    while (wait() != -1) // 자식 회수
+      ;
+    exit();
+  }
+  sched_locked = 1;
+  release(&ptable.lock);
+}
+
+void
+schedulerUnlock(int password) 
+{
+  struct proc *p;
+
+  acquire(&ptable.lock); //h 스케쥴언락이 호출됐을 때, 작업이 종료되기 전 interrupt를 방지한다
+  p = myproc();
+  //h 암호가 일치하지 않더라도 강제종료를 해야하니, 락을 풀어주는게 타당함
+  if (password != PASSWORD)
+  {
+    sched_locked = 0; 
+    cprintf("Error: schedulerUnlock: invalid password!\n");
+    cprintf("pid: %d, used_ticks: %d, qlev: %d\n\n", p->pid, p->used_ticks, p->qlev);
+    release(&ptable.lock);
+    while (wait() != -1) // 자식을 회수
+      ;
+    exit();
+  }
+  //h 락돼있지 않은데 언락이 호출되면? 그냥 무시한다
+  //h 부스팅에 의해 언락이 호출된 후, 사용자 언락이 재호출되는 경우는 자연스럽다. 따라서 조용히 냅둔다
+  //h 부스팅에 의해 락되지 않았는데 언락이 그냥 호출될 수도 있다. 이 경우도 그냥 아무처리 하지 않는다
+  if (sched_locked)
+  {
+    sched_locked = 0;
+    unlock_occured = 1;
+  }
+  release(&ptable.lock);
 }

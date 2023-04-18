@@ -108,7 +108,10 @@ extern int sys_safeprint(void);
 extern int sys_yield(void);
 extern int sys_getLevel(void);
 extern int sys_setPriority(void);
+extern int sys_schedulerLock(void);
+extern int sys_schedulerUnlock(void);
 
+// TODO: 시스템콜 함수 포인터 배열에 추가
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
 [SYS_exit]    sys_exit,
@@ -135,6 +138,8 @@ static int (*syscalls[])(void) = {
 [SYS_yield]  sys_yield,
 [SYS_getLevel] sys_getLevel,
 [SYS_setPriority] sys_setPriority,
+[SYS_schedulerLock] sys_schedulerLock,
+[SYS_schedulerUnlock] sys_schedulerUnlock,
 };
 
 void

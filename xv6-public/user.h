@@ -29,6 +29,8 @@ int	safeprint(char *);
 int yield(void);
 int	getLevel(void);
 int setPriority(int pid, int priority); // TODO: void로 정정할 것
+void schedulerLock(int password);
+void schedulerUnlock(int password);
 
 // ulib.c
 int stat(const char*, struct stat*);
