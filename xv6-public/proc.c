@@ -900,11 +900,11 @@ getLevel(void)
   return (p->qlev);
 }
 
-int
+void
 setPriority(int pid, int priority)
 {
   struct proc *p;
-  // int invalid_pid = 1;
+  int invalid_pid = 1;
 
   // priority가 0~3 사이가 아닌 경우에 대한 예외처리
   if (priority > 3)
@@ -917,18 +917,13 @@ setPriority(int pid, int priority)
     if (p->pid == pid)
     {
       p->priority = priority;
-
-      release(&ptable.lock);
-      return (0);
-
-      // invalid_pid = 0;
-      // break ;
+      invalid_pid = 0;
+      break ;
     }
   }
-  // if (invalid_pid)
-  //   cprintf("setPriority Error: invalid pid!\n");
+  if (invalid_pid)
+    cprintf("setPriority Error: invalid pid!\n");
   release(&ptable.lock);
-  return (-1);
 }
 
 void

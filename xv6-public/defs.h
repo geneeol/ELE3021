@@ -124,7 +124,7 @@ void 			priority_boosting(void);
 // project1 추가한 시스템콜
 void            yield(void);
 int				getLevel(void);
-int				setPriority(int pid, int priority);
+void			setPriority(int pid, int priority);
 void			schedulerLock(int password);
 void			schedulerUnlock(int password);
 void			bp_tracer(const char *msg);

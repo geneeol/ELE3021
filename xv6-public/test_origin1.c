@@ -35,14 +35,7 @@ int fork_children2()
       return getpid();
     }
     else
-    {
-      int r = setPriority(p, i);
-      if (r < 0)
-      {
-        printf(1, "setpriority returned %d\n", r);
-        exit();
-      }
-    }
+      setPriority(p, i);
   }
   return parent;
 }

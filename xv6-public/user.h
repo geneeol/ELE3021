@@ -28,7 +28,7 @@ int	safeprint(char *);
 // project1 추가한 시스템콜
 int yield(void);
 int	getLevel(void);
-int setPriority(int pid, int priority); // TODO: void로 정정할 것
+void setPriority(int pid, int priority);
 void schedulerLock(int password);
 void schedulerUnlock(int password);
 void bp_tracer(const char *msg);
