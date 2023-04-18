@@ -32,6 +32,6 @@ main(void)
       exit();
     }
     while((wpid=wait()) >= 0 && wpid != pid) //h 자식프로세스 sh가 종료될 때까지 대기한다.
-      printf(1, "zombie!\n");                //h sh를 회수하면 반복문을 바로 탈출한다
+      printf(1, "zombie!, orphan: %d\n", wpid);                //h sh를 회수하면 반복문을 바로 탈출한다
   }
 }

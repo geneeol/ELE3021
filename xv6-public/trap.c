@@ -63,7 +63,7 @@ trap(struct trapframe *tf)
         global_ticks = 0;
         priority_boosting();
       }
-      wakeup(&ticks);
+      wakeup(&ticks); //h 타이머 인터럽트 발생시 ticks를 채널로 sleep하던 프로세스 깨움
       release(&tickslock);
     }
     lapiceoi();

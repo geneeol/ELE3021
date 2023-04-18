@@ -194,6 +194,7 @@ UPROGS=\
 	_test_mlfq3\
 	_test_origin1\
 	# TODO: 위 테스트코드 주석처리하고 usertests 돌리면 에러안뜸 왜?
+	# TODO: filesystem에 유저프로그램 많아지면 뭔가 에러 발생하는듯
 
 fs.img: mkfs README $(UPROGS)
 	./mkfs fs.img README $(UPROGS)

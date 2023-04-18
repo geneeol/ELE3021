@@ -185,7 +185,7 @@ writetest(void)
 }
 
 void
-writetest1(void)
+writetest1(void) //h makefile에서 유저프로그램 개수가 달라지면 에러가 뜬다 대체 왜? 아니시발 이것때문에 10시간은 꼬라박음
 {
   int i, fd, n;
 
@@ -204,6 +204,9 @@ writetest1(void)
       exit();
     }
   }
+
+  //h
+  printf(1, "\npassing loop1\n\n");
 
   close(fd);
 
@@ -233,6 +236,10 @@ writetest1(void)
     }
     n++;
   }
+
+  //h
+  printf(1, "\npassing loop2\n\n");
+
   close(fd);
   if(unlink("big") < 0){
     printf(stdout, "unlink big failed\n");
@@ -1195,6 +1202,9 @@ bigfile(void)
   }
   close(fd);
 
+  //h
+  printf(1, "\npassing loop1\n\n");
+
   fd = open("bigfile", 0);
   if(fd < 0){
     printf(1, "cannot open bigfile\n");
@@ -1225,6 +1235,9 @@ bigfile(void)
     exit();
   }
   unlink("bigfile");
+
+  //h
+  printf(1, "\npassing loop2\n\n");
 
   printf(1, "bigfile test ok\n");
 }
@@ -1805,7 +1818,7 @@ main(int argc, char *argv[])
 
   opentest();
   writetest();
-  writetest1();
+  writetest1(); //h makefile 유저프로그램 개수가 달라지면 패닉 에러 발생 대체 왜?
   createtest();
 
   openiputtest();
