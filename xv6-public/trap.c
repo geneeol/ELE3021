@@ -26,6 +26,9 @@ tvinit(void)
     SETGATE(idt[i], 0, SEG_KCODE<<3, vectors[i], 0);
   SETGATE(idt[T_SYSCALL], 1, SEG_KCODE<<3, vectors[T_SYSCALL], DPL_USER);
   SETGATE(idt[T_PRAC2], 1, SEG_KCODE<<3, vectors[T_PRAC2], DPL_USER);
+  //h 129, 130번 인터럽트 게이트 오픈
+  SETGATE(idt[SCHED_LOCK], 1, SEG_KCODE<<3, vectors[SCHED_LOCK], DPL_USER);
+  SETGATE(idt[SCHED_UNLOCK], 1, SEG_KCODE<<3, vectors[SCHED_UNLOCK], DPL_USER);
   // TODO: 129, 130번 인터럽트를 위한 idt 설정
 
   initlock(&tickslock, "time");
@@ -92,7 +95,14 @@ trap(struct trapframe *tf)
   case T_PRAC2: // The line added
     cprintf("user interrupt 128 called\n");
     break;
-  
+  case SCHED_LOCK:
+    cprintf("int 128 occured!\n");
+    schedulerLock(PASSWORD);
+    break ;
+  case SCHED_UNLOCK:
+    cprintf("int 129 occured!\n");
+    schedulerUnlock(PASSWORD);
+    break ;
 
   //PAGEBREAK: 13
   default:

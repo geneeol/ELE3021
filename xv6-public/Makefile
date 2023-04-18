@@ -183,16 +183,17 @@ UPROGS=\
 	_stressfs\
 	_wc\
 	_zombie\
+	_usertests\
 	_prac_myuserapp\
 	_myapp\
 	_prac2_usercall\
 	_test_yield\
-	_usertests\
 	_test_mlfq\
 	_test_lock\
 	_test_mlfq2\
 	_test_mlfq3\
 	_test_origin1\
+	_test_interrupt\
 	# TODO: 위 테스트코드 주석처리하고 usertests 돌리면 에러안뜸 왜?
 	# TODO: filesystem에 유저프로그램 많아지면 뭔가 에러 발생하는듯
 
@@ -267,7 +268,7 @@ EXTRA=\
 	ln.c ls.c mkdir.c rm.c stressfs.c wc.c zombie.c\
 	printf.c umalloc.c prac_myuserapp.c myapp.c prac2_usercall.c\
 	test_yield.c usertests.c test_mlfq.c test_mlfq2.c test_lock\
-	test_mlfq3.c test_origin1.c\
+	test_mlfq3.c test_origin1.c test_interrupt.c\
 	README dot-bochsrc *.pl toc.* runoff runoff1 runoff.list\
 	.gdbinit.tmpl gdbutil\
 

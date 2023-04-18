@@ -38,3 +38,7 @@
 
 // User-defined (For online practice)
 #define  T_PRAC2		128 // Just user-defined number. It has no meaning.
+
+// projcet1
+#define SCHED_LOCK 129
+#define SCHED_UNLOCK 130
