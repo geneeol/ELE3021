@@ -19,7 +19,8 @@ static const int mlfq_time_quantum[NMLFQ] = {4, 6, 8};
 
 int sched_locked = 0;
 int unlock_occured = 0;
-extern int boosting_occured;
+int boosting_occured;
+
 // static char *states2[] = {
 //   [UNUSED]    "unused",
 //   [EMBRYO]    "embryo",
@@ -429,6 +430,7 @@ priority_boosting(void) //h 부스팅은 반드시 tickslock이 걸렸을 때 �
   int end;
   struct proc *poped;
 
+  boosting_occured = 1;
   schedulerUnlock(PASSWORD);
 
   for (int qlev = L0; qlev <= L2; qlev++)
