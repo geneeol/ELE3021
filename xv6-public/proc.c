@@ -931,7 +931,7 @@ schedulerLock(int password)
 
   acquire(&ptable.lock); // 스케쥴락이 호출됐을 때, 작업이 종료되기 전 interrupt를 방지한다
   acquire(&tickslock); // 안해도 될 것 같긴한데 안전하게 추가..
-  global_ticks = 0;
+  global_ticks = 0; // 부스팅 발생시 틱을 0으로 초기화 한다
   release(&tickslock);
   p = myproc();
   if (sched_locked) // 락을 두번 시도하면 패스워드가 틀렸을지라도 반드시 해제하고 exit해야 한다

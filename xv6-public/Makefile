@@ -184,13 +184,13 @@ UPROGS=\
 	_stressfs\
 	_wc\
 	_zombie\
+	_test_origin1\
 	# _test_yield\
 	# _test_mlfq\
 	# _test_lock\
 	# _test_lock2\
 	# _test_mlfq2\
 	# _test_mlfq3\
-	# _test_origin1\
 	# _test_interrupt\
 	# _prac_myuserapp\
 	# _myapp\

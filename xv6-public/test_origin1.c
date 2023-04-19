@@ -1,25 +1,44 @@
 #include "types.h"
 #include "stat.h"
 #include "user.h"
+#include "param.h"
 
-#define NUM_LOOP 100000
+// #define NUM_LOOP 100000
+#define NUM_LOOP 50000
 #define NUM_YIELD 20000
 #define NUM_SLEEP 1000
 
-#define NUM_THREAD 4
+#define NUM_THREAD 40
 #define MAX_LEVEL 5
 
 int parent;
+int g_cnt[MAX_LEVEL];
 
 int fork_children()
 {
   int i, p;
+  int x;
   for (i = 0; i < NUM_THREAD; i++)
+  {
+    x = getLevel(); // 여기 출력 넣을 때 trap 14 발생.. 오ㅑ지?
+    g_cnt[x]++;
     if ((p = fork()) == 0)
     {
-      sleep(10);
+      // sleep(10);
       return getpid();
     }
+    // else // fork가 -1 리턴했을 때 getLevel하면 에러 발생했갰다.. 맞나?
+    // {
+    x = getLevel(); // 여기 출력 넣을 때 trap 14 발생.. 오ㅑ지?
+    if (x >= 0)
+    {
+      g_cnt[x]++;
+      // printf(1, "hi g_cnt[%d] = %d\n", x, g_cnt[x]);
+    }
+    else  
+      printf(1, "Wrong level: %d\n", x);
+    // }
+  }
   return parent;
 }
 
@@ -75,7 +94,7 @@ int main(int argc, char *argv[])
   printf(1, "MLFQ test start\n");
 
   printf(1, "[Test 1] default\n");
-  pid = fork_children3();
+  pid = fork_children();
 
   if (pid != parent)
   {
@@ -89,11 +108,16 @@ int main(int argc, char *argv[])
       }
       count[x]++;
     }
+    schedulerLock(PASSWORD);
     printf(1, "Process %d\n", pid);
     for (i = 0; i < MAX_LEVEL; i++)
       printf(1, "L%d: %d\n", i, count[i]);
+    schedulerUnlock(PASSWORD);
   }
   exit_children();
+  printf(1, "Process partent %d\n", pid);
+    for (i = 0; i < MAX_LEVEL; i++)
+      printf(1, "p L%d: %d\n", i, g_cnt[i]);
   bp_tracer("test_origin1 ends");
   printf(1, "[Test 1] finished\n");
   printf(1, "done\n");
