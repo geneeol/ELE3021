@@ -128,6 +128,9 @@ void			setPriority(int pid, int priority);
 void			schedulerLock(int password);
 void			schedulerUnlock(int password);
 void			bp_tracer(const char *msg);
+void			mutex_init(struct spinlock *lk, char *name);
+void			mutex_lock(struct spinlock *lk);			
+void			mutex_unlock(struct spinlock *lk);
 
 // swtch.S
 void            swtch(struct context**, struct context*);
@@ -169,10 +172,10 @@ void            timerinit(void);
 
 // trap.c
 void            idtinit(void);
-extern uint     ticks;
-extern uint		global_ticks;
+extern uint     ticks; // 원래 있던 줄
 void            tvinit(void);
-extern struct spinlock tickslock;
+extern struct spinlock tickslock; // 원래 있던 줄
+extern uint		global_ticks;
 
 // uart.c
 void            uartinit(void);

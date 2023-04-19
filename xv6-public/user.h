@@ -1,3 +1,5 @@
+#include "spinlock.h"
+
 struct stat;
 struct rtcdate;
 
@@ -33,6 +35,10 @@ void setPriority(int pid, int priority);
 void schedulerLock(int password);
 void schedulerUnlock(int password);
 void bp_tracer(const char *msg);
+void mutex_init(struct spinlock *lk, char *name);
+void mutex_lock(struct spinlock *lk);			
+void mutex_unlock(struct spinlock *lk);
+
 
 // ulib.c
 int stat(const char*, struct stat*);

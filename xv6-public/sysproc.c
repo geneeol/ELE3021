@@ -6,6 +6,7 @@
 #include "memlayout.h"
 #include "mmu.h"
 #include "proc.h"
+#include "spinlock.h"
 
 int
 sys_fork(void)
@@ -148,5 +149,43 @@ sys_bp_tracer(void)
 
   if (argstr(0, &msg) < 0)
     return (-1);
+  return (0);
+}
+
+int
+sys_mutex_init(void)
+{
+  struct spinlock *lock;
+  char  *name;
+
+  if (argptr(0, (char **)&lock, sizeof(struct spinlock)) < 0) // TODO: sizeof struct spinlock인지 lockd인지 체크할것
+    return (-1);
+  if (argstr(1, &name) < 0)
+    return (-1);
+  initlock(lock, name);
+  cprintf("sys_mutex_init: %s, %p\n", lock->name, lock);
+  return (0);
+}
+
+int
+sys_mutex_lock(void)
+{
+  struct spinlock *lock;
+
+  if (argptr(0, (char **)&lock, sizeof(struct spinlock)) < 0)
+    return (-1);
+  acquire(lock);
+  cprintf("sys_mutex_lock: %s, %p\n", lock->name, lock);
+  return (0);
+}
+
+int
+sys_mutex_unlock(void)
+{
+  struct spinlock *lock;
+  if (argptr(0, (char **)&lock, sizeof(struct spinlock)) < 0)
+    return (-1);
+  release(lock);
+  cprintf("sys_mutex_unlock: %s, %p\n", lock->name, lock);
   return (0);
 }

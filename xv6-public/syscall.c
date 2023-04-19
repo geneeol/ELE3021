@@ -111,6 +111,9 @@ extern int sys_setPriority(void);
 extern int sys_schedulerLock(void);
 extern int sys_schedulerUnlock(void);
 extern int sys_bp_tracer(void);
+extern int sys_mutex_init(void);
+extern int sys_mutex_lock(void);
+extern int sys_mutex_unlock(void);
 
 // TODO: 시스템콜 함수 포인터 배열에 추가
 static int (*syscalls[])(void) = {
@@ -142,6 +145,9 @@ static int (*syscalls[])(void) = {
 [SYS_schedulerLock] sys_schedulerLock,
 [SYS_schedulerUnlock] sys_schedulerUnlock,
 [SYS_bp_tracer] sys_bp_tracer,
+[SYS_mutex_init] sys_mutex_init,
+[SYS_mutex_lock] sys_mutex_lock,
+[SYS_mutex_unlock] sys_mutex_unlock,
 };
 
 void
