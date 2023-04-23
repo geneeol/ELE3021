@@ -386,14 +386,12 @@ find_runnable_in_fcfs_priority(struct queue *q)
   int begin;
   int end;
   int rotate_cnt; 
-  static int  flag;
 
   p = 0;
   lowest_priority = 4;
   begin = (q->front + 1) % (NPROC + 1);
   end = (q->rear + 1) % (NPROC + 1);
   rotate_cnt = 0;
-  flag++;
   for (int iter = begin; iter != end; iter = (iter + 1) % (NPROC + 1))
   {
     tmp = q->items[iter]; // queue가 empty인 상황은 앞에서 걸러진다
@@ -420,9 +418,6 @@ find_runnable_in_fcfs_priority(struct queue *q)
   return (p);
 }
 
-// All process are move to the L0 queue
-// Every process's priority is set to 3
-// Every process's time slice is set to 0
 void
 priority_boosting(void) //h 부스팅은 반드시 tickslock이 걸렸을 때 발생하기에 인터럽트 당하지 않는다
 {
@@ -555,7 +550,7 @@ scheduler(void)
       //h 정상적이라면 unlock을 호출후 exit할 때 큐에서 제거된다, 따라서 lock한 프로세스가 좀비면 절대 안된다
       if (p->state == ZOMBIE)
       {
-        cprintf("pid: %d, sched is locked and zombie state\n", p->pid);
+        cprintf("pid: %d, The process ended without unlocking sched\n", p->pid);
         sched_locked = 0;
       }
     }

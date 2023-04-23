@@ -1,6 +1,7 @@
 #include "types.h"
 #include "stat.h"
 #include "user.h"
+#include "param.h"
 
 #define NUM_LOOP 100000
 #define NUM_YIELD 20000
@@ -87,12 +88,17 @@ int main(int argc, char *argv[])
   else
   {
     for (i = 0; i < NUM_LOOP / 100; i++)
+    {
+      sleep(5);
 			count[getLevel()]++;
+    }
   }
+  schedulerLock(PASSWORD);
   printf(1, "Process %d\n", pid);
   for (i = 0; i < MAX_LEVEL; i++)
     printf(1, "L%d: %d\n", i, count[i]);
   }
+  schedulerUnlock(PASSWORD);
   exit_children();
   printf(1, "[Test 1] finished\n");
   printf(1, "done\n");

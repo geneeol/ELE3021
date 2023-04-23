@@ -184,18 +184,17 @@ UPROGS=\
 	_stressfs\
 	_wc\
 	_zombie\
-	_test_origin1\
-	# _test_yield\
-	# _test_mlfq\
+	# _test_origin1\
 	# _test_lock\
 	# _test_lock2\
+	# _test_yield\
 	# _test_mlfq2\
 	# _test_mlfq3\
 	# _test_interrupt\
 	# _prac_myuserapp\
 	# _myapp\
 	# _prac2_usercall\
-	# _usertests
+	# _usertests\
 
 #위 테스트코드 주석처리하고 usertests 돌리면 에러안뜸 왜?
 #filesystem에 유저프로그램 많아지면 뭔가 에러 발생하는듯

@@ -16,6 +16,7 @@ uint ticks;
 
 // project1
 uint global_ticks;
+extern int boosting_occured;
 
 void
 tvinit(void)
@@ -94,11 +95,11 @@ trap(struct trapframe *tf)
     cprintf("user interrupt 128 called\n");
     break;
   case SCHED_LOCK:
-    cprintf("int 128 occured!\n");
+    cprintf("int 129 occured!\n");
     schedulerLock(PASSWORD);
     break ;
   case SCHED_UNLOCK:
-    cprintf("int 129 occured!\n");
+    cprintf("int 130 occured!\n");
     schedulerUnlock(PASSWORD);
     break ;
   
@@ -132,7 +133,8 @@ trap(struct trapframe *tf)
   if(myproc() && myproc()->state == RUNNING
       && tf->trapno == T_IRQ0+IRQ_TIMER)
   {
-    myproc()->used_ticks++; //h 현재 프로세스가 running이고 타이머 인터럽트를 받았다면, 한틱동안 큐에 머문 것
+    if (!boosting_occured)
+      myproc()->used_ticks++; //h 현재 프로세스가 running이고 타이머 인터럽트를 받았다면, 한틱동안 큐에 머문 것
     yield();
   }
 

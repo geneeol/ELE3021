@@ -27,13 +27,13 @@ forktest(void)
     if(pid < 0)
       break;
     if(pid == 0)
-	{
+	  {
 		sleep(pid * 10);
   		int freq[4] = {0, 0, 0, 0};
 		for (int i = 0; i < 1000; i++)
 			freq[getLevel()]++;
 		distribution(freq);
-	}
+	  }
   }
 
   if(n == N){

@@ -3,12 +3,15 @@
 #include "user.h"
 #include "param.h"
 
-// #define NUM_LOOP 100000
-#define NUM_LOOP 50000
+// #define NUM_LOOP 5000000
+#define NUM_LOOP 100000
+// #define NUM_LOOP 1000000
+// #define NUM_LOOP 50000
 #define NUM_YIELD 20000
 #define NUM_SLEEP 1000
 
-#define NUM_THREAD 40
+#define NUM_THREAD 4
+// #define NUM_THREAD 40
 #define MAX_LEVEL 5
 
 int parent;
