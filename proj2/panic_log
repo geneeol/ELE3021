@@ -1,0 +1,558 @@
+$ usertests
+usertests starting
+arg test passed
+createdelete test
+
+passing loop1, wait start
+
+
+passing loop2, wait success
+
+
+passing loop3
+
+
+passing loop4
+
+createdelete ok
+linkunlink test
+>======procdmp start======<
+1 sleep  init 801044e3 801053f9 80106575 801062ac
+2 sleep  sh 801044e3 801053f9 80106575 801062ac
+5 run    usertests
+10 runble usertests
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:8, rear:10
+items[9], id: 1, sleep  init
+items[10], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:30, rear:30
+
+queue Level: 2, size: 1
+front:28, rear:29
+items[29], id: 10, runble usertests
+
+>======procdmp finish======<
+
+
+linkunlink ok
+concreate test
+>======procdmp start======<
+1 sleep  init 801044e3 801053f9 80106575 801062ac
+2 sleep  sh 801044e3 801053f9 80106575 801062ac
+5 runble usertests
+12 run    usertests
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:4, rear:6
+items[5], id: 1, sleep  init
+items[6], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:30, rear:30
+
+queue Level: 2, size: 1
+front:29, rear:30
+items[30], id: 5, runble usertests
+
+>======procdmp finish======<
+
+
+
+passing loop1
+
+
+passing loop2
+
+
+passing loop3
+
+concreate ok
+fourfiles test
+
+passing loop1, wait start
+
+
+passing loop2, wait finish
+
+
+passing loop3
+
+fourfiles ok
+sharedfd test
+>======procdmp start======<
+1 sleep  init 801044e3 801053f9 80106575 801062ac
+2 sleep  sh 801044e3 801053f9 80106575 801062ac
+5 runble usertests
+95 runble usertests
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:42, rear:44
+items[43], id: 1, sleep  init
+items[44], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:33, rear:33
+
+queue Level: 2, size: 2
+front:53, rear:55
+items[54], id: 5, runble usertests
+items[55], id: 95, runble usertests
+
+>======procdmp finish======<
+
+
+sharedfd ok
+bigarg test
+bigarg test ok
+bigwrite test
+bigwrite ok
+bigarg test
+bigarg test ok
+bss test
+bss test ok
+sbrk test
+>======procdmp start======<
+1 sleep  init 801044e3 801053f9 80106575 801062ac
+2 sleep  sh 801044e3 801053f9 80106575 801062ac
+5 run    usertests
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:43, rear:45
+items[44], id: 1, sleep  init
+items[45], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:27, rear:27
+
+queue Level: 2, size: 0
+front:11, rear:11
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+1 sleep  init 801044e3 801053f9 80106575 801062ac
+2 sleep  sh 801044e3 801053f9 80106575 801062ac
+5 run    usertests
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:24, rear:26
+items[25], id: 1, sleep  init
+items[26], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:27, rear:27
+
+queue Level: 2, size: 0
+front:11, rear:11
+
+>======procdmp finish======<
+
+
+pid 99 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x80000000--kill proc
+pid 100 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x8000c350--kill proc
+pid 101 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x800186a0--kill proc
+pid 102 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x800249f0--kill proc
+pid 103 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x80030d40--kill proc
+pid 104 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x8003d090--kill proc
+pid 105 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x800493e0--kill proc
+pid 106 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x80055730--kill proc
+pid 107 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x80061a80--kill proc
+pid 108 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x8006ddd0--kill proc
+pid 109 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x8007a120--kill proc
+pid 110 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x80086470--kill proc
+pid 111 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x800927c0--kill proc
+pid 112 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x8009eb10--kill proc
+pid 113 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x800aae60--kill proc
+pid 114 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x800b71b0--kill proc
+pid 115 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x800c3500--kill proc
+pid 116 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x800cf850--kill proc
+pid 117 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x800dbba0--kill proc
+pid 118 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x800e7ef0--kill proc
+pid 119 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x800f4240--kill proc
+pid 120 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x80100590--kill proc
+pid 121 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x8010c8e0--kill proc
+pid 122 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x80118c30--kill proc
+pid 123 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x80124f80--kill proc
+pid 124 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x801312d0--kill proc
+pid 125 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x8013d620--kill proc
+pid 126 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x80149970--kill proc
+pid 127 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x80155cc0--kill proc
+pid 128 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x80162010--kill proc
+pid 129 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x8016e360--kill proc
+pid 130 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x8017a6b0--kill proc
+>======procdmp start======<
+1 sleep  init 801044e3 801053f9 80106575 801062ac
+2 sleep  sh 801044e3 801053f9 80106575 801062ac
+5 run    usertests
+131 embryo
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:42, rear:44
+items[43], id: 1, sleep  init
+items[44], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:27, rear:27
+
+queue Level: 2, size: 0
+front:11, rear:11
+
+>======procdmp finish======<
+
+
+pid 131 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x80186a00--kill proc
+pid 132 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x80192d50--kill proc
+pid 133 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x8019f0a0--kill proc
+pid 134 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x801ab3f0--kill proc
+pid 135 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x801b7740--kill proc
+pid 136 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x801c3a90--kill proc
+pid 137 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x801cfde0--kill proc
+pid 138 usertests: trap 14 err 5 on cpu 0 eip 0x30f9 addr 0x801dc130--kill proc
+>======procdmp start======<
+1 sleep  init 801044e3 801053f9 80106575 801062ac
+2 sleep  sh 801044e3 801053f9 80106575 801062ac
+5 sleep  usertests 8010461c 8010371a 801056c9 801053f9 80106575 801062ac
+139 runble usertests
+140 run    usertests
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:8, rear:10
+items[9], id: 1, sleep  init
+items[10], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:39, rear:39
+
+queue Level: 2, size: 2
+front:20, rear:22
+items[21], id: 139, runble usertests
+items[22], id: 5, sleep  usertests
+
+>======procdmp finish======<
+
+
+allocuvm out of memory
+>======procdmp start======<
+1 sleep  init 801044e3 801053f9 80106575 801062ac
+2 sleep  sh 801044e3 801053f9 80106575 801062ac
+5 sleep  usertests 8010461c 8010371a 801056c9 801053f9 80106575 801062ac
+139 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+140 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+141 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+142 run    usertests
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:1, rear:3
+items[2], id: 1, sleep  init
+items[3], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:51, rear:51
+
+queue Level: 2, size: 4
+front:59, rear:63
+items[60], id: 5, sleep  usertests
+items[61], id: 141, sleep  usertests
+items[62], id: 139, sleep  usertests
+items[63], id: 140, sleep  usertests
+
+>======procdmp finish======<
+
+
+allocuvm out of memory
+allocuvm out of memory
+allocuvm out of memory
+>======procdmp start======<
+1 sleep  init 801044e3 801053f9 80106575 801062ac
+2 sleep  sh 801044e3 801053f9 80106575 801062ac
+5 sleep  usertests 8010461c 8010371a 801056c9 801053f9 80106575 801062ac
+139 runble usertests
+140 runble usertests
+141 runble usertests
+142 runble usertests
+143 runble usertests
+144 runble usertests
+145 run    usertests
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:16, rear:18
+items[17], id: 1, sleep  init
+items[18], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:0, rear:0
+
+queue Level: 2, size: 7
+front:54, rear:61
+items[55], id: 5, sleep  usertests
+items[56], id: 143, runble usertests
+items[57], id: 142, runble usertests
+items[58], id: 140, runble usertests
+items[59], id: 139, runble usertests
+items[60], id: 141, runble usertests
+items[61], id: 144, runble usertests
+
+>======procdmp finish======<
+
+
+allocuvm out of memory
+allocuvm out of memory
+allocuvm out of memory
+>======procdmp start======<
+1 sleep  init 801044e3 801053f9 80106575 801062ac
+2 sleep  sh 801044e3 801053f9 80106575 801062ac
+5 sleep  usertests 8010461c 8010371a 801056c9 801053f9 80106575 801062ac
+139 runble usertests
+140 runble usertests
+141 runble usertests
+142 runble usertests
+143 runble usertests
+144 runble usertests
+145 runble usertests
+146 runble usertests
+147 runble usertests
+148 run    usertests
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:24, rear:26
+items[25], id: 1, sleep  init
+items[26], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 10
+front:18, rear:28
+items[19], id: 5, sleep  usertests
+items[20], id: 146, runble usertests
+items[21], id: 145, runble usertests
+items[22], id: 144, runble usertests
+items[23], id: 141, runble usertests
+items[24], id: 139, runble usertests
+items[25], id: 140, runble usertests
+items[26], id: 142, runble usertests
+items[27], id: 143, runble usertests
+items[28], id: 147, runble usertests
+
+>======procdmp finish======<
+
+
+allocuvm out of memory
+>======procdmp start======<
+1 sleep  init 801044e3 801053f9 80106575 801062ac
+2 sleep  sh 801044e3 801053f9 80106575 801062ac
+5 run    usertests
+140 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+141 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+142 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+143 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+144 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+145 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+146 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+147 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+148 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:58, rear:60
+items[59], id: 1, sleep  init
+items[60], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 9
+front:29, rear:38
+items[30], id: 148, sleep  usertests
+items[31], id: 147, sleep  usertests
+items[32], id: 143, sleep  usertests
+items[33], id: 142, sleep  usertests
+items[34], id: 140, sleep  usertests
+items[35], id: 141, sleep  usertests
+items[36], id: 144, sleep  usertests
+items[37], id: 145, sleep  usertests
+items[38], id: 146, sleep  usertests
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+1 sleep  init 801044e3 801053f9 80106575 801062ac
+2 sleep  sh 801044e3 801053f9 80106575 801062ac
+5 run    usertests
+141 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+142 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+143 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+144 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+145 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+146 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+147 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+148 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:35, rear:37
+items[36], id: 1, sleep  init
+items[37], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 8
+front:59, rear:2
+items[60], id: 148, sleep  usertests
+items[61], id: 147, sleep  usertests
+items[62], id: 143, sleep  usertests
+items[63], id: 142, sleep  usertests
+items[64], id: 141, sleep  usertests
+items[0], id: 144, sleep  usertests
+items[1], id: 145, sleep  usertests
+items[2], id: 146, sleep  usertests
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+1 sleep  init 801044e3 801053f9 80106575 801062ac
+2 sleep  sh 801044e3 801053f9 80106575 801062ac
+5 run    usertests
+143 runble usertests
+144 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+145 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+146 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+147 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+148 sleep  usertests 8010461c 80106122 801053f9 80106575 801062ac
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:34, rear:36
+items[35], id: 1, sleep  init
+items[36], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 6
+front:44, rear:50
+items[45], id: 148, sleep  usertests
+items[46], id: 147, sleep  usertests
+items[47], id: 143, runble usertests
+items[48], id: 144, sleep  usertests
+items[49], id: 145, sleep  usertests
+items[50], id: 146, sleep  usertests
+
+>======procdmp finish======<
+
+
+sbrk test OK
+validate test
+>======procdmp start======<
+1 sleep  init 801044e3 801053f9 80106575 801062ac
+2 sleep  sh 801044e3 801053f9 80106575 801062ac
+5 run    usertests
+343 embryo
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:15, rear:17
+items[16], id: 1, sleep  init
+items[17], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:24, rear:24
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+1 sleep  init 801044e3 801053f9 80106575 801062ac
+2 sleep  sh 801044e3 801053f9 80106575 801062ac
+5 run    usertests
+388 embryo
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:44, rear:46
+items[45], id: 1, sleep  init
+items[46], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 0
+front:24, rear:24
+
+>======procdmp finish======<
+
+
+validate ok
+open test
+open test ok
+small file test
+creat small succeeded; ok
+>======procdmp start======<
+1 sleep  init 801044e3 801053f9 80106575 801062ac
+2 sleep  sh 801044e3 801053f9 80106575 801062ac
+5 runble usertests
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:26, rear:28
+items[27], id: 1, sleep  init
+items[28], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 1
+front:23, rear:24
+items[24], id: 5, runble usertests
+
+>======procdmp finish======<
+
+
+writes ok
+open small succeeded ok
+read succeeded ok
+small file test ok
+big files test
+>======procdmp start======<
+1 sleep  init 801044e3 801053f9 80106575 801062ac
+2 sleep  sh 801044e3 801053f9 80106575 801062ac
+5 runble usertests
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:17, rear:19
+items[18], id: 1, sleep  init
+items[19], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:22, rear:22
+
+queue Level: 2, size: 1
+front:23, rear:24
+items[24], id: 5, runble usertests
+
+>======procdmp finish======<
+
+
+lapicid 0: panic: balloc: out of blocks
+ 801012ee 801014ba 80101bff 80101150 80105749 801053f9 80106575 801062ac 0 0

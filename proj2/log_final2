@@ -1,0 +1,1277 @@
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 801045ac 801002d2 8010105c 801057d9 80105509 801066ed 801063db
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:50, rear:52
+items[51], id: 2, sleep  sh
+items[52], id: 1, sleep  init
+
+queue Level: 1, size: 0
+front:23, rear:23
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 51, end 53
+qlev: 1, begin 24, end 24
+qlev: 2, begin 2, end 2
+1
+pid: 3, used_tick: 4, qlev: 0
+MLFQ test start
+[Test 1] default
+pid: 3, used_tick: 6, qlev: 1
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 runble test_origin1
+5 runble test_origin1
+6 runble test_origin1
+7 run    test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:39, rear:41
+items[40], id: 2, sleep  sh
+items[41], id: 1, sleep  init
+
+queue Level: 1, size: 0
+front:53, rear:53
+
+queue Level: 2, size: 4
+front:3, rear:7
+items[4], id: 4, runble test_origin1
+items[5], id: 5, runble test_origin1
+items[6], id: 6, runble test_origin1
+items[7], id: 3, sleep  test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 40, end 42
+qlev: 1, begin 54, end 54
+qlev: 2, begin 4, end 8
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 run    test_origin1
+5 runble test_origin1
+6 runble test_origin1
+7 runble test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:56, rear:59
+items[57], id: 2, sleep  sh
+items[58], id: 1, sleep  init
+items[59], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:12, rear:12
+
+queue Level: 2, size: 3
+front:8, rear:11
+items[9], id: 5, runble test_origin1
+items[10], id: 6, runble test_origin1
+items[11], id: 7, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 57, end 60
+qlev: 1, begin 13, end 13
+qlev: 2, begin 9, end 12
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 runble test_origin1
+5 run    test_origin1
+6 runble test_origin1
+7 runble test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:8, rear:11
+items[9], id: 2, sleep  sh
+items[10], id: 1, sleep  init
+items[11], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:36, rear:36
+
+queue Level: 2, size: 3
+front:12, rear:15
+items[13], id: 6, runble test_origin1
+items[14], id: 7, runble test_origin1
+items[15], id: 4, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 9, end 12
+qlev: 1, begin 37, end 37
+qlev: 2, begin 13, end 16
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 runble test_origin1
+5 runble test_origin1
+6 run    test_origin1
+7 runble test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:25, rear:28
+items[26], id: 2, sleep  sh
+items[27], id: 1, sleep  init
+items[28], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:60, rear:60
+
+queue Level: 2, size: 3
+front:16, rear:19
+items[17], id: 7, runble test_origin1
+items[18], id: 4, runble test_origin1
+items[19], id: 5, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 26, end 29
+qlev: 1, begin 61, end 61
+qlev: 2, begin 17, end 20
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 runble test_origin1
+5 runble test_origin1
+6 runble test_origin1
+7 run    test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:42, rear:45
+items[43], id: 2, sleep  sh
+items[44], id: 1, sleep  init
+items[45], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:19, rear:19
+
+queue Level: 2, size: 3
+front:20, rear:23
+items[21], id: 4, runble test_origin1
+items[22], id: 5, runble test_origin1
+items[23], id: 6, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 43, end 46
+qlev: 1, begin 20, end 20
+qlev: 2, begin 21, end 24
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 run    test_origin1
+5 runble test_origin1
+6 runble test_origin1
+7 runble test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:59, rear:62
+items[60], id: 2, sleep  sh
+items[61], id: 1, sleep  init
+items[62], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:43, rear:43
+
+queue Level: 2, size: 3
+front:24, rear:27
+items[25], id: 5, runble test_origin1
+items[26], id: 6, runble test_origin1
+items[27], id: 7, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 60, end 63
+qlev: 1, begin 44, end 44
+qlev: 2, begin 25, end 28
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 runble test_origin1
+5 run    test_origin1
+6 runble test_origin1
+7 runble test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:11, rear:14
+items[12], id: 2, sleep  sh
+items[13], id: 1, sleep  init
+items[14], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:2, rear:2
+
+queue Level: 2, size: 3
+front:28, rear:31
+items[29], id: 6, runble test_origin1
+items[30], id: 7, runble test_origin1
+items[31], id: 4, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 12, end 15
+qlev: 1, begin 3, end 3
+qlev: 2, begin 29, end 32
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 runble test_origin1
+5 runble test_origin1
+6 run    test_origin1
+7 runble test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:28, rear:31
+items[29], id: 2, sleep  sh
+items[30], id: 1, sleep  init
+items[31], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:26, rear:26
+
+queue Level: 2, size: 3
+front:32, rear:35
+items[33], id: 7, runble test_origin1
+items[34], id: 4, runble test_origin1
+items[35], id: 5, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 29, end 32
+qlev: 1, begin 27, end 27
+qlev: 2, begin 33, end 36
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 runble test_origin1
+5 runble test_origin1
+6 runble test_origin1
+7 run    test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:45, rear:48
+items[46], id: 2, sleep  sh
+items[47], id: 1, sleep  init
+items[48], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:50, rear:50
+
+queue Level: 2, size: 3
+front:36, rear:39
+items[37], id: 4, runble test_origin1
+items[38], id: 5, runble test_origin1
+items[39], id: 6, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 46, end 49
+qlev: 1, begin 51, end 51
+qlev: 2, begin 37, end 40
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 run    test_origin1
+5 runble test_origin1
+6 runble test_origin1
+7 runble test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:50, rear:53
+items[51], id: 2, sleep  sh
+items[52], id: 1, sleep  init
+items[53], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:9, rear:9
+
+queue Level: 2, size: 3
+front:40, rear:43
+items[41], id: 5, runble test_origin1
+items[42], id: 6, runble test_origin1
+items[43], id: 7, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 51, end 54
+qlev: 1, begin 10, end 10
+qlev: 2, begin 41, end 44
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 runble test_origin1
+5 run    test_origin1
+6 runble test_origin1
+7 runble test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:2, rear:5
+items[3], id: 2, sleep  sh
+items[4], id: 1, sleep  init
+items[5], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:33, rear:33
+
+queue Level: 2, size: 3
+front:44, rear:47
+items[45], id: 6, runble test_origin1
+items[46], id: 7, runble test_origin1
+items[47], id: 4, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 3, end 6
+qlev: 1, begin 34, end 34
+qlev: 2, begin 45, end 48
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 runble test_origin1
+5 runble test_origin1
+6 run    test_origin1
+7 runble test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:19, rear:22
+items[20], id: 2, sleep  sh
+items[21], id: 1, sleep  init
+items[22], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:57, rear:57
+
+queue Level: 2, size: 3
+front:48, rear:51
+items[49], id: 7, runble test_origin1
+items[50], id: 4, runble test_origin1
+items[51], id: 5, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 20, end 23
+qlev: 1, begin 58, end 58
+qlev: 2, begin 49, end 52
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 runble test_origin1
+5 runble test_origin1
+6 runble test_origin1
+7 run    test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:36, rear:39
+items[37], id: 2, sleep  sh
+items[38], id: 1, sleep  init
+items[39], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:16, rear:16
+
+queue Level: 2, size: 3
+front:52, rear:55
+items[53], id: 4, runble test_origin1
+items[54], id: 5, runble test_origin1
+items[55], id: 6, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 37, end 40
+qlev: 1, begin 17, end 17
+qlev: 2, begin 53, end 56
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 run    test_origin1
+5 runble test_origin1
+6 runble test_origin1
+7 runble test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:53, rear:56
+items[54], id: 2, sleep  sh
+items[55], id: 1, sleep  init
+items[56], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:40, rear:40
+
+queue Level: 2, size: 3
+front:56, rear:59
+items[57], id: 5, runble test_origin1
+items[58], id: 6, runble test_origin1
+items[59], id: 7, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 54, end 57
+qlev: 1, begin 41, end 41
+qlev: 2, begin 57, end 60
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 runble test_origin1
+5 run    test_origin1
+6 runble test_origin1
+7 runble test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:5, rear:8
+items[6], id: 2, sleep  sh
+items[7], id: 1, sleep  init
+items[8], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:64, rear:64
+
+queue Level: 2, size: 3
+front:60, rear:63
+items[61], id: 6, runble test_origin1
+items[62], id: 7, runble test_origin1
+items[63], id: 4, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 6, end 9
+qlev: 1, begin 0, end 0
+qlev: 2, begin 61, end 64
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 runble test_origin1
+5 runble test_origin1
+6 run    test_origin1
+7 runble test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:22, rear:25
+items[23], id: 2, sleep  sh
+items[24], id: 1, sleep  init
+items[25], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:23, rear:23
+
+queue Level: 2, size: 3
+front:64, rear:2
+items[0], id: 7, runble test_origin1
+items[1], id: 4, runble test_origin1
+items[2], id: 5, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 23, end 26
+qlev: 1, begin 24, end 24
+qlev: 2, begin 0, end 3
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 runble test_origin1
+5 runble test_origin1
+6 runble test_origin1
+7 run    test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:39, rear:42
+items[40], id: 2, sleep  sh
+items[41], id: 1, sleep  init
+items[42], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:47, rear:47
+
+queue Level: 2, size: 3
+front:3, rear:6
+items[4], id: 4, runble test_origin1
+items[5], id: 5, runble test_origin1
+items[6], id: 6, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 40, end 43
+qlev: 1, begin 48, end 48
+qlev: 2, begin 4, end 7
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 run    test_origin1
+5 runble test_origin1
+6 runble test_origin1
+7 runble test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:56, rear:59
+items[57], id: 2, sleep  sh
+items[58], id: 1, sleep  init
+items[59], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:6, rear:6
+
+queue Level: 2, size: 3
+front:7, rear:10
+items[8], id: 5, runble test_origin1
+items[9], id: 6, runble test_origin1
+items[10], id: 7, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 57, end 60
+qlev: 1, begin 7, end 7
+qlev: 2, begin 8, end 11
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 runble test_origin1
+5 run    test_origin1
+6 runble test_origin1
+7 runble test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:5, rear:8
+items[6], id: 2, sleep  sh
+items[7], id: 1, sleep  init
+items[8], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:30, rear:30
+
+queue Level: 2, size: 3
+front:11, rear:14
+items[12], id: 6, runble test_origin1
+items[13], id: 7, runble test_origin1
+items[14], id: 4, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 6, end 9
+qlev: 1, begin 31, end 31
+qlev: 2, begin 12, end 15
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 runble test_origin1
+5 runble test_origin1
+6 run    test_origin1
+7 runble test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:22, rear:25
+items[23], id: 2, sleep  sh
+items[24], id: 1, sleep  init
+items[25], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:54, rear:54
+
+queue Level: 2, size: 3
+front:15, rear:18
+items[16], id: 7, runble test_origin1
+items[17], id: 4, runble test_origin1
+items[18], id: 5, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 23, end 26
+qlev: 1, begin 55, end 55
+qlev: 2, begin 16, end 19
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 runble test_origin1
+5 runble test_origin1
+6 runble test_origin1
+7 run    test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:39, rear:42
+items[40], id: 2, sleep  sh
+items[41], id: 1, sleep  init
+items[42], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 3
+front:19, rear:22
+items[20], id: 4, runble test_origin1
+items[21], id: 5, runble test_origin1
+items[22], id: 6, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 40, end 43
+qlev: 1, begin 14, end 14
+qlev: 2, begin 20, end 23
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+pid: 4, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 run    test_origin1
+5 runble test_origin1
+6 runble test_origin1
+7 runble test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:56, rear:59
+items[57], id: 2, sleep  sh
+items[58], id: 1, sleep  init
+items[59], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:37, rear:37
+
+queue Level: 2, size: 3
+front:23, rear:26
+items[24], id: 5, runble test_origin1
+items[25], id: 6, runble test_origin1
+items[26], id: 7, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 57, end 60
+qlev: 1, begin 38, end 38
+qlev: 2, begin 24, end 27
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 runble test_origin1
+5 run    test_origin1
+6 runble test_origin1
+7 runble test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:2, rear:5
+items[3], id: 2, sleep  sh
+items[4], id: 1, sleep  init
+items[5], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:61, rear:61
+
+queue Level: 2, size: 3
+front:27, rear:30
+items[28], id: 6, runble test_origin1
+items[29], id: 7, runble test_origin1
+items[30], id: 4, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 3, end 6
+qlev: 1, begin 62, end 62
+qlev: 2, begin 28, end 31
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 runble test_origin1
+5 runble test_origin1
+6 run    test_origin1
+7 runble test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:19, rear:22
+items[20], id: 2, sleep  sh
+items[21], id: 1, sleep  init
+items[22], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:20, rear:20
+
+queue Level: 2, size: 3
+front:31, rear:34
+items[32], id: 7, runble test_origin1
+items[33], id: 4, runble test_origin1
+items[34], id: 5, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 20, end 23
+qlev: 1, begin 21, end 21
+qlev: 2, begin 32, end 35
+pid: 7, used_tick: 4, qlev: 0
+pid: 4, used_tick: 4, qlev: 0
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 6, qlev: 1
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+Process 7
+L0: 15610
+L1: 24579
+L2: 59811
+L3:pid: 7, used_tick: 8, qlev: 2
+ 0
+L4: 0
+pid: 4, used_tick: 8, qlev: 2
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 80104473 80105509 801066ed 801063db
+3 sleep  test_origin1 80104473 80105509 801066ed 801063db
+4 run    test_origin1
+5 runble test_origin1
+6 runble test_origin1
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:39, rear:42
+items[40], id: 2, sleep  sh
+items[41], id: 1, sleep  init
+items[42], id: 3, sleep  test_origin1
+
+queue Level: 1, size: 0
+front:44, rear:44
+
+queue Level: 2, size: 2
+front:36, rear:38
+items[37], id: 5, runble test_origin1
+items[38], id: 6, runble test_origin1
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 40, end 43
+qlev: 1, begin 45, end 45
+qlev: 2, begin 37, end 39
+Process 6
+pid: 5, used_tick: 4, qlev: 0
+L0: pid: 6, used_tick: 4, qlev: 0
+pid: 4, used_tick: 4, qlev: 0
+15712
+L1: 24992
+L2: 59296
+L3: 0
+L4: 0
+pid: 5, used_tick: 6, qlev: 1
+pid: 4, used_tick: 6, qlev: 1
+Process 5
+L0: 16215
+L1: 25341
+L2: 58444
+L3: 0
+L4: 0
+pid: 5, used_tick: 8, qlev: 2
+Procepid: 4, used_tick: 8, qlev: 2
+ss 4
+L0: 15865
+L1: 25714
+L2: 58421
+L3: 0
+L4: 0
+[Test 1] finished
+pid: 3, used_tick: 4, qlev: 0
+done
+$ boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 801045ac 801002d2 8010105c 801057d9 80105509 801066ed 801063db
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:46, rear:48
+items[47], id: 1, sleep  init
+items[48], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:63, rear:63
+
+queue Level: 2, size: 0
+front:40, rear:40
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 47, end 49
+qlev: 1, begin 64, end 64
+qlev: 2, begin 41, end 41
+boosting occur
+>======procdmp start======<
+1 sleep  init 80104473 80105509 801066ed 801063db
+2 sleep  sh 801045ac 801002d2 8010105c 801057d9 80105509 801066ed 801063db
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:43, rear:45
+items[44], id: 1, sleep  init
+items[45], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:63, rear:63
+
+queue Level: 2, size: 0
+front:40, rear:40
+
+>======procdmp finish======<
+
+
+qlev: 0, begin 44, end 46
+qlev: 1, begin 64, end 64
+qlev: 2, begin 41, end 41
+QEMU: Terminated
+root@e51d9bf76bf1:

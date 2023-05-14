@@ -1,0 +1,47 @@
+>======procdmp start======<
+1 sleep  init 80104423 80105119 801061c5 80105efa
+2 sleep  sh 80104423 80105119 801061c5 80105efa
+3 runble usertests
+89 sleep  usertests 8010455c 8010498a 801018c5 801042a7 80105d3b 80105119 801061c5 80105efa
+90 zombie usertests
+
+*****mlfq info*****
+queue Level: 0, size: 3
+front:63, rear:1
+items[64], id: 2, sleep  sh
+items[0], id: 1, sleep  init
+items[1], id: 89, sleep  usertests
+
+queue Level: 1, size: 0
+front:1, rear:1
+
+queue Level: 2, size: 0
+front:1, rear:1
+
+>======procdmp finish======<
+
+
+/*******************************************/
+
+>======procdmp start======<
+1 sleep  init 80104423 80105119 801061c5 80105efa
+2 sleep  sh 80104423 80105119 801061c5 80105efa
+13 runble usertests
+14 zombie usertests
+15 zombie usertests
+16 zombie usertests
+17 zombie usertests
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:28, rear:30
+items[29], id: 2, sleep  sh
+items[30], id: 1, sleep  init
+
+queue Level: 1, size: 0
+front:61, rear:61
+
+queue Level: 2, size: 0
+front:7, rear:7
+
+>======procdmp finish======<

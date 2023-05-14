@@ -1,0 +1,560 @@
+#define NUM_LOOP 5000
+#define NUM_YIELD 20000
+#define NUM_SLEEP 1000
+
+#define NUM_THREAD 64
+#define MAX_LEVEL 5
+
+이 설정에서 origin1 트랩14에 걸림
+아 원인 걍 인덱스 범위 에러였던 거 같다..
+
+
+
+MLFQ test start
+[Test 1] default
+g_cnt[1] = 0
+g_cnt[0] = 1
+g_cnt[0] = 0
+g_cnt[1] = 0
+g_cnt[1] = 0
+g_cnt[1] = 3
+Process 4
+L0: 731
+L1: 1095
+L2: 3174
+L3: 0
+L4: 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[0] = 0
+g_cnt[1] = 0
+g_cnt[1] = 0
+g_cnt[0] = 0
+g_cnt[0] = 0
+g_cnt[0] = 0
+g_cnt[0] = 0
+g_cnt[1] = 0
+Process 6
+L0: 3189
+L1: 1811
+L2: 0
+L3: 0
+L4: 0
+Process 10
+L0: 3175
+L1: 1825
+L2: 0
+L3: 0
+L4: 0
+Process 14
+L0: 3194
+L1: 1806
+L2: 0
+L3: 0
+L4: 0
+Process 8
+L0: 3234
+L1: 1766
+L2: 0
+L3: 0
+L4: 0
+Process 11
+L0: 3226
+L1: 1774
+L2: 0
+L3: 0
+L4: 0
+Process 13
+L0: 3204
+L1: 1796
+L2: 0
+L3: 0
+L4: 0
+Process 16
+L0: 3229
+L1: 1771
+L2: 0
+L3: 0
+L4: 0
+g_cnt[0] = 0
+Process 5
+L0: 3258
+L1: 1742
+L2: 0
+L3: 0
+L4: 0
+Process 7
+L0: 3255
+L1: 1745
+L2: 0
+L3: 0
+L4: 0
+Process 9
+L0: 3296
+L1: 1704
+L2: 0
+L3: 0
+L4: 0
+Process 12
+L0: 3194
+L1: 1806
+L2: 0
+L3: 0
+L4: 0
+Process 15
+L0: 3291
+L1: 1709
+L2: 0
+L3: 0
+L4: 0
+Process 17
+L0: 3376
+L1: 1624
+L2: 0
+L3: 0
+L4: 0
+g_cnt[1] = 0
+g_cnt[1] = 0
+Process 21
+L0: 2177
+L1: 979
+L2: 1844
+L3: 0
+L4: 0
+Process 22
+L0: 1663
+L1: 645
+L2: 2692
+L3: 0
+L4: 0
+Process 19
+L0: 2094
+L1: 920
+L2: 1986
+L3: 0
+L4: 0
+Process 23
+L0: 1467
+L1: 810
+L2: 2723
+L3: 0
+L4: 0
+Process 24
+L0: 1390
+L1: 830
+L2: 2780
+L3: 0
+L4: 0
+Process 18
+L0: 2852
+L1: 1369
+L2: 779
+L3: 0
+L4: 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[0] = 0
+g_cnt[0] = 0
+g_cnt[1] = 0
+Process 20
+L0: 3570
+L1: 1430
+L2: 0
+L3: 0
+L4: 0
+g_cnt[0] = 0
+g_cnt[0] = 0
+g_cnt[1] = 0
+g_cnt[0] = 0
+g_cnt[0] = 0
+Process 30
+L0: 3117
+L1: 1883
+L2: 0
+L3: 0
+L4: 0
+Process 25
+L0: 3561
+L1: 1439
+L2: 0
+L3: 0
+L4: 0
+Process 31
+L0: 3050
+L1: 1950
+L2: 0
+L3: 0
+L4: 0
+Process 33
+L0: 3100
+L1: 1900
+L2: 0
+L3: 0
+L4: 0
+Process 35
+L0: 3061
+L1: 1939
+L2: 0
+L3: 0
+L4: 0
+g_cnt[0] = 0
+Process 29
+L0: 2980
+L1: 2020
+L2: 0
+L3: 0
+L4: 0
+Process 32
+L0: 3051
+L1: 1949
+L2: 0
+L3: 0
+L4: 0
+Process 34
+L0: 3166
+L1: 1834
+L2: 0
+L3: 0
+L4: 0
+gProcess 28
+L0: 3553
+L1: 1447
+L2: 0
+L3: 0
+L4: 0
+_cnt[0] = 0
+Process 27
+L0: 3417
+L1: 1583
+L2: 0
+L3: 0
+L4: 0
+gProcess 26
+L0: 3200
+L1: 1800
+L2: 0
+L3: 0
+L4: 0
+_cnt[1] = 0
+Process 36
+L0: 3135
+L1: 1865
+L2: 0
+L3: 0
+L4: 0
+g_cnt[1] = 0
+Process 41
+L0: 2128
+L1: 1351
+L2: 1521
+L3: 0
+L4: 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[0] = 0
+Process 37
+L0: 2981
+L1: 2019
+L2: 0
+L3: 0
+L4: 0
+g_cnt[0] = 0
+Process 38
+gL0: 3161
+_cnt[0] = 0
+Process 39
+L0: 3569
+L1: 1431
+L2: 0
+L3: 0
+L4: 0
+L1: 1839g
+L2: 0_cnt[0] = 0
+
+L3: 0
+Process 40
+L0: 3129
+L1: 1871
+L2: 0
+L3: 0
+L4: 0
+g_L4: 0
+cnt[1] = 0
+g_cnt[1] = 0
+Process 42g
+L0: 3334
+Process 43
+L0: 3435
+L1: 1565
+L2: 0
+L3: 0
+L4: 0
+_cnt[0] = 0
+L1: 1666
+gL2: 0
+L3: 0
+L4: 0
+_cntProcess 44
+Process 47
+L0: 2992
+L1: 2008
+L2: 0
+L3: 0
+L4: 0
+[0] = 0
+g_L0: 3271
+Process 46
+L0: 2918
+L1: 2082
+L2: 0
+L3: 0
+L4: 0
+Process 49
+L0: 3020
+L1: 1980
+L2: 0
+L3: 0
+L4: 0
+Process 50
+L0: 2990
+L1: 2010
+L2: 0
+L3: 0
+L4: 0
+Process 52
+L0: 3129
+L1: 1871
+L2: 0
+L3: 0
+L4: 0
+cnt[0] = 0
+L1: 1729
+g_cnt[0] = 0
+L2: 0
+Process 53
+L0: 2990
+L1: 2010
+L2: 0
+L3: 0
+L4: 0
+Process 55
+L0: 3142
+L1: 1858
+L2: 0
+L3: 0
+L4: 0
+g_cnt[1] = 0
+L3: 0
+Process 45
+L0: 3009
+L1: 1991
+L2: 0
+L3: 0
+L4: 0
+g_cnt[1] = 0
+L4: 0
+Process 48
+L0: 2885
+L1: 2115
+L2: 0
+L3: 0
+L4: 0
+Process 56
+L0: 3098
+L1: 1902
+L2: 0
+L3: 0
+L4: 0
+g_cnt[1] = 0
+g_cnt[1] = 0
+g_cnt[1] = 0
+g_cnt[1] = 0
+Process 59
+L0: 1942
+L1: 1619
+L2: 1439
+L3: 0
+L4: 0
+Process 60
+L0: 2031
+L1: 1717
+L2: 1252
+L3: 0
+L4: 0
+Process 51
+L0: 2333
+L1: 2534
+L2: 133
+L3: 0
+L4: 0
+Process 54
+L0: 1867
+L1: 2054
+L2: 1079
+L3: 0
+L4: 0
+Process 57
+L0: 2358
+L1: 1831
+L2: 811
+L3: 0
+L4: 0
+Process 58
+L0: 2155
+L1: 1880
+L2: 965
+L3: 0
+L4: 0
+Process 62
+L0: 2160
+L1: 1270
+L2: 1570
+L3: 0
+L4: 0
+Process 61
+L0: 2106
+L1: 1650
+L2: 1244
+L3: 0
+L4: 0
+Process 63
+L0: 1454
+L1: 1255
+L2: 2291
+L3: 0
+L4: 0
+Process 64
+L0: 1350
+L1: 1141
+L2: 2509
+L3: 0
+L4: 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+g_cnt[2] = 0
+pid 3 test_origin1: trap 14 err 5 on cpu 0 eip 0x18d addr 0x1000--kill proc
+zom$ bie!, orphan: 4
+zombie!, orphan: 5
+zombie!, orphan: 6
+zombie!, orphan: 7
+zombie!, orphan: 8
+zombie!, orphan: 9
+zombie!, orphan: 10
+zombie!, orphan: 11
+zombie!, orphan: 12
+zombie!, orphan: 13
+zombie!, orphan: 14
+zombie!, orphan: 15
+zombie!, orphan: 16
+zombie!, orphan: 17
+zombie!, orphan: 18
+zombie!, orphan: 19
+zombie!, orphan: 20
+zombie!, orphan: 21
+zombie!, orphan: 22
+zombie!, orphan: 23
+zombie!, orphan: 24
+zombie!, orphan: 25
+zombie!, orphan: 26
+zombie!, orphan: 27
+zombie!, orphan: 28
+zombie!, orphan: 29
+zombie!, orphan: 30
+zombie!, orphan: 31
+zombie!, orphan: 32
+zombie!, orphan: 33
+zombie!, orphan: 34
+zombie!, orphan: 35
+zombie!, orphan: 36
+zombie!, orphan: 37
+zombie!, orphan: 38
+zombie!, orphan: 39
+zombie!, orphan: 40
+zombie!, orphan: 41
+zombie!, orphan: 42
+zombie!, orphan: 43
+zombie!, orphan: 44
+zombie!, orphan: 45
+zombie!, orphan: 46
+zombie!, orphan: 47
+zombie!, orphan: 48
+zombie!, orphan: 49
+zombie!, orphan: 50
+zombie!, orphan: 51
+zombie!, orphan: 52
+zombie!, orphan: 53
+zombie!, orphan: 54
+zombie!, orphan: 55
+zombie!, orphan: 56
+zombie!, orphan: 57
+zombie!, orphan: 58
+zombie!, orphan: 59
+zombie!, orphan: 60
+zombie!, orphan: 61
+zombie!, orphan: 62
+zombie!, orphan: 63
+zombie!, orphan: 64

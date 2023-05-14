@@ -1,0 +1,354 @@
+MLFQ test start
+[Test 1] default
+pid: 4, used_tick: 6, qlev: 1
+pid: 5, used_tick: 4, qlev: 0
+pid: 6, used_tick: 4, qlev: 0
+pid: 7, used_tick: 4, qlev: 0
+pid: 8, used_tick: 4, qlev: 0
+boosting occur
+pid: 7, used_tick: 6, qlev: 1
+pid: 8, used_tick: 6, qlev: 1
+pid: 5, used_tick: 6, qlev: 1
+pid: 6, used_tick: 6, qlev: 1
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+boosting occur
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+boosting occur
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+boosting occur
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+boosting occur
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+boosting occur
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+boosting occur
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+pid: 7, used_tick: 8, qlev: 2
+Process 7
+L0: 608
+L1: 925
+L2: 98467
+L3: 0
+L4pid: 7, used_tick: 8, qlev: 2
+: 0
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+boosting occur
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+boosting occur
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+boosting occur
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+boosting occur
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+boosting occur
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+boosting occur
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+pid: 8, used_tick: 8, qlev: 2
+Process 8pid: 8, used_tick: 8, qlev: 2
+
+L0: 521
+L1: 1468
+L2: 98011
+L3: 0
+L4: 0
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+boosting occur
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+boosting occur
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+boosting occur
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+boosting occur
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+boosting occur
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+boosting occur
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+pid: 5, used_tick: 8, qlev: 2
+Process 5
+L0: 6pid: 5, used_tick: 8, qlev: 2
+48
+L1: 1703
+L2: 97649
+L3: 0
+L4: 0
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+boosting occur
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+boosting occur
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+boosting occur
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+boosting occur
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+boosting occur
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+pid: 6, used_tick: 8, qlev: 2
+boosting occur
+pid: 6, used_tick: 8, qlev: 2
+Process 6
+L0: 674
+L1: 1764
+L2: 97562
+L3: 0
+L4: 0
+pid: 6, used_tick: 8, qlev: 2
+[Test 1] finished
+done

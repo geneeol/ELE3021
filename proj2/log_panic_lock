@@ -1,0 +1,21 @@
+Booting from Hard Disk...
+xv6...
+cpu0: starting 0
+sb: size 1000 nblocks 941 ninodes 200 nlog 30 logstart 2 inodestart 32 bmap start 58
+init: starting sh
+$ test_mlfq
+MLFQ test start
+[Test 7] schedulerLock & Unlock Test
+Else
+Before Lock Process : 4
+After Lock Process : 4
+ CHILD : 4
+BeforGRANDSON : 6
+e try UnlocBefore try Unlock Prk Process : 4
+After try Unlock Proocess : 6
+After try Unlock Process : 6cess : 4
+Process
+Process : 6
+lapicid 0: panic: Should unlock scheduler before exit
+
+ 8010423d 8010303f 8010318c 0 0 0 0 0 0 0

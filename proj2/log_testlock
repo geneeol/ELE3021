@@ -1,0 +1,775 @@
+Booting from Hard Disk..xv6...
+cpu0: starting 0
+sb: size 1000 nblocks 941 ninodes 200 nlog 30 logstart 2 inodestart 32 bmap start 58
+init: starting sh
+$ test_lock
+child: pid: 4, try lock
+child: pid: 4, get lock
+elapsed loop: 0
+elapsed loop: 100
+elapsed loop: 200
+elapsed loop: 300
+elapsed loop: 400
+elapsed loop: 500
+elapsed loop: 600
+elapsed loop: 700
+elapsed loop: 800
+parent: pid: elapsed loop: 900
+e3
+plapsed loop: 1000
+arent: pid: 3, i: 0
+parent: pid: 3, i: 1>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 runble test_lock
+4 runble test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:34, rear:36
+items[35], id: 1, sleep  init
+items[36], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 2
+front:1, rear:3
+items[2], id: 4, runble test_lock
+items[3], id: 3, runble test_lock
+
+>======procdmp finish======<
+
+
+elapsed loop: 1100
+elapsed loop: 1200
+elapsed loop: 1300
+elapsed loop: 1400
+elapsed loop: 1500
+elapsed loop: 1600
+elapsed loop: 170>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 runble test_lock
+4 run    test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:64, rear:1
+items[0], id: 1, sleep  init
+items[1], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 1
+front:2, rear:3
+items[3], id: 3, runble test_lock
+
+>======procdmp finish======<
+
+
+0
+elapsed loop: 1800
+elapsed loop: 1900
+elapsed loop: 2000
+elapsed loop: 2100
+elapsed loop: 2200
+>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 runble test_lock
+4 run    test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:25, rear:27
+items[26], id: 1, sleep  init
+items[27], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 1
+front:2, rear:3
+items[3], id: 3, runble test_lock
+
+>======procdmp finish======<
+
+
+elapsed loop: 2300
+elapsed loop: 2400
+elapsed loop: 2500
+elapsed loop: 2600
+elapsed loop: 2700
+elapsed loop: 2800
+elapsed loop: 2900
+elapsed loop: 3000
+>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 runble test_lock
+4 run    test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:63, rear:0
+items[64], id: 1, sleep  init
+items[0], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 1
+front:2, rear:3
+items[3], id: 3, runble test_lock
+
+>======procdmp finish======<
+
+
+elapsed loop: 3100
+elapsed loop: 3200
+elapsed loop: 3300
+elapsed loop: 3400
+elapsed loop: 3500
+elapsed loop: 3600
+elapsed loop: 3700
+elapsed loop: 3800
+elapsed loop: 3900
+elapsed loop: 4000
+elapsed loop: 4100
+elapsed loop: 4200
+elapsed loop: 4300
+elapsed loop: 4400
+elapsed loop: 4500
+>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 runble test_lock
+4 run    test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:62, rear:64
+items[63], id: 1, sleep  init
+items[64], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 1
+front:2, rear:3
+items[3], id: 3, runble test_lock
+
+>======procdmp finish======<
+
+
+elapsed loop: 4600
+elapsed loop: 4700
+elapsed loop: 4800
+00
+parelapsed loop: 4900
+elapsed loop: 5000
+elapsed loop: 5100
+elapsed loop: 5200
+elapsed l>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 runble test_lock
+4 run    test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:42, rear:44
+items[43], id: 1, sleep  init
+items[44], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 1
+front:5, rear:6
+items[6], id: 3, runble test_lock
+
+>======procdmp finish======<
+
+
+oop: 5300
+elapsed loop: 5400
+elapsed loop: 5500
+elapsed loop: 5600
+elapsed loop: 5700
+elapsed loop: 5800
+elapsed loop: 5900
+elapsed loop: 6000
+elapsed loop: 6100
+elapsed loop: 6200
+>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 runble test_lock
+4 run    test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:21, rear:23
+items[22], id: 1, sleep  init
+items[23], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 1
+front:5, rear:6
+items[6], id: 3, runble test_lock
+
+>======procdmp finish======<
+
+
+elapsed loop: 6300
+elapsed loop: 6400
+>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 runble test_lock
+4 run    test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:51, rear:53
+items[52], id: 1, sleep  init
+items[53], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 1
+front:5, rear:6
+items[6], id: 3, runble test_lock
+
+>======procdmp finish======<
+
+
+elapsed loop: 6500
+elapsed loop: 6600
+elapsed loop: 670>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 runble test_lock
+4 run    test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:2, rear:4
+items[3], id: 1, sleep  init
+items[4], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 1
+front:5, rear:6
+items[6], id: 3, runble test_lock
+
+>======procdmp finish======<
+
+
+0
+elapsed loop: 6800
+elapsed loop: 6900
+elapsed loop: 7000
+elapsed loop: 7100
+elapsed loop: 7200
+elapsed loop: 7300
+>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 runble test_lock
+4 run    test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:30, rear:32
+items[31], id: 1, sleep  init
+items[32], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 1
+front:5, rear:6
+items[6], id: 3, runble test_lock
+
+>======procdmp finish======<
+
+
+elapsed loop: 7400
+elapsed loop: 7500
+elapsed loop: 7600
+elapsed loop: 7700
+elapsed loop: 7800
+elapsed loop: 7900
+elapsed loop: 8000
+elapsed loop: 8100
+elapsed loop: 8200
+elapsed loop: 8300
+elapsed lo>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 runble test_lock
+4 run    test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:13, rear:15
+items[14], id: 1, sleep  init
+items[15], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 1
+front:5, rear:6
+items[6], id: 3, runble test_lock
+
+>======procdmp finish======<
+
+
+op: 8400
+elapsed loopent: pid: 3, i:: 8500
+elapsed loop: 8600
+elapsed loop: 8700
+elapsed loop: 8800
+elapsed loop: 8900
+elapsed loop: 9000
+elapsed loop: 9100
+elapsed loop: 9200
+elapsed loop: >======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 runble test_lock
+4 run    test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:58, rear:60
+items[59], id: 1, sleep  init
+items[60], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 1
+front:6, rear:7
+items[7], id: 3, runble test_lock
+
+>======procdmp finish======<
+
+
+9300
+elapsed loop: 9400
+elapsed loop: 9500
+elapsed loop: 9600
+elapsed loop: 9700
+elapsed loop: 9800
+elapsed loop: 9900
+loop finishedProcess 4
+L0: 787
+L>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 runble test_lock
+4 run    test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:39, rear:41
+items[40], id: 1, sleep  init
+items[41], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 1
+front:6, rear:7
+items[7], id: 3, runble test_lock
+
+>======procdmp finish======<
+
+
+1: 214
+L2: 8999
+Fatal: schedulerUnlock: It's not locked!
+pid: 4, used_ticks: 3, qlev: 2
+
+ 200
+parent: pid: 3, i: 300
+parent: pid: 3, i: 400
+parent: pid: 3, i: 500
+parent: pid: 3, i: 600
+parent: pid: 3, i: 700
+parent: pid: 3, i: 800
+parent: pid: 3, i: 900
+>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 run    test_lock
+4 zombie test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:20, rear:22
+items[21], id: 1, sleep  init
+items[22], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 0
+front:7, rear:7
+
+>======procdmp finish======<
+
+
+parent: pid: 3, i: 1000
+parent: pid: 3, i: 1100
+parent: pid: 3, i: 1200
+parent: pid: 3, i: 1300
+parent: pid: 3, i: 1400
+parent: pid: 3, i: 1500
+parent: pid: 3, i: 1600
+parent: pid: 3, i: 1700
+parent: pid: 3, i: 18>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 run    test_lock
+4 zombie test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:64, rear:1
+items[0], id: 1, sleep  init
+items[1], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 0
+front:7, rear:7
+
+>======procdmp finish======<
+
+
+00
+parent: pid: 3, i: 1900
+parent: pid: 3, i: 2000
+parent: pid: 3, i: 2100
+parent: pid: 3, i: 2200
+parent: pid: 3, i: 2300
+parent: pid: 3, i: 2400
+parent: pid: 3, i: 2500
+parent: pid: 3, i: 2600
+parent: pid>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 run    test_lock
+4 zombie test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:45, rear:47
+items[46], id: 1, sleep  init
+items[47], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 0
+front:7, rear:7
+
+>======procdmp finish======<
+
+
+: 3, i: 2700
+parent: pid: 3, i: 2800
+parent: pid: 3, i: 2900
+parent: pid: 3, i: 3000
+parent: pid: 3, i: 3100
+parent: pid: 3, i: 3200
+parent: pid: 3, i: 3300
+parent: pid: 3, i: 3400
+parent: pid: 3, i: 3500
+>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 run    test_lock
+4 zombie test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:24, rear:26
+items[25], id: 1, sleep  init
+items[26], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 0
+front:7, rear:7
+
+>======procdmp finish======<
+
+
+parent: pid: 3, i: 3600
+parent: pid: 3, i: 3700
+parent: pid: 3, i: 3800
+parent: pid: 3, i: 3900
+parent: pid: 3, i: 4000
+parent: pid: 3, i: 4100
+parent: pid: 3, i: 4200
+parent: pid: 3, i: 4300
+parent: pid>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 run    test_lock
+4 zombie test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:7, rear:9
+items[8], id: 1, sleep  init
+items[9], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 0
+front:7, rear:7
+
+>======procdmp finish======<
+
+
+: 3, i: 4400
+parent: pid: 3, i: 4500
+parent: pid: 3, i: 4600
+parent: pid: 3, i: 4700
+parent: pid: 3, i: 4800
+parent: pid: 3, i: 4900
+parent: pid: 3, i: 5000
+parent: pid: 3, i: 5100
+parent: pid: 3, i: 5200
+parent: pid: 3, i: 5300
+paren>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 run    test_lock
+4 zombie test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:61, rear:63
+items[62], id: 1, sleep  init
+items[63], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 0
+front:7, rear:7
+
+>======procdmp finish======<
+
+
+t: pid: 3, i: 5400
+parent: pid: 3, i: 5500
+parent: pid: 3, i: 5600
+parent: pid: 3, i: 5700
+parent: pid: 3, i: 5800
+parent: pid: 3, i: 5900
+parent: pid: 3, i: 6000
+parent: pid: 3, i: 6100
+parent: pid: 3, >======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 run    test_lock
+4 zombie test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:42, rear:44
+items[43], id: 1, sleep  init
+items[44], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 0
+front:7, rear:7
+
+>======procdmp finish======<
+
+
+i: 6200
+parent: pid: 3, i: 6300
+parent: pid: 3, i: 6400
+parent: pid: 3, i: 6500
+parent: pid: 3, i: 6600
+parent: pid: 3, i: 6700
+parent: pid: 3, i: 6800
+parent: pid: 3, i: 6900
+parent: pid: 3, i: 7000
+parent: pid: 3, i: 7100
+parent: pid: 3, i: 7200
+paren>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 run    test_lock
+4 zombie test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:31, rear:33
+items[32], id: 1, sleep  init
+items[33], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 0
+front:7, rear:7
+
+>======procdmp finish======<
+
+
+t: pid: 3, i: 7300
+parent: pid: 3, i: 7400
+parent: pid: 3, i: 7500
+parent: pid: 3, i: 7600
+parent: pid: 3, i: 7700
+parent: pid: 3, i: 7800
+parent: pid: 3, i: 7900
+parent: pid: 3, i: 8000
+parent: pid: 3, i: 8100
+parent: pid: 3, i: 8200
+pa>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 run    test_lock
+4 zombie test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:18, rear:20
+items[19], id: 1, sleep  init
+items[20], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 0
+front:7, rear:7
+
+>======procdmp finish======<
+
+
+rent: pid: 3, i: 8300
+parent: pid: 3, i: 8400
+parent: pid: 3, i: 8500
+parent: pid: 3, i: 8600
+parent: pid: 3, i: 8700
+parent: pid: 3, i: 8800
+parent: pid:>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 run    test_lock
+4 zombie test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:54, rear:56
+items[55], id: 1, sleep  init
+items[56], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 0
+front:7, rear:7
+
+>======procdmp finish======<
+
+
+ 3, i: 8900
+parent: pid: 3, i: 9000
+parent: pid: 3, i: 9100
+parent: pid: 3, i: 9200
+parent: pid: 3, i: 9300
+parent: pid: 3, i: 9400
+parent: pid: 3, i: 9500
+parent: pid: 3, i: 9600
+parent: pid: 3, i: 9700
+parent: pid: 3, i:>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 80104533 80105489 80106605 8010633c
+3 run    test_lock
+4 zombie test_lock
+
+*****mlfq info*****
+queue Level: 0, size: 2
+front:37, rear:39
+items[38], id: 1, sleep  init
+items[39], id: 2, sleep  sh
+
+queue Level: 1, size: 0
+front:13, rear:13
+
+queue Level: 2, size: 0
+front:7, rear:7
+
+>======procdmp finish======<
+
+
+ 9800
+parent: pid: 3, i: 9900
+Process 3
+L0: 0
+L1: 101
+L2: 9899
+$ >======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 8010466c 801002d2 8010105c 80105759 80105489 80106605 8010633c
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:30, rear:31
+items[31], id: 1, sleep  init
+
+queue Level: 1, size: 1
+front:49, rear:50
+items[50], id: 2, sleep  sh
+
+queue Level: 2, size: 0
+front:7, rear:7
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+1 sleep  init 80104533 80105489 80106605 8010633c
+2 sleep  sh 8010466c 801002d2 8010105c 80105759 80105489 80106605 8010633c
+
+*****mlfq info*****
+queue Level: 0, size: 1
+front:5, rear:6
+items[6], id: 1, sleep  init
+
+queue Level: 1, size: 1
+front:24, rear:25
+items[25], id: 2, sleep  sh
+
+queue Level: 2, size: 0
+front:7, rear:7
+
+>======procdmp finish======<
+
+
