@@ -14,10 +14,6 @@ extern uint vectors[];  // in vectors.S: array of 256 entry pointers
 struct spinlock tickslock;
 uint ticks;
 
-// project1
-uint global_ticks;
-extern int boosting_occured;
-
 void
 tvinit(void)
 {
@@ -59,12 +55,6 @@ trap(struct trapframe *tf)
     if(cpuid() == 0){
       acquire(&tickslock);
       ticks++;
-      global_ticks++;
-      if (global_ticks == 100)
-      {
-        global_ticks = 0;
-        priority_boosting();
-      }
       wakeup(&ticks); //h 타이머 인터럽트 발생시 ticks를 채널로 sleep하던 프로세스 깨움
       release(&tickslock);
     }
@@ -132,11 +122,7 @@ trap(struct trapframe *tf)
   // If interrupts were on while locks held, would need to check nlock.
   if(myproc() && myproc()->state == RUNNING
       && tf->trapno == T_IRQ0+IRQ_TIMER)
-  {
-    if (!boosting_occured)
-      myproc()->used_ticks++; //h 현재 프로세스가 running이고 타이머 인터럽트를 받았다면, 한틱동안 큐에 머문 것
     yield();
-  }
 
   // Check if the process has been killed since we yielded
   if(myproc() && myproc()->killed && (tf->cs&3) == DPL_USER)

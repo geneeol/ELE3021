@@ -13,13 +13,8 @@ struct {
   struct proc proc[NPROC];
 } ptable;
 
-// project 1
-t_queue mlfq[NMLFQ];
-static const int mlfq_time_quantum[NMLFQ] = {4, 6, 8};
-
 int sched_locked = 0;
 int unlock_occured = 0;
-int boosting_occured;
 
 // static char *states2[] = {
 //   [UNUSED]    "unused",
@@ -29,7 +24,6 @@ int boosting_occured;
 //   [RUNNING]   "run   ",
 //   [ZOMBIE]    "zombie"
 //   };
-
 
 static struct proc *initproc;
 
@@ -174,12 +168,6 @@ userinit(void)
   acquire(&ptable.lock);
 
   p->state = RUNNABLE; //h allocproc로 ptable에 프로세스 할당후 runnable로 바꿈으로서 스케쥴러가 실행가능하게 함
-
-  // 첫 프로세스를 L0 큐에 넣는다
-  // 락을 획득하고 큐에 push해야 인터럽트를 받지 않는다
-  if (queue_push_back(&mlfq[L0], p) == -1) // 절대 실패하지 않지만 혹시나 해서..
-    cprintf("userinit: queue_push failed");
-
   release(&ptable.lock);
 }
 
@@ -247,13 +235,8 @@ fork(void)
   acquire(&ptable.lock);
 
   np->state = RUNNABLE; //h 생성한 프로세스를 이곳에서 RUNNABLE 상태로 변경
-  // 새로운 자식은 항상 L0큐에 진입한다. 
-  // 락이 걸린 상태에서 큐에 push해야 인터럽트에 방해받지 않는다
-  if (queue_push_back(&mlfq[L0], np) == -1)
-    cprintf("fork: queue_push failed\n");
 
   release(&ptable.lock);
-
   return pid;
 }
 
@@ -354,100 +337,7 @@ wait(void)
   }
 }
 
-struct proc *
-find_runnable_in_rr(struct queue *q)
-{
-  struct proc *p;
-  int begin;
-  int end;
-
-  begin = (q->front + 1) % (NPROC + 1);
-  end = (q->rear + 1) % (NPROC + 1);
-
-  for (int iter = begin; iter != end; iter = (iter + 1) % (NPROC + 1))
-  {
-    p = queue_front(q); // queue가 empty인 상황은 앞에서 걸러진다
-    queue_pop(q);
-    if (p->state == RUNNABLE)
-      return p;
-    // sleeping 혹은 zombie 상태의 프로세스는 큐 맨뒤로 보낸다
-    // 단 정상적이라면 zombie 프로세스는 큐에 존재해선 안된다
-    queue_push_back(q, p);
-  }
-  return 0;
-}
-
-struct proc *
-find_runnable_in_fcfs_priority(struct queue *q)
-{
-  struct proc *p;
-  struct proc *tmp;
-  int lowest_priority;
-  int begin;
-  int end;
-  int rotate_cnt; 
-
-  p = 0;
-  lowest_priority = 4;
-  begin = (q->front + 1) % (NPROC + 1);
-  end = (q->rear + 1) % (NPROC + 1);
-  rotate_cnt = 0;
-  for (int iter = begin; iter != end; iter = (iter + 1) % (NPROC + 1))
-  {
-    tmp = q->items[iter]; // queue가 empty인 상황은 앞에서 걸러진다
-    // 큐를 전부 탐색하며 우선순위가 가장 낮은 프로세스를 찾는다
-    // 해당 프로세스를 큐의 맨 앞으로 보내기 위해 필요한 큐 회전 횟수를 기록한다
-    if (tmp->state == RUNNABLE && tmp->priority < lowest_priority)
-    {
-      lowest_priority = tmp->priority;
-      p = tmp;
-      rotate_cnt = dist_between_iters(begin, iter); 
-    }
-  }
-  if (p)
-  {
-    // 선택한 프로세스를 큐 맨 앞으로 보낸다
-    for (int i = 0; i < rotate_cnt; i++) 
-    {
-      tmp = queue_front(q);
-      queue_pop(q);
-      queue_push_back(q, tmp);
-    }
-    queue_pop(q);
-  }
-  return (p);
-}
-
-void
-priority_boosting(void) //h 부스팅은 반드시 tickslock이 걸렸을 때 발생하기에 인터럽트 당하지 않는다
-{
-  int begin;
-  int end;
-  struct proc *poped;
-
-  boosting_occured = 1;
-  schedulerUnlock(PASSWORD);
-
-  for (int qlev = L0; qlev <= L2; qlev++)
-  {
-    begin = (mlfq[qlev].front + 1) % (NPROC + 1);
-    end = (mlfq[qlev].rear + 1) % (NPROC + 1);
-    for (int iter = begin; iter != end; iter = (iter + 1) % (NPROC + 1))
-    {
-      mlfq[qlev].items[iter]->priority = 3;
-      mlfq[qlev].items[iter]->used_ticks = 0;
-      if (qlev > L0)
-      {
-        poped = queue_front(&mlfq[qlev]);
-        poped->qlev = L0; // L1나 L2큐에 있는 프로세스의 큐레벨을 0으로 초기화한 후 L0큐에 넣는다
-        queue_pop(&mlfq[qlev]);
-        queue_push_back(&mlfq[L0], poped);
-      }
-    }
-  }
-}
-
-// PAGEBREAK: 42
+//PAGEBREAK: 42
 // Per-CPU process scheduler.
 // Each CPU calls scheduler() after setting itself up.
 // Scheduler never returns.  It loops, doing:
@@ -458,196 +348,38 @@ priority_boosting(void) //h 부스팅은 반드시 tickslock이 걸렸을 때 �
 void
 scheduler(void)
 {
-  struct proc *p = 0;
+  struct proc *p;
   struct cpu *c = mycpu();
-  int is_demoted;
   c->proc = 0;
   
-  for(;;)
-  {
+  for(;;){
     // Enable interrupts on this processor.
     sti();
-    //h 이 사이에서 인터럽트로 인한 부스팅이 발생할 수 있다
 
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
+    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+      if(p->state != RUNNABLE)
+        continue;
 
-    is_demoted = 0;
-    // 현재 스케쥴러가 락돼있거나, 직전에 언락된 경우가 아닐 때만 큐를 순회하며 찾는다
-    // 그 외 경우라면 이전에 스케쥴링됐던 프로세스 p를 다시 사용한다
-    if (!sched_locked && !unlock_occured) 
-    {
-      // 이전에 사용한 p가 남아있을 수 있으므로 널로 리셋해준다
-      p = 0;
-      for (int qlev = L0; qlev <= L2; qlev++)
-      {
-        if (queue_is_empty(&mlfq[qlev]))
-          continue ;
-        if (qlev == L2)
-          p = find_runnable_in_fcfs_priority(&mlfq[qlev]);
-        else
-          p = find_runnable_in_rr(&mlfq[qlev]);
-        if (p) // 찾았으면 p는 널포인터가 아니다
-          break;
-      }
-    }
-    //h 모든 유저프로세스가 sleep이어도 스케쥴러는 돌아가기에 이 분기 발생
-    if (!p)
-    {
-      release(&ptable.lock);
-      continue ;
-    }
+      // Switch to chosen process.  It is the process's job
+      // to release ptable.lock and then reacquire it
+      // before jumping back to us.
+      c->proc = p;
+      switchuvm(p);
+      p->state = RUNNING;
 
-    //h 스케쥴러에서 락한 것은 아마 선택된 프로세스가 lock을 릴리즈하는 것 같다
-    // Switch to chosen process.  It is the process's job
-    // to release ptable.lock and then reacquire it
-    // before jumping back to us.
-    c->proc = p;
-    switchuvm(p);
-    p->state = RUNNING;
+      swtch(&(c->scheduler), p->context);
+      switchkvm();
 
-    swtch(&(c->scheduler), p->context);
-    switchkvm(); //h 스케쥴러로 다시 컨텐스트 스위칭이 일어나면 이 부분부터 코드가 실행된다
-
-
-    // 4가지 경우중 하나 1. 부스팅발생 2. 스케쥴러가 락됨 3. 방금 언락됨 4. 일반적인 상황
-    // 경우를 1 / 2,3,4 로 나눔. 즉 if문과 if else if else 
-
-    // 현재 p의 상태에 대해서!
-    // 1. 만약 p가 running 중에 인터럽트를 당했다면 yield를 호출한 것임.
-    // 따라서 yield에 의해 p 상태는 runnable로 변경
-    // 2 좀비였다면 exit을 호출한 것이고,
-    // 이는 인터럽트가 아닌 sched 호출에의해 스케쥴러로 바로 전환됨
-    // 3 슬립 상태라면 다시 runnable로 바뀔 수 있으므로 큐에 넣어준다
-
-    // 부스팅은 인터럽트가 발생햇을때만 가능, 즉 실행중이던 프로세스가 타임퀀텀 안에 안끝났을때만 발생
-    if (boosting_occured)
-    {
-      boosting_occured = 0;
-      p->priority = 3;
-      p->qlev = L0;
-      p->used_ticks = 0;
-      // 부스팅이 발생한 경우에서도 두 가지 경우로 나뉜다 1. 스케쥴러 언락 발생 2. 일반적인 부스팅
-      if (unlock_occured)
-      {
-        unlock_occured = 0;
-        if (p->state != ZOMBIE) // zombie가 아님을 확인후 큐에 다시 집어넣는다 (방어적 코딩)
-          queue_push_front(&mlfq[L0], p);  //h 부스팅에 의해 언락 발생했을시, 해당 프로세스는 다시 큐 맨앞으로 가야한다
-      }
-      else
-      { 
-        if (p->state != ZOMBIE)
-          queue_push_back(&mlfq[L0], p); // 공평성을 위해 부스팅이 발생하면 L0맨 뒤에 넣는다
-      }
-      //h 아래 분기로 내려가지 않고 다시 continue를 통해 반복문 위로 올라간다 
+      // Process is done running for now.
+      // It should have changed its p->state before coming back.
       c->proc = 0;
-      release(&ptable.lock);
-      continue ;
     }
-
-    if (sched_locked)
-    {
-      //h 정상적이라면 unlock을 호출후 exit할 때 큐에서 제거된다, 따라서 lock한 프로세스가 좀비면 절대 안된다
-      if (p->state == ZOMBIE)
-      {
-        cprintf("pid: %d, The process ended without unlocking sched\n", p->pid);
-        sched_locked = 0;
-      }
-    }
-    else if (unlock_occured) //h 직전에 unlock을 호출했다면
-    {
-      //h unlock함수는 락이 존재할 때만 unlock_occured 변수값을 1로 한다
-      //  따라서 락 전에 언락을 호출하는 경우는 아무일도 발생하지 않는다.
-      //  이는 부스팅에 의해 언락이 두번 호출되는 경우를 사전에 알 수 없기 때문에 이렇게 설계했다
-      unlock_occured = 0;
-      if (p->state != ZOMBIE) // unlock 발생했는데 종료되지 않았다면 mlfq 맨 앞에 삽입한다
-      {
-        p->priority = 3;
-        p->qlev = L0;
-        p->used_ticks = 0;
-        queue_push_front(&mlfq[L0], p);
-      }
-    }
-    else //h 일반적인 스케쥴러 동작 상황
-    {
-      if (p->used_ticks >= mlfq_time_quantum[p->qlev])
-      {
-        p->used_ticks = 0;
-        if (p->qlev == L2 && p->priority > 0)
-            p->priority--;
-        if (p->qlev < L2)
-        {
-          p->qlev++;
-          is_demoted = 1;
-        }
-      }
-      if (p->state != ZOMBIE) 
-      {
-        if (p->qlev == L2 && !is_demoted) // 원래 l2큐에 있던 녀석만, 해당 큐의 맨앞으로 보낸다
-          queue_push_front(&mlfq[p->qlev], p);
-        else
-          queue_push_back(&mlfq[p->qlev], p);
-      }
-    }
-    // Process is done running for now.
-    // It should have changed its p->state before coming back.
-    c->proc = 0;
-
     release(&ptable.lock);
+
   }
 }
-
-// void
-// scheduler(void)
-// {
-//   struct proc *p;
-//   struct cpu *c = mycpu();
-//   c->proc = 0;
-  
-//   for(;;){
-//     // Enable interrupts on this processor.
-//     sti();
-
-//     // 당연히 순회방식 변경
-//     // Loop over process table looking for process to run.
-//     acquire(&ptable.lock);
-//     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-//       if(p->state != RUNNABLE)
-//         continue;
-
-//       // 선택된 프로세스가 lock을 해제하는 것 같다
-//       // Switch to chosen process.  It is the process's job
-//       // to release ptable.lock and then reacquire it
-//       // before jumping back to us.
-//       c->proc = p;
-//       switchuvm(p);
-//       p->state = RUNNING;
-
-//       swtch(&(c->scheduler), p->context);
-//       switchkvm(); 
-//       // 스케쥴러로 다시 컨텐스트 스위칭이 일어나면 이 부분부터 코드가 실행된다
-
-//       // acquire(&tickslock);
-
-//       // cprintf("switched to scheduler\n");
-//       // cprintf("global_ticks: %d\n", global_ticks);
-//       // cprintf("ticks: %d\n\n", ticks);
-//       // if (global_ticks >= 100)
-//       // {
-//       //   global_ticks = 0;
-//       //   priority_boosting();
-//       // }
-
-//       // release(&tickslock);
-
-//       // Process is done running for now.
-//       // It should have changed its p->state before coming back.
-//       c->proc = 0;
-//     }
-//     release(&ptable.lock);
-
-//   }
-// }
 
 // Enter scheduler.  Must hold only ptable.lock
 // and have changed proc->state. Saves and restores
@@ -794,40 +526,6 @@ kill(int pid)
   return -1;
 }
 
-void
-mlfq_print(void)
-{
-  static char *states[] = {
-  [UNUSED]    "unused",
-  [EMBRYO]    "embryo",
-  [SLEEPING]  "sleep ",
-  [RUNNABLE]  "runble",
-  [RUNNING]   "run   ",
-  [ZOMBIE]    "zombie"
-  };
-  int qlev;
-  int iter;
-  int begin, end;
-
-  for(qlev = L0; qlev <= L2; qlev++)
-  {
-    cprintf("queue Level: %d, size: %d\n", qlev, queue_get_size(&mlfq[qlev]));
-    cprintf("front:%d, rear:%d\n", mlfq[qlev].front, mlfq[qlev].rear);
-
-    begin = (mlfq[qlev].front + 1) % (NPROC + 1);
-    end = (mlfq[qlev].rear + 1) % (NPROC + 1);
-    for(iter = begin; iter != end; iter = (iter + 1) % (NPROC + 1))
-    {
-      cprintf("items[%d], id: %d, %s %s\n",
-              iter,
-              mlfq[qlev].items[iter]->pid,
-              states[mlfq[qlev].items[iter]->state],
-              mlfq[qlev].items[iter]->name);
-    }
-    cprintf("\n");
-  }
-}
-
 //h 프로세스 정보를 출력해주는 디버깅용 함수
 //PAGEBREAK: 36
 // Print a process listing to console.  For debugging.
@@ -866,18 +564,6 @@ procdump(void)
     }
     cprintf("\n");
   }
-  cprintf("\n*****mlfq info*****\n");
-  mlfq_print();
-  // for (int qlev = L0; qlev <= L2; qlev++)
-  // {
-  //   cprintf("qlev: %d\n", qlev);
-  //   for (int i = 0; i < NPROC + 1; i++)
-  //   {
-  //     if (mlfq[qlev].items[i] != 0)
-  //       cprintf("q->items[%d], pid: %d, priority: %d\n", i, mlfq[qlev].items[i]->pid, mlfq[qlev].items[i]->priority);
-  //   }
-  //   cprintf("q front: %d, rear: %d\n\n", mlfq[qlev].front, mlfq[qlev].rear);
-  // }
   cprintf("\n>======procdmp finish======<\n");
   cprintf("\n\n");
 }
@@ -927,9 +613,6 @@ schedulerLock(int password)
   struct proc *p;
 
   acquire(&ptable.lock); // 스케쥴락이 호출됐을 때, 작업이 종료되기 전 interrupt를 방지한다
-  acquire(&tickslock); // 안해도 될 것 같긴한데 안전하게 추가..
-  global_ticks = 0; // 부스팅 발생시 틱을 0으로 초기화 한다
-  release(&tickslock);
   p = myproc();
   if (sched_locked) // 락을 두번 시도하면 패스워드가 틀렸을지라도 반드시 해제하고 exit해야 한다
   {
