@@ -730,6 +730,8 @@ sleep(void *chan, struct spinlock *lk) // 커널에서 프로세스를 재울 �
   if(lk != &ptable.lock){  //DOC: sleeplock0
     acquire(&ptable.lock);  //DOC: sleeplock1
     release(lk);
+    //h sleeplock인 경우 lk가 ptable.lock과 다름. 이 경우 sleep하기 전에 release 필요
+    //h release가 필요한 이유. 1. 데드락 방지 2. 비지웨잇 막기 위해?
   }
   // Go to sleep.
   p->chan = chan;

@@ -22,7 +22,7 @@ initsleeplock(struct sleeplock *lk, char *name)
 void
 acquiresleep(struct sleeplock *lk)
 {
-  acquire(&lk->lk);
+  acquire(&lk->lk); //h lk->lk는 lk를 보호하기 위해 존재
   while (lk->locked) {
     sleep(lk, &lk->lk);
   }
