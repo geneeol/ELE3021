@@ -54,6 +54,9 @@ struct proc {
   int priority;
   int qlev;
   int used_ticks;
+
+  // project2 맴버 추가
+  int mem_limit;
 };
 
 // Process memory is laid out contiguously, low addresses first:

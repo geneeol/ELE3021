@@ -189,3 +189,18 @@ sys_mutex_unlock(void)
   cprintf("sys_mutex_unlock: %s, %p\n", lock->name, lock);
   return (0);
 }
+
+/***** proj2 *****/
+
+int
+sys_setmemorylimit(void)
+{
+  int pid;
+  int limit;
+
+  if (argint(0, &pid) < 0)
+    return (-1);
+  if (argint(1, &limit) < 0)
+    return (-1);
+  return (setmemorylimit(pid, limit));
+}

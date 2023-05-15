@@ -132,6 +132,11 @@ void			mutex_init(struct spinlock *lk, char *name);
 void			mutex_lock(struct spinlock *lk);			
 void			mutex_unlock(struct spinlock *lk);
 
+// project2 추가한 시스템콜
+int				exec2(char *path, char **argv, int stacksize);
+int				setmemorylimit(int pid, int limit);
+
+
 // swtch.S
 void            swtch(struct context**, struct context*);
 

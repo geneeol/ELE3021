@@ -31,3 +31,5 @@
 #define SYS_mutex_init 29
 #define SYS_mutex_lock 30
 #define SYS_mutex_unlock 31
+#define SYS_exec2 32
+#define SYS_setmemorylimit 33

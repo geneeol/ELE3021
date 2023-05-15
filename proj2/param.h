@@ -15,3 +15,5 @@
 // projcect 1
 #define PASSWORD 2019035587
 
+// project 2
+#define UNLIMITED 0x7fffffff

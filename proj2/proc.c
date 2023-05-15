@@ -106,7 +106,7 @@ found:
   p->priority = 3;
   p->qlev = L0;
   p->used_ticks = 0;
-  // cprintf("allocproc: pid %d\n", p->pid);
+  p->mem_limit = UNLIMITED; //h 새로이 생성된 프로세스는 메모리 제한이 없다.
 
   release(&ptable.lock);
 
@@ -171,6 +171,8 @@ userinit(void)
   release(&ptable.lock);
 }
 
+//h sbrk를 호출하면 해당 함수를 통해 프로세스의 heap에 추가적인 메모리를 할당한다.
+//  프로세스의 heap 사이즈와 페이지 테이블을 업데이트한다.
 // Grow current process's memory by n bytes.
 // Return 0 on success, -1 on failure.
 int
@@ -180,6 +182,11 @@ growproc(int n)
   struct proc *curproc = myproc();
 
   sz = curproc->sz;
+  //h mem_limit보다 늘렸을 때의 프로세스 메모리 사이즈가 작은지 체크
+  //  uint + int 랑 int 자료형 비교하지만 문제 되진 않는듯.
+  //  (애초에 limit이 int형 자료형이고 n도 int형) 
+  if (sz + n > curproc->mem_limit)
+    return -1;
   if(n > 0){
     if((sz = allocuvm(curproc->pgdir, sz, sz + n)) == 0)
       return -1;
@@ -666,4 +673,39 @@ schedulerUnlock(int password)
     unlock_occured = 1;
   }
   release(&ptable.lock);
+}
+
+/***** system calls for project2 *****/
+
+int
+setmemorylimit(int pid, int limit)
+{
+  struct proc *p;
+  int invalid_pid = 1;
+
+  if (limit < 0)
+    return (-1);
+  acquire(&ptable.lock);
+  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
+  {
+    if (p->pid == pid)
+    {
+      // TODO: 쓰레드끼리는 sz값이 동일하느냐? 만약 동일하지 않으면 특정 쓰레드에서
+      // limit값 설정에 실패하고, 다른 쓰레드에선 성공하는 경우 고려해야함
+      if (p->sz > limit)
+      {
+        release(&ptable.lock);
+        return (-1);
+      }
+      if (limit == 0)
+        p->mem_limit = UNLIMITED;
+      else
+        p->mem_limit = limit;
+      invalid_pid = 0;
+    }
+  }
+  release(&ptable.lock);
+  if (invalid_pid)
+    return (-1);
+  return (0);
 }
