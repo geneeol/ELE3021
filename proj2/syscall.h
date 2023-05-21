@@ -33,3 +33,6 @@
 #define SYS_mutex_unlock 31
 #define SYS_exec2 32
 #define SYS_setmemorylimit 33
+#define SYS_thread_create 34
+#define SYS_thread_exit 35
+#define SYS_thread_join 36

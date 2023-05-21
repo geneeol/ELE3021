@@ -116,6 +116,9 @@ extern int sys_mutex_lock(void);
 extern int sys_mutex_unlock(void);
 extern int sys_exec2(void);
 extern int sys_setmemorylimit(void);
+extern int sys_thread_create(void);
+extern int sys_thread_exit(void);
+extern int sys_thread_join(void);
 
 // TODO: 시스템콜 함수 포인터 배열에 추가
 static int (*syscalls[])(void) = {
@@ -152,6 +155,9 @@ static int (*syscalls[])(void) = {
 [SYS_mutex_unlock] sys_mutex_unlock,
 [SYS_exec2] sys_exec2,
 [SYS_setmemorylimit] sys_setmemorylimit,
+[SYS_thread_create] sys_thread_create,
+[SYS_thread_exit] sys_thread_exit,
+[SYS_thread_join] sys_thread_join,
 };
 
 void

@@ -10,6 +10,8 @@ struct sleeplock;
 struct stat;
 struct superblock;
 
+typedef int thread_t;
+
 // bio.c
 void            binit(void);
 struct buf*     bread(uint, uint);
@@ -135,6 +137,11 @@ void			mutex_unlock(struct spinlock *lk);
 // project2 추가한 시스템콜
 int				exec2(char *path, char **argv, int stacksize);
 int				setmemorylimit(int pid, int limit);
+int				thread_create(thread_t *thread, 
+								void *(*start_routine)(void *),
+								void *arg);
+void			thread_exit(void *retval);
+int				thread_join(thread_t thread, void **retval);
 
 
 // swtch.S

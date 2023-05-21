@@ -111,27 +111,12 @@ found:
 
   release(&ptable.lock);
 
-  // Allocate kernel stack.
-  if((p->kstack = kalloc()) == 0){
+  // TODO: 락 여부 꼼꼼히 확인할 것
+  if (allocthread(p) == 0) 
+  {
     p->state = UNUSED;
-    return 0;
+    return (0);
   }
-  sp = p->kstack + KSTACKSIZE;
-
-  // Leave room for trap frame.
-  sp -= sizeof *p->tf;
-  p->tf = (struct trapframe*)sp;
-
-  // Set up new context to start executing at forkret,
-  // which returns to trapret.
-  sp -= 4;
-  *(uint*)sp = (uint)trapret;
-
-  sp -= sizeof *p->context;
-  p->context = (struct context*)sp;
-  memset(p->context, 0, sizeof *p->context);
-  p->context->eip = (uint)forkret; // eip는 pc 레지스터로 모든 자식은 forkret에서부터 시작한다
-
   return p;
 }
 
@@ -216,7 +201,6 @@ fork(void)
   }
 
   // Copy process state from proc.
-  // TODO: setmemorylimit과 관계 고려할 것
   if((np->pgdir = copyuvm(curproc->pgdir, curproc->sz)) == 0){
     kfree(np->kstack);
     np->kstack = 0;
@@ -356,8 +340,10 @@ void
 scheduler(void)
 {
   struct proc *p;
+  struct thread *t;
   struct cpu *c = mycpu();
   c->proc = 0;
+  c->thread = 0;
   
   for(;;){
     // Enable interrupts on this processor.
@@ -365,23 +351,30 @@ scheduler(void)
 
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
-    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-      if(p->state != RUNNABLE)
-        continue;
+    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
+    {
+      for (p->thread_idx = 0; p->thread_idx < NTHREAD; p->thread_idx++)
+      {
+        t = &p->threads[p->thread_idx];
+        if(t->state != RUNNABLE)
+          continue;
 
-      // Switch to chosen process.  It is the process's job
-      // to release ptable.lock and then reacquire it
-      // before jumping back to us.
-      c->proc = p;
-      switchuvm(p);
-      p->state = RUNNING;
+        // Switch to chosen process.  It is the process's job
+        // to release ptable.lock and then reacquire it
+        // before jumping back to us.
+        c->proc = p;
+        c->thread = t;
+        switchuvm(p);
+        t->state = RUNNING;
 
-      swtch(&(c->scheduler), p->context);
-      switchkvm();
+        swtch(&(c->scheduler), t->context);
+        switchkvm();
 
-      // Process is done running for now.
-      // It should have changed its p->state before coming back.
-      c->proc = 0;
+        // Process is done running for now.
+        // It should have changed its p->state before coming back.
+        c->proc = 0;
+        c->thread = 0;
+      }
     }
     release(&ptable.lock);
 
@@ -710,276 +703,163 @@ setmemorylimit(int pid, int limit)
   return (0);
 }
 
-// static struct thread*
-// allocthread(struct proc *p)
-// {
-//   struct thread *t;
-//   char *sp;
+static struct thread*
+allocthread(struct proc *p)
+{
+  struct thread *t;
+  char *sp;
 
-//   acquire(&ptable.lock);
-//   //h 이부분에서 ptable락은 필요 없을듯?
-//   // 만약 goto found로 갔는데 그 사이 다른쓰레드가 할당해버리면? 
-//   // 락 필요하네
-//   // allocthread는 alloproc와 무관하게 호출될 수 있으므로 함수 내부에서 그냥 락을 잡자
-//   for(t = p->threads; t < &p->threads[NTHREAD]; t++) //h ptable에서 빈 슬롯에 프로세스 할당
-//   {
-//     if(t->state == UNUSED)
-//       goto found;
-//   }
-//   release(&ptable.lock);
-//   return 0;
+  acquire(&ptable.lock);
+  //h 이부분에서 ptable락은 필요 없을듯?
+  // 만약 goto found로 갔는데 그 사이 다른쓰레드가 할당해버리면? 
+  // 락 필요하네
+  // allocthread는 alloproc와 무관하게 호출될 수 있으므로 함수 내부에서 그냥 락을 잡자
+  for(t = p->threads; t < &p->threads[NTHREAD]; t++) //h ptable에서 빈 슬롯에 프로세스 할당
+  {
+    if(t->state == UNUSED)
+      goto found;
+  }
+  release(&ptable.lock);
+  return 0;
 
-// found:
-//   t->state = EMBRYO;
-//   t->tid = nexttid++;
-//   t->main_proc = p;
+found:
+  t->state = EMBRYO;
+  t->tid = nexttid++;
+  t->main_proc = p;
 
-//   release(&ptable.lock);
+  release(&ptable.lock);
 
-//   // Allocate kernel stack.
-//   if((t->kstack = kalloc()) == 0){
-//     t->state = UNUSED;
-//     return 0;
-//   }
-//   sp = t->kstack + KSTACKSIZE;
+  // Allocate kernel stack.
+  if((t->kstack = kalloc()) == 0){
+    t->state = UNUSED;
+    return 0;
+  }
+  sp = t->kstack + KSTACKSIZE;
 
-//   // Leave room for trap frame.
-//   sp -= sizeof *t->tf;
-//   t->tf = (struct trapframe*)sp;
+  // Leave room for trap frame.
+  sp -= sizeof *t->tf;
+  t->tf = (struct trapframe*)sp;
 
-//   // Set up new context to start executing at forkret,
-//   // which returns to trapret.
-//   sp -= 4;
-//   *(uint*)sp = (uint)trapret;
+  // Set up new context to start executing at forkret,
+  // which returns to trapret.
+  sp -= 4;
+  *(uint*)sp = (uint)trapret;
 
-//   sp -= sizeof *t->context;
-//   t->context = (struct context*)sp;
-//   memset(t->context, 0, sizeof *t->context);
-//   t->context->eip = (uint)forkret; // eip는 pc 레지스터로 모든 자식은 forkret에서부터 시작한다
-//   p->n_thread++;
+  sp -= sizeof *t->context;
+  t->context = (struct context*)sp;
+  memset(t->context, 0, sizeof *t->context);
+  t->context->eip = (uint)forkret; // eip는 pc 레지스터로 모든 자식은 forkret에서부터 시작한다
+  p->n_thread++;
 
-//   return t;
-// }
+  return t;
+}
 
-
-// int
-// thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
-// {
-//   int i, pid;
-//   uint sz, sp;
-//   struct thread *nt;
-//   struct proc *curproc = myproc();
-
-//   // Allocate process.
-//   if((nt = allocthread(curproc)) == 0){
-//     return -1;
-//   }
-
-//   sz = curproc->sz;
-//   if (sz = allocuvm(curproc->pgdir, sz, sz + 2 * PGSIZE) == 0)
-//   {
-//     kfree(nt->kstack);
-//     nt->kstack = 0;
-//     nt->state = UNUSED;
-//     return (-1);
-//   }
-
-//   curproc->sz = sz;
-//   sp = sz;
-
-//   sp -= 4;
-//   *(uint *)sp = (uint)arg;
-//   sp -= 4;
-//   *(uint *)sp = (uint)0xffffffff;
-//   nt->tf->eip = (uint)start_routine;
-//   nt->tf->esp = sp;
-//   *thread = nt->tid;
-
-//   acquire(&ptable.lock);
-
-//   t->state = RUNNABLE;
-
-//   release(&ptable.lock);
-//   return 0;
-// }
 
 int
 thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
 {
-  int i;
-  uint sz;
-  uint sp;
-  struct proc *np;
-  struct proc *curproc;
-  struct proc *main;
+  int i, pid;
+  uint sz, sp;
+  struct thread *nt;
+  struct proc *curproc = myproc();
 
   // Allocate process.
-  if((np = allocproc()) == 0){
+  if((nt = allocthread(curproc)) == 0){
     return -1;
   }
-  --nextpid;
-  curproc = myproc();
-  if (curproc->main == 0)
-    main = curproc;
-  else
-    main = curproc->main;
-  np->tid = nexttid++;
-  np->main = main;
-  np->pid = main->pid;
 
-  // 락을 잡아야 하는가?
-  // pgdir = main->pgdir;
-  // sz = main->sz;
-
-  // 이 부분 락 필요할듯.
-  // fork에서 pgdir을 copy하는 대신 그대로 공유
-  sz = main->sz;
-  np->pgdir = main->pgdir;
-  if ((sz = allocuvm(main->pgdir, sz, sz + 2 * PGSIZE)) == 0)
+  sz = curproc->sz;
+  if (sz = allocuvm(curproc->pgdir, sz, sz + 2 * PGSIZE) == 0)
   {
-    kfree(np->kstack);
-    np->kstack = 0;
-    np->state = UNUSED;
+    kfree(nt->kstack);
+    nt->kstack = 0;
+    nt->state = UNUSED;
     return (-1);
   }
-  clearpteu(main->pgdir, (char*)(sz - 2*PGSIZE));
-  main->sz = sz;
-  np->sz = sz;
-  np->parent = main->parent;
-  *np->tf = *main->tf;
 
-  // 스택에 인자를 push하고 레지스터값을 수정
+  curproc->sz = sz;
   sp = sz;
+
   sp -= 4;
   *(uint *)sp = (uint)arg;
   sp -= 4;
   *(uint *)sp = (uint)0xffffffff;
-  np->tf->eip = (uint)start_routine;
-  np->tf->esp = sp;
-
-  for(i = 0; i < NOFILE; i++)
-    if(curproc->ofile[i])
-      np->ofile[i] = filedup(curproc->ofile[i]);
-  np->cwd = idup(curproc->cwd);
-
-  safestrcpy(np->name, curproc->name, sizeof(curproc->name));
+  nt->tf->eip = (uint)start_routine;
+  nt->tf->esp = sp;
+  *thread = nt->tid;
 
   acquire(&ptable.lock);
 
-  np->state = RUNNABLE; //h 생성한 프로세스를 이곳에서 RUNNABLE 상태로 변경
+  t->state = RUNNABLE;
 
   release(&ptable.lock);
-  *thread = np->tid;
-  return (0);
+  return 0;
 }
 
 void
 thread_exit(void *retval)
 {
   struct proc *curproc = myproc();
+  struct proc *p;
   int fd;
 
   if(curproc == initproc)
     panic("init exiting");
 
-  // Close all open files.
-  for(fd = 0; fd < NOFILE; fd++){
-    if(curproc->ofile[fd]){
-      fileclose(curproc->ofile[fd]);
-      curproc->ofile[fd] = 0;
+  acquire(&ptable.lock);
+
+  // Parent might be sleeping in wait().
+  wakeup1(curproc->parent);
+
+  // Pass abandoned children to init.
+  //h 고아 프로세스가 되지 않게끔, 현재 종료하려는 프로세스의 부모를 initproc로 바꾸어 준다
+  // 만약 현재 exit을 호출한 프로세스를 부모프로세스로 하는 자식이 있다면 wait이 호출되기 전에 exit이 호출된 것이다
+  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+    if(p->parent == curproc){
+      p->parent = initproc;
+      if(p->state == ZOMBIE)
+        wakeup1(initproc);
     }
   }
 
-  begin_op();
-  iput(curproc->cwd);
-  end_op();
-  curproc->cwd = 0;
-
-  acquire(&ptable.lock);
-
-  curproc->retval = retval;
-
-  // Parent might be sleeping in wait().
-  wakeup1(curproc->main);
-
+  //h 큐에서 pop 해야하는지 확인할 것! 안해도 상관은 없을 것 같은데 흠..
+  //  안해도 된다. 그냥 다시 큐에 집어넣지만 않으면 되는 것 
   //  Jump into the scheduler, never to return.
-  curproc->state = ZOMBIE;
+  curproc->state = ZOMBIE; //h 현재 프로세스를 ZOMBIE 상태로 변경한다,
+                           //  따라서 해당 프로세스는 더 이상 스케줄링 되지 않는다.
+                           //  이후 부모프로세스의 wait호출을 통해 회수된다
   sched(); //h scheduler로 컨텍스트 스위치가 되고 나면 두 번 다시 이 프로세스는 선택되지 않는다
   panic("zombie exit");
 }
-
-// int
-// thread_join(thread_t thread, void **retval)
-// {
-//   struct proc *p;
-//   struct thread *t;
-//   int havekids, pid;
-//   struct proc *curproc = myproc();
-  
-//   acquire(&ptable.lock);
-//   for(;;){
-//     // Scan through table looking for exited children.
-//     havekids = 0;
-//     for(t = curproc->threads; t < &curproc->threads[NPROC]; t++)
-//     {
-//       if( t->state == ZOMBIE)
-//       {
-//         // Found one.
-//         *retval = t->retval;
-//         kfree(t->kstack);
-//         t->kstack = 0;
-//         t->state = UNUSED;
-//         release(&ptable.lock);
-//         return (0);
-//       }
-//     }
-
-//     // No point waiting if we don't have any children.
-//     if(!havekids || curproc->killed){
-//       release(&ptable.lock);
-//       return -1;
-//     }
-
-//     // Wait for children to exit.  (See wakeup1 call in proc_exit.)
-//     sleep(curproc, &ptable.lock);  //DOC: wait-sleep
-//   }
-// }
 
 int
 thread_join(thread_t thread, void **retval)
 {
   struct proc *p;
-  int havethread;
+  struct thread *t;
+  int havekids, pid;
   struct proc *curproc = myproc();
   
   acquire(&ptable.lock);
   for(;;){
     // Scan through table looking for exited children.
-    havethread = 0;
-    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-      if (p->tid != thread)
-        continue;
-
-      havethread = 1;
-      if(p->state == ZOMBIE){
+    havekids = 0;
+    for(t = curproc->threads; t < &curproc->threads[NPROC]; t++)
+    {
+      if( t->state == ZOMBIE)
+      {
         // Found one.
-        if (retval)
-          *retval = p->retval;
-        kfree(p->kstack);
-        p->kstack = 0;
-        p->pid = 0;
-        p->tid = 0;
-        p->parent = 0;
-        p->name[0] = 0;
-        p->killed = 0;
-        p->state = UNUSED;
+        *retval = t->retval;
+        kfree(t->kstack);
+        t->kstack = 0;
+        t->state = UNUSED;
         release(&ptable.lock);
         return (0);
       }
     }
 
     // No point waiting if we don't have any children.
-    if(!havethread || curproc->killed){
+    if(!havekids || curproc->killed){
       release(&ptable.lock);
       return -1;
     }
@@ -988,3 +868,5 @@ thread_join(thread_t thread, void **retval)
     sleep(curproc, &ptable.lock);  //DOC: wait-sleep
   }
 }
+
+
