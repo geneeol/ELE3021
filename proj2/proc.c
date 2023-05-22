@@ -108,6 +108,7 @@ found:
   p->qlev = L0;
   p->used_ticks = 0;
   p->mem_limit = UNLIMITED; //h 새로이 생성된 프로세스는 메모리 제한이 없다.
+  p->main = 0;
 
   release(&ptable.lock);
 
