@@ -186,6 +186,9 @@ UPROGS=\
 	_zombie\
 	_usertests\
 	_p2_test1 \
+	_p2_basic_test \
+	_p2_fork \
+	_p2_t2 \
 	# _test_origin1\
 	# _test_lock\
 	# _test_lock2\
@@ -272,7 +275,7 @@ EXTRA=\
 	printf.c umalloc.c prac_myuserapp.c myapp.c prac2_usercall.c\
 	test_yield.c usertests.c test_mlfq.c test_mlfq2.c test_lock.c\
 	test_lock2.c test_mlfq3.c test_origin1.c test_interrupt.c\
-	p2_test1.c \
+	p2_test1.c p2_basic_test.c p2_fork.c p2_t2.c\
 	README dot-bochsrc *.pl toc.* runoff runoff1 runoff.list\
 	.gdbinit.tmpl gdbutil\
 

@@ -122,6 +122,7 @@ void            userinit(void);
 int             wait(void);
 void            wakeup(void*);
 void 			priority_boosting(void);
+int				retrieve_sub_threads(int pid);
 
 // project1 추가한 시스템콜
 void            yield(void);

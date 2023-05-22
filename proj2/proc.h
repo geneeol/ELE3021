@@ -72,7 +72,8 @@ struct proc {
   int mem_limit;
 
   thread_t tid;
-  struct proc *main; // 널드면 메인 쓰레드
+  struct proc *main; // 널이면 메인 쓰레드
+  int is_main;
   void *retval;
 
 
