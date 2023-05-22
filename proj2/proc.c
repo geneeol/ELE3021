@@ -803,6 +803,16 @@ setmemorylimit(int pid, int limit)
 //   return 0;
 // }
 
+// void
+// thread_start(void *(*start_routine)(void *), void *arg)
+// {
+//   void *retval;
+
+//   cprintf("thread_start\n");
+//   retval = start_routine(arg);
+//   thread_exit(retval);
+// }
+
 int
 thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
 {
