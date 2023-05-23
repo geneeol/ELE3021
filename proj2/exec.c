@@ -59,6 +59,7 @@ exec(char *path, char **argv)
       goto bad;
     if(ph.vaddr + ph.memsz < ph.vaddr)
       goto bad;
+    // 코드, 데이터 영역에 해당하는 메모리 할당. 프로세스마다 해당 크기가 상이하다.
     if((sz = allocuvm(pgdir, sz, ph.vaddr + ph.memsz)) == 0)
       goto bad;
     if(ph.vaddr % PGSIZE != 0)
@@ -137,6 +138,8 @@ exec2(char *path, char **argv, int stacksize)
   pde_t *pgdir, *oldpgdir;
   struct proc *curproc = myproc();
 
+  if (stacksize < 1 || stacksize > 100)
+    return (-1);
   begin_op();
 
   if((ip = namei(path)) == 0){
