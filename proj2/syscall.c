@@ -119,6 +119,7 @@ extern int sys_setmemorylimit(void);
 extern int sys_thread_create(void);
 extern int sys_thread_exit(void);
 extern int sys_thread_join(void);
+extern int sys_plist(void);
 
 // TODO: 시스템콜 함수 포인터 배열에 추가
 static int (*syscalls[])(void) = {
@@ -158,6 +159,7 @@ static int (*syscalls[])(void) = {
 [SYS_thread_create] sys_thread_create,
 [SYS_thread_exit] sys_thread_exit,
 [SYS_thread_join] sys_thread_join,
+[SYS_plist] sys_plist,
 };
 
 void

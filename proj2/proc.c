@@ -788,6 +788,35 @@ setmemorylimit(int pid, int limit)
   return (0);
 }
 
+// print process's information
+// it it include process's name, pid, the number of stack page, allocated memory size, limit of memory size
+// Also, it should consider its thread information
+int
+plist(void)
+{
+  struct proc *p;
+  
+  acquire(&ptable.lock);
+  for (p = ptable.proc; p < &ptable.proc[NPROC]; p++)
+  {
+    if (p->state == UNUSED)
+      continue ;
+    if (p->state == ZOMBIE)
+    {
+      cprintf("ZOMBIE detect!: pid: %d,", p->pid);
+      if (!p->is_main)
+        cprintf("it's thread: tid: %d\n", p->tid);
+      else
+        cprintf("it's main process\n");
+    }
+    if (p->is_main)
+      cprintf("name: %s, pid: %d, page: %d, memory size: 0x%x, limit: 0x%x\n", \
+                      p->name, p->pid, p->sz / PGSIZE, p->sz, p->mem_limit);
+  }
+  release(&ptable.lock);
+  return (0);
+}
+
 // static struct thread*
 // allocthread(struct proc *p)
 // {
@@ -1052,6 +1081,7 @@ thread_join(thread_t thread, void **retval)
       if (p->tid != thread)
         continue;
       havethread = 1;
+      // TODO: main 쓰레드 아니어도 회수할 수 있는지 확인.
       if (p->main != curproc)
       {
         release(&ptable.lock);

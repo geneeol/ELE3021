@@ -206,6 +206,12 @@ sys_setmemorylimit(void)
 }
 
 int
+sys_plist(void)
+{
+  return (plist());
+}
+
+int
 sys_thread_create(void)
 {
   thread_t *thread;

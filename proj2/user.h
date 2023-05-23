@@ -45,6 +45,7 @@ void mutex_unlock(struct spinlock *lk);
 // project2 추가한 시스템콜
 int exec2(char *path, char **argv, int stacksize);
 int setmemorylimit(int pid, int limit);
+int	plist(void);
 int thread_create(thread_t *thread, 
 					void *(*start_routine)(void *),
 					void *arg);

@@ -15,45 +15,37 @@ enum cmd_type
 };
 
 int
-mapcmd(char *cmd)
+is_digit(char ch)
 {
-	const char *cmd_dict[] = {
-		"list",
-		"kill",
-		"execute",
-		"memlim",
-		"exit"
-	};
-	int i;
-
-	i = 0;
-	while (i < 5) {
-		if (strcmp(cmd, cmd_dict[i]) == 0)
-			return (i);
-		i++;
-	}
-	return (0);
+  return ('0' <= ch && ch <= '9');
 }
 
-// TODO: 추후 thread 정보를 고려하여 출력
-// TODO: ps 시스템콜 구현
 int
 pm_list(char *buf, int cmd_len)
 {
-  if (buf[cmd_len] != 0)
+  if (buf[cmd_len] != '\n')
     return (1);
-  return (ps());
+  return (plist());
 }
 
 int
 pm_kill(char *buf, int cmd_len)
 {
+  int arg1_idx;
   int pid;
+  int i;
 
   if (buf[cmd_len] != ' ')
     return (1);
-  pid = atoi(buf + cmd_len + 1);
-  kill(pid);
+  arg1_idx = cmd_len + 1;
+  i = 0;
+  while (buf[arg1_idx + i] != 0 && is_digit(buf[arg1_idx + i]))
+    i++;
+  if (buf[arg1_idx + i] != '\n')
+    return (1);
+  pid = atoi(buf + arg1_idx);
+  if (kill(pid))
+    printf(2, "pmanger: kill failed\n");
   return (0);
 
 }
@@ -71,7 +63,6 @@ pm_execute(char *buf, int cmd_len)
 
   if (buf[cmd_len] != ' ')
     return (1);
-  // buf[cmd_len]: 공백, 바로 다음 인덱스가 첫번째 인자 시작 인덱스
   arg1_idx = cmd_len + 1;
   i = 0;
   while (buf[arg1_idx + i] != 0 && buf[arg1_idx + i] != ' ')
@@ -86,19 +77,25 @@ pm_execute(char *buf, int cmd_len)
   i = 0;
   while (buf[arg2_idx + i] != 0 && is_digit(buf[arg2_idx + i]))
     i++;
-  if (buf[arg2_idx + i] != 0)
+  if (buf[arg2_idx + i] != '\n')
     return (1);
-  // atoi는 '딱 숫자부분'만 정수로 변환함, 다른 문자가 사이에 껴 있으면 반복문 탈출
+  // atoi는 '딱 숫자부분'만 정수로 변환함, 다른 문자가 사이에 껴있으면 바로 앞 문자까지만 atoi로 변환
   stacksize = atoi(buf + arg2_idx);
   argv[0] = path;
   argv[1] = 0;
+  // exec2로 실행된 프로세스 자원회수를 init 프로세스에 인계하기 위해 fork를 두번 사용
   pid = fork();
   if (pid == 0)
   {
-    exec2(path, argv, stacksize);
-    printf(2, "pmanager: Failed to exec %s\n", path);
+    pid = fork();
+    if (pid == 0)
+    {
+      exec2(path, argv, stacksize);
+      printf(2, "pmanager: exec failed\n");
+    }
     exit();
   }
+  wait();
   return (0);
 }
 
@@ -123,27 +120,54 @@ pm_memlim(char *buf, int cmd_len)
   i = 0;
   while (buf[arg2_idx + i] != 0 && is_digit(buf[arg2_idx + i]))
     i++;
-  if (buf[arg2_idx + i] != 0)
+  if (buf[arg2_idx + i] != '\n')
     return (1);
   pid = atoi(buf + arg1_idx);
   limit = atoi(buf + arg2_idx);
-  setmemorylimit(pid, limit);
+  // TODO: pid가 없을 때 예외처리
+  if (setmemorylimit(pid, limit))
+    printf(2, "pmanager: memlim failed\n");
   return (0);
 }
 
 int
 pm_exit(char *buf, int cmd_len)
 {
-  if (buf[cmd_len] != 0)
+  if (buf[cmd_len] != '\n')
     return (1);
   exit();
   return (0);
 }
 
-// 입력이 '형식'에 정확히 맞을 때만 명령어를 실행한다.
+int
+mapcmd(char *cmd)
+{
+	const char *cmd_dict[] = {
+		"list",
+		"kill",
+		"execute",
+		"memlim",
+		"exit"
+	};
+	int i;
+
+	i = 0;
+	while (i < 5)
+  {
+		if (strcmp(cmd, cmd_dict[i]) == 0)
+			return (i);
+		i++;
+	}
+	return (-1);
+}
+
+// 입력이 '형식'에 정확히 들어맞을 때만 명령어를 실행한다.
+// 형식: '명령어 옵션1 옵션2개행'
+// 명령어, 옵션 앞 뒤의 추가적인 공백이 존재하면 명령어는 실행되지 않는다.
 int
 runcmd(char *buf)
 {
+  // 함수 포인터 배열
   t_exec_cmd exec_cmd[] = {
     pm_list,
     pm_kill,
@@ -156,7 +180,8 @@ runcmd(char *buf)
 	int cmd_type;
 
 	i = 0;
-	while (buf[i] != ' ' && buf[i] != '\0') {
+	while (buf[i] != 0 && buf[i] != ' ' && buf[i] != '\n')
+  {
 		cmd[i] = buf[i];
 		i++;
 	}
@@ -165,7 +190,7 @@ runcmd(char *buf)
   // 개행만 입력된 경우 아무 메시지를 출력하지 않도록 함.
   // 대신 eof가 들어오는 경우 메시지 출력
   if (cmd_type == NONE)
-    return (cmd[0] != '\n');
+    return (i != 0);
   return (exec_cmd[cmd_type](buf, i));
 }
 
@@ -189,7 +214,7 @@ main(void)
 	while(getcmd(buf, sizeof(buf)) >= 0)
   {
     if (runcmd(buf))
-      printf(2, "pmanager: Failed to run command\n");
+      printf(2, "pmanager: Usage error\n");
   }
   exit();
 }
