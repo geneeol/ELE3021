@@ -7,6 +7,9 @@
 #include "x86.h"
 #include "elf.h"
 
+
+extern void kill_and_wait_threads(struct proc *curproc);
+
 int
 exec(char *path, char **argv)
 {
@@ -29,7 +32,9 @@ exec(char *path, char **argv)
     curproc->tid = 0;
     curproc->main = curproc;
   }
-  retrieve_sub_threads(curproc->pid);
+  // TODO: 이 부분 고칠 것 두 함수마다 차이가 존재함.
+  kill_and_wait_threads(curproc);
+  // retrieve_sub_threads(curproc->pid);
 
   begin_op();
 

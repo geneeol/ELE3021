@@ -36,17 +36,6 @@ enum procstate { UNUSED, EMBRYO, SLEEPING, RUNNABLE, RUNNING, ZOMBIE };
 
 typedef int thread_t;
 
-// struct thread {
-//   thread_t tid;
-//   char *kstack;
-//   enum procstate state;        // thread state
-//   struct trapframe *tf;
-//   struct context *context;
-//   void *chan;
-//   struct proc *main_proc; 
-//   void *retval;
-// };
-
 // Per-process state
 struct proc {
   uint sz;                     // Size of process memory (bytes)
@@ -70,16 +59,11 @@ struct proc {
 
   // project2 맴버 추가
   int mem_limit;
-
   thread_t tid;
-  struct proc *main; // 널이면 메인 쓰레드
+  struct proc *main;
   int is_main;
   void *retval;
-
-
-  // struct thread threads[NTHREAD];
-  // int n_thread;
-  // int thread_idx;
+  int n_thread; // 메인 쓰레드의 경우만 의미있는 값을 가짐
 };
 
 // Process memory is laid out contiguously, low addresses first:

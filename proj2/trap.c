@@ -102,9 +102,9 @@ trap(struct trapframe *tf)
       panic("trap");
     }
     // In user space, assume process misbehaved.
-    cprintf("pid %d %s: trap %d err %d on cpu %d "
+    cprintf("pid %d tid %d %s: trap %d err %d on cpu %d "
             "eip 0x%x addr 0x%x--kill proc\n",
-            myproc()->pid, myproc()->name, tf->trapno,
+            myproc()->pid, myproc()->tid, myproc()->name, tf->trapno,
             tf->err, cpuid(), tf->eip, rcr2());
     myproc()->killed = 1;
   }
@@ -124,6 +124,7 @@ trap(struct trapframe *tf)
       && tf->trapno == T_IRQ0+IRQ_TIMER)
     yield();
 
+  //h 이 부분에 의해 현재 프로세스가 다시 cpu를 잡았는데 killed 상태면 종료
   // Check if the process has been killed since we yielded
   if(myproc() && myproc()->killed && (tf->cs&3) == DPL_USER)
     exit();

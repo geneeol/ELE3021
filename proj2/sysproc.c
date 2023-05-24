@@ -170,7 +170,8 @@ sys_mutex_init(void)
   struct spinlock *lock;
   char  *name;
 
-  if (argptr(0, (char **)&lock, sizeof(struct spinlock)) < 0) // TODO: sizeof struct spinlock인지 lockd인지 체크할것
+  // TODO: sizeof struct spinlock인지 lockd인지 체크할것
+  if (argptr(0, (char **)&lock, sizeof(struct spinlock)) < 0)
     return (-1);
   if (argstr(1, &name) < 0)
     return (-1);

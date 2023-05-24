@@ -68,7 +68,11 @@ void *thread_sbrk(void *arg)
   int i, j;
 
   if (val == 0) {
+    // TODO: 간헐적으로 에러 발생하는데 왜일까?
+    // TODO: free가 먼저 발생해서 아닐까 추측
+    // 충분히 재우면 괜찮을듯?
     ptr = (int *)malloc(65536);
+    // sleep(1000);
     sleep(100);
     free(ptr);
     ptr = 0;
@@ -84,6 +88,7 @@ void *thread_sbrk(void *arg)
     sleep(1);
 
   for (i = 0; i < 2000; i++) {
+    // 여기서 레이스컨디션 발생하는 것 같음
     int *p = (int *)malloc(65536);
     for (j = 0; j < 16384; j++)
       p[j] = val;
