@@ -277,6 +277,7 @@ wait_sub_threads(struct proc *curproc)
     {
       if (p->main != curproc || p->is_main)
         continue ;
+      p->killed = 1;
       if (p->state == ZOMBIE)
       {
         kfree(p->kstack);
