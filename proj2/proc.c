@@ -178,6 +178,7 @@ userinit(void)
 
 //h sbrk를 호출하면 해당 함수를 통해 프로세스의 heap에 추가적인 메모리를 할당한다.
 //  프로세스의 heap 사이즈와 페이지 테이블을 업데이트한다.
+// 해당 함수는 sys_sbrk에서 호출되는데 함수 내부로 들어오기 전 항상 락을 잡고 진입한다.
 // Grow current process's memory by n bytes.
 // Return 0 on success, -1 on failure.
 int
@@ -229,20 +230,22 @@ fork(void)
     return -1;
   }
 
+  // 힙에 존재하는 데이터는 모든 쓰레드가 공유한다.
+  // 따라서 메인 쓰레드의 pgdir과 sz을 이용하는 것이 옳다. (pgdir은 어차피 공유)
   // Copy process state from proc.
-  if((np->pgdir = copyuvm(curproc->pgdir, curproc->sz)) == 0){
+  if((np->pgdir = copyuvm(curproc->main->pgdir, curproc->main->sz)) == 0){
     kfree(np->kstack);
     np->kstack = 0;
     np->state = UNUSED;
     return -1;
   }
-  np->sz = curproc->sz;
+  // 메인 쓰레드의 pgdir을 통째로 복사했으므로 sz값도 main의 값으로 복사한다.
+  np->sz = curproc->main->sz;
+
+  // fork를 한 쓰레드가 wait을 통해 자기 스스로 자식을 회수하는 건 자연스럽다 
+  // 즉 쓰레드가 다른 프로세스의 부모가 될 수 있다.
   np->parent = curproc;
   *np->tf = *curproc->tf;
-
-  // 새로운 맴버값 초기화
-  np->mem_limit = curproc->mem_limit;
-
   // Clear %eax so that fork returns 0 in the child.
   np->tf->eax = 0;
 
@@ -314,6 +317,7 @@ kill_and_wait_threads(struct proc *curproc)
   }
 }
 
+// TODO: 메인 쓰레드가 아닌 쓰레드가 exit을 호출했을 때 자원 회수.
 // TODO: 1. 만약 쓰레드가 fork를 했고 해당 프로세스가 thread_exit하는 상황
 //       2. 메인 쓰레드가 exit하고 서브 쓰레드가 fork를 한 상황
 //h 모든 프로세스는 종료전 exit을 명시적으로 호출해야하는 것 같다
@@ -331,9 +335,14 @@ exit(void)
     panic("init exiting");
 
 
+  // TODO: 이 부분은 조교님 답변 받고 결정하자.
   // kill에 의해 쓰레드가 exit을 호출하면 thread_exit을 호출하게 수정 
   // (이러한 수정은 kill에 의해 프로세스가 종료되는 경우가 있을 수 있기 때문)
+  // kill에 의해 쓰레드가 exit을 콜하는 경우가 생길 수 있다. (현재 구현에서는)
+  // 이 부분을 바꾸려면 trap.c에서 thread_exit을 호출하게 하면 됨.
   // thread_exit과 exit은 wakeup 해주는 프로세스 외에는 차이가 없다.
+  // 또 exit의 경우 메인쓰레드라면 서브 스레드를 전부 죽이고 exit한다.
+  // 수정방향: kill pid 때리고 trap.c 수정해두기. 
   if (!curproc->is_main)
     thread_exit(0);
   
@@ -341,7 +350,7 @@ exit(void)
   if (curproc->is_main)
     kill_and_wait_threads(curproc);
   
-  // Close all open files했
+  // Close all open files
   for(fd = 0; fd < NOFILE; fd++)
   {
     if(curproc->ofile[fd])
@@ -359,6 +368,8 @@ exit(void)
   acquire(&ptable.lock);
 
   // Parent might be sleeping in wait().
+  //h 이미 ptable.lock을 잡았으므로 바로 wakeup1 호출
+  // TODO: 만약 쓰레드가 exit할 수 있다면 이 부분 수정 필요
   wakeup1(curproc->parent);
 
   // Pass abandoned children to init.
@@ -557,6 +568,7 @@ sleep(void *chan, struct spinlock *lk) // 커널에서 프로세스를 재울 �
   p->state = SLEEPING; //h 보통 ticks를 채널로해서 재우고 상태를 sleeping으로 바꾼다
 
   sched();
+  //h sleep하던 프로세스는 여기서 깨어날 수도 있음. 이 때 killed 상태일 수도.
 
   // Tidy up.
   p->chan = 0;
@@ -1029,18 +1041,26 @@ thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
   return (0);
 }
 
+// TODO: 나중에 고려할 사항. main이 exit할 때 자원회수를 누가할 것인가.
+//       메인 쓰레드도 thread_exit을 호출할 수 있음.
+//       실제 pthread에서 다른 쓰레드는 계속 실행된다고 함.
+//       현재 구현에서는 exit을 호출하도록 디자인.
+// 테스트케이스: 메인 쓰레드 thread_exit, 다른 쓰레드에서 thread_join 하는 경우
 void
 thread_exit(void *retval)
 {
   struct proc *curproc = myproc();
+  struct proc *p;
   int fd;
 
   if(curproc == initproc)
     panic("init exiting");
 
-  // 현재 쓰레드가 메인이라면 exit으로 정리 
+  // TODO: 일단 약식으로 구현하자. main 쓰레드가 thread_exit을 호출하면
+  // 모든 프로세스를 종료한다.
   if (curproc->is_main)
     exit();
+
   // Close all open files.
   for(fd = 0; fd < NOFILE; fd++){
     if(curproc->ofile[fd]){
@@ -1054,6 +1074,7 @@ thread_exit(void *retval)
   end_op();
   curproc->cwd = 0;
 
+  // 스케쥴러로 돌아가기 전에 락을 잡는다.
   acquire(&ptable.lock);
 
   curproc->retval = retval;
@@ -1120,6 +1141,8 @@ thread_exit(void *retval)
 //   }
 // }
 
+// TODO: '같은 쓰레드 그룹끼리만 회수할 수 있게 설정'
+// TODO: 데드락이 감지된 경우 에러 처리 (이 부분은 구현 못할듯)
 int
 thread_join(thread_t thread, void **retval)
 {
@@ -1157,14 +1180,17 @@ thread_join(thread_t thread, void **retval)
       }
     }
     // No point waiting if we don't have any children.
+    // 현재 프로세스가 이미 kill 됐으면 쓰레드 그룹이 전부 kill됐을 거임.
+    // kill 되었더라도 루프를 한번더 돌고 자원 회수가능하면 회수
     if(!foundthread || curproc->killed)
     {
       release(&ptable.lock);
       return -1;
     }
-
     // Wait for children to exit.  (See wakeup1 call in proc_exit.)
     sleep(curproc, &ptable.lock);  //DOC: wait-sleep
+    //h 만약 curproc가 sleep중에 kill됐으면 여기서 깨어날 수 있음
+    //  killed 상태일지라도 루프를 한번 더 돌며 타깃이 좀비면 회수
   }
 }
 
@@ -1174,7 +1200,12 @@ retrieve_sub_threads(int pid)
   struct proc *p;
   int fd;
 
+  // TODO: 여기서 락잡으면 왜 터지지?
+  // cprintf("starting retrieve_sub_threads: pid = %d\n", pid);
+  // if (holding(&ptable.lock))
+  //   cprintf("lock is already hold!\n");
   acquire(&ptable.lock);
+  // cprintf("after acquire\n");
   for (p = ptable.proc; p < &ptable.proc[NPROC]; p++)
   {
     if (p->pid == pid && !p->is_main)
@@ -1197,6 +1228,7 @@ retrieve_sub_threads(int pid)
       clean_proc_slot(p);
     }
   }
+  // cprintf("retrieve_sub_threads is done: pid = %d\n", pid);
   release(&ptable.lock);
   return (0);
 }
