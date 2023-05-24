@@ -8,6 +8,11 @@
 #include "proc.h"
 #include "spinlock.h"
 
+extern struct {
+  struct spinlock lock;
+  struct proc proc[NPROC];
+} ptable;
+
 int
 sys_fork(void)
 {
@@ -51,9 +56,16 @@ sys_sbrk(void)
 
   if(argint(0, &n) < 0)
     return -1;
-  addr = myproc()->sz;
+  // 락을 걸어서 페이지 테이블에 대한 레이스 컨디션 방지
+  acquire(&ptable.lock);
+  // sbrk 리턴값은 이전 메모리 사이즈 (top of heap)
+  addr = myproc()->main->sz;
   if(growproc(n) < 0)
+  {
+    release(&ptable.lock);
     return -1;
+  }
+  release(&ptable.lock);
   return addr;
 }
 

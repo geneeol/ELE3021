@@ -187,36 +187,29 @@ growproc(int n)
   struct proc *curproc = myproc();
   struct proc *main;
 
-  acquire(&ptable.lock);
+  // 락을 sys_sbrk 함수에서 걸고 들어옴.
+  // acquire(&ptable.lock);
 
   main = curproc->main;
   sz = main->sz;
   //h mem_limit보다 늘렸을 때의 프로세스 메모리 사이즈가 작은지 체크
   //  uint + int 랑 int 자료형 비교하지만 문제 되진 않는듯.
   //  (애초에 limit이 int형 자료형이고 n도 int형) 
+
+  // 쓰레드의 mem_limit이 아닌 main 쓰레드의 mem_limit과 비교한다
   if (sz + n > main->mem_limit)
-  {
-    release(&ptable.lock);
     return -1;
-  }
   if(n > 0)
   {
     if((sz = allocuvm(main->pgdir, sz, sz + n)) == 0)
-    {
-      release(&ptable.lock);
       return -1;
-    }
   }
   else if(n < 0)
   {
     if((sz = deallocuvm(main->pgdir, sz, sz + n)) == 0)
-    {
-      release(&ptable.lock);
       return -1;
-    }
   }
   main->sz = sz;
-  release(&ptable.lock);
   switchuvm(curproc);
   return 0;
 }
