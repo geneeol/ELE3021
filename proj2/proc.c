@@ -264,7 +264,25 @@ fork(void)
 }
 
 void
-wait_sub_threads(struct proc *curproc)
+clean_proc_slot(struct proc *p)
+{
+  kfree(p->kstack);
+  p->kstack = 0;
+  p->pid = 0;
+  p->parent = 0;
+  p->name[0] = 0;
+  p->killed = 0;
+  p->state = UNUSED;
+  // proj2 맴버에 대한 삭제 부분
+  p->mem_limit = 0;
+  p->tid = 0;
+  p->main = 0;
+  p->is_main = 0;
+  p->retval = 0;
+}
+
+void
+kill_and_wait_threads(struct proc *curproc)
 {
   struct proc *p;
   int nthread;
@@ -277,24 +295,13 @@ wait_sub_threads(struct proc *curproc)
     {
       if (p->main != curproc || p->is_main)
         continue ;
-      p->killed = 1;
       if (p->state == ZOMBIE)
-      {
-        kfree(p->kstack);
-        p->kstack = 0;
-        p->pid = 0;
-        p->tid = 0;
-        p->parent = 0;
-        p->main = 0;
-        p->name[0] = 0;
-        p->killed = 0;
-        p->state = UNUSED;
-        release(&ptable.lock);
-        return ;
-      }
+        clean_proc_slot(p);
       else
       {
+        p->killed = 1;
         nthread++;
+        // ptable락을 잡고 있으므로 wakeup1 사용
         wakeup1(p);
       }
     }
@@ -330,14 +337,9 @@ exit(void)
   if (!curproc->is_main)
     thread_exit(0);
   
-  // TODO: join을 호출하지 않았는데 wait하는게 맞는걸까?
-  //       메인 쓰레드가 exit하면 페이지테이블도 해제해야하는데 그렇게 되면 서브 쓰레드들에서 문제가 생김
-  //       이상하긴하지만 메인쓰레드가 exit 호출하면 서브쓰레드 정리되길 기다리는 게 맞는듯.
-  //       해당 부분 join으로 수정
-
   // 메인 쓰레드는 서브 쓰레드가 전부 종료된 후 exit할 수 있다.
   if (curproc->is_main)
-    wait_sub_threads(curproc);
+    kill_and_wait_threads(curproc);
   
   // Close all open files했
   for(fd = 0; fd < NOFILE; fd++)
@@ -392,42 +394,31 @@ wait(void)
   struct proc *curproc = myproc();
   
   acquire(&ptable.lock);
-  for(;;){
+  for(;;)
+  {
     // Scan through table looking for exited children.
     havekids = 0;
-    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
+    {
       if(p->parent != curproc)
         continue;
       havekids = 1;
-      if(p->state == ZOMBIE){
+      if(p->state == ZOMBIE)
+      {
         // Found one.
         pid = p->pid;
-        kfree(p->kstack);
-        p->kstack = 0;
+        clean_proc_slot(p);
         freevm(p->pgdir);
-        p->pid = 0;
-        p->parent = 0;
-        p->name[0] = 0;
-        p->killed = 0;
-        p->state = UNUSED;
-        // TODO: p2 추가 맴버에 대한 삭제 부분
-        p->mem_limit = 0;
-        p->tid = 0;
-        p->main = 0;
-        p->is_main = 0;
-        p->retval = 0;
-
         release(&ptable.lock);
         return pid;
       }
     }
-
     // No point waiting if we don't have any children.
-    if(!havekids || curproc->killed){
+    if(!havekids || curproc->killed)
+    {
       release(&ptable.lock);
       return -1;
     }
-
     // Wait for children to exit.  (See wakeup1 call in proc_exit.)
     sleep(curproc, &ptable.lock);  //DOC: wait-sleep
   }
@@ -577,6 +568,20 @@ sleep(void *chan, struct spinlock *lk) // 커널에서 프로세스를 재울 �
   }
 }
 
+// 해당 함수는 호출 전에 ptable.lock이 잡혀있다.
+// pid에 해당하는 모든 쓰레드를 깨운다. (join을 호출한 쓰레드가 누구인지 모르므로)
+void
+wakeup_pid1(int pid)
+{
+  struct proc *p;
+
+  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
+  {
+    if(p->pid == pid && p->state == SLEEPING)
+      p->state = RUNNABLE;
+  }
+}
+
 //PAGEBREAK!
 // Wake up all processes sleeping on chan.
 // The ptable lock must be held.
@@ -586,8 +591,10 @@ wakeup1(void *chan)
   struct proc *p;
 
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
+  {
     if(p->state == SLEEPING && p->chan == chan)
       p->state = RUNNABLE;
+  }
 }
 
 // Wake up all processes sleeping on chan.
@@ -606,23 +613,26 @@ int
 kill(int pid)
 {
   struct proc *p;
+  int invalid_pid;
 
   acquire(&ptable.lock);
+  invalid_pid = 1;
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
   {
-    // main 쓰레드만 kill플래그 설정
-    if(p->pid == pid && p->is_main)
+    // 메인쓰레드 및 쓰레드 전부 kill 플래그 설정
+    if(p->pid == pid)
     {
+      invalid_pid = 0;
       p->killed = 1;
       // Wake process from sleep if necessary.
       if(p->state == SLEEPING)
         p->state = RUNNABLE;
-      release(&ptable.lock);
-      return 0;
     }
   }
   release(&ptable.lock);
-  return -1;
+  if(invalid_pid)
+    return -1;
+  return (0);
 }
 
 //h 프로세스 정보를 출력해주는 디버깅용 함수
@@ -1047,9 +1057,24 @@ thread_exit(void *retval)
   curproc->retval = retval;
 
   // Parent might be sleeping in wait().
-  if (!curproc->is_main)
-    wakeup1(curproc->main);
+  // 여기 조건문 필요 없을듯.
+  // if (!curproc->is_main)
+  //   wakeup1(curproc->main);
+  wakeup_pid1(curproc->pid);
 
+  // 현재 종료되는 쓰레드가 누군가의 부모일 수 있다.
+  // 따라서 해당 프로세스(쓰레드)의 자식을 initproc에 인계한다.
+  // 이로써 고아프로세스를 initproc가 회수한다.
+  // 아래 for문 주석처리 하면 쓰레드에서 fork한 자식들이 고아가 됨.
+  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
+  {
+    if(p->parent == curproc)
+    {
+      p->parent = initproc;
+      if(p->state == ZOMBIE)
+        wakeup1(initproc);
+    }
+  }
   //  Jump into the scheduler, never to return.
   curproc->state = ZOMBIE;
   sched(); //h scheduler로 컨텍스트 스위치가 되고 나면 두 번 다시 이 프로세스는 선택되지 않는다
@@ -1097,49 +1122,40 @@ int
 thread_join(thread_t thread, void **retval)
 {
   struct proc *p;
-  int havethread;
+  int foundthread;
   struct proc *curproc = myproc();
   
-  // TODO: 메인쓰레드의 tid는 0으로 설정돼 있음.
-  if (thread == 0)
+  // thread id가 자기 자신인 경우, tid가 0인 경우 예외처리
+  if (curproc->tid == thread || thread == 0)
     return (-1);
   acquire(&ptable.lock);
   for(;;){
     // Scan through table looking for exited children.
-    havethread = 0;
+    foundthread = 0;
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
     {
       if (p->tid != thread)
         continue;
-      havethread = 1;
-      // TODO: 현재 구현에서는 메인쓰레드가 아니면 자원을 회수하지 못하도록 함.
-      if (p->main != curproc)
+      // 같은 쓰레드 그룹인지 확인
+      if (p->main != curproc->main)
       {
         release(&ptable.lock);
         return (-1);
       }
-      // TODO: 회수하는 자원 추가
+      foundthread = 1;
       if(p->state == ZOMBIE)
       {
         // Found one.
         if (retval)
           *retval = p->retval;
-        kfree(p->kstack);
-        p->kstack = 0;
-        p->pid = 0;
-        p->tid = 0;
-        p->parent = 0;
-        p->main = 0;
-        p->name[0] = 0;
-        p->killed = 0;
-        p->state = UNUSED;
+        // TODO: dealloc이용해서 스택 회수하는 로직도 고려해볼 것.
+        clean_proc_slot(p);
         release(&ptable.lock);
         return (0);
       }
     }
-
     // No point waiting if we don't have any children.
-    if(!havethread || curproc->killed)
+    if(!foundthread || curproc->killed)
     {
       release(&ptable.lock);
       return -1;
@@ -1176,15 +1192,7 @@ retrieve_sub_threads(int pid)
         end_op();
         p->cwd = 0;
       }
-      kfree(p->kstack);
-      p->kstack = 0;
-      p->main = 0;
-      p->pid = 0;
-      p->tid = 0;
-      p->parent = 0;
-      p->name[0] = 0;
-      p->killed = 0;
-      p->state = UNUSED;
+      clean_proc_slot(p);
     }
   }
   release(&ptable.lock);
