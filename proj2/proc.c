@@ -779,21 +779,24 @@ schedulerUnlock(int password)
 
 /***** system calls for project2 *****/
 
+
+// 쓰레드끼리는 sz값이 동일하느냐? 만약 동일하지 않으면 특정 쓰레드에서
+// limit값 설정에 실패하고, 다른 쓰레드에선 성공하는 경우 고려해야함
+// 디자인: main 쓰레드의 sz값만 의미있다고 판단.
+// sbrk를 호출시에도 메인쓰레드의 sz값을 이용함. 메모리 관련은 전부 메인쓰레드가 담당.
+// 따라서 메인 쓰레드의 mem_limit값만 관리하자
 int
 setmemorylimit(int pid, int limit)
 {
   struct proc *p;
-  int invalid_pid = 1;
 
   if (limit < 0)
     return (-1);
   acquire(&ptable.lock);
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
   {
-    if (p->pid == pid)
+    if (p->pid == pid && p->is_main)
     {
-      // TODO: 쓰레드끼리는 sz값이 동일하느냐? 만약 동일하지 않으면 특정 쓰레드에서
-      // limit값 설정에 실패하고, 다른 쓰레드에선 성공하는 경우 고려해야함
       if (p->sz > limit)
       {
         release(&ptable.lock);
@@ -803,13 +806,12 @@ setmemorylimit(int pid, int limit)
         p->mem_limit = UNLIMITED;
       else
         p->mem_limit = limit;
-      invalid_pid = 0;
+      release(&ptable.lock);
+      return (0);
     }
   }
   release(&ptable.lock);
-  if (invalid_pid)
-    return (-1);
-  return (0);
+  return (-1);
 }
 
 // print process's information
