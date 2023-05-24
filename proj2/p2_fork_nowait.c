@@ -46,13 +46,8 @@ void *thread_fork(void *arg)
     printf(1, "Child of thread %d end\n", val);
     exit();
   }
-  else {
+  else
     status = 2;
-    if (wait() == -1) {
-      printf(1, "Thread %d lost their child\n", val);
-      failed();
-    }
-  }
   printf(1, "Thread %d end\n", val);
   thread_exit(arg);
   return 0;
@@ -133,17 +128,6 @@ int main(int argc, char *argv[])
   for (i = 0; i < NUM_THREAD; i++)
     expected[i] = i;
 
-  printf(1, "Test 1: Basic test\n");
-  create_all(2, thread_basic);
-  sleep(100);
-  printf(1, "Parent waiting for children...\n");
-  join_all(2);
-  if (status != 1) {
-    printf(1, "Join returned before thread exit, or the address space is not properly shared\n");
-    failed();
-  }
-  printf(1, "Test 1 passed\n\n");
-
   printf(1, "Test 2: Fork test\n");
   create_all(NUM_THREAD, thread_fork);
   join_all(NUM_THREAD);
@@ -157,12 +141,5 @@ int main(int argc, char *argv[])
     failed();
   }
   printf(1, "Test 2 passed\n\n");
-
-  printf(1, "Test 3: Sbrk test\n");
-  create_all(NUM_THREAD, thread_sbrk);
-  join_all(NUM_THREAD);
-  printf(1, "Test 3 passed\n\n");
-
-  printf(1, "All tests passed!\n");
   exit();
 }

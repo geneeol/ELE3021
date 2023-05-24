@@ -56,14 +56,14 @@ routine2(void *arg)
   pid = fork();
 
   if(pid == 0){
-    printf(1, "[%d(%d)] I'm child process of thread! amazing!\n", getpid(), getpid());
+    printf(1, "[%d(%d)] I'm child process of thread! amazing!\n", getpid(), get_tid());
     sleep(100);
     exit();
 
   }else if(pid > 0){
-    printf(1, "[%d(%d)] I'm thread. I made one child, and waiting for it.\n", getpid(), getpid());
+    printf(1, "[%d(%d)] I'm thread. I made one child, and waiting for it.\n", getpid(), get_tid());
     wait();
-    printf(1, "[%d(%d)] Child is exit\n", getpid(), getpid());
+    printf(1, "[%d(%d)] Child is exit\n", getpid(), get_tid());
 
     thread_exit((void *)2000);
   }
@@ -78,11 +78,11 @@ test2()
   thread_t mthread;
   void *retval;
 
-  printf(1, "[%d(%d)] Test2: create thread\n", getpid(), getpid());
+  printf(1, "[%d(%d)] Test2: create thread\n", getpid(), get_pid());
   thread_create(&mthread, routine2, (void*)1000);
   
   thread_join(mthread, &retval);
-  printf(1, "[%d(%d)] Result on main thread: %d\n", getpid(), getpid(), (int)retval);
+  printf(1, "[%d(%d)] Result on main thread: %d\n", getpid(), get_pid(), (int)retval);
 }
 
 

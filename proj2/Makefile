@@ -184,11 +184,22 @@ UPROGS=\
 	_stressfs\
 	_wc\
 	_zombie\
-	_usertests\
-	_p2_test1 \
-	_p2_basic_test \
-	_p2_fork \
-	_p2_t2 \
+	_hello_thread \
+	_thread_exec \
+	_thread_exit \
+	_thread_kill \
+	_thread_test \
+	_p2_fork_nowait \
+	_p2_null \
+	_p2_hard \
+	# _p2_test1 \
+	# _p2_basic_test \
+	# _pmanager \
+	# _p2_fork \
+	# _p2_t2 \
+	# _p2_fork_sbrk \
+	# _p2_sbrk \
+	# _usertests\
 	# _test_origin1\
 	# _test_lock\
 	# _test_lock2\
@@ -275,7 +286,10 @@ EXTRA=\
 	printf.c umalloc.c prac_myuserapp.c myapp.c prac2_usercall.c\
 	test_yield.c usertests.c test_mlfq.c test_mlfq2.c test_lock.c\
 	test_lock2.c test_mlfq3.c test_origin1.c test_interrupt.c\
-	p2_test1.c p2_basic_test.c p2_fork.c p2_t2.c\
+	pmanager.c p2_test1.c p2_basic_test.c p2_fork.c p2_t2.c\
+	p2_sbrk.c p2_hard.c p2_fork_sbrk.c p2_fork_nowait.c hello_thread.c \
+	p2_null.c \
+	thread_exec.c thread_exit.c thread_kill.c thread_test.c\
 	README dot-bochsrc *.pl toc.* runoff runoff1 runoff.list\
 	.gdbinit.tmpl gdbutil\
 
