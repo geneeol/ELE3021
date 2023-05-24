@@ -55,6 +55,7 @@ morecore(uint nu)
   if(p == (char*)-1)
     return 0;
   hp = (Header*)p;
+  // 이 부분에서 잘못된 주소 참조 났었음. sbrk 리턴값이 이상해서
   hp->s.size = nu;
   free((void*)(hp + 1));
   return freep;

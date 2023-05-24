@@ -36,6 +36,8 @@ main(int argc, char *argv[])
   sleep(20);
   printf(1, "\nglobal variable increased by 1 by thread\ng_cnt: %d\n", g_cnt);
   printf(1, "main thread try to access thread's local variale x by its addr\nx: %d\n", *ptr);
+  // if (thread_join(0, 0))
+  //   printf(1, "thread_join failed\n");
   thread_join(tid, 0);
   exit();
 }

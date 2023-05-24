@@ -107,6 +107,8 @@ void create_all(int n, void *(*entry)(void *))
       printf(1, "Error creating thread %d\n", i);
       failed();
     }
+    // 여기 sleep 추가시 첫번째 스레드가 좀비가 됐다가 회수되는듯..?
+    // sleep(1000);
   }
 }
 

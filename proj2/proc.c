@@ -293,7 +293,6 @@ wait_sub_threads(struct proc *curproc)
       }
       else
       {
-        cprintf("increase nthread, i: %d\n", ptable.proc - p);
         nthread++;
         wakeup1(p);
       }
@@ -307,6 +306,8 @@ wait_sub_threads(struct proc *curproc)
   }
 }
 
+// TODO: 1. 만약 쓰레드가 fork를 했고 해당 프로세스가 thread_exit하는 상황
+//       2. 메인 쓰레드가 exit하고 서브 쓰레드가 fork를 한 상황
 //h 모든 프로세스는 종료전 exit을 명시적으로 호출해야하는 것 같다
 // Exit the current process.  Does not return.
 // An exited process remains in the zombie state
@@ -320,11 +321,24 @@ exit(void)
 
   if(curproc == initproc)
     panic("init exiting");
+
+
+  // kill에 의해 쓰레드가 exit을 호출하면 thread_exit을 호출하게 수정 
+  // (이러한 수정은 kill에 의해 프로세스가 종료되는 경우가 있을 수 있기 때문)
+  // thread_exit과 exit은 wakeup 해주는 프로세스 외에는 차이가 없다.
+  if (!curproc->is_main)
+    thread_exit(0);
   
+  // TODO: join을 호출하지 않았는데 wait하는게 맞는걸까?
+  //       메인 쓰레드가 exit하면 페이지테이블도 해제해야하는데 그렇게 되면 서브 쓰레드들에서 문제가 생김
+  //       이상하긴하지만 메인쓰레드가 exit 호출하면 서브쓰레드 정리되길 기다리는 게 맞는듯.
+  //       해당 부분 join으로 수정
+
+  // 메인 쓰레드는 서브 쓰레드가 전부 종료된 후 exit할 수 있다.
   if (curproc->is_main)
     wait_sub_threads(curproc);
   
-  // Close all open files.
+  // Close all open files했
   for(fd = 0; fd < NOFILE; fd++)
   {
     if(curproc->ofile[fd])
@@ -343,7 +357,6 @@ exit(void)
 
   // Parent might be sleeping in wait().
   wakeup1(curproc->parent);
-  // wakeup1(curproc->main);
 
   // Pass abandoned children to init.
   //h 고아 프로세스가 되지 않게끔, 현재 종료하려는 프로세스의 부모를 initproc로 바꾸어 준다
@@ -393,10 +406,16 @@ wait(void)
         freevm(p->pgdir);
         p->pid = 0;
         p->parent = 0;
-        p->main = 0;
         p->name[0] = 0;
         p->killed = 0;
         p->state = UNUSED;
+        // TODO: p2 추가 맴버에 대한 삭제 부분
+        p->mem_limit = 0;
+        p->tid = 0;
+        p->main = 0;
+        p->is_main = 0;
+        p->retval = 0;
+
         release(&ptable.lock);
         return pid;
       }
@@ -590,6 +609,7 @@ kill(int pid)
   acquire(&ptable.lock);
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
   {
+    // main 쓰레드만 kill플래그 설정
     if(p->pid == pid && p->is_main)
     {
       p->killed = 1;
@@ -634,7 +654,7 @@ procdump(void)
       state = states[p->state];
     else
       state = "???";
-    cprintf("%d %s %s", p->pid, state, p->name);
+    cprintf("pid: %d, tid: %d %s %s", p->pid, p->tid, state, p->name);
     if(p->state == SLEEPING){
       getcallerpcs((uint*)p->context->ebp+2, pc);
       for(i=0; i<10 && pc[i] != 0; i++)
@@ -914,6 +934,7 @@ plist(void)
 // }
 
 // TODO: 함수 나누기
+// fork함수와 exec함수에서 필요한 부분을 가져와서 구성 
 int
 thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
 {
@@ -931,19 +952,21 @@ thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
   nextpid--;
   curproc = myproc();
 
+  // TODO: memlimit 정보 메인 쓰레드와 동일하게
   main = curproc->main;
   np->tid = nexttid++;
   np->main = main;
   np->is_main = 0;
   np->pid = main->pid;
 
-  // 락을 잡아야 하는가?
-  // 이 부분 락 필요할듯, 락을 걸지 않으면 np->pgdir이후 pgdir이 변경될 수 있음
-  // fork에서 pgdir을 copy하는 대신 그대로 공유
+  // 메인 쓰레드와 pgdir을 공유하기 위해 락이 필요함
+  // 락을 걸지 않으면 pgdir에 대한 레이스 컨디션 발생 가능
   acquire(&ptable.lock);
 
   sz = main->sz;
   np->pgdir = main->pgdir;
+  // 쓰레드는 메인 쓰레드와 디렉토리(첫번째 페이지 테이블)을 공유한다.
+  // 해당 테이블 공간에 해당하는 유저 스택을 할당해서 쓰레드가 사용하게끔 한다.
   if ((sz = allocuvm(main->pgdir, sz, sz + 2 * PGSIZE)) == 0)
   {
     kfree(np->kstack);
@@ -956,12 +979,16 @@ thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
 
   release(&ptable.lock);
 
+  // 메인쓰레드의 메모리 사용량을 업데이트
+  *thread = np->tid;
   main->sz = sz;
   np->sz = sz;
   np->parent = main->parent;
   *np->tf = *main->tf;
 
-  // 스택에 인자를 push하고 레지스터값을 수정
+  // calling convention에 맞게 스택에 인자, 리턴주소를 차례로 push
+  // eip 레지스터에 start_routine주소를 할당한다. (pc 레지스터) 
+  // 쓰레드는 유저 영역 코드를 실행할 start_routine부터 실행된다.
   sp = sz;
   sp -= 4;
   *(uint *)sp = (uint)arg;
@@ -970,9 +997,13 @@ thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
   np->tf->eip = (uint)start_routine;
   np->tf->esp = sp;
 
+  // TODO: 아래 부분 필요한지 확인.
+  // 쓰레드끼리는 open file 리스트를 공유한다. 
   for(i = 0; i < NOFILE; i++)
+  {
     if(curproc->ofile[i])
       np->ofile[i] = filedup(curproc->ofile[i]);
+  }
   np->cwd = idup(curproc->cwd);
 
   safestrcpy(np->name, curproc->name, sizeof(curproc->name));
@@ -982,7 +1013,6 @@ thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
   np->state = RUNNABLE; //h 생성한 프로세스를 이곳에서 RUNNABLE 상태로 변경
 
   release(&ptable.lock);
-  *thread = np->tid;
   return (0);
 }
 
@@ -995,6 +1025,9 @@ thread_exit(void *retval)
   if(curproc == initproc)
     panic("init exiting");
 
+  // 현재 쓰레드가 메인이라면 exit으로 정리 
+  if (curproc->is_main)
+    exit();
   // Close all open files.
   for(fd = 0; fd < NOFILE; fd++){
     if(curproc->ofile[fd]){
@@ -1066,21 +1099,27 @@ thread_join(thread_t thread, void **retval)
   int havethread;
   struct proc *curproc = myproc();
   
+  // TODO: 메인쓰레드의 tid는 0으로 설정돼 있음.
+  if (thread == 0)
+    return (-1);
   acquire(&ptable.lock);
   for(;;){
     // Scan through table looking for exited children.
     havethread = 0;
-    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
+    {
       if (p->tid != thread)
         continue;
       havethread = 1;
-      // TODO: main 쓰레드 아니어도 회수할 수 있는지 확인.
+      // TODO: 현재 구현에서는 메인쓰레드가 아니면 자원을 회수하지 못하도록 함.
       if (p->main != curproc)
       {
         release(&ptable.lock);
         return (-1);
       }
-      if(p->state == ZOMBIE){
+      // TODO: 회수하는 자원 추가
+      if(p->state == ZOMBIE)
+      {
         // Found one.
         if (retval)
           *retval = p->retval;
@@ -1099,7 +1138,8 @@ thread_join(thread_t thread, void **retval)
     }
 
     // No point waiting if we don't have any children.
-    if(!havethread || curproc->killed){
+    if(!havethread || curproc->killed)
+    {
       release(&ptable.lock);
       return -1;
     }

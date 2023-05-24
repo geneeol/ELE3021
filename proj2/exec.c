@@ -19,6 +19,8 @@ exec(char *path, char **argv)
   pde_t *pgdir, *oldpgdir;
   struct proc *curproc = myproc();
 
+  // TODO: sz을 main쓰레드의 것으로 초기화, dealloc하는 부분 추가
+  // main쓰레드의 is_main을 초기화
   if (!curproc->is_main)
   {
     curproc->main->is_main = 0;
@@ -76,6 +78,7 @@ exec(char *path, char **argv)
   sz = PGROUNDUP(sz);
   if((sz = allocuvm(pgdir, sz, sz + 2*PGSIZE)) == 0)
     goto bad;
+  //h 가드용 페이지를 할당하는 부분
   clearpteu(pgdir, (char*)(sz - 2*PGSIZE));
   sp = sz;
 
@@ -92,6 +95,7 @@ exec(char *path, char **argv)
   }
   ustack[3+argc] = 0;
 
+  //h 스택에 리턴주소, argc, argv 주소를 차례로 push
   ustack[0] = 0xffffffff;  // fake return PC
   ustack[1] = argc;
   ustack[2] = sp - (argc+1)*4;  // argv pointer

@@ -124,7 +124,6 @@ pm_memlim(char *buf, int cmd_len)
     return (1);
   pid = atoi(buf + arg1_idx);
   limit = atoi(buf + arg2_idx);
-  // TODO: pid가 없을 때 예외처리
   if (setmemorylimit(pid, limit))
     printf(2, "pmanager: memlim failed\n");
   return (0);

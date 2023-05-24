@@ -111,7 +111,6 @@
 
 //   release(&ptable.lock);
 
-//   // TODO: 락 여부 꼼꼼히 확인할 것
 //   if (allocthread(p) == 0) 
 //   {
 //     p->state = UNUSED;
@@ -683,8 +682,6 @@
 //   {
 //     if (p->pid == pid)
 //     {
-//       // TODO: 쓰레드끼리는 sz값이 동일하느냐? 만약 동일하지 않으면 특정 쓰레드에서
-//       // limit값 설정에 실패하고, 다른 쓰레드에선 성공하는 경우 고려해야함
 //       if (p->sz > limit)
 //       {
 //         release(&ptable.lock);
