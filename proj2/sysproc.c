@@ -261,3 +261,15 @@ sys_thread_join(void)
     return (-1);
   return (thread_join(thread, retval));
 }
+
+int
+sys_get_pid(void)
+{
+  return (get_pid());
+}
+
+int
+sys_get_tid(void)
+{
+  return (get_tid());
+}

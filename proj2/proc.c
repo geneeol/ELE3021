@@ -1189,3 +1189,25 @@ retrieve_sub_threads(int pid)
   release(&ptable.lock);
   return (0);
 }
+
+int
+get_pid(void)
+{
+  struct proc	*p;
+
+	p = myproc();
+  if (!p)
+    return (-1); // proc 정보를 받을 수 없는 경우
+  return (p->pid);
+}
+
+int
+get_tid(void)
+{
+  struct proc *p;
+
+  p = myproc();
+  if (!p)
+    return (-1);
+  return (p->tid);
+}

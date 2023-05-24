@@ -144,6 +144,8 @@ int				thread_create(thread_t *thread,
 								void *arg);
 void			thread_exit(void *retval);
 int				thread_join(thread_t thread, void **retval);
+int				get_pid(void);
+int				get_tid(void);
 
 
 // swtch.S

@@ -37,3 +37,5 @@
 #define SYS_thread_exit 35
 #define SYS_thread_join 36
 #define SYS_plist 37
+#define SYS_get_pid 38
+#define SYS_get_tid 39
