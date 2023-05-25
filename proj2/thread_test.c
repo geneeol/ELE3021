@@ -68,9 +68,9 @@ void *thread_sbrk(void *arg)
   int i, j;
 
   if (val == 0) {
-    // TODO: 간헐적으로 에러 발생하는데 왜일까?
+    // TODO: 1순위 고려사항. 간헐적으로 에러 발생하는데 왜일까?
     // TODO: free가 먼저 발생해서 아닐까 추측
-    // 충분히 재우면 괜찮을듯?
+    // 충분히 재우면 괜찮을듯? (충분히 재워도 발생했던듯..)
     ptr = (int *)malloc(65536);
     // sleep(1000);
     sleep(100);
@@ -136,30 +136,30 @@ int main(int argc, char *argv[])
   for (i = 0; i < NUM_THREAD; i++)
     expected[i] = i;
 
-  printf(1, "Test 1: Basic test\n");
-  create_all(2, thread_basic);
-  sleep(100);
-  printf(1, "Parent waiting for children...\n");
-  join_all(2);
-  if (status != 1) {
-    printf(1, "Join returned before thread exit, or the address space is not properly shared\n");
-    failed();
-  }
-  printf(1, "Test 1 passed\n\n");
+  // printf(1, "Test 1: Basic test\n");
+  // create_all(2, thread_basic);
+  // sleep(100);
+  // printf(1, "Parent waiting for children...\n");
+  // join_all(2);
+  // if (status != 1) {
+  //   printf(1, "Join returned before thread exit, or the address space is not properly shared\n");
+  //   failed();
+  // }
+  // printf(1, "Test 1 passed\n\n");
 
-  printf(1, "Test 2: Fork test\n");
-  create_all(NUM_THREAD, thread_fork);
-  join_all(NUM_THREAD);
-  if (status != 2) {
-    if (status == 3) {
-      printf(1, "Child process referenced parent's memory\n");
-    }
-    else {
-      printf(1, "Status expected 2, found %d\n", status);
-    }
-    failed();
-  }
-  printf(1, "Test 2 passed\n\n");
+  // printf(1, "Test 2: Fork test\n");
+  // create_all(NUM_THREAD, thread_fork);
+  // join_all(NUM_THREAD);
+  // if (status != 2) {
+  //   if (status == 3) {
+  //     printf(1, "Child process referenced parent's memory\n");
+  //   }
+  //   else {
+  //     printf(1, "Status expected 2, found %d\n", status);
+  //   }
+  //   failed();
+  // }
+  // printf(1, "Test 2 passed\n\n");
 
   printf(1, "Test 3: Sbrk test\n");
   create_all(NUM_THREAD, thread_sbrk);

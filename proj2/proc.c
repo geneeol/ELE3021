@@ -955,7 +955,8 @@ thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
   return (0);
 }
 
-// TODO: 나중에 고려할 사항. main이 exit할 때 자원회수를 누가할 것인가.
+// TODO: 2순위 고려사항.
+//       main이 thread_exit할 때 어떻게 처리할 것인가.
 //       메인 쓰레드도 thread_exit을 호출할 수 있음.
 //       실제 pthread에서 다른 쓰레드는 계속 실행된다고 함.
 //       현재 구현에서는 exit을 호출하도록 디자인.
