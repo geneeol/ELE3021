@@ -190,15 +190,15 @@ UPROGS=\
 	_thread_kill \
 	_thread_test \
 	_p2_fork_nowait \
-	_p2_null \
 	_p2_hard \
 	_p2_join_exit \
 	_p2_script \
 	_p2_main_exec \
-	_p2_fork_sbrk \
-	_p2_fork \
-	# _p2_t2 \
-	# _pmanager \
+	_pmanager \
+	_p2_t2 \
+	# _p2_fork_sbrk \
+	# _p2_fork \
+	# _p2_null \
 	# _p2_test1 \
 	# _p2_basic_test \
 	# _p2_sbrk \
