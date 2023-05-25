@@ -14,19 +14,6 @@ void failed()
   exit();
 }
 
-void *thread_basic(void *arg)
-{
-  int val = (int)arg;
-  printf(1, "Thread %d start\n", val);
-  if (val == 1) {
-    sleep(200);
-    status = 1;
-  }
-  printf(1, "Thread %d end\n", val);
-  thread_exit(arg);
-  return 0;
-}
-
 void *thread_fork(void *arg)
 {
   int val = (int)arg;
@@ -47,7 +34,10 @@ void *thread_fork(void *arg)
     exit();
   }
   else
+  {
+    // 원본 코드에서 wait하는 부분 삭제
     status = 2;
+  }
   printf(1, "Thread %d end\n", val);
   thread_exit(arg);
   return 0;
@@ -55,45 +45,6 @@ void *thread_fork(void *arg)
 
 int *ptr;
 
-void *thread_sbrk(void *arg)
-{
-  int val = (int)arg;
-  printf(1, "Thread %d start\n", val);
-
-  int i, j;
-
-  if (val == 0) {
-    ptr = (int *)malloc(65536);
-    sleep(100);
-    free(ptr);
-    ptr = 0;
-  }
-  else {
-    while (ptr == 0)
-      sleep(1);
-    for (i = 0; i < 16384; i++)
-      ptr[i] = val;
-  }
-
-  while (ptr != 0)
-    sleep(1);
-
-  for (i = 0; i < 2000; i++) {
-    int *p = (int *)malloc(65536);
-    for (j = 0; j < 16384; j++)
-      p[j] = val;
-    for (j = 0; j < 16384; j++) {
-      if (p[j] != val) {
-        printf(1, "Thread %d found %d\n", val, p[j]);
-        failed();
-      }
-    }
-    free(p);
-  }
-
-  thread_exit(arg);
-  return 0;
-}
 void create_all(int n, void *(*entry)(void *))
 {
   int i;
@@ -122,6 +73,7 @@ void join_all(int n)
   }
 }
 
+// 쓰레드에서 fork후 쓰레드에서 wait으로 회수하지 않음.
 int main(int argc, char *argv[])
 {
   int i;
