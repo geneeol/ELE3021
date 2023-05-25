@@ -3,12 +3,71 @@
 #include "memlayout.h"
 #include "mmu.h"
 #include "proc.h"
+#include "spinlock.h"
 #include "defs.h"
 #include "x86.h"
 #include "elf.h"
 
+extern struct {
+  struct spinlock lock;
+  struct proc proc[NPROC];
+} ptable;
 
-extern void kill_and_wait_threads(struct proc *curproc);
+
+extern void kill_and_retrieve_threads(struct proc *main);
+extern void clean_proc_slot(struct proc *p);
+
+static void
+wakeup1(void *chan)
+{
+  struct proc *p;
+
+  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
+  {
+    if(p->state == SLEEPING && p->chan == chan)
+      p->state = RUNNABLE;
+  }
+}
+
+void
+kill_old_main_and_retrieve(struct proc *curproc, struct proc *old_main)
+{
+  int clean_old;
+
+  clean_old = 0;
+  for (; ;)
+  {
+    if (old_main->state == ZOMBIE)
+    {
+      clean_old = 1;
+      clean_proc_slot(old_main);
+    }
+    else
+    {
+      old_main->killed = 1;
+      wakeup1(old_main);
+    }
+    if (clean_old)
+      return ;
+    sleep(curproc, &ptable.lock);
+  }
+}
+
+struct proc *
+change_main_thread(struct proc *curproc, struct proc *old_main)
+{
+  old_main = curproc->main;
+  old_main->main = curproc;
+  old_main->is_main = 0;
+  old_main->tid = 0; // 디버깅할 때 음수로 넣기.
+  curproc->sz = old_main->sz;
+  curproc->mem_limit = old_main->mem_limit;
+  curproc->tid = 0;
+  curproc->main = curproc;
+  curproc->is_main = 1;
+  curproc->retval = 0; // 메인 쓰레드이니 0으로 다시 초기화.
+  return (old_main);
+}
 
 int
 exec(char *path, char **argv)
@@ -21,20 +80,24 @@ exec(char *path, char **argv)
   struct proghdr ph;
   pde_t *pgdir, *oldpgdir;
   struct proc *curproc = myproc();
+  struct proc *old_main;
 
-  // TODO: sz을 main쓰레드의 것으로 초기화, dealloc하는 부분 추가
-  // main쓰레드의 is_main을 초기화
+  acquire(&ptable.lock);
+
+  // 현재 쓰레드가 메인 쓰레드가 아닌 경우 자원을 2단계로 나누어서 회수한다.
+  // 1. 메인쓰레드를 현재 쓰레드로 바꾼후 old_main을 기준으로 서브 쓰레드를
+  // 전부 kill하고 회수한다.
+  // 2. 남아있는 old_main을 kill하고 회수한다.  
   if (!curproc->is_main)
   {
-    curproc->main->is_main = 0;
-    curproc->main->main = curproc;
-    curproc->is_main = 1;
-    curproc->tid = 0;
-    curproc->main = curproc;
+    old_main = change_main_thread(curproc, curproc->main);
+    kill_and_retrieve_threads(old_main);
+    kill_old_main_and_retrieve(curproc, old_main);
   }
-  // TODO: 이 부분 고칠 것 두 함수마다 차이가 존재함.
-  kill_and_wait_threads(curproc);
-  // retrieve_sub_threads(curproc->pid);
+  else
+    kill_and_retrieve_threads(curproc);
+
+  release(&ptable.lock);
 
   begin_op();
 
@@ -146,9 +209,28 @@ exec2(char *path, char **argv, int stacksize)
   struct proghdr ph;
   pde_t *pgdir, *oldpgdir;
   struct proc *curproc = myproc();
+  struct proc *old_main;
 
   if (stacksize < 1 || stacksize > 100)
     return (-1);
+
+  acquire(&ptable.lock);
+
+  // 현재 쓰레드가 메인 쓰레드가 아닌 경우 자원을 2단계로 나누어서 회수한다.
+  // 1. 메인쓰레드를 현재 쓰레드로 바꾼후 이전 메인쓰레드를 기준으로 서브 쓰레드를
+  // 전부 kill하고 회수한다.
+  // 2. 남아있는 이전 메인 쓰레드를 kill하고 회수한다.  
+  if (!curproc->is_main)
+  {
+    old_main = change_main_thread(curproc, curproc->main);
+    kill_and_retrieve_threads(old_main);
+    kill_old_main_and_retrieve(curproc, old_main);
+  }
+  else
+    kill_and_retrieve_threads(curproc);
+
+  release(&ptable.lock);
+
   begin_op();
 
   if((ip = namei(path)) == 0){
