@@ -65,9 +65,9 @@ char *testname[NTEST] = {
   "jointest1", // 2
   "jointest2", // 3
   "stresstest", // 4 TODO: 테스트 통과하기
-  "exittest1", // 5 TODO: 테스트 통과하기
-  "exittest2", // 6 TODO: 테스트 통과하기
-  "exectest", // 7 TODO: 마이너 이슈 고치기
+  "exittest1", // 5
+  "exittest2", // 6
+  "exectest", // 7
   "sbrktest", // 8
   "killtest", // 9
   "pipetest", // 10
@@ -329,7 +329,6 @@ exitthreadmain(void *arg)
   return (0);
 }
 
-// TODO: exit 테스트 체크, exit 디자인에 따라 결과가 달라질듯.
 int
 exittest1(void)
 {
@@ -369,13 +368,14 @@ execthreadmain(void *arg)
 {
   char *args[3] = {"echo", "echo is executed!", 0}; 
   sleep(1);
-  exec("echo", args);
+  if (exec("echo", args))
+    printf(1, "exec failed\n");
+  
 
   printf(1, "panic at execthreadmain\n");
   exit();
 }
 
-// TODO: exec테스트 패닉 체크
 int
 exectest(void)
 {
@@ -570,15 +570,14 @@ pipetest(void)
 
 // ============================================================================
 
-// TODO: 슬립 테스트 체크
-// 이것도 결국 exit시 모든 프로세스를 즉시 죽이느냐 마느냐의 문제
+// exit 디자인에 따라 결과가 달라짐.
+// 현재 exit시 모든 쓰레드 정리되도록 했으므로 곧바로 모든 쓰레드가 정리됨.
 void*
 sleepthreadmain(void *arg)
 {
-  printf(1, "tid %d before sleep\n", get_tid());
-  // 원본 sleep(1000000);
-  sleep(10000);
-  printf(1, "tid %d is waked up\n", get_tid());
+
+  sleep(1000000); // 원본
+  // sleep(10000);
   thread_exit(0);
   return (0);
 }

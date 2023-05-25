@@ -17,7 +17,6 @@ start_routine(void *arg)
   }
   if (val == 2)
   {
-    // TODO:: join과 exit이 경쟁하는 상황
     // 만약 exit이 먼저 호출되면 2가지 경우
     // 1. 메인 쓰레드가 exit을 호출했을 경우 서브 쓰레드가 모두 자연히 정리됨.
     // (kill에 의해 join 코드로 진행되지 않음.)

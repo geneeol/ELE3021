@@ -1,0 +1,10 @@
+8. sbrktest start
+pid 4 tid 5 p2_hard: trap 14 err 7 on cpu 0 eip 0xd20 addr 0xff94--kill proc
+pid 4 tid 6 p2_hard: trap 14 err 7 on cpu 0 eip 0xd20 addr 0x11f94--kill proc
+pid 4 tid 7 p2_hard: trap 14 err 7 on cpu 0 eip 0xd20 addr 0x13f94--kill proc
+pid 4 tid 8 p2_hard: trap 14 err 7 on cpu 0 eip 0xd20 addr 0x15f94--kill proc
+pid 4 tid 9 p2_hard: trap 14 err 7 on cpu 0 eip 0xd20 addr 0x17f94--kill proc
+pid 4 tid 1 p2_hard: trap 14 err 5 on cpu 0 eip 0xd68 addr 0xd000--kill proc
+pid 4 tid 2 p2_hard: trap 14 err 5 on cpu 0 eip 0xd68 addr 0xd3e8--kill proc
+pid 4 tid 3 p2_hard: trap 14 err 5 on cpu 0 eip 0xd68 addr 0xd7d0--kill proc
+pid 4 tid 4 p2_hard: trap 14 err 5 on cpu 0 eip 0xd68 addr 0xdbb8--kill proc

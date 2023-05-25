@@ -192,12 +192,15 @@ UPROGS=\
 	_p2_fork_nowait \
 	_p2_null \
 	_p2_hard \
+	_p2_join_exit \
+	_p2_script \
+	_p2_main_exec \
+	_p2_fork_sbrk \
+	_p2_fork \
+	# _p2_t2 \
+	# _pmanager \
 	# _p2_test1 \
 	# _p2_basic_test \
-	# _pmanager \
-	# _p2_fork \
-	# _p2_t2 \
-	# _p2_fork_sbrk \
 	# _p2_sbrk \
 	# _usertests\
 	# _test_origin1\
@@ -288,7 +291,7 @@ EXTRA=\
 	test_lock2.c test_mlfq3.c test_origin1.c test_interrupt.c\
 	pmanager.c p2_test1.c p2_basic_test.c p2_fork.c p2_t2.c\
 	p2_sbrk.c p2_hard.c p2_fork_sbrk.c p2_fork_nowait.c hello_thread.c \
-	p2_null.c \
+	p2_null.c p2_join_exit.c p2_script.c p2_main_exec.c\
 	thread_exec.c thread_exit.c thread_kill.c thread_test.c\
 	README dot-bochsrc *.pl toc.* runoff runoff1 runoff.list\
 	.gdbinit.tmpl gdbutil\

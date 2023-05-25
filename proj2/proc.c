@@ -269,6 +269,7 @@ fork(void)
   return pid;
 }
 
+// TODO: dealloc이용해서 스택 회수하는 로직도 고려해볼 것.
 void
 clean_proc_slot(struct proc *p)
 {
@@ -644,9 +645,9 @@ kill(int pid)
   invalid_pid = 1;
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
   {
-    // 메인쓰레드 및 쓰레드 전부 kill 플래그 설정
-    // TODO: 모든 쓰레드를 kill 하는 게 더 타당해보이긴 함.
+    //h 모든 쓰레드를 kill 하는 게 더 타당해보이긴 함.
     // 왜냐하면 메인 쓰레드만 kill할 경우 쓰레드가 kill 됐음에도 불구하고 코드진행 가능
+    // 그러나 멀티태스킹의 미덕을 생각하면 메인 쓰레드만 kill 괜찮을듯.
     if(p->pid == pid && p->is_main)
     {
       invalid_pid = 0;
@@ -870,109 +871,6 @@ plist(void)
   return (0);
 }
 
-// static struct thread*
-// allocthread(struct proc *p)
-// {
-//   struct thread *t;
-//   char *sp;
-
-//   acquire(&ptable.lock);
-//   //h 이부분에서 ptable락은 필요 없을듯?
-//   // 만약 goto found로 갔는데 그 사이 다른쓰레드가 할당해버리면? 
-//   // 락 필요하네
-//   // allocthread는 alloproc와 무관하게 호출될 수 있으므로 함수 내부에서 그냥 락을 잡자
-//   for(t = p->threads; t < &p->threads[NTHREAD]; t++) //h ptable에서 빈 슬롯에 프로세스 할당
-//   {
-//     if(t->state == UNUSED)
-//       goto found;
-//   }
-//   release(&ptable.lock);
-//   return 0;
-
-// found:
-//   t->state = EMBRYO;
-//   t->tid = nexttid++;
-//   t->main_proc = p;
-
-//   release(&ptable.lock);
-
-//   // Allocate kernel stack.
-//   if((t->kstack = kalloc()) == 0){
-//     t->state = UNUSED;
-//     return 0;
-//   }
-//   sp = t->kstack + KSTACKSIZE;
-
-//   // Leave room for trap frame.
-//   sp -= sizeof *t->tf;
-//   t->tf = (struct trapframe*)sp;
-
-//   // Set up new context to start executing at forkret,
-//   // which returns to trapret.
-//   sp -= 4;
-//   *(uint*)sp = (uint)trapret;
-
-//   sp -= sizeof *t->context;
-//   t->context = (struct context*)sp;
-//   memset(t->context, 0, sizeof *t->context);
-//   t->context->eip = (uint)forkret; // eip는 pc 레지스터로 모든 자식은 forkret에서부터 시작한다
-//   p->n_thread++;
-
-//   return t;
-// }
-
-
-// int
-// thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
-// {
-//   int i, pid;
-//   uint sz, sp;
-//   struct thread *nt;
-//   struct proc *curproc = myproc();
-
-//   // Allocate process.
-//   if((nt = allocthread(curproc)) == 0){
-//     return -1;
-//   }
-
-//   sz = curproc->sz;
-//   if (sz = allocuvm(curproc->pgdir, sz, sz + 2 * PGSIZE) == 0)
-//   {
-//     kfree(nt->kstack);
-//     nt->kstack = 0;
-//     nt->state = UNUSED;
-//     return (-1);
-//   }
-
-//   curproc->sz = sz;
-//   sp = sz;
-
-//   sp -= 4;
-//   *(uint *)sp = (uint)arg;
-//   sp -= 4;
-//   *(uint *)sp = (uint)0xffffffff;
-//   nt->tf->eip = (uint)start_routine;
-//   nt->tf->esp = sp;
-//   *thread = nt->tid;
-
-//   acquire(&ptable.lock);
-
-//   t->state = RUNNABLE;
-
-//   release(&ptable.lock);
-//   return 0;
-// }
-
-// void
-// thread_start(void *(*start_routine)(void *), void *arg)
-// {
-//   void *retval;
-
-//   cprintf("thread_start\n");
-//   retval = start_routine(arg);
-//   thread_exit(retval);
-// }
-
 // TODO: 함수 나누기
 // fork함수와 exec함수에서 필요한 부분을 가져와서 구성 
 int
@@ -992,7 +890,8 @@ thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
   nextpid--;
   curproc = myproc();
 
-  // TODO: memlimit 정보 메인 쓰레드와 동일하게
+  // mem_limit 정보는 메인쓰레드에서만 의미있는 값임.
+  // 따라서 쓰레드의 mem_limit값은 초기화 하지 않음.  
   main = curproc->main;
   np->tid = nexttid++;
   np->main = main;
@@ -1119,44 +1018,6 @@ thread_exit(void *retval)
   panic("zombie exit");
 }
 
-// int
-// thread_join(thread_t thread, void **retval)
-// {
-//   struct proc *p;
-//   struct thread *t;
-//   int havekids, pid;
-//   struct proc *curproc = myproc();
-  
-//   acquire(&ptable.lock);
-//   for(;;){
-//     // Scan through table looking for exited children.
-//     havekids = 0;
-//     for(t = curproc->threads; t < &curproc->threads[NPROC]; t++)
-//     {
-//       if( t->state == ZOMBIE)
-//       {
-//         // Found one.
-//         *retval = t->retval;
-//         kfree(t->kstack);
-//         t->kstack = 0;
-//         t->state = UNUSED;
-//         release(&ptable.lock);
-//         return (0);
-//       }
-//     }
-
-//     // No point waiting if we don't have any children.
-//     if(!havekids || curproc->killed){
-//       release(&ptable.lock);
-//       return -1;
-//     }
-
-//     // Wait for children to exit.  (See wakeup1 call in proc_exit.)
-//     sleep(curproc, &ptable.lock);  //DOC: wait-sleep
-//   }
-// }
-
-// TODO: '같은 쓰레드 그룹끼리만 회수할 수 있게 설정'
 // TODO: 데드락이 감지된 경우 에러 처리 (이 부분은 구현 못할듯)
 int
 thread_join(thread_t thread, void **retval)
@@ -1177,7 +1038,8 @@ thread_join(thread_t thread, void **retval)
     {
       if (p->tid != thread)
         continue;
-      // 같은 쓰레드 그룹인지 확인
+      // 같은 쓰레드 그룹끼리만 자원을 회수하도록 지정. (실제 pthread도 그러함)
+      // 당연히 이게 타당함. 서로 다른 프로세스끼리는 자원을 공유하지 않으므로.
       if (p->main != curproc->main)
       {
         release(&ptable.lock);
@@ -1189,7 +1051,6 @@ thread_join(thread_t thread, void **retval)
         // Found one.
         if (retval)
           *retval = p->retval;
-        // TODO: dealloc이용해서 스택 회수하는 로직도 고려해볼 것.
         clean_proc_slot(p);
         release(&ptable.lock);
         return (0);
