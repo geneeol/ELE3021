@@ -414,7 +414,10 @@ wait(void)
       if(p->parent != curproc)
         continue;
       havekids = 1;
-      if(p->state == ZOMBIE)
+      // 현재 문제가 부모 - 자식 관계에서 자식 쓰레드 생성시 부모가 자식 쓰레드를 회수해버림.
+      // 쓰레드의 부모를 현재 메인 쓰레드의 부모로 지정하되, 
+      // 쓰레드는 wait을 통해 회수되지 못하도록 p->is_main 조건문에 추가.
+      if(p->state == ZOMBIE && p->is_main)
       {
         // Found one.
         pid = p->pid;
