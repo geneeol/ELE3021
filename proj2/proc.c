@@ -1169,7 +1169,8 @@ thread_join(thread_t thread, void **retval)
   if (curproc->tid == thread || thread == 0)
     return (-1);
   acquire(&ptable.lock);
-  for(;;){
+  for(;;)
+  {
     // Scan through table looking for exited children.
     foundthread = 0;
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
@@ -1194,14 +1195,26 @@ thread_join(thread_t thread, void **retval)
         return (0);
       }
     }
+
+    // 수정한 부분: 현재 프로세스가 kill 되었다는 뜻은 전체 쓰레드 그룹이 kill됨.
+    // 이 경우 자원은 자연히 회수되므로 join이 0을 리턴하는게 자연스러움.
+    // 이 부분이 pthread와 다른 점인듯.
+    if (curproc->killed)
+    {
+      // cprintf("I'm killed pid: %d, tid: %d?\n", curproc->pid, curproc->tid);
+      release(&ptable.lock);
+      return (0); // 이상하긴 하지만 join을 결국 성공하긴 할것이므로 0 리턴하게.
+    }
     // No point waiting if we don't have any children.
     // 현재 프로세스가 이미 kill 됐으면 쓰레드 그룹이 전부 kill됐을 거임.
     // kill 되었더라도 루프를 한번더 돌고 자원 회수가능하면 회수
-    if(!foundthread || curproc->killed)
+    if(!foundthread)
     {
+      // cprintf("no thread left pid: %d, tid: %d\n", curproc->pid, curproc->tid);
       release(&ptable.lock);
       return -1;
     }
+
     // Wait for children to exit.  (See wakeup1 call in proc_exit.)
     sleep(curproc, &ptable.lock);  //DOC: wait-sleep
     //h 만약 curproc가 sleep중에 kill됐으면 여기서 깨어날 수 있음

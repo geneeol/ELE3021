@@ -57,13 +57,23 @@ struct proc *
 change_main_thread(struct proc *curproc, struct proc *old_main)
 {
   old_main = curproc->main;
-  old_main->main = curproc;
+
+  // old_main은 어차피 죽을 프로세스. 쓰레드 그룹이 정리되기 전에 
+  // main변수 바꾸면 curproc가 exit에 의해 죽는 경우 발생
+  // 따라서 아래부분 주석처리.
+
+  // old_main->main = curproc;
+
   old_main->is_main = 0;
   old_main->tid = 0; // 디버깅할 때 음수로 넣기.
   curproc->sz = old_main->sz;
   curproc->mem_limit = old_main->mem_limit;
-  curproc->tid = 0;
-  curproc->main = curproc;
+
+  // 쓰레드 그룹이 완전히 정리되기 전에 tid와 main 변수를 바꾸면 문제가 됨.
+  // 따라서 아래부분 주석처리.
+  // curproc->tid = 0;
+  // curproc->main = curproc;
+
   curproc->is_main = 1;
   curproc->retval = 0; // 메인 쓰레드이니 0으로 다시 초기화.
   return (old_main);
@@ -83,6 +93,7 @@ exec(char *path, char **argv)
   struct proc *old_main;
 
   acquire(&ptable.lock);
+  // cprintf("exec pid: %d, tid: %d\n", curproc->pid, curproc->tid);
 
   // 현재 쓰레드가 메인 쓰레드가 아닌 경우 자원을 2단계로 나누어서 회수한다.
   // 1. 메인쓰레드를 현재 쓰레드로 바꾼후 old_main을 기준으로 서브 쓰레드를
@@ -93,6 +104,10 @@ exec(char *path, char **argv)
     old_main = change_main_thread(curproc, curproc->main);
     kill_and_retrieve_threads(old_main);
     kill_old_main_and_retrieve(curproc, old_main);
+    // 쓰레드 그룹이 완전히 변경된 후 tid와 main 변수 변경
+    // 해당 정보를 마지막에 초기화 해야 join과 호환 가능.
+    curproc->tid = 0;
+    curproc->main = curproc;
   }
   else
     kill_and_retrieve_threads(curproc);
@@ -225,6 +240,8 @@ exec2(char *path, char **argv, int stacksize)
     old_main = change_main_thread(curproc, curproc->main);
     kill_and_retrieve_threads(old_main);
     kill_old_main_and_retrieve(curproc, old_main);
+    curproc->tid = 0;
+    curproc->main = curproc;
   }
   else
     kill_and_retrieve_threads(curproc);
