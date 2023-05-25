@@ -63,6 +63,7 @@ struct proc {
   struct proc *main;
   int is_main;
   void *retval;
+  int already_call_exit;
   int n_thread; // 메인 쓰레드의 경우만 의미있는 값을 가짐
 };
 

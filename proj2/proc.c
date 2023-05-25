@@ -34,6 +34,9 @@ extern void trapret(void);
 
 static void wakeup1(void *chan);
 
+// proj2 프로토타입 추가
+static void wakeup_pid1(int pid);
+
 void
 pinit(void)
 {
@@ -282,45 +285,49 @@ clean_proc_slot(struct proc *p)
   p->main = 0;
   p->is_main = 0;
   p->retval = 0;
+  p->already_call_exit = 0;
 }
 
 void
-kill_and_wait_threads(struct proc *curproc)
+kill_and_retrieve_threads(struct proc *main)
 {
   struct proc *p;
   int nthread;
-
-  acquire(&ptable.lock);
+  
   for (;;)
   {
     nthread = 0;
     for (p = ptable.proc; p < &ptable.proc[NPROC]; p++)
     {
-      if (p->main != curproc || p->is_main)
+      // 인자로 받은 main을 메인 쓰레드로 하는 쓰레드 찾기
+      // 메인 쓰레드의 메인은 자기 자신이므로 이에 대한 처리 추가
+      if (p->main != main || p == main || p->is_main)
         continue ;
       if (p->state == ZOMBIE)
         clean_proc_slot(p);
       else
       {
-        p->killed = 1;
+        if (!p->already_call_exit)
+          p->killed = 1;
         nthread++;
-        // ptable락을 잡고 있으므로 wakeup1 사용
         wakeup1(p);
       }
     }
     if (nthread == 0)
-    {
-      release(&ptable.lock);
       return ;
-    }
-    sleep(curproc, &ptable.lock);
+    sleep(main, &ptable.lock);
   }
 }
 
-// TODO: 메인 쓰레드가 아닌 쓰레드가 exit을 호출했을 때 자원 회수.
-// TODO: 1. 만약 쓰레드가 fork를 했고 해당 프로세스가 thread_exit하는 상황
-//       2. 메인 쓰레드가 exit하고 서브 쓰레드가 fork를 한 상황
-//h 모든 프로세스는 종료전 exit을 명시적으로 호출해야하는 것 같다
+// thread_exit과 exit의 차이:
+// exit의 경우 현재 쓰레드 그룹을 전부 kill해서 프로세스를 종료시킨다.
+
+// 1. 만약 쓰레드가 fork를 했고 해당 프로세스가 thread_exit하는 상황
+// 2. 메인 쓰레드가 exit하고 서브 쓰레드가 fork를 한 상황
+// 1번의 경우 init_proc에 쓰레드에 의해 생성된 프로세스를 인계한다.
+// 2번의 경우 메인 쓰레드가 exit하면 서브쓰레드가 thread_exit을 호출한다.
+// 따라서 결국 1번의 상황으로 귀결된다.
+//h 모든 프로세스는 종료전 exit을 명시적으로 호출해야한다.
 // Exit the current process.  Does not return.
 // An exited process remains in the zombie state
 // until its parent calls wait() to find out it exited.
@@ -334,22 +341,26 @@ exit(void)
   if(curproc == initproc)
     panic("init exiting");
 
+  acquire(&ptable.lock);
 
-  // TODO: 이 부분은 조교님 답변 받고 결정하자.
-  // kill에 의해 쓰레드가 exit을 호출하면 thread_exit을 호출하게 수정 
-  // (이러한 수정은 kill에 의해 프로세스가 종료되는 경우가 있을 수 있기 때문)
-  // kill에 의해 쓰레드가 exit을 콜하는 경우가 생길 수 있다. (현재 구현에서는)
-  // 이 부분을 바꾸려면 trap.c에서 thread_exit을 호출하게 하면 됨.
-  // thread_exit과 exit은 wakeup 해주는 프로세스 외에는 차이가 없다.
-  // 또 exit의 경우 메인쓰레드라면 서브 스레드를 전부 죽이고 exit한다.
-  // 수정방향: kill pid 때리고 trap.c 수정해두기. 
+  // 디버깅 할 때 꼭 출력해야하는 부분
+  // cprintf("exit pid:%d, tid: %d\n", curproc->pid, curproc->tid);
   if (!curproc->is_main)
-    thread_exit(0);
-  
-  // 메인 쓰레드는 서브 쓰레드가 전부 종료된 후 exit할 수 있다.
-  if (curproc->is_main)
-    kill_and_wait_threads(curproc);
-  
+  {
+    curproc->already_call_exit = 1; // thread_exit이 재귀적으로 호출되는 것을 방지
+    curproc->main->killed = 1;
+    wakeup_pid1(curproc->pid);
+    release(&ptable.lock);
+    thread_exit(0); 
+    // thread_exit을 호출함으로써 좀비 상태가 됨
+    // 따라서 아래로 더이상 코드가 진행되지 않음.
+  }
+  else
+  {
+    kill_and_retrieve_threads(curproc);
+    release(&ptable.lock);
+  }
+
   // Close all open files
   for(fd = 0; fd < NOFILE; fd++)
   {
@@ -369,7 +380,9 @@ exit(void)
 
   // Parent might be sleeping in wait().
   //h 이미 ptable.lock을 잡았으므로 바로 wakeup1 호출
-  // TODO: 만약 쓰레드가 exit할 수 있다면 이 부분 수정 필요
+
+  // 쓰레드가 exit을 호출하더라도 절대 이 라인까지 도달하지 못함
+  // thread_exit을 사전에 호출 후 zombie상태로 진입하기 때문
   wakeup1(curproc->parent);
 
   // Pass abandoned children to init.
@@ -385,12 +398,8 @@ exit(void)
     }
   }
 
-  //h 큐에서 pop 해야하는지 확인할 것! 안해도 상관은 없을 것 같은데 흠..
-  //  안해도 된다. 그냥 다시 큐에 집어넣지만 않으면 되는 것 
   //  Jump into the scheduler, never to return.
-  curproc->state = ZOMBIE; //h 현재 프로세스를 ZOMBIE 상태로 변경한다,
-                           //  따라서 해당 프로세스는 더 이상 스케줄링 되지 않는다.
-                           //  이후 부모프로세스의 wait호출을 통해 회수된다
+  curproc->state = ZOMBIE;
   sched(); //h scheduler로 컨텍스트 스위치가 되고 나면 두 번 다시 이 프로세스는 선택되지 않는다
   panic("zombie exit");
 }
@@ -515,7 +524,8 @@ yield(void)
   acquire(&ptable.lock);  //DOC: yieldlock //h 스케쥴러로 돌아가기 전에 락을 다시 잡아둔다
   myproc()->state = RUNNABLE;
   sched(); //h 이 부분에서 스케쥴러가 락을 잡아뒀다, 아랫줄이 실행되는 상황에서 스케쥴러는 락을 해제하지 않는다
-  release(&ptable.lock); //h scheduler에서 걸어뒀던 락을 여기에서 풀어준다
+  //h sleep할 때 잡았던 락 혹은 스케쥴러에서 잡았던 락을 이 부분에서 풀어줌.
+  release(&ptable.lock);
 }
 
 //h 자식 프로세스는 항상 여기에서 시작한다.
@@ -635,7 +645,9 @@ kill(int pid)
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
   {
     // 메인쓰레드 및 쓰레드 전부 kill 플래그 설정
-    if(p->pid == pid)
+    // TODO: 모든 쓰레드를 kill 하는 게 더 타당해보이긴 함.
+    // 왜냐하면 메인 쓰레드만 kill할 경우 쓰레드가 kill 됐음에도 불구하고 코드진행 가능
+    if(p->pid == pid && p->is_main)
     {
       invalid_pid = 0;
       p->killed = 1;
@@ -1197,44 +1209,6 @@ thread_join(thread_t thread, void **retval)
   }
 }
 
-int
-retrieve_sub_threads(int pid)
-{
-  struct proc *p;
-  int fd;
-
-  // TODO: 여기서 락잡으면 왜 터지지?
-  // cprintf("starting retrieve_sub_threads: pid = %d\n", pid);
-  // if (holding(&ptable.lock))
-  //   cprintf("lock is already hold!\n");
-  acquire(&ptable.lock);
-  // cprintf("after acquire\n");
-  for (p = ptable.proc; p < &ptable.proc[NPROC]; p++)
-  {
-    if (p->pid == pid && !p->is_main)
-    {
-      if (p->state != ZOMBIE)
-      {
-        for(fd = 0; fd < NOFILE; fd++)
-        {
-          if(p->ofile[fd])
-          {
-            fileclose(p->ofile[fd]);
-            p->ofile[fd] = 0;
-          }
-        }
-        begin_op();
-        iput(p->cwd);
-        end_op();
-        p->cwd = 0;
-      }
-      clean_proc_slot(p);
-    }
-  }
-  // cprintf("retrieve_sub_threads is done: pid = %d\n", pid);
-  release(&ptable.lock);
-  return (0);
-}
 
 int
 get_pid(void)

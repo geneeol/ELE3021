@@ -41,12 +41,13 @@ void
 trap(struct trapframe *tf)
 {
   if(tf->trapno == T_SYSCALL){
+    // 쓰레드의 경우 kill 플래그가 세워지면 thread_exit을 호출하게 수정 
     if(myproc()->killed)
-      exit();
+      myproc()->is_main ? exit() : thread_exit(0);
     myproc()->tf = tf;
     syscall();
     if(myproc()->killed) //h 시스템콜 호출됐는데 상태가 killed면 종료
-      exit();
+      myproc()->is_main ? exit() : thread_exit(0);
     return;
   }
 
@@ -109,23 +110,24 @@ trap(struct trapframe *tf)
     myproc()->killed = 1;
   }
 
+  // 쓰레드의 경우 kill 플래그가 세워지면 thread_exit을 호출하게 수정 
   // Force process exit if it has been killed and is in user space.
   // (If it is still executing in the kernel, let it keep running
   // until it gets to the regular system call return.)
   if(myproc() && myproc()->killed && (tf->cs&3) == DPL_USER) // 실행됐는데 killed 상태면 종료
-    exit();
+      myproc()->is_main ? exit() : thread_exit(0);
 
   //h 확인결과 myproc가 널이거나, myproc 상태는 항상 running 같음
   //  즉 모든 프로세스가 sleep이어도 인터럽트는 발생해서 trap에 도달한다.
-  //  그 외 일반적으로 프로세스사 running중에 인터럽트를 당해서 trap에 도달한다.
+  //  그 외 일반적으로 프로세스스 running중에 인터럽트를 당해서 trap에 도달한다.
   // Force process to give up CPU on clock tick.
   // If interrupts were on while locks held, would need to check nlock.
   if(myproc() && myproc()->state == RUNNING
       && tf->trapno == T_IRQ0+IRQ_TIMER)
     yield();
 
-  //h 이 부분에 의해 현재 프로세스가 다시 cpu를 잡았는데 killed 상태면 종료
+  //h 이 부분에 의해 yield 이후 다시 cpu를 잡았는데 kill 플래그가 있으면 종료
   // Check if the process has been killed since we yielded
   if(myproc() && myproc()->killed && (tf->cs&3) == DPL_USER)
-    exit();
+      myproc()->is_main ? exit() : thread_exit(0);
 }
