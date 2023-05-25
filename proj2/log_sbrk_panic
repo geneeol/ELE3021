@@ -1,0 +1,267 @@
+$ p2_script
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+ThreadThread 4 start
+ 3 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+ThrThread 2 start
+Thread 3 start
+Thread 4 start
+ead 1 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 Thread 4 start
+start
+Thread 1 found 2
+Test failed!
+Thread 2 found 1
+Test failed!
+Test 3: Sbrk test
+Thread 0Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+ start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Thread 0 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 staThread 3 start
+Thread 4 start
+rt
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+ThreadThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+ 0 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+ThreadThread 2 start
+Thread 3 start
+Thread 4 start
+ 1 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 stThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+art
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3: Sbrk test
+Thread 0 start
+lapicid 0: panic: remap
+ 80108207 80108599 80104125 80106b1c 80105d59 801072fd 80106fea 0 0 0
