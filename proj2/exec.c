@@ -196,7 +196,7 @@ exec2(char *path, char **argv, int stacksize)
   sz = PGROUNDUP(sz);
   if((sz = allocuvm(pgdir, sz, sz + (stacksize + 1) * PGSIZE)) == 0)
     goto bad;
-  clearpteu(pgdir, (char*)(sz - 2*PGSIZE));
+  clearpteu(pgdir, (char*)(sz - (stacksize + 1) *PGSIZE));
   sp = sz;
 
   //h argument strings를 스택 탑에 한번에 하나씩 복사한다.
