@@ -1,0 +1,7 @@
+pid 41 tid 184 thread_test: trap 14 err 5 on cpu 0 eip 0xb5 addr 0x1c004--kill proc
+// err5: 유저모드에서 페이지 폴트, write과정에서 에러 발생, 존재하지 않는 페이지.
+// 즉 쓰레드가 존재하지 않는다? 뭐지
+Thread 4 start
+pid 41 tid 185 thread_test: trap 14 err 7 on cpu 0 eip 0x10e addr 0x1a000--kill proc
+// err7: 유저모드에서, write할 때, 페이지레벨 프로텍션을 위반.
+pid 41 tid 181 thread_test: trap 14 err 7 on cpu 0 eip 0x160 addr 0x1a000--kill proc
