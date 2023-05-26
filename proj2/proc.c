@@ -244,6 +244,8 @@ fork(void)
   }
   // 메인 쓰레드의 pgdir을 통째로 복사했으므로 sz값도 main의 값으로 복사한다.
   np->sz = curproc->main->sz;
+  np->n_stackpage = curproc->main->n_stackpage;
+
 
   // fork를 한 쓰레드가 wait을 통해 자기 스스로 자식을 회수하는 건 자연스럽다 
   // 즉 쓰레드가 다른 프로세스의 부모가 될 수 있다.
@@ -287,6 +289,7 @@ clean_proc_slot(struct proc *p)
   p->is_main = 0;
   p->retval = 0;
   p->already_call_exit = 0;
+  p->n_stackpage = 0;
 }
 
 void
@@ -861,7 +864,9 @@ plist(void)
       if (!p->is_main)
         cprintf("it's thread: tid: %d\n", p->tid);
       else
-        cprintf("it's main process\n");
+      cprintf("name: %s, pid: %d, state: %s, ", p->name, p->pid, state); 
+      cprintf("n_stackpage: %d, memory_size: 0x%x, limit: 0x%x\n", \
+                p->n_stackpage, p->sz, p->mem_limit);
     }
     if (p->is_main)
       cprintf("name: %s, pid: %d, page: %d, memory size: 0x%x, limit: 0x%x\n", \
@@ -921,6 +926,8 @@ thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
   // 메인쓰레드의 메모리 사용량을 업데이트
   *thread = np->tid;
   main->sz = sz;
+  main->n_stackpage++; // 쓰레드가 하나 생성되면 main의 스택페이지개수를 늘려준다.
+  // 프로세스의 스택페이지 개수는 결국 쓰레드의 스택페이지 개수를 포함하는 것이므로
   np->sz = sz;
   np->parent = main->parent;
   *np->tf = *main->tf;
@@ -993,6 +1000,8 @@ thread_exit(void *retval)
   acquire(&ptable.lock);
 
   curproc->retval = retval;
+  /// 메인 쓰레드의 현재 사용하는 스택페이지 개수 하나 줄인다.
+  curproc->main->n_stackpage--;
 
   // Parent might be sleeping in wait().
   // 여기 조건문 필요 없을듯.

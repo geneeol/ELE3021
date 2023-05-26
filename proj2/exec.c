@@ -163,6 +163,9 @@ exec(char *path, char **argv)
     goto bad;
   //h 가드용 페이지를 할당하는 부분
   clearpteu(pgdir, (char*)(sz - 2*PGSIZE));
+  // exec실행하는 시점에 현재 프로세스만 남아있으므로 레이스컨디션 존재하지 않음
+  // 현재 프로세스가 exec 실행 루틴에 이미 진입했으므로.
+  curproc->n_stackpage = 1;
   sp = sz;
 
   //h argument strings를 스택 탑에 한번에 하나씩 복사한다.
@@ -296,6 +299,7 @@ exec2(char *path, char **argv, int stacksize)
   if((sz = allocuvm(pgdir, sz, sz + (stacksize + 1) * PGSIZE)) == 0)
     goto bad;
   clearpteu(pgdir, (char*)(sz - (stacksize + 1) *PGSIZE));
+  curproc->n_stackpage = stacksize;
   sp = sz;
 
   //h argument strings를 스택 탑에 한번에 하나씩 복사한다.
@@ -331,6 +335,7 @@ exec2(char *path, char **argv, int stacksize)
   curproc->sz = sz;
   curproc->tf->eip = elf.entry;  // main
   curproc->tf->esp = sp;
+  //h switchuvm 호출하기 전까지 이전 주소공간을 사용하여 코드가 계속 진행되는듯
   switchuvm(curproc);
   freevm(oldpgdir);
   return 0;
