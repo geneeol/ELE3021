@@ -218,59 +218,6 @@ growproc(int n)
   return 0;
 }
 
-// Create a new process copying p as the parent.
-// Sets up stack to return as if from system call.
-// Caller must set state of returned proc to RUNNABLE.
-int
-fork(void)
-{
-  int i, pid;
-  struct proc *np;
-  struct proc *curproc = myproc();
-
-  // Allocate process.
-  if((np = allocproc()) == 0){
-    return -1;
-  }
-
-  // 힙에 존재하는 데이터는 모든 쓰레드가 공유한다.
-  // 따라서 메인 쓰레드의 pgdir과 sz을 이용하는 것이 옳다. (pgdir은 어차피 공유)
-  // Copy process state from proc.
-  if((np->pgdir = copyuvm(curproc->main->pgdir, curproc->main->sz)) == 0){
-    kfree(np->kstack);
-    np->kstack = 0;
-    np->state = UNUSED;
-    return -1;
-  }
-  // 메인 쓰레드의 pgdir을 통째로 복사했으므로 sz값도 main의 값으로 복사한다.
-  np->sz = curproc->main->sz;
-  np->n_stackpage = curproc->main->n_stackpage;
-
-
-  // fork를 한 쓰레드가 wait을 통해 자기 스스로 자식을 회수하는 건 자연스럽다 
-  // 즉 쓰레드가 다른 프로세스의 부모가 될 수 있다.
-  np->parent = curproc;
-  *np->tf = *curproc->tf;
-  // Clear %eax so that fork returns 0 in the child.
-  np->tf->eax = 0;
-
-  for(i = 0; i < NOFILE; i++)
-    if(curproc->ofile[i])
-      np->ofile[i] = filedup(curproc->ofile[i]);
-  np->cwd = idup(curproc->cwd);
-
-  safestrcpy(np->name, curproc->name, sizeof(curproc->name));
-
-  pid = np->pid; //h 자식프로세스의 pid값을 반환하다.
-
-  acquire(&ptable.lock);
-
-  np->state = RUNNABLE; //h 생성한 프로세스를 이곳에서 RUNNABLE 상태로 변경
-
-  release(&ptable.lock);
-  return pid;
-}
-
 // TODO: dealloc이용해서 스택 회수하는 로직도 고려해볼 것.
 void
 clean_proc_slot(struct proc *p)
@@ -292,6 +239,73 @@ clean_proc_slot(struct proc *p)
   p->n_stackpage = 0;
 }
 
+// Create a new process copying p as the parent.
+// Sets up stack to return as if from system call.
+// Caller must set state of returned proc to RUNNABLE.
+int
+fork(void)
+{
+  int i, pid;
+  struct proc *np;
+  struct proc *curproc = myproc();
+
+  // Allocate process.
+  if((np = allocproc()) == 0){
+    return -1;
+  }
+
+  // 복사할 때 락으로 보호해주는게 타당함.
+  // 기존 코드에서 보호 안한 이유는
+  // 현재 프로세스의 sz값을 바꿀 수 있는게 자기 자신뿐이므로 레이스 컨디션 발생 x
+  acquire (&ptable.lock);
+
+  // 쓰레드가 fork를 하더라도 프로세스를 통째로 복사하는 것이 옳다.
+  // 따라서 메인 쓰레드의 pgdir과 sz을 이용하는 것이 옳다. (pgdir은 어차피 공유)
+  // Copy process state from proc.
+  if((np->pgdir = copyuvm(curproc->main->pgdir, curproc->main->sz)) == 0){
+    clean_proc_slot(np);
+    release(&ptable.lock);
+    return -1;
+  }
+
+  // 메인 쓰레드의 pgdir을 통째로 복사했으므로 sz값도 main의 값으로 복사한다.
+  np->sz = curproc->main->sz;
+  np->n_stackpage = curproc->main->n_stackpage;
+
+  // 일단 이 부분도 락으로 보호.
+  // fork를 한 쓰레드가 wait을 통해 자기 스스로 자식을 회수하는 건 자연스럽다 
+  // 즉 현재 디자인에서는 쓰레드 그룹내 하나의 유일한 쓰레드가
+  // 다른 프로세스의 유일한 부모가 될 수 있다.
+  // 회수는 wait 참고.
+  np->parent = curproc;
+  release(&ptable.lock);
+
+
+
+  *np->tf = *curproc->tf;
+
+  // Clear %eax so that fork returns 0 in the child.
+  np->tf->eax = 0;
+
+  for(i = 0; i < NOFILE; i++)
+    if(curproc->ofile[i])
+      np->ofile[i] = filedup(curproc->ofile[i]);
+  np->cwd = idup(curproc->cwd);
+
+  safestrcpy(np->name, curproc->name, sizeof(curproc->name));
+
+  pid = np->pid; //h 자식프로세스의 pid값을 반환하다.
+
+  acquire(&ptable.lock);
+
+  np->state = RUNNABLE; //h 생성한 프로세스를 이곳에서 RUNNABLE 상태로 변경
+
+  release(&ptable.lock);
+  return pid;
+}
+
+// TODO: 쓰레드는 dealloc호출,
+// wait이랑 embryo상태일 때는 dealloc 호출 x 
 void
 kill_and_retrieve_threads(struct proc *main)
 {
@@ -892,42 +906,50 @@ thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
   if((np = allocproc()) == 0){
     return -1;
   }
-  nextpid--;
   curproc = myproc();
 
-  // mem_limit 정보는 메인쓰레드에서만 의미있는 값임.
-  // 따라서 쓰레드의 mem_limit값은 초기화 하지 않음.  
-  main = curproc->main;
-  np->tid = nexttid++;
-  np->main = main;
-  np->is_main = 0;
-  np->pid = main->pid;
 
   // 메인 쓰레드와 pgdir을 공유하기 위해 락이 필요함
   // 락을 걸지 않으면 pgdir에 대한 레이스 컨디션 발생 가능
   acquire(&ptable.lock);
-
+  
+  nextpid--;
+  main = curproc->main;
   sz = main->sz;
-  np->pgdir = main->pgdir;
-  // 쓰레드는 메인 쓰레드와 디렉토리(첫번째 페이지 테이블)을 공유한다.
-  // 해당 테이블 공간에 해당하는 유저 스택을 할당해서 쓰레드가 사용하게끔 한다.
+
+  // 쓰레드는 메인 쓰레드와 페이지디렉토리(첫번째 페이지 테이블)를 공유한다.
+  // 해당 테이블(주소공간)에 해당하는 쓰레드의 유저 스택을 할당한다.
   if ((sz = allocuvm(main->pgdir, sz, sz + 2 * PGSIZE)) == 0)
   {
-    kfree(np->kstack);
-    np->kstack = 0;
-    np->state = UNUSED;
+    clean_proc_slot(np);
+    release(&ptable.lock);
     return (-1);
   }
   // 유저 스택 밑에 가드 페이지 추가.
   clearpteu(main->pgdir, (char*)(sz - 2*PGSIZE));
+  np->pgdir = main->pgdir;
 
-  release(&ptable.lock);
+  // 안전하게 이 부분 통째로 락 안으로
+  np->tid = nexttid++; //h tid 공유변수에 대한 레이스 컨디션 고려해야함..!
+  np->main = main;
+  np->is_main = 0;
+  np->pid = main->pid;
 
-  // 메인쓰레드의 메모리 사용량을 업데이트
-  *thread = np->tid;
+
+  // mem_limit 정보는 메인쓰레드에서만 의미있는 값임.
+  // 따라서 쓰레드의 mem_limit값은 초기화 하지 않음.  
+  // np->mem_limit = main->mem_limit;
+
+  //h 여기서 레이스 컨디션 발생했었음!!! main의 sz 보호 안돼서.
+  // main의 쓰레드 맴버변수는 락을 통해 보호되어야 한다.
   main->sz = sz;
   main->n_stackpage++; // 쓰레드가 하나 생성되면 main의 스택페이지개수를 늘려준다.
   // 프로세스의 스택페이지 개수는 결국 쓰레드의 스택페이지 개수를 포함하는 것이므로
+  *thread = np->tid; // 쓰레드 id할당도 tid를 보호해서 해야함
+
+
+  // 이 부분도 그냥 안전하게 임계 영역 안에 넣자
+  // np값은 runnable로 바꿀 때만 락을 잡으면 되는듯하지만 방어적 코드 작성
   np->sz = sz;
   np->parent = main->parent;
   *np->tf = *main->tf;
@@ -942,6 +964,8 @@ thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
   *(uint *)sp = (uint)0xffffffff;
   np->tf->eip = (uint)start_routine;
   np->tf->esp = sp;
+
+  release(&ptable.lock);
 
   // TODO: 아래 부분 필요한지 확인.
   // 쓰레드끼리는 open file 리스트를 공유한다. 
