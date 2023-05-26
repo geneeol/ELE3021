@@ -41,6 +41,8 @@ Thread 1 start
 Thread 2 start
 Thread 3 Thread 4 start
 start
+// TODO: (해결된듯) thread1이 2를 찾는 에러
+// tid할당시에 보호가 안돼서 레이스 컨디션 생긴거.
 Thread 1 found 2
 Test failed!
 Thread 2 found 1
