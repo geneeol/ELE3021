@@ -179,6 +179,8 @@ userinit(void)
   release(&ptable.lock);
 }
 
+// sbrk는 힙과 관련된 영역이므로 n_stackpage값 변경하지 않는게 타당.
+
 //h sbrk를 호출하면 해당 함수를 통해 프로세스의 heap에 추가적인 메모리를 할당한다.
 //  프로세스의 heap 사이즈와 페이지 테이블을 업데이트한다.
 // 해당 함수는 sys_sbrk에서 호출되는데 함수 내부로 들어오기 전 항상 락을 잡고 진입한다.
@@ -434,6 +436,8 @@ exit(void)
   panic("zombie exit");
 }
 
+// 현재 fork를 한 쓰레드가 자식 프로세스 회수를 책임지도록 구현.
+// 실제론 여러 쓰레드가 wait으로 다른 쓰레드에서 fork한 자식프로세스를 회수 가능할듯
 // Wait for a child process to exit and return its pid.
 // Return -1 if this process has no children.
 int
@@ -841,11 +845,16 @@ schedulerUnlock(int password)
 /***** system calls for project2 *****/
 
 
-// 쓰레드끼리는 sz값이 동일하느냐? 만약 동일하지 않으면 특정 쓰레드에서
-// limit값 설정에 실패하고, 다른 쓰레드에선 성공하는 경우 고려해야함
+// sbrk가 호출될 때, 메인이 호출하면 당연히 main의 mem_limit을 이용해야함.
+// 쓰레드가 호출하더라도 main의 mem_limit을 봐야함. 
+// 실제 프로세스 메모리 주소공간은 메인이 관리하기 때문
+
 // 디자인: main 쓰레드의 sz값만 의미있다고 판단.
-// sbrk를 호출시에도 메인쓰레드의 sz값을 이용함. 메모리 관련은 전부 메인쓰레드가 담당.
+// 메인 쓰레드의 sz이 증가하더라도 쓰레드의 sz값까지 업데이트하기에는 오버헤드가 크다.
+// 실제로 메인쓰레드와 쓰레드는 같은 주소공간을 공유하므로 두개의 sz을 분리하는게 의미 없다.
+// sbrk를 호출시에도 메인쓰레드의 sz값을 이용해야함. 메모리 관련은 전부 메인쓰레드가 담당.
 // 따라서 메인 쓰레드의 mem_limit값만 관리하자
+// 즉 전체 쓰레드는 main쓰레드의 mem_limit과 sz을 이용함. 
 int
 setmemorylimit(int pid, int limit)
 {
@@ -941,6 +950,11 @@ thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
 
   // 쓰레드는 메인 쓰레드와 페이지디렉토리(첫번째 페이지 테이블)를 공유한다.
   // 해당 테이블(주소공간)에 해당하는 쓰레드의 유저 스택을 할당한다.
+  // 쓰레드 스택 사이즈에 대한 디자인:
+  // 현재 메인 쓰레드의 스택 사이즈가 클지라도 쓰레드가 클 이유는 없다.
+  // 일반적으로 쓰레드는 서브태스크를 수행하기에,
+  // 요구하는 스택사이즈가 그리 크지 않을 것이다.
+  // 따라서 쓰레드의 스택사이즈는 4096kb로 고정한다.
   if ((sz = allocuvm(main->pgdir, sz, sz + 2 * PGSIZE)) == 0)
   {
     clean_proc_slot(np);
@@ -1002,7 +1016,10 @@ thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
   // xv6에서 파일시스템 코드는 락을 항상 '정해진 순서'로 잡아야 함.
   // 따라서 함부로 ptale.lock을 잡고 아래 코드 실행하면 에러 발생 가능.
 
+  // TODO: 아래 부분 필요한지 확인. 아마 파이프 때문에 필요할듯.
   // 쓰레드끼리는 open file 리스트를 공유한다. 
+  // 실제로 쓰레드를 pcb를 및 fork를 이용하여 구현했으니 아래 부분이 필요한게 맞는듯.
+  //h 한계: 한 쓰레드에서 파일을 open, close하더라도 다른쓰레드에 해당정보 전달 불가.
   for(i = 0; i < NOFILE; i++)
   {
     if(curproc->ofile[i])
@@ -1038,6 +1055,7 @@ thread_exit(void *retval)
 
   // TODO: 일단 약식으로 구현하자. main 쓰레드가 thread_exit을 호출하면
   // 모든 프로세스를 종료한다.
+  // 조교님피셜: 메인 쓰레드는 thread_exit을 호출하지 않는다고 함.
   if (curproc->is_main)
     exit();
 
@@ -1082,7 +1100,7 @@ thread_exit(void *retval)
   }
   //  Jump into the scheduler, never to return.
   curproc->state = ZOMBIE;
-  sched(); //h scheduler로 컨텍스트 스위치가 되고 나면 두 번 다시 이 프로세스는 선택되지 않는다
+  sched(); //h scheduler로 컨텍스트 스위치가 되고 나면 두번 다시 이 프로세스는 선택되지 않는다
   panic("zombie exit");
 }
 
