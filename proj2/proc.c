@@ -220,12 +220,16 @@ growproc(int n)
   return 0;
 }
 
-// TODO: dealloc이용해서 스택 회수하는 로직도 고려해볼 것.
 void
-clean_proc_slot(struct proc *p)
+clean_proc_slot(struct proc *p, int is_thread)
 {
   kfree(p->kstack);
   p->kstack = 0;
+  // 하단 코드를 통해 연속된 주소공간에 사용하지 않는 hole이 생김.
+  // hole을 채우는 것은 오히려 메모리 구조를 복잡하게 만든다고 판단하여 구현치 않음.
+  // 한 프로세스가 0x80000000까지의 논리주소를 모두 사용하는 경우는 극히 드뭄. 
+  if (is_thread)
+    deallocuvm(p->pgdir, p->sz, p->sz - 2 * PGSIZE);
   p->pid = 0;
   p->parent = 0;
   p->name[0] = 0;
@@ -264,8 +268,8 @@ fork(void)
   // 쓰레드가 fork를 하더라도 프로세스를 통째로 복사하는 것이 옳다.
   // 따라서 메인 쓰레드의 pgdir과 sz을 이용하는 것이 옳다. (pgdir은 어차피 공유)
   // Copy process state from proc.
-  if((np->pgdir = copyuvm(curproc->main->pgdir, curproc->main->sz)) == 0){
-    clean_proc_slot(np);
+  if((np->pgdir = copyuvm(curproc->pgdir, curproc->main->sz)) == 0){
+    clean_proc_slot(np, PROC);
     release(&ptable.lock);
     return -1;
   }
@@ -336,7 +340,7 @@ kill_and_retrieve_threads(struct proc *main)
       if (p->main != main || p == main || p->is_main)
         continue ;
       if (p->state == ZOMBIE)
-        clean_proc_slot(p);
+        clean_proc_slot(p, THREAD);
       else
       {
         if (!p->already_call_exit)
@@ -468,7 +472,7 @@ wait(void)
       {
         // Found one.
         pid = p->pid;
-        clean_proc_slot(p);
+        clean_proc_slot(p, PROC);
         freevm(p->pgdir);
         release(&ptable.lock);
         return pid;
@@ -957,7 +961,8 @@ thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
   // 따라서 쓰레드의 스택사이즈는 4096kb로 고정한다.
   if ((sz = allocuvm(main->pgdir, sz, sz + 2 * PGSIZE)) == 0)
   {
-    clean_proc_slot(np);
+    // 쓰레드 스택 할당에 실패한 경우이니 쓰레드 유저스택 회수할 필요 없음.
+    clean_proc_slot(np, PROC);
     release(&ptable.lock);
     return (-1);
   }
@@ -1137,7 +1142,7 @@ thread_join(thread_t thread, void **retval)
         // Found one.
         if (retval)
           *retval = p->retval;
-        clean_proc_slot(p);
+        clean_proc_slot(p, THREAD);
         release(&ptable.lock);
         return (0);
       }

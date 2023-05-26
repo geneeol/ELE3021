@@ -325,8 +325,11 @@ copyuvm(pde_t *pgdir, uint sz)
   for(i = 0; i < sz; i += PGSIZE){
     if((pte = walkpgdir(pgdir, (void *) i, 0)) == 0)
       panic("copyuvm: pte should exist");
+    // 정책변경:
+    // 가상주소공간에 쓰지 않는 영역, 즉 hole이 존재해도 계속 복사를 진행하자!
     if(!(*pte & PTE_P))
-      panic("copyuvm: page not present");
+      continue ;
+      // panic("copyuvm: page not present");
     pa = PTE_ADDR(*pte);
     flags = PTE_FLAGS(*pte);
     if((mem = kalloc()) == 0)

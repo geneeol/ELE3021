@@ -64,7 +64,9 @@ char *testname[NTEST] = {
   "basictest", // 1
   "jointest1", // 2
   "jointest2", // 3
-  "stresstest", // 4 TODO: 테스트 통과하기
+  //TODO: (나중에) stresstest 논리주소공간의 hole 채우기. 
+  // 현재 주소공간오버플로우 발생가능
+  "stresstest", // 4
   "exittest1", // 5
   "exittest2", // 6
   "exectest", // 7
