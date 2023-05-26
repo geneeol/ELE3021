@@ -881,26 +881,32 @@ setmemorylimit(int pid, int limit)
 int
 plist(void)
 {
+  static char *states[] = {
+  [UNUSED]    "unused",
+  [EMBRYO]    "embryo",
+  [SLEEPING]  "sleep",
+  [RUNNABLE]  "runble",
+  [RUNNING]   "run",
+  [ZOMBIE]    "zombie"
+  };
+  char *state;
   struct proc *p;
   
   acquire(&ptable.lock);
   for (p = ptable.proc; p < &ptable.proc[NPROC]; p++)
   {
-    if (p->state == UNUSED)
+    if (!p->is_main)
       continue ;
-    if (p->state == ZOMBIE)
+    if (p->state == RUNNING || p->state == RUNNABLE || p->state == SLEEPING)
     {
-      cprintf("ZOMBIE detect!: pid: %d,", p->pid);
-      if (!p->is_main)
-        cprintf("it's thread: tid: %d\n", p->tid);
+      if(p->state >= 0 && p->state < NELEM(states) && states[p->state])
+        state = states[p->state];
       else
+        state = "???";
       cprintf("name: %s, pid: %d, state: %s, ", p->name, p->pid, state); 
       cprintf("n_stackpage: %d, memory_size: 0x%x, limit: 0x%x\n", \
                 p->n_stackpage, p->sz, p->mem_limit);
     }
-    if (p->is_main)
-      cprintf("name: %s, pid: %d, page: %d, memory size: 0x%x, limit: 0x%x\n", \
-                      p->name, p->pid, p->sz / PGSIZE, p->sz, p->mem_limit);
   }
   release(&ptable.lock);
   return (0);
