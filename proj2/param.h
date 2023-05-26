@@ -17,4 +17,5 @@
 
 // project 2
 #define UNLIMITED 0x7fffffff
-// #define NTHREAD 8
+#define THREAD 1
+#define PROC 0

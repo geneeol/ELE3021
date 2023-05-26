@@ -82,7 +82,7 @@ argstr(int n, char **pp)
   return fetchstr(addr, pp);
 }
 
-// TODO: 시스템콜 외부 프로토타입 선번
+// 시스템콜추가: 시스템콜 외부 프로토타입 선번
 extern int sys_chdir(void);
 extern int sys_close(void);
 extern int sys_dup(void);
@@ -123,7 +123,7 @@ extern int sys_plist(void);
 extern int sys_get_pid(void);
 extern int sys_get_tid(void);
 
-// TODO: 시스템콜 함수 포인터 배열에 추가
+// 시스템콜추가 : 시스템콜 함수 포인터 배열에 추가
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
 [SYS_exit]    sys_exit,

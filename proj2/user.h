@@ -6,7 +6,7 @@ struct rtcdate;
 typedef int thread_t;
 
 
-// TODO: 시스템콜 헤더 추가, makefile에 추가
+// 시스템콜추가: 시스템콜 헤더 추가, makefile에 추가
 // system calls
 int	fork(void);
 int exit(void) __attribute__((noreturn));

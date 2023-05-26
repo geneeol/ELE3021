@@ -196,7 +196,7 @@ runcmd(char *buf)
 int
 getcmd(char *buf, int nbuf)
 {
-  printf(2, "pmanager$ "); // TODO: 왜 표준에러로 출력하지? (원본코드)
+  printf(2, "pmanager$ ");
   memset(buf, 0, nbuf);
   gets(buf, nbuf);
   if(buf[0] == 0) // EOF

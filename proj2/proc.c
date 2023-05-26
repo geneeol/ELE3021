@@ -286,7 +286,7 @@ fork(void)
   np->parent = curproc;
   release(&ptable.lock);
 
-  // TODO: 해결하기 어려울듯
+  // TODO: np embryo, 해결 불가
   // 이 공간 사이에서 np가 embryo 상태로 붕 떠버릴 수 있음.
   // thread_create와 마찬가지로 이 공간 사이에 현재 프로세스가 exit될 수 있음.
   // 예를 들어 쓰레드 그룹이 정리된다면 현재 fork를 수행하던 프로세스가 종료됨.
@@ -321,9 +321,8 @@ fork(void)
   return pid;
 }
 
-// TODO: 쓰레드는 dealloc호출,
-// TODO: 붕 뜬 EMBRYO 처리: 그냥 아예 회수를 하지 말자..
-// 어차피 파일 자원도 회수 불가능.
+// TODO: np EMBRYO 처리: 그냥 아예 회수를 하지 말자..
+// 어차피 파일 자원 회수 불가능.
 void
 kill_and_retrieve_threads(struct proc *main)
 {
@@ -925,7 +924,6 @@ plist(void)
   return (0);
 }
 
-// TODO: 함수 나누기
 // fork함수와 exec함수에서 필요한 부분을 가져와서 구성 
 int
 thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
@@ -1021,9 +1019,9 @@ thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
   // xv6에서 파일시스템 코드는 락을 항상 '정해진 순서'로 잡아야 함.
   // 따라서 함부로 ptale.lock을 잡고 아래 코드 실행하면 에러 발생 가능.
 
-  // TODO: 아래 부분 필요한지 확인. 아마 파이프 때문에 필요할듯.
-  // 쓰레드끼리는 open file 리스트를 공유한다. 
-  // 실제로 쓰레드를 pcb를 및 fork를 이용하여 구현했으니 아래 부분이 필요한게 맞는듯.
+  // 파일 옮겨주는 부분 파이프때문에 필요한듯.
+  // 기본적으로 쓰레드끼리는 open file 리스트를 공유한다. 
+  // 쓰레드를 pcb를 및 fork를 이용하여 구현했으니 연 파일 리스트도 공유해야 한다. 
   //h 한계: 한 쓰레드에서 파일을 open, close하더라도 다른쓰레드에 해당정보 전달 불가.
   for(i = 0; i < NOFILE; i++)
   {
@@ -1042,12 +1040,7 @@ thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
   return (0);
 }
 
-// TODO: 2순위 고려사항.
-//       main이 thread_exit할 때 어떻게 처리할 것인가.
-//       메인 쓰레드도 thread_exit을 호출할 수 있음.
-//       실제 pthread에서 다른 쓰레드는 계속 실행된다고 함.
-//       현재 구현에서는 exit을 호출하도록 디자인.
-// 테스트케이스: 메인 쓰레드 thread_exit, 다른 쓰레드에서 thread_join 하는 경우
+// TODO: 테케: 메인 쓰레드 thread_exit, 다른 쓰레드에서 thread_join 하는 경우
 void
 thread_exit(void *retval)
 {
@@ -1058,9 +1051,11 @@ thread_exit(void *retval)
   if(curproc == initproc)
     panic("init exiting");
 
-  // TODO: 일단 약식으로 구현하자. main 쓰레드가 thread_exit을 호출하면
-  // 모든 프로세스를 종료한다.
-  // 조교님피셜: 메인 쓰레드는 thread_exit을 호출하지 않는다고 함.
+  // 현재 디자인: main 쓰레드가 thread_exit을 호출하면
+  // exit 호출을 통해 모든 쓰레드가 정리되고 종료됨.
+  // 조교님피셜 메인 쓰레드는 thread_exit을 호출하지 않는다고 함.
+  // 실제: pthread에서는 메인 쓰레드가 thread_exit을 호출해서,
+  // 다른 쓰레드들 작업이 계속 진행되게 할 수 있는듯.
   if (curproc->is_main)
     exit();
 

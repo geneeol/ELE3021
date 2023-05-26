@@ -103,7 +103,7 @@ sys_uptime(void) //h 디버깅용 틱 체크 시스템콜
   return xticks;
 }
 
-// TODO: 시스템콜 래퍼함수 추가
+// 시스템콜추가: 시스템콜 래퍼함수 추가
 
 int
 sys_yield(void)
