@@ -280,7 +280,18 @@ fork(void)
   np->parent = curproc;
   release(&ptable.lock);
 
+  // TODO: 해결하기 어려울듯
+  // 이 공간 사이에서 np가 embryo 상태로 붕 떠버릴 수 있음.
+  // thread_create와 마찬가지로 이 공간 사이에 현재 프로세스가 exit될 수 있음.
+  // 예를 들어 쓰레드 그룹이 정리된다면 현재 fork를 수행하던 프로세스가 종료됨.
+  // 그러면 embryo np단계에서 멈춘 녀석을 회수해줄 프로세스가 없다!
 
+  // (X) thread_create에서 붕 뜬 np는 kill_and_retrieve에서 회수 가능.
+  // (X) 그러나 fork는 np->main = self 이므로 여기서 회수가 안됨!!!
+  // (thread_create에서 붕 뜬 np도 일단 회수하지 않기로 결정)
+  // 현재 구현에서 np가 initproc에 인계됨. 그러면 wait으로 회수하긴 해야하는데,
+  // 문제는 wait은 ZOMBIE상태 프로세스만 회수함.
+  // 그렇다고 wait에서 EMBRYO도 회수하게 하는 건 더더욱 말이 안됨.
 
   *np->tf = *curproc->tf;
 
@@ -305,7 +316,8 @@ fork(void)
 }
 
 // TODO: 쓰레드는 dealloc호출,
-// wait이랑 embryo상태일 때는 dealloc 호출 x 
+// TODO: 붕 뜬 EMBRYO 처리: 그냥 아예 회수를 하지 말자..
+// 어차피 파일 자원도 회수 불가능.
 void
 kill_and_retrieve_threads(struct proc *main)
 {
@@ -444,6 +456,10 @@ wait(void)
       // 현재 문제가 부모 - 자식 관계에서 자식 쓰레드 생성시 부모가 자식 쓰레드를 회수해버림.
       // 쓰레드의 부모를 현재 메인 쓰레드의 부모로 지정하되, 
       // 쓰레드는 wait을 통해 회수되지 못하도록 p->is_main 조건문에 추가.
+
+      // 여기 조건에 EMBRYO 넣으면 큰일남.
+      // 스케쥴링에 따라 부모가 또 다시 스케쥴링 되어버리면 자식을 생성하자마자 회수해버림.
+      // 즉 fork해도 자식프로세스가 생성 안되는 효과.
       if(p->state == ZOMBIE && p->is_main)
       {
         // Found one.
@@ -967,7 +983,19 @@ thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
 
   release(&ptable.lock);
 
-  // TODO: 아래 부분 필요한지 확인.
+  // np가 EMBRYO 상태로 붕 뜨는 문제 발생
+  // 만약 락을 풀어둔 이 사이에 현재 쓰레드 그룹이 exit하거나 exec가 일어나면?
+  // 1. 메인 쓰레드가 exit하는 상황.
+  // 2. exec가 일어나서 main쓰레드가 바뀌는 상황.
+  // 특히 embryo의 file자원 관련 회수가 상당히 까다로움.
+  // 파일자원은 exit 호출을 통해 wait으로 회수되기 전 먼저 회수되는데
+  // 아래 코드는 락으로 보호받지 않기 때문에 함부로 회수할 수가 없음.
+  
+  // 락을 푼 이유:
+  // 하단 코드는 락킹을 이용하기 때문에 ptable.lock을 사용하면 데드락 위험 존재. 
+  // xv6에서 파일시스템 코드는 락을 항상 '정해진 순서'로 잡아야 함.
+  // 따라서 함부로 ptale.lock을 잡고 아래 코드 실행하면 에러 발생 가능.
+
   // 쓰레드끼리는 open file 리스트를 공유한다. 
   for(i = 0; i < NOFILE; i++)
   {
