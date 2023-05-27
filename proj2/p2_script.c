@@ -97,9 +97,9 @@ main(int argc, char *argv[])
   start = 0;
   end = sizeof(test) / sizeof(void (*)(void)) - 1;
 
-  if (argc > 2)
+  if (argc > 1)
     start = atoi(argv[1]);
-  if (argc > 3)
+  if (argc > 2)
     end = atoi(argv[2]);
   while (1)
   {

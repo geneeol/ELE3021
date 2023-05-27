@@ -1,0 +1,1607 @@
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+Thread 0 start
+Thread 1 start
+sp: 0x1c000
+sp: 0x1e000
+Thread 2 start
+pid 6 tid 3 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1a000--kill proc
+pid 6 tid 4 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1c004--kill proc
+Thread 4 start
+pid 6 tid 5 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1a000--kill proc
+pid 6 tid 1 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x1a000--kill proc
+Thread 2 returned 0, but expected 2
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 sThread 4 start
+tart
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+ThreaThread 2 start
+Thread 3 start
+Thread 4 start
+d 1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+ThreaThread 3 start
+Thread 4 start
+d 2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+Thread 0 start
+sp: 0x1a000
+sp: 0x1c000
+sp: 0x1e000
+Thread 1 start
+pid 18 tid 62 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 18 tid 63 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1a004--kill proc
+pid 18 tid 64 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1c004--kill proc
+Thread 4 start
+pid 18 tid 65 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 18 tid 61 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x18000--kill proc
+Thread 1 returned 0, but expected 1
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+TThread 4 start
+hread 3 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 startThread 2 start
+Thread 3 start
+Thread 4 start
+
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+TThread 2 start
+Thread 3 start
+Thread 4 start
+hread 1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+ThreadThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+ 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+sp: 0x1e000
+Thread 3 start
+pid 27 tid 109 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1c000--kill proc
+Thread 4 start
+pid 27 tid 110 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1c000--kill proc
+pid 27 tid 106 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x1c000--kill proc
+Thread 3 returned 0, but expected 3
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+Thread 0 start
+Thread 1 start
+sp: 0x1c000
+sp: 0x1e000
+Thread 2 start
+pid 30 tid 123 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1a000--kill proc
+Thread 4 start
+pid 30 tid 125 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1a000--kill proc
+pid 30 tid 124 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1c004--kill proc
+pid 30 tid 121 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x1a000--kill proc
+Thread 2 returned 0, but expected 2
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+Thread 0 start
+sp: 0x1a000
+sp: 0x1c000
+sp: 0x1e000
+Thread 1 start
+pid 32 tid 132 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 32 tid 133 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1a004--kill proc
+pid 32 tid 134 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1c004--kill proc
+Thread 4 start
+pid 32 tid 135 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 32 tid 131 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x18000--kill proc
+Thread 1 returned 0, but expected 1
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+Thread 0 start
+sp: 0x1a000
+sp: 0x1c000
+sp: 0x1e000
+Thread 1 start
+pid 33 tid 137 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 33 tid 138 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1a004--kill proc
+pid 33 tid 139 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1c004--kill proc
+Thread 4 start
+pid 33 tid 140 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 33 tid 136 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x18000--kill proc
+Thread 1 returned 0, but expected 1
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+ThreThread 4 start
+ad 3 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+Thread 0 start
+Thread 1 start
+sp: 0x1c000
+sp: 0x1e000
+Thread 2 start
+pid 35 tid 148 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1a000--kill proc
+pid 35 tid 149 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1c004--kill proc
+Thread 4 start
+pid 35 tid 150 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1a000--kill proc
+pid 35 tid 146 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x1a000--kill proc
+Thread 2 returned 0, but expected 2
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+sp: 0x1e000
+Thread 3 start
+pid 37 tid 159 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1c000--kill proc
+Thread 4 start
+pid 37 tid 160 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1c000--kill proc
+pid 37 tid 156 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x1c000--kill proc
+Thread 3 returned 0, but expected 3
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+sp: 0x1e000
+Thread 3 start
+pid 41 tid 179 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1c000--kill proc
+Thread 4 start
+pid 41 tid 180 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1c000--kill proc
+pid 41 tid 176 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x1c000--kill proc
+Thread 3 returned 0, but expected 3
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+Thread 0 start
+sp: 0x1a000
+sp: 0x1c000
+sp: 0x1e000
+Thread 1 start
+pid 43 tid 187 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 43 tid 188 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1a004--kill proc
+pid 43 tid 189 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1c004--kill proc
+Thread 4 start
+pid 43 tid 190 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 43 tid 186 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x18000--kill proc
+Thread 1 returned 0, but expected 1
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+Thread 0 start
+Thread 1 start
+sp: 0x1c000
+sp: 0x1e000
+Thread 2 start
+pid 44 tid 193 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1a000--kill proc
+pid 44 tid 194 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1c004--kill proc
+Thread 4 start
+pid 44 tid 195 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1a000--kill proc
+pid 44 tid 191 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x1a000--kill proc
+Thread 2 returned 0, but expected 2
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+ThreadThread 3 start
+Thread 4 start
+ 2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+ThThread 4 start
+read 3 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+Thread 0 start
+sp: 0x1a000
+sp: 0x1c000
+sp: 0x1e000
+Thread 1 start
+pid 50 tid 222 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 50 tid 223 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1a004--kill proc
+pid 50 tid 224 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1c004--kill proc
+Thread 4 start
+pid 50 tid 225 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 50 tid 221 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x18000--kill proc
+Thread 1 returned 0, but expected 1
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+ThreadThread 4 start
+ 3 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+sp: 0x1e000
+Thread 3 start
+pid 55 tid 249 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1c000--kill proc
+Thread 4 start
+pid 55 tid 250 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1c000--kill proc
+pid 55 tid 246 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x1c000--kill proc
+Thread 3 returned 0, but expected 3
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+Thread 0 start
+sp: 0x1a000
+sp: 0x1c000
+sp: 0x1e000
+Thread 1 start
+pid 56 tid 252 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 56 tid 253 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1a004--kill proc
+pid 56 tid 254 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1c004--kill proc
+Thread 4 start
+pid 56 tid 255 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 56 tid 251 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x18000--kill proc
+Thread 1 returned 0, but expected 1
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+Thread 0 start
+sp: 0x1a000
+sp: 0x1c000
+sp: 0x1e000
+Thread 1 start
+pid 57 tid 257 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 57 tid 258 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1a004--kill proc
+pid 57 tid 259 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1c004--kill proc
+Thread 4 start
+pid 57 tid 260 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 57 tid 256 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x18000--kill proc
+Thread 1 returned 0, but expected 1
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+Thread 0 start
+Thread 1 start
+sp: 0x1c000
+sp: 0x1e000
+Thread 2 start
+pid 58 tid 263 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1a000--kill proc
+pid 58 tid 264 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1c004--kill proc
+Thread 4 start
+pid 58 tid 265 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1a000--kill proc
+pid 58 tid 261 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x1a000--kill proc
+Thread 2 returned 0, but expected 2
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 startThread 2 start
+Thread 3 start
+Thread 4 start
+
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+ThreadThread 3 start
+Thread 4 start
+ 2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 startThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 stThread 4 start
+art
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+ThreaThread 4 start
+d 3 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+ThThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+read 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+Thread 0 start
+Thread 1 start
+sp: 0x1c000
+sp: 0x1e000
+Thread 2 start
+pid 65 tid 298 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1a000--kill proc
+pid 65 tid 299 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1c004--kill proc
+Thread 4 start
+pid 65 tid 300 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1a000--kill proc
+pid 65 tid 296 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x1a000--kill proc
+Thread 2 returned 0, but expected 2
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 sThread 2 start
+Thread 3 start
+Thread 4 start
+tart
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+ThThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+read 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+Thread 0 start
+sp: 0x1a000
+sp: 0x1c000
+sp: 0x1e000
+Thread 1 start
+pid 68 tid 312 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 68 tid 313 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1a004--kill proc
+pid 68 tid 314 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1c004--kill proc
+Thread 4 start
+pid 68 tid 315 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 68 tid 311 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x18000--kill proc
+Thread 1 returned 0, but expected 1
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+sp: 0x1e000
+Thread 3 start
+pid 69 tid 319 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1c000--kill proc
+Thread 4 start
+pid 69 tid 320 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1c000--kill proc
+pid 69 tid 316 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x1c000--kill proc
+Thread 3 returned 0, but expected 3
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+Thread 0 start
+Thread 1 start
+sp: 0x1c000
+sp: 0x1e000
+Thread 2 start
+pid 70 tid 323 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1a000--kill proc
+pid 70 tid 324 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1c004--kill proc
+Thread 4 start
+pid 70 tid 325 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x1a000--kill proc
+pid 70 tid 321 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x1a000--kill proc
+Thread 2 returned 0, but expected 2
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+ThreaThread 3 start
+Thread 4 start
+d 2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+ThreaThread 3 start
+Thread 4 start
+d 2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+Thread 0 start
+sp: 0x1a000
+sp: 0x1c000
+sp: 0x1e000
+Thread 1 start
+pid 78 tid 362 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 78 tid 363 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1a004--kill proc
+pid 78 tid 364 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1c004--kill proc
+Thread 4 start
+pid 78 tid 365 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 78 tid 361 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x18000--kill proc
+Thread 1 returned 0, but expected 1
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 startThread 2 start
+Thread 3 start
+Thread 4 start
+
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+Thread 0 start
+sp: 0x1a000
+sp: 0x1c000
+sp: 0x1e000
+Thread 1 start
+pid 84 tid 392 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 84 tid 393 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1a004--kill proc
+Thread 4 start
+pid 84 tid 395 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 84 tid 394 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1c004--kill proc
+pid 84 tid 391 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x18000--kill proc
+Thread 1 returned 0, but expected 1
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+Thread 0 start
+sp: 0x1a000
+sp: 0x1c000
+sp: 0x1e000
+Thread 1 start
+pid 85 tid 397 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 85 tid 398 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1a004--kill proc
+pid 85 tid 399 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1c004--kill proc
+Thread 4 start
+pid 85 tid 400 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 85 tid 396 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x18000--kill proc
+Thread 1 returned 0, but expected 1
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+Thread 0 start
+sp: 0x1a000
+sp: 0x1c000
+sp: 0x1e000
+Thread 1 start
+pid 86 tid 402 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 86 tid 403 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1a004--kill proc
+Thread 4 start
+pid 86 tid 405 thread_test: trap 14 err 7 on cpu 0 eip 0x106 addr 0x18000--kill proc
+pid 86 tid 404 thread_test: trap 14 err 5 on cpu 0 eip 0xb9 addr 0x1c004--kill proc
+pid 86 tid 401 thread_test: trap 14 err 7 on cpu 0 eip 0x150 addr 0x18000--kill proc
+Thread 1 returned 0, but expected 1
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 sThread 4 start
+tart
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+sp: 0x5ff8
+sp: 0x7ff8
+sp: 0x9ff8
+sp: 0xbff8
+sp: 0xdff8
+Thread 0Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+ start
