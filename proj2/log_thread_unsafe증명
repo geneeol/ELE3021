@@ -1,0 +1,2404 @@
+$ p2_script 3 3
+Test 3 start
+Test 3: Sbrk test
+Thread 15 tid: 16 found 16, p_addr: 0x169080, j: 0
+
+Thread 0 p_addr: 0x40008
+Thread 1 p_addr: 0x79008
+Thread 2 p_addr: 0x89010
+Thread 3 p_addr: 0x99018
+Thread 4 p_addr: 0xA9020
+Thread 5 p_addr: 0xB9028
+Thread 6 p_addr: 0xC9030
+Thread 7 p_addr: 0xD9038
+Thread 8 p_addr: 0xE9040
+Thread 9 p_addr: 0xF9048
+Thread 10 p_addr: 0x109050
+Thread 11 p_addr: 0x119058
+Thread 12 p_addr: 0x129060
+Thread 13 p_addr: 0x139068
+Thread 14 p_addr: 0x149070
+Thread 15 p_addr: 0x169080
+Thread 16 p_addr: 0x169080
+Thread 17 p_addr: 0x179088
+Thread 18 p_addr: 0x189090
+Thread 19 p_addr: 0x199098
+Thread 20 p_addr: 0x1A90A0
+Thread 21 p_addr: 0x1B90A8
+Thread 22 p_addr: 0x1C90B0
+Thread 23 p_addr: 0x1D90B8
+Thread 24 p_addr: 0x1E90C0
+Thread 25 p_addr: 0x1F90C8
+Thread 26 p_addr: 0x2090D0
+Thread 27 p_addr: 0x2190D8
+Thread 28 p_addr: 0x2290E0
+Thread 29 p_addr: 0x2390E8
+Thread 30 p_addr: 0x2490F0
+Thread 31 p_addr: 0x2590F8
+Thread 32 p_addr: 0x269100
+Thread 33 p_addr: 0x279108
+Thread 34 p_addr: 0x289110
+Thread 35 p_addr: 0x299118
+Thread 36 p_addr: 0x2A9120
+Thread 37 p_addr: 0x2B9128
+Thread 38 p_addr: 0x2C9130
+Thread 39 p_addr: 0x2D9138
+Thread 40 p_addr: 0x2E9140
+Thread 41 p_addr: 0x2F9148
+Thread 42 p_addr: 0x309150
+Thread 43 p_addr: 0x319158
+Thread 44 p_addr: 0x329160
+Thread 45 p_addr: 0x339168
+Thread 46 p_addr: 0x349170
+Thread 47 p_addr: 0x359178
+Thread 48 p_addr: 0x369180
+Thread 49 p_addr: 0x379188
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 31 tid: 82 found 32, p_addr: 0x268108, j: 14508
+
+Thread 0 p_addr: 0x68008
+Thread 1 p_addr: 0x338170
+Thread 2 p_addr: 0x88018
+Thread 3 p_addr: 0x68008
+Thread 4 p_addr: 0x2480F8
+Thread 5 p_addr: 0xB8030
+Thread 6 p_addr: 0xC8038
+Thread 7 p_addr: 0xD8040
+Thread 8 p_addr: 0xE8048
+Thread 9 p_addr: 0xC8038
+Thread 10 p_addr: 0x378190
+Thread 11 p_addr: 0x118060
+Thread 12 p_addr: 0x128068
+Thread 13 p_addr: 0x138070
+Thread 14 p_addr: 0xD8040
+Thread 15 p_addr: 0xE8048
+Thread 16 p_addr: 0xE8048
+Thread 17 p_addr: 0xE8048
+Thread 18 p_addr: 0xE8048
+Thread 19 p_addr: 0xC8038
+Thread 20 p_addr: 0x378190
+Thread 21 p_addr: 0xE8048
+Thread 22 p_addr: 0xE8048
+Thread 23 p_addr: 0xE8048
+Thread 24 p_addr: 0x338170
+Thread 25 p_addr: 0xB8030
+Thread 26 p_addr: 0x2080D8
+Thread 27 p_addr: 0x378190
+Thread 28 p_addr: 0xA8028
+Thread 29 p_addr: 0xA8028
+Thread 30 p_addr: 0x2480F8
+Thread 31 p_addr: 0x268108
+Thread 32 p_addr: 0x268108
+Thread 33 p_addr: 0x278110
+Thread 34 p_addr: 0x2480F8
+Thread 35 p_addr: 0xA8028
+Thread 36 p_addr: 0x2480F8
+Thread 37 p_addr: 0x2B8130
+Thread 38 p_addr: 0x98020
+Thread 39 p_addr: 0x98020
+Thread 40 p_addr: 0x308158
+Thread 41 p_addr: 0x98020
+Thread 42 p_addr: 0x98020
+Thread 43 p_addr: 0x88018
+Thread 44 p_addr: 0x328168
+Thread 45 p_addr: 0x2180E0
+Thread 46 p_addr: 0x2480F8
+Thread 47 p_addr: 0x358180
+Thread 48 p_addr: 0x338170
+Thread 49 p_addr: 0x98020
+Test failed!
+Test 3 end
+
+init: starting sh
+$ p2_script 3 3
+Test 3 start
+Test 3: Sbrk test
+Thread 15 tid: 16 found 16, p_addr: 0x169080, j: 0
+
+Thread 0 p_addr: 0x40008
+Thread 1 p_addr: 0x79008
+Thread 2 p_addr: 0x89010
+Thread 3 p_addr: 0x99018
+Thread 4 p_addr: 0xA9020
+Thread 5 p_addr: 0xB9028
+Thread 6 p_addr: 0xC9030
+Thread 7 p_addr: 0xD9038
+Thread 8 p_addr: 0xE9040
+Thread 9 p_addr: 0xF9048
+Thread 10 p_addr: 0x109050
+Thread 11 p_addr: 0x119058
+Thread 12 p_addr: 0x129060
+Thread 13 p_addr: 0x139068
+Thread 14 p_addr: 0x149070
+Thread 15 p_addr: 0x169080
+Thread 16 p_addr: 0x169080
+Thread 17 p_addr: 0x179088
+Thread 18 p_addr: 0x189090
+Thread 19 p_addr: 0x199098
+Thread 20 p_addr: 0x1A90A0
+Thread 21 p_addr: 0x1B90A8
+Thread 22 p_addr: 0x1C90B0
+Thread 23 p_addr: 0x1D90B8
+Thread 24 p_addr: 0x1E90C0
+Thread 25 p_addr: 0x1F90C8
+Thread 26 p_addr: 0x2090D0
+Thread 27 p_addr: 0x2190D8
+Thread 28 p_addr: 0x2290E0
+Thread 29 p_addr: 0x2390E8
+Thread 30 p_addr: 0x2490F0
+Thread 31 p_addr: 0x2590F8
+Thread 32 p_addr: 0x269100
+Thread 33 p_addr: 0x279108
+Thread 34 p_addr: 0x289110
+Thread 35 p_addr: 0x299118
+Thread 36 p_addr: 0x2A9120
+Thread 37 p_addr: 0x2B9128
+Thread 38 p_addr: 0x2C9130
+Thread 39 p_addr: 0x2D9138
+Thread 40 p_addr: 0x2E9140
+Thread 41 p_addr: 0x2F9148
+Thread 42 p_addr: 0x309150
+Thread 43 p_addr: 0x319158
+Thread 44 p_addr: 0x329160
+Thread 45 p_addr: 0x339168
+Thread 46 p_addr: 0x349170
+Thread 47 p_addr: 0x359178
+Thread 48 p_addr: 0x369180
+Thread 49 p_addr: 0x379188
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 31 tid: 82 found 32, p_addr: 0x268108, j: 14508
+
+Thread 0 p_addr: 0x68008
+Thread 1 p_addr: 0x338170
+Thread 2 p_addr: 0x88018
+Thread 3 p_addr: 0x68008
+Thread 4 p_addr: 0x2480F8
+Thread 5 p_addr: 0xB8030
+Thread 6 p_addr: 0xC8038
+Thread 7 p_addr: 0xD8040
+Thread 8 p_addr: 0xE8048
+Thread 9 p_addr: 0xC8038
+Thread 10 p_addr: 0x378190
+Thread 11 p_addr: 0x118060
+Thread 12 p_addr: 0x128068
+Thread 13 p_addr: 0x138070
+Thread 14 p_addr: 0xD8040
+Thread 15 p_addr: 0xE8048
+Thread 16 p_addr: 0xE8048
+Thread 17 p_addr: 0xE8048
+Thread 18 p_addr: 0xE8048
+Thread 19 p_addr: 0xC8038
+Thread 20 p_addr: 0x378190
+Thread 21 p_addr: 0xE8048
+Thread 22 p_addr: 0xE8048
+Thread 23 p_addr: 0xE8048
+Thread 24 p_addr: 0x338170
+Thread 25 p_addr: 0xB8030
+Thread 26 p_addr: 0x2080D8
+Thread 27 p_addr: 0x378190
+Thread 28 p_addr: 0xA8028
+Thread 29 p_addr: 0xA8028
+Thread 30 p_addr: 0x2480F8
+Thread 31 p_addr: 0x268108
+Thread 32 p_addr: 0x268108
+Thread 33 p_addr: 0x278110
+Thread 34 p_addr: 0x2480F8
+Thread 35 p_addr: 0xA8028
+Thread 36 p_addr: 0x2480F8
+Thread 37 p_addr: 0x2B8130
+Thread 38 p_addr: 0x98020
+Thread 39 p_addr: 0x98020
+Thread 40 p_addr: 0x308158
+Thread 41 p_addr: 0x98020
+Thread 42 p_addr: 0x98020
+Thread 43 p_addr: 0x88018
+Thread 44 p_addr: 0x328168
+Thread 45 p_addr: 0x2180E0
+Thread 46 p_addr: 0x2480F8
+Thread 47 p_addr: 0x358180
+Thread 48 p_addr: 0x338170
+Thread 49 p_addr: 0x98020
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 33 tid: 484 found 34, p_addr: 0x289110, j: 0
+
+Thread 0 p_addr: 0x60008
+Thread 1 p_addr: 0Thread 34 tid: 485 found 33, p_addr: 0x289110, j: 14545
+
+Thread 0 p_addr: 0x60008
+Thread 1 p_adx79008
+Thread 2 p_addr: 0x89010
+Thread 3 p_addr: 0x99018
+Thread 4 p_addr: 0xA9020
+Thread 5 p_addr: 0xdr: 0x79008
+Thread 2 p_addr: 0x89010
+Thread 3 p_addr: 0x99018
+Thread 4 p_addr: 0xA9020
+Thread 5 p_addr:B9028
+Thread 6 p_addr: 0xC9030
+Thread 7 p_addr: 0xD9038
+Thread 8 p_addr: 0xE9040
+Thread 9 p_addr: 0xF9048 0xB9028
+Thread 6 p_addr: 0xC9030
+Thread 7 p_addr: 0xD9038
+Thread 8 p_addr: 0xE9040
+Thread 9 p_addr: 0xF
+Thread 10 p_addr: 0x109050
+Thread 11 p_addr: 0x119058
+Thread 12 p_addr: 0x129060
+Thread 13 p_addr: 0x139069048
+Thread 10 p_addr: 0x109050
+Thread 11 p_addr: 0x119058
+Thread 12 p_addr: 0x129060
+Thread 13 p_addr: 08
+Thread 14 p_addr: 0x149070
+Thread 15 p_addr: 0x159078
+Thread 16 p_addr: 0x169080
+Thread 17 p_addx139068
+Thread 14 p_addr: 0x149070
+Thread 15 p_addr: 0x159078
+Thread 16 p_addr: 0x169080
+Thread 17 pr: 0x179088
+Thread 18 p_addr: 0x189090
+Thread 19 p_addr: 0x199098
+Thread 20 p_addr: 0x1A90A0
+Thread 21_addr: 0x179088
+Thread 18 p_addr: 0x189090
+Thread 19 p_addr: 0x199098
+Thread 20 p_addr: 0x1A90A0
+Thre p_addr: 0x1B90A8
+Thread 22 p_addr: 0x1C90B0
+Thread 23 p_addr: 0x1D90B8
+Thread 24 p_addr: 0x1E90C0
+Thrad 21 p_addr: 0x1B90A8
+Thread 22 p_addr: 0x1C90B0
+Thread 23 p_addr: 0x1D90B8
+Thread 24 p_addr: 0x1E90C0
+ead 25 p_addr: 0x1F90C8
+Thread 26 p_addr: 0x2090D0
+Thread 27 p_addr: 0x2190D8
+Thread 28 p_addr: 0x2290E0
+Thread 25 p_addr: 0x1F90C8
+Thread 26 p_addr: 0x2090D0
+Thread 27 p_addr: 0x2190D8
+Thread 28 p_addr: 0x2290E0
+Thread 29 p_addr: 0x2390E8
+Thread 30 p_addr: 0x2490F0
+Thread 31 p_addr: 0x2590F8
+Thread 32 p_addr: 0x269100
+Thread 29 p_addr: 0x2390E8
+Thread 30 p_addr: 0x2490F0
+Thread 31 p_addr: 0x2590F8
+Thread 32 p_addr: 0x26910Thread 33 p_addr: 0x289110
+Thread 34 p_addr: 0x289110
+Thread 35 p_addr: 0x299118
+Thread 36 p_addr: 0x2A9120
+Thread 37 p_addr: 0x2B9128
+Thread 38 p_addr: 0x2C9130
+Thread 39 p_addr: 0x2D9138
+Thread 40 p_a0
+Thread 33 p_addr: 0x289110
+Thread 34 p_addr: 0x289110
+Thread 35 p_addr: 0x299118
+Thread 36 p_addddr: 0x2E9140
+Thread 41 p_addr: 0x2F9148
+Thread 42 p_addr: 0x309150
+Thread 43 p_addr: 0x319158
+r: 0x2A9120
+Thread 37 p_addr: 0x2B9128
+Thread 38 p_addr: 0x2C9130
+Thread 39 p_addr: 0x2D9138
+Thread 40 p_addr: 0x2E9140
+Thread 41 p_addr: 0x2F9148
+Thread 42 p_addr: 0x309150
+Thread 43 p_addr: 0x319Thread 44 p_addr: 0x329160
+Thread 45 p_addr: 0x339168
+Thread 46 p_addr: 0x349170
+Thread 47 p_addr: 0x359178
+158
+Thread 44 p_addr: 0x329160
+Thread 45 p_addr: 0x339168
+Thread 46 p_addr: 0x349170
+Thread 4Thread 48 p_addr: 0x369180
+Th7 p_addr: 0x359178
+Thread 48 p_addr: 0x369180
+Thread 49 p_addr: 0x379188
+Test failed!
+rTest 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 20 tid: 671 found 14, p_addr: 0x1D80C0, j: 0
+
+Thread 0 p_addr: 0x68008
+Thread 1 p_addr: 0x1D80C0
+Thread 2 p_addr: 0x1D80C0
+Thread 3 p_addr: 0x168088
+Thread 4 p_addr: 0xA8028
+Thread 5 p_addr: 0x88018
+Thread 6 p_addr: 0xC8038
+Thread 7 p_addr: 0xD8040
+Thread 8 p_addr: 0x368188
+Thread 9 p_addr: 0xF8050
+Thread 10 p_addr: 0x108058
+Thread 11 p_addr: 0x88018
+Thread 12 p_addr: 0x1D80C0
+Thread 13 p_addr: 0xC8038
+Thread 14 p_addr: 0x378190
+Thread 15 p_addr: 0x88018
+Thread 16 p_addr: 0x168088
+Thread 17 p_addr: 0x368188
+Thread 18 p_addr: 0x88018
+Thread 19 p_addr: 0x1980A0
+Thread 20 p_addr: 0x1D80C0
+Thread 21 p_addr: 0x1B80B0
+Thread 22 p_addr: 0x1A80A8
+Thread 23 p_addr: 0x378190
+Thread 24 p_addr: 0xD8040
+Thread 25 p_addr: 0x1E80C8
+Thread 26 p_addr: 0x2F8150
+Thread 27 p_addr: 0x2080D8
+Thread 28 p_addr: 0x2F8150
+Thread 29 p_addr: 0x1C80B8
+Thread 30 p_addr: 0x1C80B8
+Thread 31 p_addr: 0x378190
+Thread 32 p_addr: 0x1B80B0
+Thread 33 p_addr: 0x78010
+Thread 34 p_addr: 0x278110
+Thread 35 p_addr: 0x2F8150
+Thread 36 p_addr: 0x1E80C8
+Thread 37 p_addr: 0x2A8128
+Thread 38 p_addr: 0x1E80C8
+Thread 39 p_addr: 0x1B80B0
+Thread 40 p_addr: 0x1A80A8
+Thread 41 p_addr: 0x78010
+Thread 42 p_addr: 0x1A80A8
+Thread 43 p_addr: 0x1B80B0
+Thread 44 p_addr: 0x318160
+Thread 45 p_addr: 0x2F8150
+Thread 46 p_addr: 0x288118
+Thread 47 p_addr: 0x168088
+Thread 48 p_addr: 0x288118
+Thread 49 p_addr: 0x78010
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 22 tid: 1673 found 23, p_addr: 0x1D80C0, j: 0
+
+Thread 0 p_addr: 0x68008
+Thread 1 p_addr: 0x78010
+Thread 2 p_addr: 0x88018
+Thread 3 p_addr: 0x98020
+Thread 4 p_addr: 0xA8028
+Thread 5 p_addr: 0xB8030
+Thread 6 p_addr: 0xC8038
+Thread 7 p_addr: 0xD8040
+Thread 8 p_addr: 0xE8048
+Thread 9 p_addr: 0xF8050
+Thread 10 p_addr: 0x108058
+Thread 11 p_addr: 0x118060
+Thread 12 p_addr: 0x128068
+Thread 13 p_addr: 0x138070
+Thread 14 p_addr: 0x148078
+Thread 15 p_addr: 0x158080
+Thread 16 p_addr: 0x168088
+Thread 17 p_addr: 0x178090
+Thread 18 p_addr: 0x188098
+Thread 19 p_addr: 0x1980A0
+Thread 20 p_addr: 0x1A80A8
+Thread 21 p_addr: 0x1B80B0
+Thread 22 p_addr: 0x1D80C0
+Thread 23 p_addr: 0x1D80C0
+Thread 24 p_addr: 0x1E80C8
+Thread 25 p_addr: 0x1F80D0
+Thread 26 p_addr: 0x2080D8
+Thread 27 p_addr: 0x2180E0
+Thread 28 p_addr: 0x2280E8
+Thread 29 p_addr: 0x2380F0
+Thread 30 p_addr: 0x2480F8
+Thread 31 p_addr: 0x258100
+Thread 32 p_addr: 0x268108
+Thread 33 p_addr: 0x278110
+Thread 34 p_addr: 0x288118
+Thread 35 p_addr: 0x298120
+Thread 36 p_addr: 0x2A8128
+Thread 37 p_addr: 0x2B8130
+Thread 38 p_addr: 0x2C8138
+Thread 39 p_addr: 0x2D8140
+Thread 40 p_addr: 0x2E8148
+Thread 41 p_addr: 0x2F8150
+Thread 42 p_addr: 0x308158
+Thread 43 p_addr: 0x318160
+Thread 44 p_addr: 0x328168
+Thread 45 p_addr: 0x338170
+Thread 46 p_addr: 0x348178
+Thread 47 p_addr: 0x358180
+Thread 48 p_addr: 0x368188
+Thread 49 p_addr: 0x378190
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 12 tid: 2863 found 11, p_addr: 0x129060, j: 8019
+
+Thread 0 p_addr: 0x50008
+Thread 1 p_addr: 0x79008
+Thread 2 p_addr: 0x89010
+Thread 3 p_addr: 0x99018
+Thread 4 p_addr: 0xA9020
+Thread 5 p_addr: 0xB9028
+Thread 6 p_addr: 0xC9030
+Thread 7 p_addr: 0xD9038
+Thread 8 p_addr: 0xF9048
+Thread 9 p_addr: 0x109050
+Thread 10 p_addr: 0x119058
+Thread 11 p_addr: 0x129060
+Thread 12 p_addr: 0x129060
+Thread 13 p_addr: 0x139068
+Thread 14 p_addr: 0x149070
+Thread 15 p_addr: 0x159078
+Thread 16 p_addr: 0x169080
+Thread 17 p_addr: 0x179088
+Thread 18 p_addr: 0x189090
+Thread 19 p_addr: 0x199098
+Thread 20 p_addr: 0x1A90A0
+Thread 21 p_addr: 0x1B90A8
+Thread 22 p_addr: 0x1C90B0
+Thread 23 p_addr: 0x1D90B8
+Thread 24 p_addr: 0x1E90C0
+Thread 25 p_addr: 0x1F90C8
+Thread 26 p_addr: 0x2090D0
+Thread 27 p_addr: 0x2190D8
+Thread 28 p_addr: 0x2290E0
+Thread 29 p_addr: 0x2390E8
+Thread 30 p_addr: 0x2490F0
+Thread 31 p_addr: 0x2590F8
+Thread 32 p_addr: 0x269100
+Thread 33 p_addr: 0x279108
+Thread 34 p_addr: 0x289110
+Thread 35 p_addr: 0x299118
+Thread 36 p_addr: 0x2A9120
+Thread 37 p_addr: 0x2B9128
+Thread 38 p_addr: 0x2C9130
+Thread 39 p_addr: 0x2D9138
+Thread 40 p_addr: 0x2E9140
+Thread 41 p_addr: 0x2F9148
+Thread 42 p_addr: 0x309150
+Thread 43 p_addr: 0x319158
+Thread 44 p_addr: 0x329160
+Thread 45 p_addr: 0x339168
+Thread 46 p_addr: 0x2590F8
+Thread 47 p_addr: 0x359178
+Thread 48 p_addr: 0x369180
+Thread 49 p_addr: 0x379188
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 7 tid: 3008 found 8, p_addr: 0xE8048, j: 0
+
+Thread 0 p_addr: 0x68008
+Thread 1 p_addr: 0x78010
+Thread 2 p_addr: 0x88018
+Thread 3 p_addr: 0x98020
+Thread 4 p_addr: 0xA8028
+Thread 5 p_addr: 0xB8030
+Thread 8 tid: 3009 found 7, p_addr: 0xE8048, j: 4392
+
+Thread 0 p_addr: 0x68008
+Thread 1 p_addr: 0x780Thread 6 p_addr: 0xC8038
+Thread 7 p_addr: 0xE8048
+Thread 8 p_addr: 0xE8048
+Thread 9 p_addr: 0x10
+Thread 2 p_addr: 0x88018
+Thread 3 p_addr: 0x98020
+Thread 4 p_addr: 0xA8028
+Thread 5 p_aF8050
+Thread 10 p_addr: 0x108058
+Thread 11 p_addr: 0x118060
+Thread 12 p_addr: 0x128068
+Thread 13 p_addr: 0x138070
+Thread 14 p_addr: 0x148078
+Thread 15 p_addr: 0x158080
+Thread 16 p_addr: 0x168088
+Thread 17 p_ddr: 0xB8030
+Thread 6 p_addr: 0xC8038
+Thread 7 p_addr: 0xE8048
+Thread 8 p_addr: 0xE8048
+Thread 9 p_addr: 0addr: 0x178090
+Thread 18 p_addr: 0x188098
+Thread 19 p_addr: 0x1980A0
+Thread 20 p_addr: 0x1A8xF8050
+Thread 10 p_addr: 0x108058
+Thread 11 p_addr: 0x118060
+Thread 12 p_addr: 0x128068
+Thread 13 p_addr: 0x138070
+Thread 14 p_addr: 0x288118
+Thread 15 p_addr: 0x288118
+Threa0A8
+Thread 21 p_addr: 0x1B80B0
+Thread 22 p_addr: 0x1C80B8
+Thread 23 p_addr: 0x1D80C0
+Thread 2d 16 p_addr: 0xC8038
+Thread 17 p_addr: 0xC8038
+Thread 18 p_addr: 0xC8038
+Thread 19 p_addr: 0x1980A0
+Thread 20 4 p_addr: 0x1E80C8
+Thread 25 p_addr: 0xB8030
+Thread 26 p_addr: 0x2080D8
+Thread 27 p_addr: 0x1D80C0
+Thread 28 p_addr: 0x2380F0
+Thread 29 p_addr: 0x1D80C0
+Thread 30 p_addr: 0x1D80C0
+Thread 31 p_addr: 0x1D80C0
+Thread 32 p_addr: 0xC8038
+Thread 33 p_addr: 0x1D80C0
+Thread 34 p_addr: 0x288118
+Thread 35 p_addr: 0x378190
+Thread 36 p_addr: 0x2A8128
+Thread 37p_addr: 0xC8038
+Thread 21 p_addr: 0x1B80B0
+Thread 22 p_addr: 0x1C80B8
+Thread 23 p_addr: 0x1D80C0
+Thread 24 p_addr: 0x1E80C8
+Thread 25 p_addr: 0xB8030
+Thread 26 p_addr: 0x2080D8
+Thread 27 p_addr: 0x1D80C0
+ p_addr: 0x2B8130
+Thread 38 p_addr: 0x1A80A8
+Thread 39 p_addr: 0x378190
+Thread 40 p_addr: 0x1E80C8
+ThreThread 28 p_addr: 0x2380F0
+Thread 29 p_addr: 0x1D80C0
+Thread 30 p_addr: 0x1D80C0
+Thread 31 p_addr: 0x1D80C0
+ad 41 p_addr: 0x1A80A8
+Thread 42 p_addr: 0x268108
+Thread 43 p_addr: 0x1A80A8
+Thread 44 p_addr: 0xC8038
+Thread 45 p_addr: 0xB8030
+Thread 46 p_addr: 0x348178
+Thread 47 p_addr: 0x378190
+Thread 48 p_addr: 0x2480F8
+Thread 49 p_addr: 0x1A80A8
+Test failed!
+Thread 32 p_addr: 0xC8038
+Thread 33 p_addr: 0x1D80C0
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 2 tid: 4153 found 3, p_addr: 0x98020, j: 9257
+
+Thread 0 p_addr: 0x68008
+Thread 1 p_addr: 0x78010
+Thread 2 p_addr: 0x98020
+Thread 3 p_addr: 0x98020
+Thread 4 p_addr: 0xA8028
+Thread 5 p_addr: 0xB8030
+Thread 6 p_addr: 0xC8038
+Thread 7 p_addr: 0xD8040
+Thread 8 p_addr: 0xE8048
+Thread 9 p_addr: 0x108058
+Thread 10 p_addr: 0xF8050
+Thread 11 p_addr: 0x118060
+Thread 12 p_addr: 0x128068
+Thread 13 p_addr: 0x138070
+Thread 14 p_addr: 0x148078
+Thread 15 p_addr: 0x158080
+Thread 16 p_addr: 0x168088
+Thread 17 p_addr: 0x178090
+Thread 18 p_addr: 0x188098
+Thread 19 p_addr: 0x1980A0
+Thread 20 p_addr: 0x1A80A8
+Thread 21 p_addr: 0x1B80B0
+Thread 22 p_addr: 0x1C80B8
+Thread 23 p_addr: 0x1D80C0
+Thread 24 p_addr: 0x1E80C8
+Thread 25 p_addr: 0x1F80D0
+Thread 26 p_addr: 0x2080D8
+Thread 27 p_addr: 0x2180E0
+Thread 28 p_addr: 0x2280E8
+Thread 29 p_addr: 0x2380F0
+Thread 30 p_addr: 0x2480F8
+Thread 31 p_addr: 0x258100
+Thread 32 p_addr: 0x268108
+Thread 33 p_addr: 0x278110
+Thread 34 p_addr: 0x288118
+Thread 35 p_addr: 0x298120
+Thread 36 p_addr: 0x2A8128
+Thread 37 p_addr: 0x2B8130
+Thread 38 p_addr: 0x2C8138
+Thread 39 p_addr: 0x2D8140
+Thread 40 p_addr: 0x2E8148
+Thread 41 p_addr: 0x2F8150
+Thread 42 p_addr: 0x308158
+Thread 43 p_addr: 0x318160
+Thread 44 p_addr: 0x328168
+Thread 45 p_addr: 0x338170
+Thread 46 p_addr: 0x348178
+Thread 47 p_addr: 0x358180
+Thread 48 p_addr: 0x368188
+Thread 49 p_addr: 0x378190
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 36 tid: 4487 found 37, p_addr: 0x2B8130, j: 0
+
+Thread 0 p_addr: 0x68008
+Thread 1 p_addr: 0x78010
+Thread 2 p_addr: 0x88018
+Thread 3 p_addr: 0x98020
+Thread 4 p_addr: 0xA8028
+Thread 5 p_addr: 0xB8030
+Thread 6 p_addr: 0xC8038
+Thread 7 p_addr: 0xD8040
+Thread 8 p_addr: 0xE8048
+Thread 9 p_addr: 0xF8050
+Thread 10 p_addr: 0x108058
+Thread 11 p_addr: 0x118060
+Thread 12 p_addr: 0x128068
+Thread 13 p_addr: 0x138070
+Thread 14 p_addr: 0x148078
+Thread 15 p_addr: 0x158080
+Thread 16 p_addr: 0x168088
+Thread 17 p_addr: 0x178090
+Thread 18 p_addr: 0x188098
+Thread 19 p_addr: 0x1980A0
+Thread 20 p_addr: 0x148078
+Thread 21 p_addr: 0x1B80B0
+Thread 22 p_addr: 0x1C80B8
+Thread 23 p_addr: 0x148078
+Thread 24 p_addr: 0x188098
+Thread 25 p_addr: 0x138070
+Thread 26 p_addr: 0x2080D8
+Thread 27 p_addr: 0x188098
+Thread 28 p_addr: 0x378190
+Thread 29 p_addr: 0x2380F0
+Thread 30 p_addr: 0x2E8148
+Thread 31 p_addr: 0x2E8148
+Thread 32 p_addr: 0x2180E0
+Thread 33 p_addr: 0x148078
+Thread 34 p_addr: 0x298120
+Thread 35 p_addr: 0x2E8148
+Thread 36 p_addr: 0x2B8130
+Thread 37 p_addr: 0x2B8130
+Thread 38 p_addr: 0x2E8148
+Thread 39 p_addr: 0x2D8140
+Thread 40 p_addr: 0x378190
+Thread 41 p_addr: 0x168088
+Thread 42 p_addr: 0x168088
+Thread 43 p_addr: 0x168088
+Thread 44 p_addr: 0x168088
+Thread 45 p_addr: 0x168088
+Thread 46 p_addr: 0x298120
+Thread 47 p_addr: 0x138070
+Thread 48 p_addr: 0x2180E0
+Thread 49 p_addr: 0x298120
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 19 tid: 4920 found 20, p_addr: 0x1A90A0, j: 0
+
+Thread 0 p_addr: 0x16008
+Thread 1 p_addr: 0x79008
+Thread 2 p_addr: 0x189090
+Thread 3 p_addr: 0x189090
+Thread 4 p_addr: 0x16008
+Thread 5 p_addr: 0x16008
+Thread 6 p_addr: 0x16008
+Thread 7 p_addr: 0x16008
+Thread 8 p_addr: 0xE9040
+Thread 9 p_addr: 0xF9048
+Thread 10 p_addr: 0x109050
+Thread 11 p_addr: 0x119058
+Thread 12 p_addr: 0x189090
+Thread 13 p_addr: 0x139068
+Thread 14 p_addr: 0x119058
+Thread 15 p_addr: 0x159078
+Thread 16 p_addr: 0x119058
+Thread 17 p_addr: 0x179088
+Thread 18 p_addr: 0x189090
+Thread 19 p_addr: 0x1A90A0
+Thread 20 p_addr: 0x1A90A0
+Thread 21 p_addr: 0x119058
+Thread 22 p_addr: 0x16008
+Thread 23 p_addr: 0x1D90B8
+Thread 24 p_addr: 0x1E90C0
+Thread 25 p_addr: 0x179088
+Thread 26 p_addr: 0x16008
+Thread 27 p_addr: 0x2190D8
+Thread 28 p_addr: 0x2290E0
+Thread 29 p_addr: 0x1B90A8
+Thread 30 p_addr: 0x16008
+Thread 31 p_addr: 0x1F90C8
+Thread 32 p_addr: 0x169080
+Thread 33 p_addr: 0x119058
+Thread 34 p_addr: 0x189090
+Thread 35 p_addr: 0x2A9120
+Thread 36 p_addr: 0x2A9120
+Thread 37 p_addr: 0x189090
+Thread 38 p_addr: 0x1E90C0
+Thread 39 p_addr: 0x2D9138
+Thread 40 p_addr: 0x169080
+Thread 41 p_addr: 0x309150
+Thread 42 p_addr: 0x379188
+Thread 43 p_addr: 0x1D90B8
+Thread 44 p_addr: 0x189090
+Thread 45 p_addr: 0x1B90A8
+Thread 46 p_addr: 0x109050
+Thread 47 p_addr: 0x109050
+Thread 48 p_addr: 0x16008
+Thread 49 p_addr: 0xF9048
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 27 tid: 5578 found 28, p_addr: 0x2290E0, j: 6602
+
+Thread 0 p_addr: 0x34008
+Thread 1 p_addr: 0x79008
+Thread 2 p_addr: 0x89010
+Thread 3 p_addr: 0x99018
+Thread 4 p_addr: 0xA9020
+Thread 5 p_addr: 0xB9028
+Thread 6 p_addr: 0xC9030
+Thread 7 p_addr: 0xD9038
+Thread 8 p_addr: 0xE9040
+Thread 9 p_addr: 0xF9048
+Thread 10 p_addr: 0x109050
+Thread 11 p_addr: 0x119058
+Thread 12 p_addr: 0x129060
+Thread 13 p_addr: 0x139068
+Thread 14 p_addr: 0x149070
+Thread 15 p_addr: 0x169080
+Thread 16 p_addr: 0x179088
+Thread 17 p_addr: 0x189090
+Thread 18 p_addr: 0x199098
+Thread 19 p_addr: 0x1A90A0
+Thread 20 p_addr: 0x2390E8
+Thread 21 p_addr: 0x2B9128
+Thread 22 p_addr: 0x1C90B0
+Thread 23 p_addr: 0x1D90B8
+Thread 24 p_addr: 0x1E90C0
+Thread 25 p_addr: 0x1F90C8
+Thread 26 p_addr: 0x2090D0
+Thread 27 p_addr: 0x2290E0
+Thread 28 p_addr: 0x2290E0
+Thread 29 p_addr: 0x2190D8
+Thread 30 p_addr: 0x1B90A8
+Thread 31 p_addr: 0x2590F8
+Thread 32 p_addr: 0x269100
+Thread 33 p_addr: 0x279108
+Thread 34 p_addr: 0x289110
+Thread 35 p_addr: 0x299118
+Thread 36 p_addr: 0x2A9120
+Thread 37 p_addr: 0x2490F0
+Thread 38 p_addr: 0x2C9130
+Thread 39 p_addr: 0x2D9138
+Thread 40 p_addr: 0x2E9140
+Thread 41 p_addr: 0x2F9148
+Thread 42 p_addr: 0x309150
+Thread 43 p_addr: 0x319158
+Thread 44 p_addr: 0x329160
+Thread 45 p_addr: 0x339168
+Thread 46 p_addr: 0x349170
+Thread 47 p_addr: 0x359178
+Thread 48 p_addr: 0x369180
+Thread 49 p_addr: 0x379188
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 35 tid: 5836 found 34, p_addr: 0x288118, j: 513
+
+Thread 0 p_addr: 0x68008
+Thread 1 p_addr: 0x78010
+Thread 2 p_addr: 0x88018
+Thread 3 p_addr: 0x98020
+Thread 4 p_addr: 0xA8028
+Thread 5 p_addr: 0xB8030
+Thread 6 p_addr: 0xC8038
+Thread 7 p_addr: 0xD8040
+Thread 8 p_addr: 0xE8048
+Thread 9 p_addr: 0xF8050
+Thread 10 p_addr: 0x108058
+Thread 11 p_addr: 0x118060
+Thread 12 p_addr: 0x128068
+Thread 13 p_addr: 0x138070
+Thread 14 p_addr: 0x148078
+Thread 15 p_addr: 0x158080
+Thread 16 p_addr: 0x168088
+Thread 17 p_addr: 0x178090
+Thread 18 p_addr: 0x188098
+Thread 19 p_addr: 0x1980A0
+Thread 20 p_addr: 0x1A80A8
+Thread 21 p_addr: 0x1B80B0
+Thread 22 p_addr: 0x1C80B8
+Thread 23 p_addr: 0x1D80C0
+Thread 24 p_addr: 0x1E80C8
+Thread 25 p_addr: 0x1F80D0
+Thread 26 p_addr: 0x2080D8
+Thread 27 p_addr: 0x2180E0
+Thread 28 p_addr: 0x2280E8
+Thread 29 p_addr: 0x2380F0
+Thread 30 p_addr: 0x2480F8
+Thread 31 p_addr: 0x258100
+Thread 32 p_addr: 0x268108
+Thread 33 p_addr: 0x278110
+Thread 34 p_addr: 0x288118
+Thread 35 p_addr: 0x288118
+Thread 36 p_addr: 0x298120
+Thread 37 p_addr: 0x2A8128
+Thread 38 p_addr: 0x2B8130
+Thread 39 p_addr: 0x2C8138
+Thread 40 p_addr: 0x2D8140
+Thread 41 p_addr: 0x2E8148
+Thread 42 p_addr: 0x2F8150
+Thread 43 p_addr: 0x308158
+Thread 44 p_addr: 0x318160
+Thread 45 p_addr: 0x328168
+Thread 46 p_addr: 0x338170
+Thread 47 p_addr: 0x348178
+Thread 48 p_addr: 0x358180
+Thread 49 p_addr: 0x368188
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 23 tid: 7774 found 22, p_addr: 0x1D80C0, j: 0
+
+Thread 0 p_addr: 0x68008
+Thread 1 p_addr: 0x78010
+Thread 2 p_addr: 0x88018
+Thread 3 p_addr: 0x98020
+Thread 4 p_addr: 0xA8028
+Thread 5 p_addThread 22 tid: 7773 found 23, p_addr: 0x1D80C0, j: 5801
+
+Thread 0 p_addr: 0x68008
+Thread 1 p_addr: 0x78r: 0xB8030
+Thread 6 p_addr: 0xC8038
+Thread 7 p_addr: 0xD8040
+Thread 8 p_addr: 0xE8048
+Thread 9 010
+Thread 2 p_addr: 0x88018
+Thread 3 p_addr: 0x98020
+Thread 4 p_addr: 0xA8028
+Thread 5 p_addr:p_addr: 0xF8050
+Thread 10 p_addr: 0x108058
+Thread 11 p_addr: 0x118060
+Thread 12 p_addr: 0x128068
+Thread 0xB8030
+Thread 6 p_addr: 0xC8038
+Thread 7 p_addr: 0xD8040
+Thread 8 p_addr: 0xE8048
+Thread  13 p_addr: 0x138070
+Thread 14 p_addr: 0x148078
+Thread 15 p_addr: 0x158080
+Thread 16 p_addr: 0x168088
+Thread 17 p_addr: 0x188098
+Thread 18 p_addr: 0x1980A0
+Thread 19 p_addr: 0x1A80A8
+Thread 20 p_addr: 09 p_addr: 0xF8050
+Thread 10 p_addr: 0x108058
+Thread 11 p_addr: 0x118060
+Thread 12 p_addr: 0x128068
+Thrxead 13 p_addr: 0x138070
+Thread 14 p_addr: 0x1C80B8
+Thread 15 p_addr: 0x168088
+Thread 16 p_addr: 0x178090
+1B80B0
+Thread 21 p_addr: 0x158080
+Thread 22 p_addr: 0x1D80C0
+Thread 23 p_addr: 0x1D80C0
+Thread 24 p_addrThread 17 p_addr: 0x188098
+Thread 18 p_addr: 0x1980A0
+Thread 19 p_addr: 0x1A80A8
+Thread 20 p_addr: 0x1B80B0
+: 0x1E80C8
+Thread 25 p_addr: 0x1F80D0
+Thread 26 p_addr: 0x2080D8
+Thread 27 p_addr: 0x2180E0
+TThread 21 p_addr: 0x158080
+Thread 22 p_addr: 0x1D80C0
+Thread 23 p_addr: 0x1D80C0
+Thread 24 p_addr: 0x1E80C8
+Thread 25 p_addr: 0x1F80D0
+Thread 26 p_addr: 0x2080D8
+Thread 27 p_addr: 0x2180E0
+Thread 28 p_addr: 0x2280E8
+Thread 29 p_addr: 0x2380F0
+Thread 30 p_addr: 0x2480F8
+Thread 31 p_addr: 0x258100
+Thread 32 p_addhread 28 p_addr: 0x2280E8
+Thread 29 p_addr: 0x2380F0
+Thread 30 p_addr: 0x2480F8
+Thread 31 p_addr: 0x258100
+r: 0x268108
+Thread 33 p_addr: 0x278110
+ThreThread 32 p_addr: 0x268108
+Thread 33 p_addr: 0x278110
+Thread 34 p_addr: 0x288118
+Thread 35 p_addr: 0ad 34 p_addr: 0x288118
+Thread 35 p_addr: 0x298120
+Thread 36 p_addr: 0x1A80A8
+Thread 37 p_addr: 0x298120
+Thread 36 p_addr: 0x1A80A8
+Thread 37 p_addr: 0x1A80A8
+Thread 38 p_addr: 0x1980A0
+Thread 39 p_addr: 0xC8038
+Thread 40 p_addr: 0x1980A0
+Thread 41 p_addr: 0x2F8150
+Thread 42 p_addr: 0x348178
+x1A80A8
+Thread 38 p_addr: 0x1980A0
+Thread 39 p_addr: 0xC8038
+Thread 40 Thread 43 p_addr: 0x318160
+Thread 44 p_addr: 0xC8038
+Thread 45 p_addr: 0x188098
+Thread 46 p_addr: 0x188098
+Thread 47 p_addr: 0x1C80B8
+Thread 48 p_addr: 0x368188
+Thread 49 p_addr: 0x378190
+Test failed!
+pTest 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 47 tid: 8598 found 48, p_addr: 0x368188, j: 1953
+
+Thread 0 p_addr: 0x68008
+Thread 1 p_addr: 0x78010
+Thread 2 p_addr: 0x88018
+Thread 3 p_addr: 0x98020
+Thread 4 p_addr: 0xA8028
+Thread 5 p_addr: 0xB8030
+Thread 6 p_addr: 0xC8038
+Thread 7 p_addr: 0xD8040
+Thread 8 p_addr: 0xE8048
+Thread 9 p_addr: 0xF8050
+Thread 10 p_addr: 0x108058
+Thread 11 p_addr: 0x118060
+Thread 12 p_addr: 0x128068
+Thread 13 p_addr: 0x138070
+Thread 14 p_addr: 0x148078
+Thread 15 p_addr: 0x158080
+Thread 16 p_addr: 0x168088
+Thread 17 p_addr: 0x178090
+Thread 18 p_addr: 0x188098
+Thread 19 p_addr: 0x1980A0
+Thread 20 p_addr: 0x1A80A8
+Thread 21 p_addr: 0x1B80B0
+Thread 22 p_addr: 0x1C80B8
+Thread 23 p_addr: 0x1D80C0
+Thread 24 p_addr: 0x1E80C8
+Thread 25 p_addr: 0x1F80D0
+Thread 26 p_addr: 0x2080D8
+Thread 27 p_addr: 0x2180E0
+Thread 28 p_addr: 0x2280E8
+Thread 29 p_addr: 0x2380F0
+Thread 30 p_addr: 0x2480F8
+Thread 31 p_addr: 0x258100
+Thread 32 p_addr: 0x268108
+Thread 33 p_addr: 0x278110
+Thread 34 p_addr: 0x288118
+Thread 35 p_addr: 0x298120
+Thread 36 p_addr: 0x2A8128
+Thread 37 p_addr: 0x2B8130
+Thread 38 p_addr: 0x2C8138
+Thread 39 p_addr: 0x2D8140
+Thread 40 p_addr: 0x2E8148
+Thread 41 p_addr: 0x2F8150
+Thread 42 p_addr: 0x308158
+Thread 43 p_addr: 0x318160
+Thread 44 p_addr: 0x328168
+Thread 45 p_addr: 0x338170
+Thread 46 p_addr: 0x348178
+Thread 47 p_addr: 0x368188
+Thread 48 p_addr: 0x368188
+Thread 49 p_addr: 0x378190
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 42 tid: 8643 found 41, p_addr: 0x2F8150, j: 0
+
+Thread 0 p_addr: 0x68008
+Thread 1 p_addr: 0x78010
+Thread 2 p_addr: 0x88018
+Thread 3 p_addr: 0x98020
+Thread 4 p_addr: 0xA8028
+Thread 5 p_addr: 0xB8030
+Thread 6 p_addr: 0xC8038
+Thread 7 p_addr: 0xD8040
+Thread 8 p_addr: 0xE8048
+Thread 9 p_addr: 0xF8050
+Thread 10 p_addr: 0x108058
+Thread 11 p_addr: 0x118060
+Thread 12 p_addr: 0x128068
+Thread 13 p_addr: 0x138070
+Thread 14 p_addr: 0x148078
+Thread 15 p_addr: 0x158080
+Thread 16 p_addr: 0x168088
+Thread 17 p_addr: 0x178090
+Thread 18 p_addr: 0x188098
+Thread 19 p_addr: 0x1980A0
+Thread 20 p_addr: 0x1A80A8
+Thread 21 p_addr: 0x1B80B0
+Thread 22 p_addr: 0x1C80B8
+Thread 23 p_addr: 0x1D80C0
+Thread 24 p_addr: 0x1E80C8
+Thread 25 p_addr: 0x1F80D0
+Thread 26 p_addr: 0x2080D8
+Thread 27 p_addr: 0x2180E0
+Thread 28 p_addr: 0x2280E8
+Thread 29 p_addr: 0x2380F0
+Thread 30 p_addr: 0x2480F8
+Thread 31 p_addr: 0x258100
+Thread 32 p_addr: 0x268108
+Thread 33 p_addr: 0x278110
+Thread 34 p_aThread 22 tid: 8623 found 23, p_addr: 0x1D80C0, j: 9279
+
+Thread 0 p_addr: 0x68008
+Thread 1 p_addr: 0x78010
+Thread 2 p_addr: 0x88018
+Thread 3 p_addr: 0x98020
+Thread 4 p_addr: 0xA8028
+Thread 5 p_addrddr: 0x288118
+Thread 35 p_addr: 0x298120
+Thread 36 p_addr: 0x2B8130
+Thread 37 p_addr: 0x2A8128
+Thre: 0xB8030
+Thread 6 p_addr: 0xC8038
+Thread 7 p_addr: 0xD8040
+Thread 8 p_addr: 0xE8048
+Thread 9 p_addr: 0xF8050
+Thread 10 p_addr: 0x108058
+Thread 11 p_addr: 0x118060
+Thread 12 p_addr: 0x128068
+Thread 13 p_addr: 0x138070
+Thread 14 p_addr: 0x148078
+Thread 15 p_addr: 0x158080
+Thread 16 p_addr: 0x168088ad 38 p_addr: 0x2C8138
+Thread 39 p_addr: 0x2D8140
+Thread 40 p_addr: 0x2E8148
+Thread 41 p_addr: 0x2F8150
+
+Thread 17 p_addr: 0x178090
+Thread 18 p_addr: 0x188098
+Thread 19 p_addr: 0x1980A0
+Thread 20 p_addr: Thread 42 p_addr: 0x2F8150
+Thread 43 p_addr: 0x308158
+Thread 44 p_addr: 0x318160
+Thread 45 p_addr: 0x0x1A80A8
+Thread 21 p_addr: 0x1B80B0
+Thread 22 p_addr: 0x1D80C0
+Thread 23 p_addr: 0x1D80C0
+Thread 24 p_328168
+Thread 46 p_addr: 0x338170
+Thread 47 p_addr: 0x348178
+Thread 48 p_addr: 0x358180
+Thread 49 p_addr: 0x368188
+Test failed!
