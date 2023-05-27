@@ -1,0 +1,124 @@
+Test 3: Sbrk test
+Thread tid: 1, arg: 0 start
+Thread tid: 2, arg: 1 start
+Thread tid: 3, argThread tid: 4, arg: 3 start
+Thread tid: 5, arg: 4 start
+: 2 start
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 3, tid: 2 run    thread_test
+pid: 3, tid: 3 zombie thread_test
+pid: 3, tid: 4 zombie thread_test
+pid: 3, tid: 5 zombie thread_test
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 3, tid: 2 run    thread_test
+pid: 3, tid: 3 zombie thread_test
+pid: 3, tid: 4 zombie thread_test
+pid: 3, tid: 5 zombie thread_test
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 3, tid: 2 run    thread_test
+pid: 3, tid: 3 zombie thread_test
+pid: 3, tid: 4 zombie thread_test
+pid: 3, tid: 5 zombie thread_test
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 3, tid: 2 run    thread_test
+pid: 3, tid: 3 zombie thread_test
+pid: 3, tid: 4 zombie thread_test
+pid: 3, tid: 5 zombie thread_test
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 3, tid: 2 run    thread_test
+pid: 3, tid: 3 zombie thread_test
+pid: 3, tid: 4 zombie thread_test
+pid: 3, tid: 5 zombie thread_test
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 3, tid: 2 run    thread_test
+pid: 3, tid: 3 zombie thread_test
+pid: 3, tid: 4 zombie thread_test
+pid: 3, tid: 5 zombie thread_test
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 3, tid: 2 run    thread_test
+pid: 3, tid: 3 zombie thread_test
+pid: 3, tid: 4 zombie thread_test
+pid: 3, tid: 5 zombie thread_test
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 3, tid: 2 run    thread_test
+pid: 3, tid: 3 zombie thread_test
+pid: 3, tid: 4 zombie thread_test
+pid: 3, tid: 5 zombie thread_test
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 3, tid: 2 run    thread_test
+pid: 3, tid: 3 zombie thread_test
+pid: 3, tid: 4 zombie thread_test
+pid: 3, tid: 5 zombie thread_test
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 3, tid: 2 run    thread_test
+pid: 3, tid: 3 zombie thread_test
+pid: 3, tid: 4 zombie thread_test
+pid: 3, tid: 5 zombie thread_test
+
+>======procdmp finish======<

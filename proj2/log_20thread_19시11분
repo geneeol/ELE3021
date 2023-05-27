@@ -1,0 +1,4550 @@
+$ p2_script 3 3
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1, arg: 0 start
+Thread tid: 2, arg: 1 start
+Thread tid:Thread tid: 4, arg: 3 start
+Thread tid: 5, arg: 4 start
+Thread tid: 6, arg: 5 start
+Thread tid: 7, arg: 6 start
+Thread tidThread tid: 9, arg: 8 start
+Thread tid: 10, arg: 9 start
+Thread tid: 11, arg: 10 start
+Thread tid: 12, arg: 11 start
+Thread tid: 13, arg: 12 start
+Thread tid: 14, arg: 13 start
+Thread tid: 15, arg: 14 stThread tid: 16, arg: 15 start
+Thread tid: 17, arg: 16 start
+Thread tid: 18, arg: 17 start
+Thread tid: 19, Thread tid: 20, arg: 19 start
+ 3, arg: 2 start
+: 8, arg: 7 start
+art
+arg: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 21, arg: 0 staThread tid: 22, arg: 1 start
+Thread tid: 23, arg: 2 start
+Thread tid: 24, arg: 3 start
+Thread tid: 25, arg:Thread tid: 26, arg: 5 start
+Thread tid: 27, arg: 6 start
+Thread tid: 28, arg: 7 start
+Thread tid: 29, arg: 8 staThread tid: 30, arg: 9 start
+Thread tid: 31, arg: 10 start
+Thread tid: 32, arg: 11 start
+Thread tid: 33, arg: 12 Thread tid: 34, arg: 13 start
+Thread tid: 35, arg: 14 start
+Thread tid: 36, arg: 15 start
+Thread tid: 37, arg: 16 start
+Thread tid: 38, arg: 17 start
+Thread tid: 39, arg: 18 start
+Thread tid: 40, arg: 19 strt
+ 4 start
+rt
+start
+art
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 41, arg: 0 start
+ThreaThread tid: 43, arg: 2 start
+Thread tid: 44, arg: 3 start
+Thread tid: 45, arg: 4 start
+Thread tidThread tid: 47, arg: 6 start
+Thread tid: 48, arg: 7 start
+Thread tid: 49, arg: 8 start
+Thread tid:Thread tid: 51, arg: 10 start
+Thread tid: 52, arg: 11 start
+Thread tid: 53, arg: 12 start
+Thread tid:: 46, arg: 5 start
+ 50, arg: 9 start
+ 54, arg: 13 start
+Thread tid: 55, arg: 14 sThread tid: 56, arg: 15 start
+Thread tid: 57, arg: 16 start
+Thread tid: 58, arg: 17 start
+Thread tid: 59, arg: 18 start
+Thread tid: 60, arg: 19 start
+d tid: 42, arg: 1 start
+tart
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 61, arg: 0 start
+Thread tid: 62, arg: 1 start
+TThread tid: 64, arg: 3 start
+Thread tid: 65, arg: 4 start
+Thread tid: 66, arg: 5 start
+Thread tid: 67, Thread tid: 68, arg: 7 start
+Thread tid: 69, arg: 8 start
+Thread tid: 70, arg: 9 start
+Thread tid: 71, aThread tid: 72, arg: 11 start
+Thread tid: 73, arg: 12 start
+Thread tid: 74, arg: 13 start
+Thread tiThread tid: 76, arg: 15 start
+Thread tid: 77, arg: 16 start
+Thread tid: 78, arg: 17 start
+ThreaThread tid: 80, arg: 19 start
+hread tid: 63, arg: 2 start
+arg: 6 start
+rg: 10 start
+d: 75, argd tid: 79, arg: 18 start
+: 14 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 81, arg: 0 start
+Thread tid: 82, arg: 1 start
+Thread tid: 83, arg: 2 start
+Thread tid: 84, arg: 3 start
+Thread tid: 85, arg: 4 start
+ThreaThread tid: 87, arg: 6 start
+Thread tid: 88, arg: 7 start
+Thread tid: 89, arg: 8 start
+Thread tiThread tid: 91, arg: 10 start
+Thread tid: 92, arg: 11 start
+Thread tid: 93, arg: 12 start
+Thread tid: 94, arg: 13 start
+Thread tid: 95, arg: 14 start
+Thread tid: 96, arg: 15 start
+Thread tid: 97, arThread tid: 98, arg: 17 start
+Thread tid: 99, arg: 18 start
+Thread tid: 100, arg: 19 start
+d tid: 8d: 90, arg: 9 start
+g: 16 start
+6, arg: 5 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 101, arg: 0 start
+pid 9 tid 102 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x18004--kill proc
+pid 9 tid 103 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x1a004--kill proc
+pid 9 tid 104 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x1c004--kill proc
+pid 9 tid 106 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x20004--kill proc
+pid 9 tid 107 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x22004--kill proc
+pid 9 tid 108 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x24004--kill proc
+pid 9 tid 109 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x26004--kill proc
+pid 9 tid 110 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x28004--kill proc
+pid 9 tid 112 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2c004--kill proc
+pid 9 tid 113 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2e004--kill proc
+pid 9 tid 114 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x30004--kill proc
+pid 9 tid 115 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x32004--kill proc
+pid 9 tid 116 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x34004--kill proc
+pid 9 tid 117 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x36004--kill proc
+pid 9 tid 118 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x38004--kill proc
+Thread tid: 120, arg: 19 start
+pid 9 tid 120 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x16000--kill proc
+pid 9 tid 105 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x1e004--kill proc
+pid 9 tid 111 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2a004--kill proc
+pid 9 tid 119 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x3a004--kill proc
+pid 9 tid 101 thread_test: trap 14 err 7 on cpu 0 eip 0x140 addr 0x16000--kill proc
+Thread 1 returned 0, but expected 1
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 121, arg: 0 start
+Thread tid: 122, arg: 1 start
+Thread tid: 123, arg: 2 startThread tid: 124, arg: 3 start
+Thread tid: 125, arg: 4 start
+Thread tid: 126, arg: 5 start
+Thread tidThread tid: 128, arg: 7 start
+Thread tid: 129, arg: 8 start
+Thread tid: 130, arg: 9 start
+Thread tid
+: 131, arg: 10 start
+Thread tid: 132, arg: 11 start
+Thread tid: 133, arg: 12 start
+Thread tiThread tid: 135, arg: 14 start
+Thread tid: 136, arg: 15 start
+Thread tid: 137, arg: 16 start
+Thre: 127, arg: 6 start
+d: 134, arg: 13 start
+ad tid: 138, arg: 17 start
+Thread tid: 139, arg: 18 staThread tid: 140, arg: 19 start
+rt
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 141, Thread tid: 142, arg: 1 start
+Thread tid: 143, arg: 2 start
+Thread tid: 144, arg: 3 start
+Thread tid: 145, argThread tid: 146, arg: 5 start
+Thread tid: 147, arg: 6 start
+Thread tid: 148, arg: 7 start
+Thread tid: 149, arg: 8 start
+Thread tid: 150, arg: 9 start
+Thread tid: 151, arg: 10 start
+Thread tid: 152, arg: 11 sThread tid: 153, arg: 12 start
+Thread tid: 154, arg: 13 start
+Thread tid: 155, arg: 14 start
+Thread tid: 156, arg: 15arg: 0 start
+: 4 start
+tart
+ start
+Thread tid: 157, arg: 16 start
+Thread tid: 158, arg: 17 start
+Thread tid: 159, arg: 18 start
+Thread tid: 160, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 161, arg: 0 start
+Thread tid: 162, arg: 1 start
+Thread tid: 163, arg: 2 start
+Thread tid: 164, arg: 3 start
+Thread tid: 165, arg: 4 start
+Thread tid: 166, arg: 5 start
+Thread tid: 167, arg: 6Thread tid: 168, arg: 7 start
+Thread tid: 169, arg: 8 start
+Thread tid: 170, arg: 9 start
+Thread tid:Thread tid: 172, arg: 11 start
+Thread tid: 173, arg: 12 start
+Thread tid: 174, arg: 13 start
+Thread tid:Thread tid: 176, arg: 15 start
+Thread tid: 177, arg: 16 start
+Thread tid: 178, arg: 17 start
+Thread tid: 1Thread tid: 180, arg: 19 start
+ start
+ 171, arg: 10 start
+ 175, arg: 14 start
+79, arg: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 181, arg: 0 start
+Thread tid: 182, arg: 1 Thread tid: 183, arg: 2 start
+Thread tid: 184, arg: 3 start
+Thread tid: 185, arg: 4 start
+Thread tid:Thread tid: 187, arg: 6 start
+Thread tid: 188, arg: 7 start
+Thread tid: 189, arg: 8 start
+Thread tid: 190, arg: 9 start
+Thread tid: 191, arg: 10 start
+Thread tid: 192, arg: 11 start
+Thread tid: 1start
+ 186, arg: 5 start
+93, arg: 12 start
+Thread tid: 194, arg: 13 start
+Thread tid: 195, arg: 14 start
+Thread tid: 196, arg: 15 start
+Thread tid: 197, arg: 16 start
+Thread tid: 198, arg: 17 start
+Thread tid: 199, arg: 18 start
+Thread tid: 200, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 201, arg: 0 start
+Thread tid: 202, arg: 1 start
+Thread tid: 203, arg: 2 start
+Thread tid: 204, arg: 3 start
+pid 14 tid 204 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x36000--kill proc
+Thread tid: 205, arg: 4 start
+pid 14 tid 205 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x36000--kill proc
+Thread tid: 207, arg: 6 start
+pid 14 tid 207 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x36000--kill proc
+Thread tid: 208, arg: 7 start
+pid 14 tid 208 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x36000--kill proc
+Thread tid: 210, arg: 9 start
+pid 14 tid 210 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x36000--kill proc
+Thread tid: 211, arg: 10 start
+pid 14 tid 211 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x36000--kill proc
+TThread tid: 213, arg: 12 start
+pid 14 tid 213 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x36000--kill proc
+Thread tid: 214, arg: 13 start
+pid 14 tid 214 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x36000--kill proc
+Thread tid: 216, arg: 15 start
+pid 14 tid 216 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x36000--kill proc
+Thread tid: 217, arg: 16 start
+pid 14 tid 217 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x36000--kill proc
+pid 14 tid 218 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x38004--kill proc
+Thread tid: 220, arg: 19 start
+pid 14 tid 220 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x36000--kill proc
+Thread tid: 206, arg: 5 start
+pid 14 tid 206 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x36000--kill proc
+hread tid: 212, arg: 11 start
+pid 14 tid 212 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x36000--kill proc
+Thread tid: 215, arg: 14 start
+pid 14 tid 215 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x36000--kill proc
+pid 14 tid 219 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x3a004--kill proc
+Thread tid: 209, arg: 8 start
+pid 14 tid 209 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x36000--kill proc
+pid 14 tid 201 thread_test: trap 14 err 7 on cpu 0 eip 0x140 addr 0x36000--kill proc
+Thread 3 returned 0, but expected 3
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 221, Thread tid: 222, arg: 1 start
+Thread tid: 223, arg: 2 start
+Thread tid: 224, arg: 3 start
+Thread tid: 225, arg: 4 start
+Thread tid: 226, arg: 5 start
+Thread tid: 227, arg: 6 start
+Thread tid: 228, arg: 7 startThread tid: 229, arg: 8 start
+Thread tid: 230, arg: 9 start
+Thread tid: 231, arg: 10 start
+Thread tid: 232,Thread tid: 233, arg: 12 start
+Thread tid: 234, arg: 13 start
+Thread tid: 235, arg: 14 start
+Thread tid:Thread tid: 237, arg: 16 start
+Thread tid: 238, arg: 17 start
+Thread tid: 239, arg: 18 start
+Thread tid: 240, arg: 19 start
+arg: 0 start
+
+ arg: 11 start
+ 236, arg: 15 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 241, arg: 0 start
+Thread tid: 242, arg: 1 start
+Thread tid: 243, arg: 2 start
+Thread tid: 244, arg: 3 start
+Thread tid: 245, arg: 4 start
+Thread tid: 246, arg: 5 start
+Thread tid: 247, arg: 6 start
+ThreaThread tid: 249, arg: 8 start
+Thread tid: 250, arg: 9 start
+Thread tid: 251, arg: 10 start
+Thread tid: 252, aThread tid: 253, arg: 12 start
+Thread tid: 254, arg: 13 start
+Thread tid: 255, arg: 14 start
+Thrd tid: 248, arg: 7 start
+rg: 11 start
+ead tid: 256, arg: 15 start
+Thread tid: 257, arg: 16 start
+Thread tid: 258, arg: 17 start
+Thread tid: 259, arg: 18 start
+Thread tid: 260, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 261, argThread tid: 262, arg: 1 start
+Thread tid: 263, arg: 2 start
+Thread tid: 264, arg: 3 start
+Thread tid: 265, argThread tid: 266, arg: 5 start
+Thread tid: 267, arg: 6 start
+Thread tid: 268, arg: 7 start
+Thread tid: 269,: 0 start
+: 4 start
+ arg: 8 start
+Thread tid: 270, arg: 9 start
+Thread tid:Thread tid: 272, arg: 11 start
+Thread tid: 273, arg: 12 start
+Thread tid: 274, aThread tid: 275, arg: 14 start
+Thread tid: 276, arg: 15 start
+Thread tid: 277, arg: 16 start
+ThreaThread tid: 279, arg: 18 start
+Thread tid: 280, arg: 19 start
+ 271, arg: 10 start
+rg: 13 start
+d tid: 278, arg: 17 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 281, arg: 0 start
+Thread tid: 282, arg: 1 start
+Thread tid: 283, arg: 2 start
+Thread tid: 284, arThread tid: 285, arg: 4 start
+Thread tid: 286, arg: 5 start
+Thread tid: 287, arg: 6 start
+Thread tid: 288, arg: 7 start
+Thread tid: 289, arg: 8 start
+Thread tid: 290, arg: 9 start
+Thread tid: 291, arg: 10 start
+Thread tid: 292, arg: 11 start
+Thread tid: 293, arg: 12 start
+Thread tid: 294, arg: 13 start
+Thread tid: 295, arg: 14 start
+Thread tid: 296, arg: 15 start
+Thread tid: 297, arg: 16 startThread tid: 298, arg: 17 start
+Thread tid: 299, arg: 18 start
+Thread tid: 300, arg: 19 start
+g: 3 start
+
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 301, arg: 0 start
+Thread tid: 302, arg: 1 start
+Thread tid: 303, arg: 2 start
+Thread tid: 304, arg: 3 start
+Thread tid: 305, arg: 4 start
+Thread tid: 306Thread tid: 307, arg: 6 start
+Thread tid: 308, arg: 7 start
+Thread tid: 309, arg: 8 start
+Thread tid: 310Thread tid: 311, arg: 10 start
+Thread tid: 312, arg: 11 start
+Thread tid: 313, arg: 12 start
+Thread tThread tid: 315, arg: 14 start
+Thread tid: 316, arg: 15 start
+Thread tid: 317, arg: 16 start
+Thread tid: 318, arg: 17 start
+Thread tid: 319, arg: 18 start
+Thread tid: 320, arg: 19 start
+, ar, arg: 9 start
+id: 314, arg: 13 start
+g: 5 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+ThreThread tid: 322, arg: 1 start
+Thread tid: 323, arg: 2 start
+Thread tid: 324, arg: 3 start
+Thread tid: 325Thread tid: 326, arg: 5 start
+Thread tid: 327, arg: 6 start
+Thread tid: 328, arg: 7 start
+Thread tid: 329, arg: 8 start
+Thread tid: 330, arg: 9 start
+Thread tid: 331, arg: 10 start
+Thread tid: 332, arg: 11 start
+Thread tid: 333, arg: 12 start
+Thread tid: 334, arg: 13 start
+Thread tid: 335, arg: 14 start
+Thread tid: 336, arg: 15 start
+Thread tid: 337, arg: 16 start
+, arg: 4 start
+Thread tid: 338, arg: 17 start
+Thread tid: 339, arg: 18 start
+Thread tidad tid: 321, arg: 0 start
+: 340, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 341, arg: 0 start
+Thread tid: 342, arg: 1 start
+Thread tid: 343, arg: 2 start
+Thread tid: 344, arg: 3 start
+Thread tid: 345, arg: 4 start
+Thread tid: 346, arg: Thread tid: 347, arg: 6 start
+Thread tid: 348, arg: 7 start
+Thread tid: 349, arg: 8 start
+Thread tid: 350, arg: 9 start
+Thread tid: 351, arg: 10 start
+Thread tid: 352, arg: 11 start
+Thread tid: 353, Thread tid: 354, arg: 13 start
+Thread tid: 355, arg: 14 start
+Thread tid: 356, arg: 15 start
+Thread tid: 357, arg: 16 start
+Thread tid: 358, arg: 17 start
+Thread tid: 359, arg: 18 start
+Thread tid: 5 start
+arg: 12 start
+360, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 361, arg: 0 start
+Thread tid: 362, arg: 1 start
+Thread tid: 363, arg: 2 start
+Thread tid: 364, arg: 3 start
+Thread tid: 365, arThread tid: 366, arg: 5 start
+Thread tid: 367, arg: 6 start
+Thread tid: 368, arg: 7 start
+Thread tid: 369, arg: 8 start
+Thread tid: 370, arg: 9 start
+Thread tid: 371, arg: 10Thread tid: 372, arg: 11 start
+Thread tid: 373, arg: 12 start
+Thread tid: 374, arg: 13 start
+Thread tid : 375, arg: 14 start
+Thread tid: 376, arg: 15 start
+Thread tid: 377, arg: 16 start
+Thread tid: 378, arg: 17 start
+Thread tid: 379, arg: 18 start
+Thread tid: 380, arg: 19 start
+g: 4 start
+start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 381, arg: 0 start
+Thread tid: 382, arg: 1 start
+Thread tid: 383Thread tid: 384, arg: 3 start
+Thread tid: 385, arg: 4 start
+Thread tid: 386, arg: 5 start
+Thread tidThread tid: 388, arg: 7 start
+Thread tid: 389, arg: 8 start
+Thread tid: 390, arg: 9 start
+Thread tid: 3Thread tid: 392, arg: 11 start
+Thread tid: 393, arg: 12 start
+Thread tid: 394, arg: 13 start
+ThreadThread tid: 396, arg: 15 start
+Thread tid: 397, arg: 16 start
+Thread tid: 398, arg: 17 start
+Thread tid: :399, arg: 18 start
+Thread tid: 400, arg: 19 start
+, arg: 2 start
+ 387, arg: 6 start
+91 tid: 395, arg: 14 start
+, arg: 10 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 401, arg: 0 start
+Thread tid:Thread tid: 403, arg: 2 start
+Thread tid: 404, arg: 3 start
+Thread tid: 405, arg: 4 start
+Thread tid:Thread tid: 407, arg: 6 start
+Thread tid: 408, arg: 7 start
+Thread tid: 409, arg: 8 start
+Thread tid: 410, ar g: 9 start
+Thread tid: 411, arg: 10 start
+Thread tid: 412, arg: 11 start
+Thread tid: 413, arg: 12 st 402, arg: 1 start
+406, arg: 5 start
+art
+Thread tid: 414, arg: 13 start
+Thread tid: 415, aThread tid: 416, arg: 15 start
+Thread tid: 417, arg: 16 start
+Thread tid: 418, arg: 17 start
+Thread tiThread tid: 420, arg: 19 start
+rg: 14 start
+d: 419, arg: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 421, arg: 0 start
+Thread tid: 422, arg: 1 start
+Thread tid:Thread tid: 424, arg: 3 start
+Thread tid: 425, arg: 4 start
+Thread tid: 426, arg: 5 start
+Thread tiThread tid: 428, arg: 7 start
+Thread tid: 429, arg: 8 start
+Thread tid: 430, arg: 9 start
+Thread tid: 431, arg: 10 start
+Thread tid: 432, arg: 11 start
+Thread tid: 433, arg: 12 start
+Thread tid: 434, arg: 13 start
+Thread tid: 435, arg: 14 start
+Thread tid: 436, arg: 15 start
+ThreaThread tid: 438, arg: 17 start
+Thread tid: 439, arg: 18 start
+Thread tid: 440, arg: 19 start
+ 423, arg: 2 sd: 427, arg: 6 start
+d tid: 437, arg: 16 start
+tart
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 441, arg: 0 start
+Thread tid: 442, arg: 1 start
+Thread tid: 443, arg: 2 start
+Thread tid: 444, arg: 3 start
+Thread tid: 445, arg: 4 start
+ThreadThread tid: 447, arg: 6 start
+Thread tid: 448, arg: 7 start
+Thread tid: 449, arg: 8 start
+Thread tid: 450, argThread tid: 451, arg: 10 start
+Thread tid: 452, arg: 11 start
+Thread tid: 453, arg: 12 start
+Thread tid: 454 tid: 446, arg: 5 start
+: 9 start
+, arg: 13 start
+Thread tid: 455, arg: 14 start
+Thread tidThread tid: 457, arg: 16 start
+Thread tid: 458, arg: 17 start
+Thread tid: 459, arg: 18 start
+Thread tid: 460, arg: 19 start
+: 456, arg: 15 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+TThread tid: 462, arg: 1 start
+Thread tid: 463, arg: 2 start
+Thread tid: 464, arg: 3 start
+Thread tid:h 465, arg: 4 start
+Thread tid: 466, arg: 5 start
+Thread tid: 467, arg: 6 start
+Thread tid: 468, arg: 7 start
+Thread tid: 469, arg: 8 start
+Thread tid: 470, arg: 9 start
+Thread tid: 471, arThread tid: 472, arg: 11 start
+Thread tid: 473, arg: 12 start
+Thread tid: 474, arg: 13 start
+Thread tid: 475, argg: 14 start
+Thread tid: 476, arg: 15 start
+Thread tid: 477, arg: 16 start
+Thread tid: 478, arg: 17 read tid: 461, arg: 0 start
+: 10 start
+start
+Thread tid: 479, argThread tid: 480, arg: 19 start
+: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 481, arg: 0 start
+Thread tid: 4Thread tid: 483, arg: 2 start
+Thread tid: 484, arg: 3 start
+Thread tid: 485, arg: 4 start
+Thread Thread tid: 487, arg: 6 start
+Thread tid: 488, arg: 7 start
+Thread tid: 489, arg: 8 start
+Thread tid: 4Thread tid: 491, arg: 10 start
+Thread tid: 492, arg: 11 start
+Thread tid: 493, arg: 12 start
+Thread tid: 494, arg: 13 start
+Thread tid: 495, arg: 14 start
+Thread tid: 496, arg: 15 start
+Thread tid: 497, arg: 16 start
+Thread tid: 498, arg: 17 start
+Thread tid: 499, arg: 18 start
+Thread tid: 500, arg: 19 start
+82, arg: 1 start
+tid: 486, arg: 5 start
+90, arg: 9 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 501, arg: 0 start
+Thread tid: 50Thread tid: 503, arg: 2 start
+Thread tid: 504, arg: 3 start
+Thread tid: 505, arg: 4 start
+ThrThread tid: 507, arg: 6 start
+Thread tid: 508, arg: 7 start
+Thread tid: 509, arg: 8 start
+Thr2, arg: 1 start
+ead tid: 506, arg: 5 start
+ead tid: 510, arg: 9 start
+Thread tid: 511, arg: 10 sThread tid: 512, arg: 11 start
+Thread tid: 513, arg: 12 start
+Thread tid: 514, arg: 13 start
+Thread tid: 515, aThread tid: 516, arg: 15 start
+Thread tid: 517, arg: 16 start
+Thread tid: 518, arg: 17 start
+Thread tid: 519, tart
+rg: 14 start
+arg: 18 start
+Thread tid: 520, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 521, arg: 0 start
+Thread tid: 522, arg: 1 start
+Thread tid: 523, arg: 2 start
+ThreaThread tid: 525, arg: 4 start
+Thread tid: 526, arg: 5 start
+Thread tid: 527, arg: 6 start
+ThreadThread tid: 529, arg: 8 start
+Thread tid: 530, arg: 9 start
+Thread tid: 531, arg: 10 start
+Thread tid: Thread tid: 533, arg: 12 start
+Thread tid: 534, arg: 13 start
+d tid: 524, arg: 3 start
+pid 30 tid 524 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x30000--kill proc
+ tid: 528, arg: 7 start
+pid 30 tid 528 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x30000--kill proc
+532, arg: 11 start
+pid 30 tid 532 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x30000--kill proc
+pid 30 tid 535 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x32004--kill proc
+pid 30 tid 536 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x34004--kill proc
+pid 30 tid 538 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x38004--kill proc
+pid 30 tid 539 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x3a004--kill proc
+Thread tid: 540, arg: 19 start
+pid 30 tid 540 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x30000--kill proc
+pid 30 tid 537 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x36004--kill proc
+pid 30 tid 521 thread_test: trap 14 err 7 on cpu 0 eip 0x140 addr 0x30000--kill proc
+Thread 3 returned 0, but expected 3
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 541, arg: 0 start
+Thread tid: 542, arg: 1 start
+Thread tid: 543, arg: 2 start
+ThreaThread tid: 545, arg: 4 start
+Thread tid: 546, arg: 5 start
+Thread tid: 547, arg: 6 start
+Thread tid: 54Thread tid: 549, arg: 8 start
+Thread tid: 550, arg: 9 start
+Thread tid: 551, arg: 10 start
+ThreadThread tid: 553, arg: 12 start
+Thread tid: 554, arg: 13 start
+Thread tid: 555, arg: 14 start
+d tid: 5448, arg: 7 start
+pid 31 tid 548 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x32000--kill proc
+ tid: 552, arg: 11 start
+pid 31 tid 552 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x32000--kill proc
+pid 31 tid 556 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x34004--kill proc
+pid 31 tid 557 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x36004--kill proc
+pid 31 tid 559 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x3a004--kill proc
+Thread tid: 560, arg: 19 start
+pid 31 tid 560 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x32000--kill proc
+, arg: 3 start
+pid 31 tid 544 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x32000--kill proc
+pid 31 tid 558 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x38004--kill proc
+pid 31 tid 541 thread_test: trap 14 err 7 on cpu 0 eip 0x140 addr 0x32000--kill proc
+Thread 3 returned 0, but expected 3
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 561, arg: 0 start
+Thread tid: 562, arg: 1 start
+Thread tid: 563, argThread tid: 564, arg: 3 start
+Thread tid: 565, arg: 4 start
+Thread tid: 566, arg: 5 start
+Thread tid: 567, arg: 6 start
+Thread tid: 568, arg: 7 start
+Thread tid: 569, arg: 8 start
+Thread tid: 570, arg: 9 start
+Thread tid: 571, arg: 10 start
+Thread tid: 572, arg: 11 start
+Thread tid: 573, arg: 12 start
+Thread tid: 574, arg: 13 start
+Thread tid: 575, arg: 14 start
+Thread tid: 576, arg: 15 start
+Thread tid: 577, arg: 16 start
+Thread tid: 578, arg: 17 start
+Thread tid: Thread tid: 580, arg: 19 start
+: 2 start
+579, arg: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 581, arg: 0 start
+Thread tid: 582, arg: 1 start
+Thread tid: 583, arg: 2 start
+Thread tid: 584, arg: 3 start
+Thread tid: 585, arg: 4 start
+Thread tid: 586, arg: 5 start
+Thread tid: 587, arg: 6 start
+Thread tid: 588, arg: 7 start
+Thread tid: 589, arg: 8 start
+Thread tid: 590, Thread tid: 591, arg: 10 start
+Thread tid: 592, arg: 11 start
+Thread tid: 593, arg: 12 start
+Thread tid: Thread tid: 595, arg: 14 start
+Thread tid: 596, arg: 15 start
+Thread tid: 597, arg: 16 start
+Thread tid: Thread tid: 599, arg: 18 start
+Thread tid: 600, arg: 19 start
+arg: 9 start
+594, arg: 13 st598, arg: 17 start
+art
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid:Thread tid: 602, arg: 1 start
+Thread tid: 603, arg: 2 start
+Thread tid: 604, arg: 3 start
+Thread tid: 605,Thread tid: 606, arg: 5 start
+Thread tid: 607, arg: 6 start
+Thread tid: 608, arg: 7 start
+Thread tid: 609, arg: 8 Thread tid: 610, arg: 9 start
+Thread tid: 611, arg: 10 start
+Thread tid: 612, arg: 11 start
+Thread tid: 613, aThread tid: 614, arg: 13 start
+Thread tid: 615, arg: 14 start
+Thread tid: 616, arg: 15 start
+Thread tidThread tid: 618, arg: 17 start
+Thread tid: 619, arg: 18 start
+Thread tid: 620, arg: 19 start
+ 601, arg: 0 star arg: 4 start
+start
+rg: 12 start
+: 617, arg: 16 start
+t
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 621, arg: 0 start
+Thread tid: 622, arg: 1 start
+Thread tid: pid 35 tid 624 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x1c004--kill proc
+pid 35 tid 625 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x1e004--kill proc
+pid 35 tid 626 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x20004--kill proc
+pid 35 tid 627 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x22004--kill proc
+pid 35 tid 628 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x24004--kill proc
+pid 35 tid 629 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x26004--kill proc
+pid 35 tid 631 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2a004--kill proc
+pid 35 tid 632 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2c004--kill proc
+pid 35 tid 633 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2e004--kill proc
+pid 35 tid 634 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x30004--kill proc
+pid 35 tid 635 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x32004--kill proc
+pid 35 tid 636 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x34004--kill proc
+pid 35 tid 637 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x36004--kill proc
+pid 35 tid 639 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x3a004--kill proc
+623, arg: 2 start
+pid 35 tid 623 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x1a000--kill proc
+pid 35 tid 630 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x28004--kill proc
+pid 35 tid 638 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x38004--kill proc
+Thread tid: 640, arg: 19 start
+pid 35 tid 640 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x1a000--kill proc
+pid 35 tid 621 thread_test: trap 14 err 7 on cpu 0 eip 0x140 addr 0x1a000--kill proc
+Thread 2 returned 0, but expected 2
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: Thread tid: 642, arg: 1 start
+Thread tid: 643, arg: 2 start
+Thread tid: 644, arg: 3 start
+Thread tid: 646, arg: 5 start
+Thread tid: 647, arg: 6 start
+Thread tid: 648, arg: 7 start
+Thread tid: 649, arg: 8 start
+Thread tid: 650, arg: 9 start
+Thread tid: 651, arg: 10 start
+Thread tid: 652, arg: 1Thread tid: 653, arg: 12 start
+Thread tid: 654, arg: 13 start
+Thread tid: 655, arg: 14 start
+ThreaThread tid: 657, arg: 16 start
+Thread tid: 658, arg: 17 start
+Thread tid: 659, arg: 18 start
+Thread tid: 66641, arg: 0 start
+Thread tid: 645, arg: 4 start
+1 start
+d tid: 656, arg: 150, arg: 19 start
+ start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: Thread tid: 662, arg: 1 start
+Thread tid: 663, arg: 2 start
+Thread tid: 664, arg: 3 start
+Thread tid: 665, aThread tid: 666, arg: 5 start
+Thread tid: 667, arg: 6 start
+Thread tid: 668, arg: 7 start
+Thread tid: 669, arg: 8 start
+Thread tid: 670, arg: 9 start
+Thread tid: 671, arg: 10 start
+ThreThread tid: 673, arg: 12 start
+Thread tid: 674, arg: 13 start
+Thread tid: 675, arg: 14 start
+Thread tid: 67Thread tid: 677, arg: 16 start
+Thread tid: 678, arg: 17 start
+Thread tid: 679, arg: 18 start
+Thread tid:661, arg: 0 start
+rg: 4 start
+ad tid: 672, arg: 11 start
+6, arg: 15 start
+ 680, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 681, arg: 0 stThread tid: 682, arg: 1 start
+Thread tid: 683, arg: 2 start
+Thread tid: 684, arg: 3 start
+ThreadThread tid: 686, arg: 5 start
+Thread tid: 687, arg: 6 start
+Thread tid: 688, arg: 7 start
+Thread tid: 689,Thread tid: 690, arg: 9 start
+Thread tid: 691, arg: 10 start
+Thread tid: 692, arg: 11 start
+Thread tid: 693, arg: 12 start
+Thread tid: 694, arg: 13 start
+Thread tid: 695, arg: 14 start
+Thread tid: 6Thread tid: 697, arg: 16 start
+Thread tid: 698, arg: 17 start
+Thread tid: 699, arg: 18 start
+Thread tid: 700, arg: 19 start
+art
+ tid: 685, arg: 4 start
+ arg: 8 start
+96, arg: 15 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 701, arg: 0 start
+Thread tid: 702, arg: 1 start
+Thread tid: 703, arg: 2 start
+Thread tid: 704, arg: 3 start
+Thread tid: 705, arg: 4 start
+Thread tid: 706, arg: 5 stThread tid: 707, arg: 6 start
+Thread tid: 708, arg: 7 start
+Thread tid: 709, arg: 8 start
+Thread tid: 710, arThread tid: 711, arg: 10 start
+Thread tid: 712, arg: 11 start
+Thread tid: 713, arg: 12 start
+Thread tid: 71Thread tid: 715, arg: 14 start
+Thread tid: 716, arg: 15 start
+Thread tid: 717, arg: 16 start
+Thread tid: 718, arg: 17 start
+Thread tid: 719, arg: 18 start
+Thread tid: 720, arg: 19 start
+art
+g: 4, arg: 13 start
+9 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 721, arg: 0 start
+Thread tid: 722, argThread tid: 723, arg: 2 start
+Thread tid: 724, arg: 3 start
+Thread tid: 725, arg: 4 start
+Thread tid: 726, arg: 5 start
+Thread tid: 727, arg: 6 start
+Thread tid: 728, arg: 7 start
+Thread tid: 729,Thread tid: 730, arg: 9 start
+Thread tid: 731, arg: 10 start
+Thread tid: 732, arg: 11 start
+Thread tid: 733Thread tid: 734, arg: 13 start
+Thread tid: 735, arg: 14 start
+Thread tid: 736, arg: 15 start
+Thread tid: 737, aThread tid: 738, arg: 17 start
+Thread tid: 739, arg: 18 start
+Thread tid: 740, arg: 19 start
+: 1 start
+, arg: 12 start
+rg: 16 start
+ arg: 8 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 741, arg: 0 start
+ThreadThread tid: 743, arg: 2 start
+Thread tid: 744, arg: 3 start
+Thread tid: 745, arg: 4 start
+Thread tid: 7Thread tid: 747, arg: 6 start
+Thread tid: 748, arg: 7 start
+Thread tid: 749, arg: 8 start
+Thread tid: 750,Thread tid: 751, arg: 10 start
+Thread tid: 752, arg: 11 start
+Thread tid: 753, arg: 12 start
+TThread tid: 755, arg: 14 start
+Thread tid: 756, arg: 15 start
+Thread tid: 757, arg: 16 start
+Thread Thread tid: 759, arg: 18 start
+Thread tid: 760, arg: 19 start
+ tid: 742, arg: 1 start
+46, arg: 5 arg: 9 start
+hread tid: 754, arg: 13 start
+tid: 758, arg: 17 start
+ start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 761, arg: 0 start
+Thread tid: 762, arg: 1 start
+Thread tid: 763, arg: 2 start
+Thread tid: 764, arg: 3 start
+Thread tid: 765, arg: 4 start
+Thread tid: 766, arg: 5 start
+Thread tid: 767, arg: 6 start
+Thread tid: Thread tid: 769, arg: 8 start
+Thread tid: 770, arg: 9 start
+Thread tid: 771, arg: 10 start
+Thread t768, arg: 7 start
+id: 772, arg: 11 start
+Thread tid: 773, arg: 12 start
+Thread tid: 774, arg: 13 start
+Thread tid: 775, arg: 14 start
+Thread tid: 776, arg: 15 start
+Thread tidThread tid: 778, arg: 17 start
+Thread tid: 779, arg: 18 start
+Thread tid: 780, arg: 19 start
+: 777, arg: 16 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 781, arg: 0 start
+TThread tid: 783, arg: 2 start
+Thread tid: 784, arg: 3 start
+Thread tid: 785, arg: 4 start
+ThreThread tid: 787, arg: 6 start
+Thread tid: 788, arg: 7 start
+Thread tid: 789, arg: 8 start
+Thread tid: 790, arThread tid: 791, arg: 10 start
+Thread tid: 792, arg: 11 start
+Thread tid: 793, arg: 12 start
+Thread tid: 79hread tid: 782, arg: 1 start
+ad tid: 786, arg: 5 start
+g: 9 start
+4, arg: 13 start
+Thread tid: 795, arg: 14 start
+Thread tid: 796, arg: 15 start
+Thread tid: 797, arg: 16 start
+Thread tid: 798Thread tid: 799, arg: 18 start
+Thread tid: 800, arg: 19 start
+, arg: 17 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 801, arg: 0 start
+Thread tid: 802, arg: 1 start
+Thread tid: 803, arg: 2 start
+Thread tid: 804, arg: 3 start
+Thread tid: 805, arg: 4 start
+Thread tid: Thread tid: 807, arg: 6 start
+Thread tid: 808, arg: 7 start
+Thread tid: 809, arg: 8 start
+Thread tid: 81Thread tid: 811, arg: 10 start
+Thread tid: 812, arg: 11 start
+Thread tid: 813, arg: 12 start
+Thread tid: 814, arg: 13 start
+Thread tid: 815, arg: 14 start
+Thread tid: 816, arg: 15 start
+Thread tidThread tid: 818, arg: 17 start
+Thread tid: 819, arg: 18 start
+Thread tid: 820, arg: 19 start
+800, arg: 9 start
+: 817, arg: 16 start
+6, arg: 5 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 821, arg: 0 Thread tid: 822, arg: 1 start
+Thread tid: 823, arg: 2 start
+Thread tid: 824, arg: 3 start
+Thread tid: 825, arg: 4 start
+Thread tid: 826, arg: 5 start
+Thread tid: 827, arg: 6 start
+Thread tid: 828, arg: 7 startThread tid: 829, arg: 8 start
+Thread tid: 830, arg: 9 start
+Thread tid: 831, arg: 10 start
+Thread tid: 832, arg: 11 start
+Thread tid: 833, arg: 12 start
+Thread tid: 834, arg: 13 start
+Thread tid: 835, arg: 14 start
+Thread tid: 836, arg: 15 start
+Thread tid: 837, arg: 16 start
+Thread tid: 838, arg: 17 start
+Thread tid: 839, argThread tid: 840, arg: 19 start
+start
+
+: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+ThreadThread tid: 842, arg: 1 start
+Thread tid: 843, arg: 2 start
+Thread tid: 844, arg: 3 start
+ThreaThread tid: 846, arg: 5 start
+Thread tid: 847, arg: 6 start
+Thread tid: 848, arg: 7 start
+Thread tid: 849, arg: 8 start
+Thread tid: 850, arg: 9 start
+Thread tid: 851, arg: 10 start
+Thread tid: 852, arg: 11 start
+Thread tid: 853, arg: 12 start
+Thread tid: 854, arg: 13 start
+Thread tid: 855, arg: 14 start
+Thread tid: d tid: 845, arg: 4 start
+856, arg: 15 start
+Thread tid: 857, arg: 16 start
+Thread tid: 858, Thread tid: 859, arg: 18 start
+Thread tid: 860, arg: 19 start
+ tid: 841, arg: 0 start
+arg: 17 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 861, arg: 0 start
+Thread tid: 862, arg: 1 start
+Thread tid: 863, arg: 2 start
+Thread tid: 865, arg: 4 start
+Thread tid: 866, arg: 5 start
+Thread tid: 867, arg: 6 start
+Thread tiThread tid: 869, arg: 8 start
+Thread tid: 870, arg: 9 start
+Thread tid: 871, arg: 10 start
+Thread tid: 8Thread tid: 873, arg: 12 start
+Thread tid: 864, arg: 3 start
+pid 47 tid 864 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x30000--kill proc
+d: 868, arg: 7 stapid 47 tid 875 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x32004--kill proc
+pid 47 tid 876 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x34004--kill proc
+pid 47 tid 877 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x36004--kill proc
+pid 47 tid 878 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x38004--kill proc
+pid 47 tid 879 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x3a004--kill proc
+rt
+pid 47 tid 868 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x30000--kill proc
+72, arg: 11 start
+pid 47 tid 872 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x30000--kill proc
+Thread tid: 874, arg: 13 start
+pid 47 tid 874 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x30000--kill proc
+Thread tid: 880, arg: 19 start
+pid 47 tid 880 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x30000--kill proc
+pid 47 tid 861 thread_test: trap 14 err 7 on cpu 0 eip 0x140 addr 0x30000--kill proc
+Thread 3 returned 0, but expected 3
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tidThread tid: 882, arg: 1 start
+Thread tid: 883, arg: 2 start
+Thread tid: 884, arg: 3 start
+ThreadThread tid: 886, arg: 5 start
+Thread tid: 887, arg: 6 start
+Thread tid: 888, arg: 7 start
+Thread tid: 889, arg: 8 start
+Thread tid: 890, arg: 9 start
+Thread tid: 891, arg: 10 start
+Thread tid: 892, arg: 11 stThread tid: 893, arg: 12 start
+Thread tid: 894, arg: 13 start
+Thread tid: 895, arg: 14 start
+Thread tid: 896, tid: 885, arg: 4 start
+art
+ arg: 15 start
+Thread tid: 897, arg: 16 start
+Thread tid: 898, arg: 1Thread tid: 899, arg: 18 start
+Thread tid: 900, arg: 19 start
+: 881, arg: 0 start
+7 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 901, arg: 0 start
+Thread tid: 902, arg: 1 start
+Thread tid: 904, arg: 3 start
+Thread tid: 905, arg: 4 start
+Thread tid: 906, arg: 5 start
+Thread tid: 907, arg: 6 start
+Thread tid: 908, arg: 7 start
+Thread tid: 909, arg: 8 start
+Thread tid: 910, arg: 9 start
+Thread tid: 911, arg: 10 start
+Thread tid: 912, arg: 11 start
+Thread tid: 91Thread tid: 914, arg: 13 start
+Thread tid: 915, arg: 14 start
+Thread tid: 916, arg: 15 start
+Thread tid: 917, arg: 16 start
+Thread tid: 918, arg: 17 start
+Thread tid: 919, arg: 18 start
+Thread tThread tid: 903, arg: 2 start
+3, arg: 12 start
+id: 920, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid:Thread tid: 922, arg: 1 start
+Thread tid: 923, arg: 2 start
+Thread tid: 924, arg: 3 start
+Thread tid: 925, arg: 4 start
+Thread tid: 926, arg: 5 start
+Thread tid: 927, arg: 6 start
+Thread tid: 928, Thread tid: 929, arg: 8 start
+Thread tid: 930, arg: 9 start
+Thread tid: 931, arg: 10 start
+Thread tid: 932, arg: 11arg: 7 start
+ start
+Thread tid: 933, arg: 12 start
+Thread tid: 934, arg: 13 start
+Thread tid:Thread tid: 936, arg: 15 start
+Thread tid: 937, arg: 16 start
+Thread tid: 938, arg: 17 start
+Thread tid: 93Thread tid: 940, arg: 19 start
+ 921, arg: 0 start
+ 935, arg: 14 start
+9, arg: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 941, arg: 0 start
+ThreaThread tid: 943, arg: 2 start
+Thread tid: 944, arg: 3 start
+Thread tid: 945, arg: 4 start
+Thread tiThread tid: 947, arg: 6 start
+Thread tid: 948, arg: 7 start
+Thread tid: 949, arg: 8 start
+Thread tid: d tid: 942, arg: 1 start
+d: 946, arg: 5 start
+950, arg: 9 start
+Thread tid: 951, arg: 10 Thread tid: 952, arg: 11 start
+Thread tid: 953, arg: 12 start
+Thread tid: 954, arg: 13 start
+Thread Thread tid: 956, arg: 15 start
+Thread tid: 957, arg: 16 start
+Thread tid: 958, arg: 17 startThread tid: 959, arg: 18 start
+Thread tid: 960, arg: 19 start
+start
+tid: 955, arg: 14 start
+
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 961, arg: 0 start
+Thread tid: 962Thread tid: 963, arg: 2 start
+Thread tid: 964, arg: 3 start
+Thread tid: 965, arg: 4 start
+Thread tid: 966, arg: 5 start
+Thread tid: 967, arg: 6 start
+Thread tid: 968, arg: 7 start
+Thread tThread tid: 970, arg: 9 start
+Thread tid: 971, arg: 10 start
+Thread tid: 972, arg: 11 start
+ThreThread tid: 974, arg: 13 start
+Thread tid: 975, arg: 14 start
+Thread tid: 976, arg: 15 start
+Thread tid: 977, arg: 16 start
+Thread tid: 978, arg: 17 start
+Thread tid: 979, arg: 18 start
+Thread ti, arg: 1 start
+id: 969, arg: 8 start
+ad tid: 973, arg: 12 start
+d: 980, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 981, arg: 0 start
+Thread tid: 982, arg: 1 start
+Thread tid: 983, arg: 2 start
+Thread tid: 984, arg: 3 start
+Thread tid: 985, arg: 4 start
+Thread tid: 986, arg: 5 start
+Thread tid: 987, arg: 6 start
+Thread tid: 988, arg: 7 start
+Thread tid: 989, arg: 8 start
+Thread tid: 990, arg: 9 start
+Thread tid: 991, arg: 10 start
+Thread tid: 992, arg: 11 start
+Thread tid: 993, arg: 12 start
+Thread tid: 994, arg: 13 start
+Thread tid: 995, arg: 14 start
+Thread tid: 996, arg: 15 start
+Thread tid: 997, arg: 16 start
+Thread tid: 998, aThread tid: 999, arg: 18 start
+Thread tid: 1000, arg: 19 start
+rg: 17 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1001, arg: 0 start
+Thread tid: 1002, arg: 1 start
+Thread tid: 1003, arg: 2 start
+pid 54 tid 1003 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x1a000--kill proc
+pid 54 tid 1004 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x1c004--kill proc
+pid 54 tid 1005 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x1e004--kill proc
+pid 54 tid 1006 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x20004--kill proc
+pid 54 tid 1007 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x22004--kill proc
+pid 54 tid 1008 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x24004--kill proc
+pid 54 tid 1010 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x28004--kill proc
+pid 54 tid 1011 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2a004--kill proc
+pid 54 tid 1012 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2c004--kill proc
+pid 54 tid 1013 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2e004--kill proc
+pid 54 tid 1014 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x30004--kill proc
+pid 54 tid 1015 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x32004--kill proc
+pid 54 tid 1017 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x36004--kill proc
+pid 54 tid 1018 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x38004--kill proc
+pid 54 tid 1019 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x3a004--kill proc
+Thread tipid 54 tid 1009 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x26004--kill proc
+pid 54 tid 1016 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x34004--kill proc
+d: 1020, arg: 19 start
+pid 54 tid 1020 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x1a000--kill proc
+pid 54 tid 1001 thread_test: trap 14 err 7 on cpu 0 eip 0x140 addr 0x1a000--kill proc
+Thread 2 returned 0, but expected 2
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1021, arg: 0 start
+Thread tid: 1022, arg: 1 start
+Thread tid: 1023, arg: 2 start
+Thread tid: 1024, arg: 3 start
+Thread tThread tid: 1026, arg: 5 start
+Thread tid: 1027, arg: 6 start
+Thread tid: 1028, arg: 7 start
+ThreThread tid: 1030, arg: 9 start
+Thread tid: 1031, arg: 10 start
+Thread tid: 1032, arg: 11 start
+id: 1025, arg: 4 start
+ad tid: 1029, arg: 8 start
+Thread tid: 1033, arg: 12 start
+Thread tid: 1034, arg: 13 start
+Thread tid: 1035, arg: 14 start
+Thread tid: 1036, arg: 15 start
+Thread tiThread tid: 1038, arg: 17 start
+Thread tid: 1039, arg: 18 start
+Thread tid: 1040, arg: 19 start
+d: 1037, arg: 16 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1041, arg: 0 start
+Thread tid: 1042, arg: 1 start
+Thread tid: 1043, arg: 2 start
+Thread tid: 1044, arg: 3 start
+Thread tid: 1045, arg: 4 start
+Thread tid: 1046, arg: 5 start
+Thread tid: 1047, arg: 6 start
+Thread tid: 1048, arg: 7 start
+Thread tid: 1Thread tid: 1050, arg: 9 start
+Thread tid: 1051, arg: 10 start
+Thread tid: 1052, arg: 11 start
+ThreThread tid: 1054, arg: 13 start
+Thread tid: 1055, arg: 14 start
+Thread tid: 1056, arg: 15 start
+Thread tid: 1057, arg: 16 start
+Thread tid: 1058, arg: 17 start
+Thread tid: 1059, arg: 18 start
+Thread tid: 1060, arg: 19 start
+049, arg: 8 start
+ad tid: 1053, arg: 12 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1061, arg: 0 start
+Thread tid: 1062, arg: 1 start
+Thread tid: 1063, arg: 2 start
+Thread tid: 1064, arg: 3 start
+ThreadThread tid: 1066, arg: 5 start
+Thread tid: 1067, arg: 6 start
+Thread tid: 1068, arg: 7 start
+ThreadThread tid: 1070, arg: 9 start
+Thread tid: 1071, arg: 10 start
+Thread tid: 1072, arg: 11 start
+Thread tid: Thread tid: 1074, arg: 13 start
+Thread tid: 1075, arg: 14 start
+Thread tid: 1076, arg: 15 start
+ThreThread tid: 1078, arg: 17 start
+Thread tid: 1079, arg: 18 start
+Thread tid: 1080, arg: 19 start
+ tid: 1065, arg: 4 start
+ tid: 1069, arg: 8 start
+1073, arg: 12 start
+ad tid: 1077, arg: 16 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1081, arg: 0 start
+pid 58 tid 1082 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x18004--kill proc
+pid 58 tid 1083 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x1a004--kill proc
+pid 58 tid 1084 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x1c004--kill proc
+pid 58 tid 1085 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x1e004--kill proc
+pid 58 tid 1087 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x22004--kill proc
+pid 58 tid 1088 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x24004--kill proc
+pid 58 tid 1089 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x26004--kill proc
+pid 58 tid 1090 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x28004--kill proc
+pid 58 tid 1091 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2a004--kill proc
+pid 58 tid 1092 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2c004--kill proc
+pid 58 tid 1094 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x30004--kill proc
+pid 58 tid 1095 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x32004--kill proc
+pid 58 tid 1096 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x34004--kill proc
+pid 58 tid 1097 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x36004--kill proc
+pid 58 tid 1098 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x38004--kill proc
+pid 58 tid 1099 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x3a004--kill proc
+pid 58 tid 1086 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x20004--kill proc
+pid 58 tid 1093 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2e004--kill proc
+Thread tid: 1100, arg: 19 start
+pid 58 tid 1100 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x16000--kill proc
+pid 58 tid 1081 thread_test: trap 14 err 7 on cpu 0 eip 0x140 addr 0x16000--kill proc
+Thread 1 returned 0, but expected 1
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1101, arg: 0 start
+Thread tid: 1102, arg: 1 start
+Thread tid: 1103, arg: 2 start
+ThreaThread tid: 1105, arg: 4 start
+Thread tid: 1106, arg: 5 start
+Thread tid: 1107, arg: 6 start
+Thread tid: 1108, arg: 7 start
+pid 59 tid 1108 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x34000--kill proc
+Thread tid: 1109, arg: 8 start
+pid 59 tid 1109 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x34000--kill proc
+Thread tid:Thread tid: 1111, arg: 10 start
+pid 59 tid 1111 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x34000--kill proc
+Thread tid: 1112, arg: 11 start
+pid 59 tid 1112 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x34000--kill proc
+Thread tid:Thread tid: 1114, arg: 13 start
+pid 59 tid 1114 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x34000--kill proc
+Thread tid: 1115, arg: 14 start
+pid 59 tid 1115 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x34000--kill proc
+Thread tpid 59 tid 1117 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x36004--kill proc
+pid 59 tid 1118 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x38004--kill proc
+pid 59 tid 1119 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x3a004--kill proc
+ 1110, arg: 9 start
+pid 59 tid 1110 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x34000--kill proc
+ 1113, arg: 12 start
+pid 59 tid 1113 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x34000--kill proc
+id: 1116, arg: 15 start
+pid 59 tid 1116 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x34000--kill proc
+Thread tid: 1120, arg: 19 start
+d tid: 1104, arg: 3 start
+pid 59 tid 1104 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x34000--kill proc
+pid 59 tid 1120 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x34000--kill proc
+pid 59 tid 1101 thread_test: trap 14 err 7 on cpu 0 eip 0x140 addr 0x34000--kill proc
+Thread 3 returned 0, but expected 3
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1121, arg: 0 start
+Thread tid: 1122, arg: 1 start
+Thread tid: 1123, arg: 2 start
+Thread tid: 1124, arg: 3 start
+Thread tid: 1125, aThread tid: 1126, arg: 5 start
+Thread tid: 1127, arg: 6 start
+Thread tid: 1128, arg: 7 start
+Thread tid: 1Thread tid: 1130, arg: 9 start
+Thread tid: 1131, arg: 10 start
+Thread tid: 1132, arg: 11 start
+Thread tid: 1133, arg: 12 start
+Thread tid: 1134, arg: 13 start
+Thread tid: 1135, arg: 14 start
+Thread tid: 1136, arg: 15 start
+Thread tid: 1137, arg: 16 start
+Thread tid: 1138, arg: 17 start
+Thread tid: Thread tid: 1140, arg: 19 start
+rg: 4 start
+129, arg: 8 start
+1139, arg: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1141, arg: 0 start
+Thread tiThread tid: 1143, arg: 2 start
+Thread tid: 1144, arg: 3 start
+Thread tid: 1145, arg: 4 start
+Thread tidThread tid: 1147, arg: 6 start
+Thread tid: 1148, arg: 7 start
+Thread tid: 1149, arg: 8 start
+ThreaThread tid: 1151, arg: 10 start
+Thread tid: 1152, arg: 11 start
+Thread tid: 1153, arg: 12 start
+Thread tid: 1154, arg: 13 start
+Thread tid: 1155, arg: 14 start
+Thread tid: 1156, arg: 15 start
+Thread tid: 1Thread tid: 1158, arg: 17 start
+Thread tid: 1159, arg: 18 start
+Thread tid: 1160, arg: 19 start
+d: 1142, arg: 1146, arg: 5 start
+d tid: 1150, arg: 9 start
+157, arg: 16 start
+: 1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1161,Thread tid: 1162, arg: 1 start
+Thread tid: 1163, arg: 2 start
+Thread tid: 1164, arg: 3 start
+Thread tid: 1165Thread tid: 1166, arg: 5 start
+Thread tid: 1167, arg: 6 start
+Thread tid: 1168, arg: 7 start
+Thread tid: 1169, arg: Thread tid: 1170, arg: 9 start
+Thread tid: 1171, arg: 10 start
+Thread tid: 1172, arg: 11 start
+Thread tid: 117, arg: 4 start
+8 start
+3, arg: 12 start
+Thread tid: 1174, arg: 13 start
+Thread tid: 1175, Thread tid: 1176, arg: 15 start
+Thread tid: 1177, arg: 16 start
+Thread tid: 1178, arg: 17 start
+Thread tid: 1179Thread tid: 1180, arg: 19 start
+ arg: 0 start
+arg: 14 start
+, arg: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1181, arg: 0 start
+Thread tid: 1182, arg: 1 start
+Thread tid: 1183, arg: 2 start
+ThreadThread tid: 1185, arg: 4 start
+Thread tid: 1186, arg: 5 start
+Thread tid: 1187, arg: 6 start
+Thread tid: 1188, arg: 7 start
+Thread tid: 1189, arg: 8 start
+Thread tid: 1190, arg: 9 start
+Thread tid: 1191, arg: 10 Thread tid: 1192, arg: 11 start
+Thread tid: 1193, arg: 12 start
+Thread tid: 1194, arg: 13 start
+Thread tid: 11 tid: 1184, arg: 3 start
+start
+95, arg: 14 start
+Thread tid: 1196, arg: 15 start
+ThrThread tid: 1198, arg: 17 start
+Thread tid: 1199, arg: 18 start
+Thread tid: 1200, arg: 19 start
+ead tid: 1197, arg: 16 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+ThreaThread tid: 1202, arg: 1 start
+Thread tid: 1203, arg: 2 start
+Thread tid: 1204, arg: 3 start
+ThreadThread tid: 1206, arg: 5 start
+Thread tid: 1207, arg: 6 start
+Thread tid: 1208, arg: 7 start
+Thread tid: 1209, arg: 8 start
+Thread tid: 1210, arg: 9 start
+Thread tid: 1211, arg: 10 start
+Thread tid: 1212, arg: 11 start
+Thread tid: 1213, arg: 12 start
+Thread tid: 1214, arg: 13 start
+Thread tid: 1215, arg: d tid: 1201, arg: 0 start
+ tid: 1205, arg: 4 start
+14 start
+Thread tid: 1216, arg: 15 start
+Thread tid: 1217, arg: 16 start
+Thread tid: 1218, arg: 17 start
+Thread tiThread tid: 1220, arg: 19 start
+d: 1219, arg: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1221, arg: 0 start
+ThrThread tid: 1223, arg: 2 start
+Thread tid: 1224, arg: 3 start
+Thread tid: 1225, arg: 4 start
+Thread tid:Thread tid: 1227, arg: 6 start
+Thread tid: 1228, arg: 7 start
+Thread tid: 1229, arg: 8 start
+Thread tid:Thread tid: 1231, arg: 10 start
+Thread tid: 1232, arg: 11 start
+Thread tid: 1233, arg: 12 start
+Thread tid: 1234, arg: 13 start
+Thread tid: 1235, arg: 14 start
+Thread tid: 1236, arg: 15 start
+Thread tid: 1237, arg: 16 start
+Thread tid: 1238, arg: 17 start
+Thread tid: 1239, arg: 18 start
+Thread tid: 1240, arg: 19 start
+ead tid: 1222, arg: 1 start
+ 1226, arg: 5 start
+ 1230, arg: 9 start
+Thread tid: 1229, arg: 8 found 9, j: 0
+Test failed!
+Thread tid: 1230, arg: 9 found 8, j: 1792
+Test faTest 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1241, arg: 0 start
+Thread tid: 1242, arg: 1 start
+Thread tid: 1243, arg: 2 start
+Thread tid: 1244, arg: 3 start
+Thread Thread tid: 1246, arg: 5 start
+Thread tid: 1247, arg: 6 start
+Thread tid: 1248, arg: 7 start
+Thread tid: 1249Thread tid: 1250, arg: 9 start
+Thread tid: 1251, arg: 10 start
+Thread tid: 1252, arg: 11 start
+Thread titid: 1245, arg: 4 start
+, arg: 8 start
+d: 1253, arg: 12 start
+Thread tid: 1254, argThread tid: 1255, arg: 14 start
+Thread tid: 1256, arg: 15 start
+Thread tid: 1257, arg: 16 start
+ThThread tid: 1259, arg: 18 start
+Thread tid: 1260, arg: 19 start
+: 13 start
+read tid: 1258, arg: 17 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1261, arg: 0 start
+TThread tid: 1263, arg: 2 start
+Thread tid: 1264, arg: 3 start
+Thread tid: 1265, arg: 4 start
+Thread tid: 1Thread tid: 1267, arg: 6 start
+Thread tid: 1268, arg: 7 start
+Thread tid: 1269, arg: 8 start
+Thread tidThread tid: 1271, arg: 10 start
+Thread tid: 1272, arg: 11 start
+Thread tid: 1273, arg: 12 start
+Thread tThread tid: 1275, arg: 14 start
+Thread tid: 1276, arg: 15 start
+Thread tid: 1277, arg: 16 start
+Thread tidhread tid: 1262, arg: 1 start
+266, arg: 5 start
+: 1270, arg: 9 start
+id: 1274, arg: 13 start
+: 1278, arg: 17 start
+Thread tid: 1279, arg: 18 start
+Thread tid: 1280, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1281, arg: 0 start
+Thread tid: 1282, arg: 1 start
+Thread tid: 1283, arg: 2 start
+ThrThread tid: 1285, arg: 4 start
+Thread tid: 1286, arg: 5 start
+Thread tid: 1287, arg: 6 start
+Thread tid: 1288, arg: 7 start
+Thread tid: 1289, arg: 8 start
+Thread tid: 1290, arg: 9 start
+Thread tid: 1291, arg: 10 start
+Thread tid: 1292, arg: 11 start
+Thread tid: 1293, arg: 12 start
+Thread tid: 12Thread tid: 1295, arg: 14 start
+Thread tid: 1296, arg: 15 start
+Thread tid: 1297, arg: 16 start
+Thread tead tid: 1284, arg: 3 start
+94, arg: 13 start
+id: 1298, arg: 17 start
+Thread tid: 1299, arg: 18 start
+Thread tid: 1300, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1301, arg: 0 start
+Thread tid: 1302, arg: 1 start
+Thread tid: 1303, arg: 2 start
+Thread tid: 1304, arg: 3 start
+Thread tid: 1305, arg: 4 start
+Thread tid: 1306, arg: 5 start
+Threpid 69 tid 1303 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x24000--kill proc
+ad tid: 1307, arg: 6 start
+pid 69 tid 1307 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x24000--kill proc
+Thread tid: 1308, arg: 7 start
+pid 69 tid 1309 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x26004--kill proc
+pid 69 tid 1310 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x28004--kill proc
+pid 69 tid 1311 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2a004--kill proc
+pid 69 tid 1312 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2c004--kill proc
+pid 69 tid 1313 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2e004--kill proc
+pid 69 tid 1314 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x30004--kill proc
+pid 69 tid 1316 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x34004--kill proc
+pid 69 tid 1317 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x36004--kill proc
+pid 69 tid 1318 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x38004--kill proc
+pid 69 tid 1319 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x3a004--kill proc
+Thread tid: 1320, arg: 19 start
+pid 69 tid 1320 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x24000--kill proc
+pid 69 tid 1308 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x24000--kill proc
+pid 69 tid 1315 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x32004--kill proc
+pid 69 tid 1301 thread_test: trap 14 err 7 on cpu 0 eip 0x140 addr 0x24000--kill proc
+Thread 2 returned 0, but expected 2
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1321, arg: 0 start
+Thread tThread tid: 1323, arg: 2 start
+Thread tid: 1324, arg: 3 start
+Thread tid: 1325, arg: 4 start
+Thread tThread tid: 1327, arg: 6 start
+Thread tid: 1328, arg: 7 start
+Thread tid: 1329, arg: 8 start
+Thread tid: 1322, arg: 1 start
+id: 1326, arg: 5 start
+id: 1330, arg: 9 start
+Thread tid: 1331, arg: Thread tid: 1332, arg: 11 start
+Thread tid: 1333, arg: 12 start
+Thread tid: 1334, arg: 13 start
+Thread tidThread tid: 1336, arg: 15 start
+Thread tid: 1337, arg: 16 start
+Thread tid: 1338, arg: 17 start
+Thread tid: 1339, arg: 18 start
+Thread tid: 1340, arg: 19 start
+10 start
+: 1335, arg: 14 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1341, arg: 0 start
+Thread tid: 1342, arg: 1 start
+ThreThread tid: 1344, arg: 3 start
+Thread tid: 1345, arg: 4 start
+Thread tid: 1346, arg: 5 start
+Thread tid: 1347, arg: 6 start
+Thread tid: 1348, arg: 7 start
+Thread tid: 1349, arg: 8 start
+Thread tid: 1350, arg: 9 start
+Thread tid: 1351, arg: 10 start
+Thread tid: 1352, arg: 11 start
+Thread tid: 1353, arg: 12 start
+Thread tid: 1354, arg: 13 start
+Thread tid: 1355, arg: 14 start
+Thread tid: 1356, arg: 15 start
+Thread tid: 1357, arg: 16 start
+Thread tid: 1358, arg: 17 start
+Thread tid: 1359, arg: 18 start
+Thread tid: 1360, arg: 19 start
+ad tid: 1343, arg: 2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1361, arg: 0 start
+Thread tid: 1362, arg: 1 start
+Thread tid: 1363, arg: 2 start
+Thread tid: 1364, arg: 3 start
+Thread tid: 1365, arg: 4 start
+Thread tid: 1366, arg: 5Thread tid: 1367, arg: 6 start
+Thread tid: 1368, arg: 7 start
+Thread tid: 1369, arg: 8 start
+Thread tid:Thread tid: 1371, arg: 10 start
+Thread tid: 1372, arg: 11 start
+Thread tid: 1373, arg: 12 start
+Thread tid: 1374, arg: 13 start
+Thread tid: 1375, arg: 14 start
+Thread tThread tid: 1377, arg: 16 start
+Thread tid: 1378, arg: 17 start
+Thread tid: 1379, arg: 18   start
+Thread tid: 1380, arg: 19 start
+start
+1370, arg: 9 start
+id: 1376, arg: 15 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+ThreThread tid: 1382, arg: 1 start
+Thread tid: 1383, arg: 2 start
+Thread tid: 1384, arg: 3 start
+Thread tid: 1385, arg: 4 start
+Thread tid: 1386, arg: 5 start
+Thread tid: 1387, arg: 6 start
+ad tid: 1381, arg: 0 start
+Thread tid: 1388, arg: 7 start
+Thread tid: 1389, aThread tid: 1390, arg: 9 start
+Thread tid: 1391, arg: 10 start
+Thread tid: 1392, arg: 11 Thread tid: 1393, arg: 12 start
+Thread tid: 1394, arg: 13 start
+Thread tid: 1395, arg: 14 start
+Thread tid: 1397, arg: 16 start
+Thread tid: 1398, arg: 17 start
+Thread tid: 1399, arg: 18 start
+Trg: 8 start
+start
+Thread tid: 1396, arg: 15 start
+hread tid: 1400, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1401, arg: 0 start
+Thread tid: 1402, arg: 1 start
+Thread tid: 1403, arg: 2 start
+Thread tid: 1404, arg: 3 start
+ThreaThread tid: 1406, arg: 5 start
+Thread tid: 1407, arg: 6 start
+Thread tid: 1408, arg: 7 start
+Thread Thread tid: 1410, arg: 9 start
+Thread tid: 1411, arg: 10 start
+Thread tid: 1412, arg: 11 start
+ThreThread tid: 1414, arg: 13 start
+Thread tid: 1415, arg: 14 start
+Thread tid: 1416, arg: 15 start
+Thread tid: 1417, arg: 16 start
+Thread tid: 1418, arg: 17 start
+Thread tid: Thread tid: 1420, arg: 19 start
+d tid: 1405, arg: 4 start
+tid: 1409, arg: 8 start
+ad tid: 1413, arg: 12 start
+1419, arg: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1421, arg: 0 start
+Thread tid: 1422, arg: 1 start
+Thread tid: 1423, arg: 2 start
+Thread tid: 1424, arg: 3 start
+Thread tid:Thread tid: 1426, arg: 5 start
+Thread tid: 1427, arg: 6 start
+Thread tid: 1428, arg: 7 start
+Thread tid: 1429,Thread tid: 1430, arg: 9 start
+Thread tid: 1431, arg: 10 start
+Thread tid: 1432, arg: 11 start
+Thread tid: 1433, Thread tid: 1434, arg: 13 start
+Thread tid: 1435, arg: 14 start
+Thread tid: 1436, arg: 15 start
+Thread  1425, arg: 4 start
+ arg: 8 start
+arg: 12 start
+tid: 1437, arg: 16 start
+Thread tid: 1438, arg: 17 start
+Thread tid: 1439, arg: 18 start
+Thread tid: 1440, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1441, arg: 0 start
+Thread tid: 1442, arg: 1 stThread tid: 1443, arg: 2 start
+Thread tid: 1444, arg: 3 start
+Thread tid: 1445, arg: 4 start
+ThThread tid: 1447, arg: 6 start
+Thread tid: 1448, arg: 7 start
+Thread tid: 1449, arg: 8 start
+TThread tid: 1451, arg: 10 start
+Thread tid: 1452, arg: 11 start
+Thread tid: 1453, arg: 12 start
+Thread tid: 1454, arg: 13 start
+Thread tid: 1455, arg: 14 start
+Thread tid: 1456, arg: 15 start
+Trhread tid: 1457, arg: 16 start
+Thread tid: 1458, arg: 17 start
+Thread tid: 1459, arg: 18 starThread tid: 1460, arg: 19 start
+art
+ead tid: 1446, arg: 5 start
+hread tid: 1450, arg: 9 start
+t
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1461, arg: 0 start
+Thread tid: 1462, arg: 1 start
+Thread tid: 1463, arg: 2 start
+Thread tid: 1464, arg: 3 start
+Thread tid: 1465, arg: 4 start
+Thread tid: 1466, arg: 5 start
+Thread tid: 1467, arg: 6 start
+Thread tid:Thread tid: 1469, arg: 8 start
+Thread tid: 1470, arg: 9 start
+Thread tid: 1471, arg: 10 start
+ThrThread tid: 1473, arg: 12 start
+Thread tid: 1474, arg: 13 start
+Thread tid: 1475, arg: 14 start
+ThrThread tid: 1477, arg: 16 start
+Thread tid: 1478, arg: 17 start
+Thread tid: 1479, arg: 18 start
+Thread tid: 1480, arg: 19 start
+ 1468, arg: 7 start
+ead tid: 1472, arg: 11 start
+ead tid: 1476, arg: 15 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1481, arg: 0 start
+Thread tid: 1482, arg: 1 start
+Thread tid: 1483, arg: 2 start
+Thread tid: 1484, arg: 3 start
+Thread tid: 1485, arg: 4 startThread tid: 1486, arg: 5 start
+Thread tid: 1487, arg: 6 start
+Thread tid: 1488, arg: 7 start
+Thread tThread tid: 1490, arg: 9 start
+Thread tid: 1491, arg: 10 start
+Thread tid: 1492, arg: 11 start
+Thread tid: 149Thread tid: 1494, arg: 13 start
+Thread tid: 1495, arg: 14 start
+Thread tid: 1496, arg: 15 start
+ThreaThread tid: 1498, arg: 17 start
+Thread tid: 1499, arg: 18 start
+Thread tid: 1500, arg: 19 start
+
+id: 1489, arg: 8 start
+3, arg: 12 start
+d tid: 1497, arg: 16 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1501, arg: 0 start
+Thread tid: 1502, arg: 1 start
+ThreaThread tid: 1504, arg: 3 start
+Thread tid: 1505, arg: 4 start
+Thread tid: 1506, arg: 5 start
+Thread tid: 1507, arg: 6 start
+Thread tid: 1508, arg: 7 start
+Thread tid: 1509, arg: 8 start
+Thread tid: 1510, arg: 9 start
+Thread tid: 1511, arg: 10 d tid: 1503, arg: 2 start
+start
+Thread tid: 1512, arg: 11 start
+Thread tid: 151Thread tid: 1514, arg: 13 start
+Thread tid: 1515, arg: 14 start
+Thread tid: 1516, arg: 15 start
+Thread tid: 1517, arg: 16 start
+Thread tid: 1518, arg: 17 start
+Thread tidThread tid: 1520, arg: 19 start
+3, arg: 12 start
+: 1519, arg: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1521, arg: 0 start
+Thread tid: 1522, arg: 1 start
+Thread tid: 1523, arg: 2 start
+Thread tid: 1524, arg: 3 start
+Thread tid: 152Thread tid: 1526, arg: 5 start
+Thread tid: 1527, arg: 6 start
+Thread tid: 1528, arg: 7 start
+Thread tid: 1Thread tid: 1530, arg: 9 start
+Thread tid: 1531, arg: 10 start
+Thread tid: 1532, arg: 11 start
+Thread tid: 1533, arg: 12 start
+Thread tid: 1534, arg: 13 start
+Thread tid: 1535, arg: 14 start
+ThrThread tid: 1537, arg: 16 start
+Thread tid: 1538, arg: 17 start
+Thread tid: 1539, arg: 18 start
+Thread tid: 1540, 5, arg: 4 start
+529, arg: 8 start
+ead tid: 1536, arg: 15 start
+arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1541, arg: 0 start
+Thread tid: 1542, arg: 1 start
+Thread tid: 1543, arg: 2 start
+Thread tid: 1544, arg: 3 start
+Thread tid: 1545, arg: 4 start
+Thread tid: 1546, arg: 5 start
+Thread tid: 1547, arg: 6 start
+ThreaThread tid: 1549, arg: 8 start
+Thread tid: 1550, arg: 9 start
+Thread tid: 1551, arg: 10 start
+Thread tid: 1552, arg: 11 start
+Thread tid: 1553, arg: 12 start
+Thread tid: 1554, arg: 13 start
+Thread tid: 1555, arg: 14 start
+Thread tid: 1556, arg: 15 start
+Thread tid: 1557, arg: 16 start
+Thread tid: 1558, arg: 17 start
+Thread tid: 1559, arg: 18 start
+Thread tid: 1560,d tid: 1548, arg: 7 start
+ arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1561, arg: 0 start
+Thread tid: 1562, arg: 1 start
+ThreaThread tid: 1564, arg: 3 start
+Thread tid: 1565, arg: 4 start
+Thread tid: 1566, arg: 5 start
+Thread tid: 1567, arg: 6 start
+Thread tid: 1568, arg: 7 start
+Thread tid: 1569, arg: 8 start
+Thread tid: 1570, arg: 9 start
+Thread tid: 1571, arg: 10 start
+Thread tid: 1572, arg: 11 start
+Thread tid: 157Thread tid: 1574, arg: 13 start
+Thread tid: 1575, arg: 14 start
+Thread tid: 1576, arg: 15 start
+Thread Thread tid: 1578, arg: 17 start
+Thread tid: 1579, arg: 18 start
+Thread tid: 1580, arg: 19 start
+d tid: 1563, arg: 2 start
+3, arg: 12 start
+tid: 1577, arg: 16 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1581, arg: 0 start
+Thread tid: 1582, arg: 1 start
+Thread tid: 1583, arg: 2 start
+Thread tid: 1584, arg: Thread tid: 1585, arg: 4 start
+Thread tid: 1586, arg: 5 start
+Thread tid: 1587, arg: 6 start
+Thread tid: 1588, arg: 7 start
+Thread tid: 1589, arg: 8 start
+Thread tid: 1590, arg: 9 start
+Thread tid: 1591, arg: 10 start
+Thread tid: 1592, arg: 11 stThread tid: 1593, arg: 12 start
+Thread tid: 1594, arg: 13 start
+Thread tid: 1595, arg: 14 start
+3 start
+art
+Thread tid: 1596, arg: 15 start
+Thread tid: 1597, argThread tid: 1598, arg: 17 start
+Thread tid: 1599, arg: 18 start
+Thread tid: 1600, arg: 19 start
+: 16 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1601, arg: 0 start
+ThreaThread tid: 1603, arg: 2 start
+Thread tid: 1604, arg: 3 start
+Thread tid: 1605, arg: 4 start
+Thread tThread tid: 1607, arg: 6 start
+Thread tid: 1608, arg: 7 start
+Thread tid: 1609, arg: 8 start
+Thread tid: 1610Thread tid: 1611, arg: 10 start
+Thread tid: 1612, arg: 11 start
+Thread tid: 1613, arg: 12 start
+Thread tid: 1d tid: 1602, arg: 1 start
+id: 1606, arg: 5 start
+, arg: 9 start
+614, arg: 13 start
+ThreaThread tid: 1616, arg: 15 start
+Thread tid: 1617, arg: 16 start
+Thread tid: 1618, arg: 17 start
+ThreadThread tid: 1620, arg: 19 start
+d tid: 1615, arg: 14 start
+ tid: 1619, arg: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1621, arg: 0 start
+ThreadThread tid: 1623, arg: 2 start
+Thread tid: 1624, arg: 3 start
+Thread tid: 1625, arg: 4 start
+Thread tThread tid: 1627, arg: 6 start
+Thread tid: 1628, arg: 7 start
+Thread tid: 1629, arg: 8 start
+Thread tid: 1630Thread tid: 1631, arg: 10 start
+Thread tid: 1632, arg: 11 start
+Thread tid: 1633, arg: 12 start
+Thread tThread tid: 1635, arg: 14 start
+Thread tid: 1636, arg: 15 start
+Thread tid: 1637, arg: 16 start
+Thread tid: Thread tid: 1639, arg: 18 start
+Thread tid: 1640, arg: 19 start
+ tid: 1622, arg: 1 start
+id: 1626, arg: 5 start
+, arg: 9 start
+id: 1634, arg: 13 start
+1638, arg: 17 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1641, arg: 0 start
+Thread tid: 1642, arg: 1 start
+Thread tid: 1643, arg: 2 start
+Thread tid: 1644, arg: 3 start
+Thread tid: 1645, arg: 4 start
+Thread tid: 1646, arg: 5 start
+Thread tid: 1647, arg: 6 start
+Thread tid: 1648, arg: 7 start
+Thread tid: 1649, arg: 8 start
+Thread tid: 1650, arg: 9 start
+Thread tid: 1651, arg: 10 start
+Thread tid: 1652, aThread tid: 1653, arg: 12 start
+Thread tid: 1654, arg: 13 start
+Thread tid: 1655, arg: 14 start
+Thread tidThread tid: 1657, arg: 16 start
+Thread tid: 1658, arg: 17 start
+Thread tid: 1659, arg: 18 start
+Thread rg: 11 start
+: 1656, arg: 15 start
+tid: 1660, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1661, arg: 0 start
+Thread tid: 1662, arg: 1 start
+Thread tid: 1663, arg: 2 start
+Thread tid: 1664, arg: 3 start
+Thread tid: 1665, arg: 4 start
+Thread tid: 1666, arg: 5 start
+Thread tid: 1667, arg: 6 start
+Thread tid: 1668, arg: 7 start
+Thread tThread tid: 1670, arg: 9 start
+Thread tid: 1671, arg: 10 start
+Thread tid: 1672, arg: 11 start
+Thread tidThread tid: 1674, arg: 13 start
+Thread tid: 1675, arg: 14 start
+Thread tid: 1676, arg: 15 start
+Thread tiid: 1669, arg: 8 start
+: 1673, arg: 12 start
+d: 1677, arg: 16 start
+Thread tid: 1678, arg: 17 start
+Thread tid: 1679, arg: 18 start
+Thread tid: 1680, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1681, arThread tid: 1682, arg: 1 start
+Thread tid: 1683, arg: 2 start
+Thread tid: 1684, arg: 3 start
+Thread Thread tid: 1686, arg: 5 start
+Thread tid: 1687, arg: 6 start
+Thread tid: 1688, arg: 7 start
+Thread tid: 1689, arg: 8 start
+Thread tid: 1690, arg: 9 start
+Thread tid: 1691, arg: 10 start
+Thread tid: 1692, arg: 11 start
+Thread tid: 1693, arg: 12 start
+Thread tid: 1694, arg: 13 start
+ThrThread tid: 1696, arg: 15 start
+Thread tid: 1697, arg: 16 start
+Thread tid: 1698, arg: 17 start
+ThreThread tid: 1700, arg: 19 start
+g: 0 start
+tid: 1685, arg: 4 start
+eadad tid: 1699, arg: 18 start
+ tid: 1695, arg: 14 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1701, arg: 0 start
+Thread tid: 1702, arg: 1 start
+ThreThread tid: 1704, arg: 3 start
+Thread tid: 1705, arg: 4 start
+Thread tid: 1706, arg: 5 start
+ThreaThread tid: 1708, arg: 7 start
+Thread tid: 1709, arg: 8 start
+Thread tid: 1710, arg: 9 start
+Thread tid: 1711, arg: 10 start
+Thread tid: 1712, arg: 11 start
+Thread tid: 1713, arg: 12 start
+ThreThread tid: 1715, arg: 14 start
+Thread tid: 1716, arg: 15 start
+Thread tid: 1717, arg: 16 start
+Thread tid: Thread tid: 1719, arg: 18 start
+Thread tid: 1720, arg: 19 start
+ad tid: 1703, arg: 2 start
+d tid: 1707, ad tid: 1714, arg: 13 start
+1718, arg: 17 start
+arg: 6 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1721, argThread tid: 1722, arg: 1 start
+Thread tid: 1723, arg: 2 start
+Thread tid: 1724, arg: 3 start
+Thread tid: 172Thread tid: 1726, arg: 5 start
+Thread tid: 1727, arg: 6 start
+Thread tid: 1728, arg: 7 start
+Thread t: 0 start
+5, arg: 4 start
+id: 1729, arg: 8 start
+Thread tid: 1730, arg: 9 start
+Thread tid: 1731, arg: 10 start
+Thread tid: 1732, arg: 11 start
+Thread tid: 1733, arg: 12 start
+Thread tid: Thread tid: 1735, arg: 14 start
+Thread tid: 1736, arg: 15 start
+Thread tid: 1737, arg: 16 starThread tid: 1738, arg: 17 start
+Thread tid: 1739, arg: 18 start
+Thread tid: 1740, arg: 19 start
+1734, arg: 13 start
+t
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1741Thread tid: 1742, arg: 1 start
+Thread tid: 1743, arg: 2 start
+Thread tid: 1744, arg: 3Thread tid: 1745, arg: 4 start
+Thread tid: 1746, arg: 5 start
+Thread tid: 1747, arg: 6 start
+Thread tid: 1748, arg: 7 start
+Thread tid: 1749, arg: 8 start
+Thread tid: 1750, arg: 9 start
+ start
+Thread tid: 1751, arg: 10 start
+Thread tid: 1752, arg: 11 start
+Thread tid: 1Thread tid: 1754, arg: 13 start
+Thread tid: 1755, arg: 14 start
+Thread tid: 1756, arg: 15 start
+Thread tiThread tid: 1758, arg: 17 start
+Thread tid: 1759, arg: 18 start
+Thread tid: 1760, arg: 19 start
+, arg753, arg: 12 start
+d: 1757, arg: 16 start
+: 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1761, arg: 0 start
+Thread tid: 1762, arg: 1 start
+ThreThread tid: 1764, arg: 3 start
+Thread tid: 1765, arg: 4 start
+Thread tid: 1766, arg: 5 start
+Thread tid: 1767, arg: 6 start
+Thread tid: 1768, arg: 7 start
+Thread tid: 1769, arg: 8 start
+Thread tThread tid: 1771, arg: 10 start
+Thread tid: 1772, arg: 11 start
+Thread tid: 1773, arg: 12 start
+Thread tid: 1774, arg: 13 start
+Thread tid: 1775, arg: 14 start
+Thread tid: 1776, arg: 15 start
+Thread tid: 1777, arg: 16 start
+Thread tid: 1778, arg: 17 start
+Thread tid: 1779, arg: 18 start
+Thread tid: 1780, arg: 19 start
+ad tid: 1763, arg: 2 start
+id: 1770, arg: 9 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: Thread tid: 1782, arg: 1 start
+Thread tid: 1783, arg: 2 start
+Thread tid: 1784, arg: 3 start
+Thread tid:Thread tid: 1786, arg: 5 start
+Thread tid: 1787, arg: 6 start
+Thread tid: 1788, arg: 7 start
+Thread tid: 1789, arg: 8 start
+Thread tid: 1790, arg: 9 start
+Thread tid: 1791, arg: 10 start
+Thread tid: 1792, arg: 11 start
+Thread tid: 1793, arg: 12 start
+Thread tid: 1794, arg: 13 start
+Thread tid: 1795, arg:Thread tid: 1796, arg: 15 start
+Thread tid: 1797, arg: 16 start
+Thread tid: 1798, arg: 17 start
+ 1785, arg: 4 start
+ 14 start
+Thread tid: 1799, arg: 18 start
+Thread tid: 1800, arg: 19 start
+1781, arg: 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1801, arg: 0 start
+Thread tid: 1802, arg: 1 start
+Thread tid: 1803Thread tid: 1804, arg: 3 start
+Thread tid: 1805, arg: 4 start
+Thread tid: 1806, arg: 5 start
+Thread tid: 1807, arg: 6 start
+Thread tid: 1808, arg: 7 start
+Thread tid: 1809, arg: 8 start
+Threa, arg: 2 start
+pid 94 tid 1803 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x28000--kill proc
+pid 94 tid 1806 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x28000--kill proc
+d tid: 1810, arg: 9 pid 94 tid 1811 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2a004--kill prc
+pid 94 tid 1812 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2c004--kill proc
+pid 94 tid 1813 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2e004--kill proc
+pid 94 tid 1814 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x30004--kill proc
+pid 94 tid 1815 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x32004--kill proc
+pid 94 tid 1816 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x34004--kill proc
+pid 94 tid 1817 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x36004--kill proc
+pid 94 tid 1819 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x3a004--kill proc
+Thread tid: 1820, arg: 19 start
+pid 94 tid 1820 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x28000--kill proc
+start
+pid 94 tid 1810 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x28000--kill proc
+pid 94 tid 1818 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x38004--kill proc
+pid 94 tid 1801 thread_test: trap 14 err 7 on cpu 0 eip 0x140 addr 0x28000--kill proc
+Thread 2 returned 0, but expected 2
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1821, arThread tid: 1822, arg: 1 start
+Thread tid: 1823, arg: 2 start
+Thread tid: 1824, arg: 3 start
+Thread tid: 1825Thread tid: 1826, arg: 5 start
+Thread tid: 1827, arg: 6 start
+Thread tid: 1828, arg: 7 start
+Thread tid: 1829, arg: 8 start
+Thread tid: 1830, arg: 9 start
+Thread tid: 1831, arg: 10 start
+Thread tig: 0 start
+, arg: 4 start
+d: 1832, arg: 11 start
+Thread tid: 1833, arg: 12 start
+Thread tid: 1834, arg: 13 start
+Thread tid: 1835, arg: 14 start
+Thread tid: 1836, arg: 15 start
+Thread tid: 1837, arg: 16 start
+Thread tid: 1838, arg: 17 start
+Thread tid: 1839, arg: 18 start
+Thread tid: 1840, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1841, aThread tid: 1842, arg: 1 start
+Thread tid: 1843, arg: 2 start
+Thread tid: 1844, arg: 3 start
+ThreaThread tid: 1846, arg: 5 start
+Thread tid: 1847, arg: 6 start
+Thread tid: 1848, arg: 7 start
+Thread tid: 1849, arg: 8 start
+Thread tid: 1850, arg: 9 start
+Thread tid: 1851, arg: 10 start
+Thread tid: 1852, arg: Thread tid: 1853, arg: 12 start
+Thread tid: 1854, arg: 13 start
+Thread tid: 1855, arg: 14 start
+Thread tidrg: 0 start
+d tid: 1845, arg: 4 start
+11 start
+: 1856, arg: 15 start
+ThThread tid: 1858, arg: 17 start
+Thread tid: 1859, arg: 18 start
+Thread tid: 1860, arg: 19 start
+read tid: 1857, arg: 16 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1861, arg: 0 start
+Thread tid: 1862, arg: 1 start
+Thread tid: 1863, arg: 2 start
+ThrThread tid: 1865, arg: 4 start
+Thread tid: 1866, arg: 5 start
+Thread tid: 1867, arg: 6 start
+ThrThread tid: 1869, arg: 8 start
+Thread tid: 1870, arg: 9 start
+Thread tid: 1871, arg: 10 start
+Thread tiThread tid: 1873, arg: 12 start
+Thread tid: 1874, arg: 13 start
+Thread tid: 1875, arg: 1Thread tid: 1876, arg: 15 start
+Thread tid: 1877, arg: 16 start
+Thread tid: 1878, arg: 17 start
+Thread tid: 1Thread tid: 1880, arg: 19 start
+ead tid: 1864, arg: 3 start
+ead tid: 1868, arg: 7 start
+d: 1872, ar4 start
+879, arg: 18 start
+g: 11 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1881, arg: 0 start
+pid 98 tid 1882 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x18004--kill proc
+pid 98 tid 1883 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x1a004--kill proc
+pid 98 tid 1884 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x1c004--kill proc
+pid 98 tid 1885 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x1e004--kill proc
+pid 98 tid 1887 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x22004--kill proc
+pid 98 tid 1888 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x24004--kill proc
+pid 98 tid 1889 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x26004--kill proc
+pid 98 tid 1890 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x28004--kill proc
+pid 98 tid 1891 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2a004--kill proc
+pid 98 tid 1892 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2c004--kill proc
+pid 98 tid 1894 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x30004--kill proc
+pid 98 tid 1895 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x32004--kill proc
+pid 98 tid 1896 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x34004--kill proc
+pid 98 tid 1897 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x36004--kill proc
+pid 98 tid 1898 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x38004--kill proc
+pid 98 tid 1899 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x3a004--kill proc
+pid 98 tid 1886 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x20004--kill proc
+pid 98 tid 1893 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2e004--kill proc
+Thread tid: 1900, arg: 19 start
+pid 98 tid 1900 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x16000--kill proc
+pid 98 tid 1881 thread_test: trap 14 err 7 on cpu 0 eip 0x140 addr 0x16000--kill proc
+Thread 1 returned 0, but expected 1
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1901, arg: 0 start
+Thread tid: 1902, arg: 1 start
+Thread tid: 1903, arg: 2 start
+ThreadThread tid: 1905, arg: 4 start
+Thread tid: 1906, arg: 5 start
+Thread tid: 1907, arg: 6 start
+Thread tidThread tid: 1909, arg: 8 start
+Thread tid: 1910, arg: 9 start
+Thread tid: 1911, arg: 10 start
+ThrThread tid: 1913, arg: 12 start
+Thread tid: 1914, arg: 13 start
+Thread tid: 1915, arg: 14 start
+ThrThread tid: 1917, arg: 16 start
+Thread tid: 1918, arg: 17 start
+ tid: 1904, arg: 3 start
+pid 99 tid 1904 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x3a000--kill proc
+: 1908, arg: 7 start
+pid 99 tid 1908 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x3a000--kill proc
+ead tid: 1912, arg: 11 start
+pid 99 tid 1912 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x3a000--kill proc
+ead tidThread tid: 1919, arg: 18 start
+pid 99 tid 1919 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x3a000--kill proc
+Thread tid: 1920, arg: 19 start
+pid 99 tid 1920 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x3a000--kill proc
+: 1916, arg: 15 start
+pid 99 tid 1916 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x3a000--kill proc
+pid 99 tid 1901 thread_test: trap 14 err 7 on cpu 0 eip 0x140 addr 0x3a000--kill proc
+Thread 3 returned 0, but expected 3
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1921, arg: 0 start
+Thread tid: 1922, arg: 1 start
+Thread tid: 1923, arg: 2 start
+Thread tid: 1924, arg: 3 start
+Thread tid: 1925, arg: 4 start
+Thread tid: 1926, arg: 5 start
+Thread tid: 1927, arg: 6 start
+Thread tid: 1928, arg: 7 start
+Thread Thread tid: 1930, arg: 9 start
+Thread tid: 1931, arg: 10 start
+Thread tid: 1932, arg: 11 start
+Thread ttid: 1929, arg: 8 start
+id: 1933, arg: 12 start
+Thread tid: 1934, arg: 13 start
+Thread tid: 1935Thread tid: 1936, arg: 15 start
+Thread tid: 1937, arg: 16 start
+Thread tid: 1938, arg: 17 start
+Thread tid: 1940, arg: 19 start
+, arg: 14 start
+Thread tid: 1939, arg: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1941, arg: 0 start
+Thread tid: 1942, argThread tid: 1943, arg: 2 start
+Thread tid: 1944, arg: 3 start
+Thread tid: 1945, arg: 4 start
+Thread tid: 1946, arg: 5 start
+Thread tid: 1947, arg: 6 start
+Thread tid: 1948, arg: 7 start
+Thread tid: 1949, arg: 8 start
+Thread tid: 1950, arg: 9 start
+Thread tid: 1951, arg: 10 start
+Thread tid: 1952, arg: 11 start
+Thread tid: 1953, arg: 12 start
+Thread tid: 1954, arg: 13 start
+Thread tid: 1955, arg: 1Thread tid: 1956, arg: 15 start
+Thread tid: 1957, arg: 16 start
+Thread tid: 1958, arg: 17 start
+Thread tid: 1959Thread tid: 1960, arg: 19 start
+: 1 start
+4 start
+, arg: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1961, arg: 0 start
+Thread Thread tid: 1963, arg: 2 start
+Thread tid: 1964, arg: 3 start
+Thread tid: 1965, arg: 4 Thread tid: 1966, arg: 5 start
+Thread tid: 1967, arg: 6 start
+Thread tid: 1968, arg: 7 start
+tid: 1962, arg: 1 start
+start
+Thread tid: 1969, arg: 8 start
+Thread tid: 1970, aThread tid: 1971, arg: 10 start
+Thread tid: 1972, arg: 11 start
+Thread tid: 1973, arg: 12 sThread tid: 1974, arg: 13 start
+Thread tid: 1975, arg: 14 start
+Thread tid: 1976, arg: 1Thread tid: 1977, arg: 16 start
+Thread tid: 1978, arg: 17 start
+Thread tid: 1979, arg: 18 start
+rg: 9 start
+tart
+5 start
+Thread tid: 1980, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 1981, arg: 0 start
+Thread tidThread tid: 1983, arg: 2 start
+Thread tid: 1984, arg: 3 start
+Thread tid: 1985, arg: 4 start
+Thread tid: Thread tid: 1987, arg: 6 start
+Thread tid: 1988, arg: 7 start
+Thread tid: 1989, arg: 8 start
+Thread tid: 1Thread tid: 1991, arg: 10 start
+Thread tid: 1992, arg: 11 start
+Thread tid: 1993, arg: 12 start
+Thread tid: 199Thread tid: 1995, arg: 14 start
+Thread tid: 1996, arg: 15 start
+Thread tid: 1997, arg: 16 start
+ThreadThread tid: 1999, arg: 18 start
+Thread tid: 2000, arg: 19 start
+: 1982, arg: 1 start
+1986, arg: 5 st990, arg: 9 start
+4, arg: 13 start
+ tid: 1998, arg: 17 start
+art
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2001, arg: 0 start
+Thread tid: 2002, arg: 1 start
+Thread tid: 2003, arg: 2 start
+Thread tid: 2004, arg: 3 start
+Thread tid: 2005, arg: 4 start
+Thread tid:Thread tid: 2007, arg: 6 start
+Thread tid: 2008, arg: 7 start
+Thread tid: 2009, arg: 8 start
+ThreadThread tid: 2011, arg: 10 start
+Thread tid: 2012, arg: 11 start
+Thread tid: 2013, arg: 12 start
+T 2006, arg: 5 start
+ tid: 2010, arg: 9 start
+hread tid: 2014, arg: 13 start
+Thread Thread tid: 2016, arg: 15 start
+Thread tid: 2017, arg: 16 start
+Thread tid: 2018, arg: 17 start
+Thtread tid: 2019, arg: 18 start
+Thread tid: 2020, arg: 19 start
+id: 2015, arg: 14 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2021, arg: 0 start
+Thread tid: 2022, arg: 1 start
+Thread Thread tid: 2024, arg: 3 start
+Thread tid: 2025, arg: 4 start
+Thread tid: 2026, arg: 5 start
+Thread tid: 2027, arg: 6 start
+Thread tid: 2028, arg: 7 start
+Thread tid: 2029, arg: 8 start
+Thread tid: 2030, arg: 9 start
+Thread tid: 2031, arg: 10 start
+Thread tid: 2032, arg: 11 start
+TThread tid: 2034, arg: 13 start
+Thread tid: 2035, arg: 14 start
+Thread tid: 2036, arg: 15 start
+Thread tid: 2037, arg: 16 start
+Thread tid: 2038, arg: 17 start
+Thread tid: 2039, arg: 18 start
+Thrtid: 2023, arg: 2 start
+hread tid: 2033, arg: 12 start
+ead tid: 2040, arg: 19 start
+Thread tid: 2026, arg: 5 found 6, j: 0
+Test failed!
+Thread tid: 2027, arg: 6 found 5, j: 9763
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2041, arg: 0 start
+ThreaThread tid: 2043, arg: 2 start
+Thread tid: 2044, arg: 3 start
+Thread tid: 2045, arg: 4 start
+Thread tiThread tid: 2047, arg: 6 start
+Thread tid: 2048, arg: 7 start
+Thread tid: 2049, arg: 8 start
+Thread tid: Thread tid: 2051, arg: 10 start
+Thread tid: 2052, arg: 11 start
+Thread tid: 2053, arg: 12 start
+Thread tid: 2054, arg: 13 start
+Thread tid: 2055, arg: 14 start
+Thread tid: 2056, arg: 15 start
+Thread tid: 2057, arg: 16 start
+Thread tid: 2058, arg: 17 start
+Thread tid: 2059, arg: 18 start
+Thread tid: 2060, arg: 19 start
+d tid: 2042, arg: 1 start
+d: 2046, arg: 5 start
+2050, arg: 9 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2061, arg: 0 start
+Thread tid: 2062, arg: 1 start
+Thread tid: 2063, arg: 2 start
+Thread tid: 2064, arg: 3 start
+Thread Thread tid: 2066, arg: 5 start
+Thread tid: 2067, arg: 6 start
+Thread tid: 2068, arg: 7 start
+Thread tidThread tid: 2070, arg: 9 start
+Thread tid: 2071, arg: 10 start
+Thread tid: 2072, arg: 11 start
+Thread tid:tid: 2065, arg: 4 start
+: 2069, arg: 8 start
+ 2073, arg: 12 start
+Thread tid: 2074, arg: 13Thread tid: 2075, arg: 14 start
+Thread tid: 2076, arg: 15 start
+Thread tid: 2077, arg: 16 start
+Thread tThread tid: 2079, arg: 18 start
+Thread tid: 2080, arg: 19 start
+ start
+id: 2078, arg: 17 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2081, arg: 0 start
+Thread tid: 2082, arg: 1 start
+Thread tid: 2083, arg: 2 start
+Thread tid: 2084, arg: 3 start
+Thread tid: 20Thread tid: 2086, arg: 5 start
+Thread tid: 2087, arg: 6 start
+Thread tid: 2088, arg: 7 start
+Thread tid: 2089, arThread tid: 2090, arg: 9 start
+Thread tid: 2091, arg: 10 start
+Thread tid: 2092, arg: 11 sta85, arg: 4 start
+g: 8 start
+rt
+Thread tid: 2093, arg: 12 start
+Thread tid: 2094, arg: 13 start
+Thread tid: 2095, arg: 14 start
+Thread tid: 2096, arg: 15 start
+Thread tThread tid: 2098, arg: 17 start
+Thread tid: 2099, arg: 18 start
+Thread tid: 2100, arg: 19 start
+id: 2097, arg: 16 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2101, arg: 0 start
+Thread tid: 2102, arg: 1 start
+Thread tid: 2103, arg: 2 start
+ThrThread tid: 2105, arg: 4 start
+ead tid: 2104, arg: 3 start
+pid 109 tid 2104 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x20000--kill proc
+Thread tid: 2106, arg:pid 109 tid 2107 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x22004--killc
+pid 109 tid 2108 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x24004--kill proc
+pid 109 tid 2109 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x26004--kill proc
+pid 109 tid 2110 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x28004--kill proc
+pid 109 tid 2111 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2a004--kill proc
+pid 109 tid 2112 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2c004--kill proc
+pid 109 tid 2114 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x30004--kill proc
+pid 109 tid 2115 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x32004--kill proc
+pid 109 tid 2116 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x34004--kill proc
+pid 109 tid 2117 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x36004--kill proc
+pid 109 tid 2118 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x38004--kill proc
+pid 109 tid 2119 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x3a004--kill proc
+Thre 5 start
+pid 109 tid 2106 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x20000--kill proc
+pid 109 tid 2113 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2e004--kill proc
+ad tid: 2120, arg: 19 start
+pid 109 tid 2120 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x20000--kill proc
+pid 109 tid 2101 thread_test: trap 14 err 7 on cpu 0 eip 0x140 addr 0x20000--kill proc
+Thread 3 returned 0, but expected 3
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2121, arg: 0 start
+Thread tid: 2122, arg: 1 start
+Thread tid: 2123, arg: 2 start
+Thread tid: 2124, arg: 3 start
+pid 110 tid 2124 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x28000--kill proc
+Thread tid: 2125, arg: 4 start
+pid 110 tid 2125 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x28000--kill proc
+ThreThread tid: 2127, arg: 6 start
+pid 110 tid 2127 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x28000--kill proc
+Thread tid: 2128, arg: 7 start
+pid 110 tid 2128 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x28000--kill proc
+Thread tiThread tid: 2130, arg: 9 start
+pid 110 tid 2130 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x28000--kill proc
+pid 110 tid 2131 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2a004--kill proc
+pid 110 tid 2132 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2c004--kill proc
+pid 110 tid 2133 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2e004--kill proc
+pid 110 tid 2134 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x30004--kill proc
+pid 110 tid 2136 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x34004--kill proc
+pid 110 tid 2137 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x36004--kill proc
+pid 110 tid 2138 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x38004--kill proc
+pid 110 tid 2139 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x3a004--kill proc
+Thread tid: 2140, apid 110 tid 2135 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x32004--kill prc
+rg: 19 start
+pid 110 tid 2140 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x28000--kill proc
+ad tid: 2126, arg: 5 start
+pid 110 tid 2126 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x28000--kill proc
+d: 2129, arg: 8 start
+pid 110 tid 2129 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x28000--kill proc
+pid 110 tid 2121 thread_test: trap 14 err 7 on cpu 0 eip 0x140 addr 0x28000--kill proc
+Thread 3 returned 0, but expected 3
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2141, arg: 0 start
+Thread tid: 2142, arg: 1 start
+Thread tid: 2143, arg: 2 start
+Thread tid: 2144, arg: 3 start
+Thread tThread tid: 2146, arg: 5 start
+Thread tid: 2147, arg: 6 start
+Thread tid: 2148, arg: 7 start
+Thread tid: 21Thread tid: 2150, arg: 9 start
+Thread tid: 2151, arg: 10 start
+Thread tid: 2152, arg: 11 start
+Thread t4id: 2153, arg: 12 start
+Thread tid: 2154, arg: 13 start
+Thread tid: 2155, arg: 14 start
+id: 2145, arg: 4 start
+9, arg: 8 start
+Thread tid: 2156, arg: 15 start
+Thread tid: 215Thread tid: 2158, arg: 17 start
+Thread tid: 2159, arg: 18 start
+Thread tid: 2160, arg: 19 start
+7, arg: 16 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2161, arg: 0 start
+Thread tid: 2162, arg: 1 start
+Thread tid: 2163, arg: 2 start
+Thread tid: 2164, arg: 3 start
+ThreadThread tid: 2166, arg: 5 start
+Thread tid: 2167, arg: 6 start
+Thread tid: 2168, arg: 7 start
+Thread tid: 21Thread tid: 2170, arg: 9 start
+Thread tid: 2171, arg: 10 start
+Thread tid: 2172, arg: 11 start
+Thread tid: 2173, arg: 12 start
+Thread tid: 2174, arg: 13 start
+Thread tid: 2175, arg: 14 start
+Thread tid: 2176,  tid: 2165, arg: 4 start
+69, arg: 8 start
+arg: 15 start
+Thread tid: 2177, arg: 16 start
+TThread tid: 2179, arg: 18 start
+Thread tid: 2180, arg: 19 start
+hread tid: 2178, arg: 17 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2181, arg: 0 start
+Thread tid: 2182, arThread tid: 2183, arg: 2 start
+Thread tid: 2184, arg: 3 start
+Thread tid: 2185, arg: 4 start
+Thread tid: Thread tid: 2187, arg: 6 start
+Thread tid: 2188, arg: 7 start
+Thread tid: 2189, arg: 8 start
+Thread tiThread tid: 2191, arg: 10 start
+Thread tid: 2192, arg: 11 start
+Thread tid: 2193, arThread tid: 2194, arg: 13 start
+Thread tid: 2195, arg: 14 start
+Thread tid: 2196, arg: 15 start
+Thread tid: 219Thread tid: 2198, arg: 17 start
+Thread tid: 2199, arg: 18 start
+Thread tid: 2200, arg: 19 start
+g:2 1 start
+186, arg: 5 start
+d: 2190, arg: 9 start
+g: 12 start
+7, arg: 16 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2201, arg: 0 start
+Thread tid: 2202, arg: 1 start
+Thread tid: 2203, arg: 2 start
+Thread tid: 2204, arg: Thread tid: 2205, arg: 4 start
+Thread tid: 2206, arg: 5 start
+Thread tid: 2207, arg: 6 start
+Thread tid: 220Thread tid: 2209, arg: 8 start
+Thread tid: 2210, arg: 9 start
+Thread tid: 2211, arg: 10 start
+Thread tid:3 start
+8, arg: 7 start
+ 2212, arg: 11 start
+Thread tid: 2213, arg: 12 start
+Thread tid: Thread tid: 2215, arg: 14 start
+Thread tid: 2216, arg: 15 start
+Thread tid: 2217, arg: 16 start
+Thread tid: 2Thread tid: 2219, arg: 18 start
+Thread tid: 2220, arg: 19 start
+2214, arg: 13 start
+218, arg: 17 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2221, arg: 0 start
+Thread tid: 2222, arg: 1 start
+Thread tid: 2223, arg: 2 start
+Thread tid: 2224, arg: 3 start
+Thread tid: 2225, arg: 4 start
+ThreaThread tid: 2227, arg: 6 start
+Thread tid: 2228, arg: 7 start
+Thread tid: 2229, arg: 8 start
+Thread tid: 2230,Thread tid: 2231, arg: 10 start
+Thread tid: 2232, arg: 11 start
+Thread tid: 2233, arg: 12 start
+Thread tid:d 2234, arg: 13 start
+Thread tid: 2235, arg: 14 start
+Thread tid: 2236, arg: 15 start
+Thread tThread tid: 2238, arg: 17 start
+Thread tid: 2239, arg: 18 start
+Thread tid: 2240, arg: 19 start
+ tid: arg: 9 start
+id: 2237, arg: 16 start
+ 2226, arg: 5 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2241, arg: 0 start
+Thread tid: 2242, arg: 1 start
+Thread tid: Thread tid: 2244, arg: 3 start
+Thread tid: 2245, arg: 4 start
+Thread tid: 2246, arg: 5 start
+ThreThread tid: 2248, arg: 7 start
+Thread tid: 2249, arg: 8 start
+Thread tid: 2250, arg: 9 startThread tid: 2251, arg: 10 start
+Thread tid: 2252, arg: 11 start
+Thread tid: 2253, arg: 12 start
+Thread tThread tid: 2255, arg: 14 start
+Thread tid: 2256, arg: 15 start
+Thread tid: 2257, arg: 16 start
+Thread tid:
+2258, arg: 17 start
+Thread tid: 2259, arg: 18 start
+Thread tid: 2260, arg: 19 start
+2243, arad tid: 2247, arg: 6 start
+id: 2254, arg: 13 start
+g: 2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2261, arg: 0 start
+Thread tid: 2262, arg: 1 start
+Thread tid: 226Thread tid: 2264, arg: 3 start
+Thread tid: 2265, arg: 4 start
+Thread tid: 2266, arg: 5 start
+Thread tid: 2267, arg: 6 start
+Thread tid: 2268, arg: 7 start
+Thread tid: 2269, arg: 8 start
+Thread tid: 2270, arg: 9 start
+Thread tid: 2271, arg: 10 start
+Thread tid: 2272, arg: 11 start
+3, arg: 2 start
+Thread tid: 2273, arg: 12 start
+Thread tid: 2274, arg: 13 start
+ThreadThread tid: 2276, arg: 15 start
+Thread tid: 2277, arg: 16 start
+Thread tid: 2278, arg: 17 start
+Thread tidThread tid: 2280, arg: 19 start
+ tid: 2275, arg: 14 start
+: 2279, arg: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2281, arg: 0 start
+Thread tid: 2282, arg: 1 start
+Thread tThread tid: 2284, arg: 3 start
+Thread tid: 2285, arg: 4 start
+Thread tid: 2286, arg: 5Thread tid: 2287, arg: 6 start
+Thread tid: 2288, arg: 7 start
+Thread tid: 2289, arg: 8 start
+ThreaThread tid: 2291, arg: 10 start
+Thread tid: 2292, arg: 11 start
+Thread tid: 2293, arg: 12 start
+Thread Thread tid: 2295, arg: 14 start
+Thread tid: 2296, arg: 15 start
+Thread tid: 2297, arg: 16 start
+Thread tid: 2298, arg: 17 start
+Thread tid: 2299, arg: 18 start
+Thread tid: 2300, arg: 19 start
+id: 2283, arg: 2 start
+d tid: 2290, arg: 9 start
+tid: 2294, arg: 13 start
+ start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2301, arg: 0 start
+Thread tid: 2302, arg: 1 start
+Thread tid: 2303, arg: 2 start
+ThreThread tid: 2305, arg: 4 start
+Thread tid: 2306, arg: 5 start
+Thread tid: 2307, arg: 6 start
+Thread tid: 23Thread tid: 2309, arg: 8 start
+Thread tid: 2310, arg: 9 start
+Thread tid: 2311, arg: 10 stThread tid: 2312, arg: 11 start
+Thread tid: 2313, arg: 12 start
+Thread tid: 2314, arg: 13 start
+Thread tid: 2315, arg: 14 start
+Thread tid: 2316, arg: 15 start
+Thread tid: 2317, arg: 16 start
+ThreadThread tid: 2319, arg: 18 start
+Thread tid: 2320, arg: 19 start
+ad tid: 2304, arg: 3 start
+08, aart
+ tid: 2318, arg: 17 start
+rg: 7 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2321, arg: 0 start
+Thread tid: 2322, arg: 1 start
+Thread tid: 2323, arg: 2 start
+Thread tid: 2324, arg: 3 start
+Thread tid: 2325, arg: 4 start
+Thread tiThread tid: 2327, arg: 6 start
+Thread tid: 2328, arg: 7 start
+Thread tid: 2329, arg: 8 start
+Thread tid: 2330,Thread tid: 2331, arg: 10 start
+Thread tid: 2332, arg: 11 start
+Thread tid: 2333, arg: 12 start
+Thread tid: 2334, arg: 13 start
+Thread tid: 2335, arg: 14 start
+Thread tid: 2336, arg: 15 start
+Thread tiThread tid: 2338, arg: 17 start
+Thread tid: 2339, arg: 18 start
+Thread tid: 2340, arg: 19 start
+d arg: 9 start
+d: 2337, arg: 16 start
+: 2326, arg: 5 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2341, arg: 0 start
+Thread tid: 2342, arg: 1 start
+Thread tid: 2343, arg: 2 start
+Thread tid: 2344, arg: 3 staThread tid: 2345, arg: 4 start
+Thread tid: 2346, arg: 5 start
+Thread tid: 2347, arg: 6 start
+Thread tidThread tid: 2349, arg: 8 start
+Thread tid: 2350, arg: 9 start
+Thread tid: 2351, arg: 10 start
+Thread tid: 2352Thread tid: 2353, arg: 12 start
+Thread tid: 2354, arg: 13 start
+Thread tid: 2355, arg: 14 start
+Thread tid: 2356, a:rg: 15 start
+Thread tid: 2357, arg: 16 start
+Thread tid: 2358, arg: 17 start
+Thread tid: 2359, arg: 18 start
+Thread tid: 2360, arg: 19 start
+rt
+ 2348, arg: 7 start
+, arg: 11 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2361, arg: 0 start
+Thread tid: 2362, arg: 1 start
+Thread tid: 2363, arg: 2 start
+Thread tid: 2364, arg: 3 start
+Thread tid: 2365, arg: 4 start
+ThThread tid: 2367, arg: 6 start
+Thread tid: 2368, arg: 7 start
+Thread tid: 2369, arg: 8 start
+Thread tid: 2370, arg: 9 start
+Thread tid: 2371, arg: 10 start
+Thread tid: 2372, arg: 11 start
+Thread tid: 2373, arg: 12 start
+Thread tid: 2374, arg: 13 start
+Thread tid: 2375, arg: 14 start
+Thread tid: 2376, arg: 15 start
+Thread tid: 2377, arg: 16 start
+Thread tid: 2378, arg: 17 start
+Thread tidread tid: 2366, arg: 5 start
+: 2379, arg: 18 start
+Thread tid: 2380, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2381, arg: 0 start
+Thread tid: 2382, arg: 1 start
+Thread tid: 2383, arg: 2 start
+Thread tid: 2384, arThread tid: 2385, arg: 4 start
+Thread tid: 2386, arg: 5 start
+Thread tid: 2387, arg: 6 start
+Thread tid: 2388, arg: 7 start
+Thread tid: 2389, arg: 8 start
+Thread tid: 2390, arg: 9 start
+Thread tid:Thread tid: 2392, arg: 11 start
+Thread tid: 2393, arg: 12 start
+Thread tid: 2394, arg: 13 start
+Thread tThread tid: 2396, arg: 15 start
+Thread tid: 2397, arg: 16 start
+Thread tid: 2398, arg: 17 start
+Thread tiThread tid: 2400, arg: 19 start
+g: 3 start
+ 2391, arg: 10 start
+id: 2395, arg: 14 start
+d: 2399, arg: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2401, arg: 0 start
+Thread tid: 2402, arg: 1 start
+Thread tid: 2403, arg: 2 start
+Thread tid: 2404, arg: 3 start
+Thread tid: 2405, arg: 4 start
+Thread tid: 2406, arg: 5 start
+Thread tid: 2407, arg: 6 start
+Thread tid: 2408, arg: 7 start
+Thread tid: 2409, arg: 8 start
+Thread tid: 2410, arg: 9 start
+Thread tid: 2411, arg: 10 start
+Thread tid: 2412, arg: 11 start
+Thread tid: 2413, arg: 12 start
+Thread tid: 2414, arg: 13 start
+Thread tid: 2415, arg: Thread tid: 2416, arg: 15 start
+Thread tid: 2417, arg: 16 start
+Thread tid: 2418, arg: 17 start
+ThrThread tid: 2420, arg: 19 start
+14 start
+ead tid: 2419, arg: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2421, arg: 0 start
+Thread tid: 2422, arg: 1 start
+Thread tid: 2423, arg: 2 start
+Thread tid: 2424, arg: 3 start
+Thread tid: 2425, arg: 4 start
+Thread tid: 2426, argThread tid: 2427, arg: 6 start
+Thread tid: 2428, arg: 7 start
+Thread tid: 2429, arg: 8 stThread tid: 2430, arg: 9 start
+Thread tid: 2431, arg: 10 start
+Thread tid: 2432, arg: 11 start
+Thread tidThread tid: 2434, arg: 13 start
+Thread tid: 2435, arg: 14 start
+Thread tid: 2436, arg: 15 start
+ThreadThread tid: 2438, arg: 17 start
+Thread tid: 2439, arg: 18 start
+Thread tid: 2440, arg: 19 start
+: 5 start
+art
+: 2433, arg: 12 start
+ tid: 2437, arg: 16 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2441, arg: 0 start
+Thread tid: 2442, arg: 1 start
+Thread tid: 2443, arg: 2 start
+Thread tid: 2444, arg: 3 start
+Thread tid:Thread tid: 2446, arg: 5 start
+Thread tid: 2447, arg: 6 start
+Thread tid: 2448, arg: 7 start
+Thread tid: 2449Thread tid: 2450, arg: 9 start
+Thread tid: 2451, arg: 10 start
+Thread tid: 2452, arg: 11 start
+Thread tid: 2453,  2445, arg: 4 start
+, arg: 8 start
+arg: 12 start
+Thread tid: 2454, arg: 13 stThread tid: 2455, arg: 14 start
+Thread tid: 2456, arg: 15 start
+Thread tid: 2457, arg: 16 start
+Thread tid: 24Thread tid: 2459, arg: 18 start
+Thread tid: 2460, arg: 19 start
+art
+58, arg: 17 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2461, arg: 0 start
+Thread tid: 2462, arg: 1 start
+Thread tid: 2463, arg: 2 start
+Thread tid: 2464, arg: 3 start
+ThreadThread tid: 2466, arg: 5 start
+Thread tid: 2467, arg: 6 start
+Thread tid: 2468, arg: 7 start
+Thread tid: Thread tid: 2470, arg: 9 start
+Thread tid: 2471, arg: 10 start
+Thread tid: 2472, arg: 11 start
+Thread tid: 247Thread tid: 2474, arg: 13 start
+Thread tid: 2475, arg: 14 start
+Thread tid: 2476, arg: 15 start
+Thread tid: 2477, arg: 16 start
+Thread tid: 2478, arg: 17 start
+Thread tid: 2479, arg: 18 start
+Thread tid: 2480, arg: 19 start
+ tid: 2465, arg: 4 start
+2469, arg: 8 start
+3, arg: 12 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2481, arg: 0 start
+Thread tid: 2482, arg: 1 start
+Thread tid: 2483, arg: 2 start
+Thread tid: 2484, arg: 3 start
+Thread tid: 2485, arg: 4 start
+Thread tid: 2486, arg: 5 start
+Thread tid: 2487, arg: 6 start
+Thread tid: 2488, arg: 7 start
+Thread tid: 2489, arg: 8 start
+Thread tidThread tid: 2491, arg: 10 start
+Thread tid: 2492, arg: 11 start
+Thread tid: 2493, arg: 12 start
+Thread tThread tid: 2495, arg: 14 start
+Thread tid: 2496, arg: 15 start
+Thread tid: 2497, arg: 16 start
+Thread: 2490, arg: 9 start
+id: 2494, arg: 13 start
+ tid: 2498, arg: 17 start
+Thread tid: 2499, arg: 18 start
+Thread tid: 2500, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2501, arg: 0 start
+Thread tid: 2502, arg: 1 start
+Thread tid: 2503, arg: 2 start
+Thread tid: 2504, arg: 3 start
+Thread tid: 2505, arg: 4 start
+ThreaThread tid: 2507, arg: 6 start
+Thread tid: 2508, arg: 7 start
+Thread tid: 2509, arg: 8 start
+Thread tid:Thread tid: 2511, arg: 10 start
+Thread tid: 2512, arg: 11 start
+Thread tid: 2513, arg: 12 start
+Thread tid: 2514, arg: 13 start
+Thread tid: 2515, arg: 14 start
+Thread tid: 2516, arg: 15 start
+Thread tid: 2Thread tid: 2518, arg: 17 start
+Thread tid: 2519, arg: 18 start
+Thread tid: 2520, arg: 19 start
+d ti 2510, arg: 9 start
+517, arg: 16 start
+d: 2506, arg: 5 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2521, arg: 0 start
+Thread tid: 252Thread tid: 2523, arg: 2 start
+Thread tid: 2524, arg: 3 start
+Thread tid: 2525, arg: 4 start
+Thread tid: 2526, arg: 5 start
+Thread tid: 2527, arg: 6 start
+Thread tid: 2528, arg: 7 start
+ThreadThread tid: 2530, arg: 9 start
+Thread tid: 2531, arg: 10 start
+Thread tid: 2532, arg: 11 start
+Thread tThread tid: 2534, arg: 13 start
+Thread tid: 2535, arg: 14 start
+Thread tid: 2536, arg: 15 start
+Thread tid:Thread tid: 2538, arg: 17 start
+Thread tid: 2539, arg: 18 start
+Thread tid: 2540, arg: 19 start
+2, arg: 1  tid: 2529, arg: 8 start
+id: 2533, arg: 12 start
+ 2537, arg: 16 start
+start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2541, arg: 0 start
+Thread tid: 2542, arg: 1 stThread tid: 2543, arg: 2 start
+Thread tid: 2544, arg: 3 start
+Thread tid: 2545, arg: 4 start
+Thread tid: 2546, arg: 5 start
+Thread tid: 2547, arg: 6 start
+Thread tid: 2548, arg: 7 start
+Thread tidart
+: 2549, arg: 8 start
+Thread tid: 2550, arg: 9 start
+Thread tid: 2551, arg: 10 start
+Thread tid: 2552, arg: 11 start
+Thread tid: 2553, arg: 12 start
+Thread tid: 2554, arg: 13 start
+Thread tid: 2555, arg: 14 start
+Thread tid: 2556, arg: 15 start
+Thread tid: 2557, arg: 16 start
+Thread tidThread tid: 2559, arg: 18 start
+Thread tid: 2560, arg: 19 start
+: 2558, arg: 17 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2561, arg: 0 start
+Thread tid: 2562, arg: 1 start
+Thread tid: 2563, arg: 2 start
+Thread tid: 2564, arg: 3 start
+Thread tid: Thread tid: 2566, arg: 5 start
+Thread tid: 2567, arg: 6 start
+Thread tid: 2568, arg: 7 start
+Thread tid: 2569, arThread tid: 2570, arg: 9 start
+Thread tid: 2571, arg: 10 start
+Thread tid: 2572, arg: 11 start
+Thread tid: 2573,Thread tid: 2574, arg: 13 start
+Thread tid: 2575, arg: 14 start
+Thread tid: 2576, arg: 15 start
+Thread tid: 2577,Thread tid: 2578, arg: 17 start
+Thread tid: 2579, arg: 18 start
+Thread tid: 2580, arg: 19 start
+2565, arg: 4 start
+g: 8 start
+ arg: 12 start
+ arg: 16 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2581, arg: 0 start
+Thread tid: 2582, arg: 1 start
+ThThread tid: 2584, arg: 3 start
+Thread tid: 2585, arg: 4 start
+Thread tid: 2586, arg: 5 start
+Thread tid: 25Thread tid: 2588, arg: 7 start
+Thread tid: 2589, arg: 8 start
+Thread tid: 2590, arg: 9 start
+Thread tid: 25Thread tid: 2592, arg: 11 start
+Thread tid: 2593, arg: 12 start
+Thread tid: 2594, arg: 13 start
+Thread tid: 2595, arg: 14 start
+Thread tid: 2596, arg: 15 start
+Thread tid: 2597, arg: 16 start
+Thread tid: 2598, arg:Thread tid: 2599, arg: 18 start
+Thread tid: 2600, arg: 19 start
+read tid: 2583, arg: 2 start
+87, arg: 691, arg: 10 start
+ 17 start
+ start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+ThreaThread tid: 2602, arg: 1 start
+Thread tid: 2603, arg: 2 start
+Thread tid: 2604, arg: 3 starThread tid: 2605, arg: 4 start
+Thread tid: 2606, arg: 5 start
+Thread tid: 2607, arg: 6 start
+Thread tid: 2608, argThread tid: 2609, arg: 8 start
+Thread tid: 2610, arg: 9 start
+Thread tid: 2611, arg: 10 start
+Thread tid: 2612, arg:d tid: 2601, arg: 0 start
+t
+: 7 start
+ 11 start
+Thread tid: 2613, arg: 1Thread tid: 2614, arg: 13 start
+Thread tid: 2615, arg: 14 start
+Thread tid: 2616, arg: 15 start
+Thread tid: Thread tid: 2618, arg: 17 start
+Thread tid: 2619, arg: 18 start
+Thread tid: 2620, arg: 19 start
+22617, arg: 16 start
+ start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2621, arg: 0 start
+Thread tid: 2622, arg: 1 start
+Thread tid: 2623, arg: 2 start
+Thread tid: 2624, arg: 3 start
+Thread tid: 2625, arg: 4 start
+Thread tid: 2626, arg: 5 start
+Thread tid: 2627, argThread tid: 2628, arg: 7 start
+Thread tid: 2629, arg: 8 start
+Thread tid: 2630, arg: 9 start
+Thread tid: 2631, arg: 10 start
+Thread tid: 2632, arg: 11 start
+Thread tid: 2633, arg: 12 start
+Thread tid: 2634, arg: 13 start
+Thread tid: 2635, arg: 14 start
+Thread tid: 2636, arg: 15 start
+Thread tid: 2637, arg: 16 start
+Thread tid: 2638, arg: 17 start
+Thread tid: 2639, arg: 18 start
+Thread tid: 2640, arg: 19 start
+: 6 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2641, arg: 0 start
+Thread tid: 2642, arg: 1 start
+Thread tid: 2643, arg: 2 start
+Thread tid: 2644, arg: 3 start
+Thread tid: 2645, arg: 4 start
+Thread tid: 2647, arg: 6 start
+Thread tid: 2648, arg: 7 start
+Thread tid: 2649, arg: 8 start
+ThreadThread tid: 2646, arg: 5 start
+ tid: 2650, arg: 9 start
+Thread tid: 2651, arg: 10 start
+Thread tid: 2652, arg: 11 start
+Thread tid: 2653, arg: 12 start
+Thread tid: 2654, arg: 13 start
+Thread tid: 2655, arg: 14 start
+Thread tid: 2656, arg: 15 start
+Thread tid: 2657, arg: 16 start
+Thread tid: 2658, arg: 17 start
+Thread tid: 2659, arg: 18 start
+Thread tid: 2660, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2661, arg: 0 start
+Thread tid: Thread tid: 2663, arg: 2 start
+Thread tid: 2664, arg: 3 start
+Thread tid: 2665, arg: 4 start
+Thread tid: 2666, arg: 5 start
+Thread tid: 2667, arg: 6 start
+Thread tid: 2668Thread tid: 2669, arg: 8 start
+Thread tid: 2670, arg: 9 start
+Thread tid: 2671, arg: 10 start
+ThreaThread tid: 2673, arg: 12 start
+Thread tid: 2674, arg: 13 start
+Thread tid: 2675, arg: 14 start
+Thread tid:Thread tid: 2677, arg: 16 start
+Thread tid: 2678, arg: 17 start
+Thread tid: 2679, arg: 18 start
+Thread tid: 2680, arg: 19 start
+2662, arg: 1 start
+, arg: 7 start
+d tid: 2672, arg: 11 start
+ 2676, arg: 15 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2681, arg: 0 start
+Thread tid: 2683, arg: 2 start
+Thread tid: 2684, arg: 3 start
+Thread tid: 2685, arg: 4 start
+Thread tid:Thread tid: 2687, arg: 6 start
+Thread tid: 2688, arg: 7 start
+Thread tid: 2689, arg: 8 start
+Thread tid: Thread tid: 2691, arg: 10 start
+Thread tid: 2692, arg: 11 start
+Thread tid: 2693, arg: 12 start
+Thread tidThread tid: 2695, arg: 14 start
+Thread tid: 2696, arg: 15 start
+Thread tid: 2697, arg: 16 start
+Thread tid: 2698, arg: 17 start
+Thread tid: 2699, arg: 18 start
+Thread tid: 2700, arg: 19 start
+Thread tid: 2682, arg: 1 start
+ 2686, arg: 5 start
+2690, arg: 9 start
+: 2694, arg: 13 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2701, arg: 0 start
+ThThread tid: 2703, arg: 2 start
+Thread tid: 2704, arg: 3 start
+Thread tid: 2705, arg: 4 start
+ThreThread tid: 2707, arg: 6 start
+Thread tid: 2708, arg: 7 start
+Thread tid: 2709, arg: 8 start
+TThread tid: 2711, arg: 10 start
+Thread tid: 2712, arg: 11 start
+Thread tid: 2713, arg: 12 starThread tid: 2714, arg: 13 start
+Thread tid: 2715, arg: 14 start
+Thread tid: 2716, arg: 15 start
+ad tid: 2706, arg: 5 start
+hread tid: 2710, arg: 9 start
+t
+Thread tid: 2717, arg: 16 start
+Thread tid: 2718, arg: 17 start
+Thread tid: 2719, arg: 18 start
+Thread tid: 2720, aread tid: 2702, arg: 1 start
+rg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2721, arg: 0 start
+Thread tid: 2722, arg: 1 start
+Thread tid: 2723, arg: 2 start
+Thread tid: 2724, arg: 3 start
+Thread tid: 2725, arg: 4 staThread tid: 2726, arg: 5 start
+Thread tid: 2727, arg: 6 start
+Thread tid: 2728, arg: 7 start
+Thread tid: 2729, arg: 8 start
+Thread tid: 2730, arg: 9 start
+Thread tid: 2731, arg: 10 start
+Thread tid: 2732, Thread tid: 2733, arg: 12 start
+Thread tid: 2734, arg: 13 start
+Thread tid: 2735, arg: 14 start
+Thread tid: 2736, arg: 15 start
+Thread tid: 2737, arg: 16 start
+Thread tid: 2738, arg: 17 start
+Thread tid:rt
+arg: 11 start
+ 2739, arg: 18 start
+Thread tid: 2740, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2741, arg: 0 start
+Thread tid: 2742, arg: 1 start
+Thread tid: 2743, arg: 2 start
+Thread Thread tid: 2745, arg: 4 start
+Thread tid: 2746, arg: 5 start
+Thread tid: 2747, arg: 6 start
+Thread tid: 2Thread tid: 2749, arg: 8 start
+Thread tid: 2750, arg: 9 start
+Thread tid: 2751, arg: 10 start
+ThreaThread tid: 2753, arg: 12 start
+Thread tid: 2754, arg: 13 start
+Thread tid: 2755, arg: 14 start
+Thread tid: 2756, arg: 15 start
+Thread tid: 2757, arg: 16 start
+Thread tid: 2758, arg: 17 start
+ThreThread tid: 2760, arg: 19 start
+tid: 2744, arg: 3 start
+748, arg: 7 start
+d tid: 2752, arg: 11 start
+ad tid: 2759, arg: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2761, arg: 0 start
+Thread tid: 2762, arg: 1 start
+Thread tid: 2763, arg: 2 start
+Thread tid: 2764, arg: 3 start
+pid 142 tid 2764 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x1e000--kill proc
+Thread tid: 2765, arg: 4 start
+pid 142 tid 2765 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x1e000--kill proc
+pid 142 tid 2766 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x20004--kill proc
+pid 142 tid 2768 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x24004--kill proc
+pid 142 tid 2769 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x26004--kill proc
+pid 142 tid 2770 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x28004--kill proc
+pid 142 tid 2771 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2a004--kill proc
+pid 142 tid 2772 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2c004--kill proc
+pid 142 tid 2773 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x2e004--kill proc
+pid 142 tid 2775 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x32004--kill proc
+pid 142 tid 2776 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x34004--kill proc
+pid 142 tid 2777 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x36004--kill proc
+pid 142 tid 2778 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x38004--kill proc
+pid 142 tid 2779 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x3a004--kill proc
+Thread tid: 278pid 142 tid 2767 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x22004--kill proc
+pid 142 tid 2774 thread_test: trap 14 err 5 on cpu 0 eip 0xa9 addr 0x30004--kill proc
+0, arg: 19 start
+pid 142 tid 2780 thread_test: trap 14 err 7 on cpu 0 eip 0xf6 addr 0x1e000--kill proc
+pid 142 tid 2761 thread_test: trap 14 err 7 on cpu 0 eip 0x140 addr 0x1e000--kill proc
+Thread 3 returned 0, but expected 3
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2781, arg: 0 start
+Thread tid: 2782, arg: 1 start
+Thread tid: 2783, arg: 2 start
+Thread tid: 2784, arg: 3 start
+Thread tid: 2785, arg: 4 start
+Thread tid: 2786, arg: 5 start
+Thread tid: 2787, arThread tid: 2788, arg: 7 start
+Thread tid: 2789, arg: 8 start
+Thread tid: 2790, arg: 9 start
+Thread tid: 2791, arg: 10 start
+Thread tid: 2792, arg: 11 start
+Thread tid: 2793, arg: 12 start
+Thread tid: 2794, arg: 13 start
+Thread tid: 2795, arg: 14 start
+Thread tid: 2796, arg: 15 start
+Thread tid:Thread tid: 2798, arg: 17 start
+Thread tid: 2799, arg: 18 start
+Thread tid: 2800, arg: 19 start
+g: 6 st 2797, arg: 16 start
+art
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2801, arg: 0 start
+ThrThread tid: 2803, arg: 2 start
+Thread tid: 2804, arg: 3 start
+Thread tid: 2805, arg: 4 start
+Thread Thread tid: 2807, arg: 6 start
+Thread tid: 2808, arg: 7 start
+Thread tid: 2809, arg: 8 stThread tid: 2810, arg: 9 start
+Thread tid: 2811, arg: 10 start
+Thread tid: 2812, arg: 11 start
+Thread tid: 2813, arg: 12 start
+Thread tid: 2814, arg: 13 start
+Thread tid: 2815, arThread tid: 2816, arg: 15 start
+Thread tid: 2817, arg: 16 start
+Thread tid: 2818, arg: 17 start
+Thread tid: 2820, arg: 19 start
+ead tid: 2802, arg: 1 start
+tid: 2806, arg: 5 start
+art
+g: 14 start
+Thread tid: 2819, arg: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2821, arg: 0 start
+Thread tid: 2822, arg: 1 start
+Thread tid: 2823, arg: 2 start
+Thread tid: 2824, arg: 3 start
+Thread tid: 2825, arg: 4 start
+Thread tid: 2826, arg: 5 start
+Thread tid: 2827,Thread tid: 2828, arg: 7 start
+Thread tid: 2829, arg: 8 start
+Thread tid: 2830, arg: 9 start
+Thread tid: 2831, arg: 10 start
+Thread tid: 2832, arg: 11 start
+Thread tid: 2833, arg: 12 start
+Thread tid: 2834,Thread tid: 2835, arg: 14 start
+Thread tid: 2836, arg: 15 start
+Thread tid: 2837, arg: 16 start
+Thread tid: 2838, arg: 17 start
+Thread tid: 2839, arg: 18 start
+Thread tid: 2840, arg: 19 start
+ arg: 6 st arg: 13 start
+art
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2841, arg: 0 start
+Thread tid: 2842, arg: 1 start
+Thread tid: 2843, arg: 2 startThread tid: 2844, arg: 3 start
+Thread tid: 2845, arg: 4 start
+Thread tid: 2846, arg: 5 start
+Thread tid: 2847, arg: 6 start
+Thread tid: 2848, arg: 7 start
+Thread tid: 2849, arg: 8 start
+Thread tid: 2Thread tid: 2851, arg: 10 start
+Thread tid: 2852, arg: 11 start
+Thread tid: 2853, arg: 12 start
+Thread tid: 2854, arg: 13 start
+Thread tid: 2855, arg: 14 start
+Thread tid: 2856, arg: 15 start
+Thread tid: 2857, arg: 16 start
+Thread tid: 2858, arg: 17 start
+Thread tid: 2859, arg: 18 start
+T
+850, arg: 9 start
+hread tid: 2860, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2861, arg: 0 start
+Thread tid: 2862, arg: 1 start
+Thread tid: 2863, arg: 2 start
+Thread tid: 2864, arg: 3 start
+Thread tid: 2865, arg: 4 start
+Thread tid: 2866, arg: 5 start
+Thread tid: 2867, arg: 6 start
+Thread tid: 286Thread tid: 2869, arg: 8 start
+Thread tid: 2870, arg: 9 start
+Thread tid: 2871, arg: 10 start
+Thread tid: 2872, arg: 11 start
+Thread tid: 2873, arg: 12 start
+Thread tid: 2874, arg: 13 start
+Thread tid: 2875, arg: 14 st8, arg: 7 start
+art
+Thread tid: 2876, arg: 15 start
+Thread tid: 2877, arg: 16Thread tid: 2878, arg: 17 start
+Thread tid: 2879, arg: 18 start
+Thread tid: 2880, arg: 19 start
+ start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2881, arg: 0 start
+Thread tid: 2882, arg: Thread tid: 2883, arg: 2 start
+Thread tid: 2884, arg: 3 start
+Thread tid: 2885, arg:1 4 start
+Thread tid: 2886, arg: 5 start
+Thread tid: 2887, arg: 6 start
+Thread tid: 2888, arg: 7 start
+Thread tid: 2889, arg: 8 start
+Thread tid: 2890, arg: 9 start
+Thread tid: 2891, arg: 10 start
+Thread tid: 2892, arg: 11 start
+Thread tid: 2893, arg: 12 start
+Thread tid: 2894, arg: 13 start
+Thread tid: 2895, arg: 14 start
+Thread tid: 2896, arg: 15 start
+Thread tid: 2897, arThread tid: 2898, arg: 17 start
+Thread tid: 2899, arg: 18 start
+Thread tid: 2900, arg: 19 start
+ start
+g: 16 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2901, arg: 0 starThread tid: 2902, arg: 1 start
+Thread tid: 2903, arg: 2 start
+Thread tid: 2904, arg: 3 start
+Thread tid: Thread tid: 2906, arg: 5 start
+Thread tid: 2907, arg: 6 start
+Thread tid: 2908, arg: 7 start
+Thread tid: 2909, arg: 8 start
+Thread tid: 2910, arg: 9 start
+Thread tid: 2911, arg: 10 start
+Thread tid: 2Thread tid: 2913, arg: 12 start
+Thread tid: 2914, arg: 13 start
+Thread tid: 2915, arg: 14 start
+Thread tid: 29Thread tid: 2917, arg: 16 start
+Thread tid: 2918, arg: 17 start
+Thread tid: 2919, arg: 18 start
+Thread912, arg: 11 start
+16, arg: 15 start
+ tid: 2920, arg: 19 start
+t
+2905, arg: 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2921, aThread tid: 2922, arg: 1 start
+Thread tid: 2923, arg: 2 start
+Thread tid: 2924, arg: 3 start
+Thread tid: 2Thread tid: 2926, arg: 5 start
+Thread tid: 2927, arg: 6 start
+Thread tid: 2928, arg: 7 start
+Thread tid: 2929,Thread tid: 2930, arg: 9 start
+Thread tid: 2931, arg: 10 start
+Thread tid: 2932, arg: 11 start
+Thread tid: 2933, aThread tid: 2934, arg: 13 start
+Thread tid: 2935, arg: 14 start
+Thread tid: 2936, arg: 15 start
+Thread tid: 2937, arg: 16 start
+Thread tid: 2938, arg: 17 start
+Thread tid: 2939, arg: 18 start
+Thread tid:rg: 0 start
+925, arg: 4 start
+ arg: 8 start
+rg: 12 start
+ 2940, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2941, arg: 0 start
+Thread tid: 2942, arg: 1 start
+Thread tid: 2943, arg: 2 start
+Thread tid: 2944, arg: 3 start
+Thread tid: 2945, arg: 4 start
+Thread tid: 2946, arg: 5 start
+Thread tid: 2947, arg: 6 startThread tid: 2948, arg: 7 start
+Thread tid: 2949, arg: 8 start
+Thread tid: 2950, arg: 9 start
+Thread tid: 2951, arg: 10 start
+Thread tid: 2952, arg: 11 start
+Thread tid: 2953, arg: 12 start
+Thre
+ad tid: 2954, arg: 13 start
+Thread tid: 2955, arg: 14 start
+Thread tid: 2956, arg: 15 start
+Thread tid: 2957, arg: 16 start
+Thread tid: 2958, arg: 17 start
+Thread tid: 2959, arg: 18 start
+Thread tid: 2960, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2961, arg: 0 startThread tid: 2962, arg: 1 start
+Thread tid: 2963, arg: 2 start
+Thread tid: 2964, arg: 3 start
+Thread tid: 2965, arg: 4 start
+Thread tid: 2966, arg: 5 start
+Thread tid: 2967, arg: 6 start
+Thread tid: 2968, arg: 7 start
+Thread tid: 2969, arg: 8 start
+Thread tid: 2970, arg: 9 start
+Thread tid: 29Thread tid: 2972, arg: 11 start
+Thread tid: 2973, arg: 12 start
+Thread tid: 2974, arg: 13 start
+Thread tid: 2975, ar71, arg: 10 start
+g: 14 start
+Thread tid: 2976, arg: 15 start
+Thread tid: 2977, arg: 16 start
+Thread tid: 2978, arg: 17 start
+Thread tid: 2979, arg: 18 start
+Thread tid: 2980, arg: 19 start
+
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 2981, arg: 0 start
+Thread tid: 298Thread tid: 2983, arg: 2 start
+Thread tid: 2984, arg: 3 start
+Thread tid: 2985, arg: 4 stThread tid: 2986, arg: 5 start
+Thread tid: 2987, arg: 6 start
+Thread tid: 2988, arg: 7 start
+Thread tid: 2Thread tid: 2990, arg: 9 start
+Thread tid: 2991, arg: 10 start
+Thread tid: 2992, arg: 11 start
+Thread tidThread tid: 2994, arg: 13 start
+Thread tid: 2995, arg: 14 start
+Thread tid: 2996, arg: 15 start
+2, arg: 1 start
+art
+989, arg: 8 start
+: 2993, arg: 12 start
+Thread tid: 2997, arg:Thread tid: 2998, arg: 17 start
+Thread tid: 2999, arg: 18 start
+Thread tid: 3000, arg: 19 start
+ 16 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+ThreadThread tid: 3002, arg: 1 start
+Thread tid: 3003, arg: 2 start
+Thread tid: 3004, arg: 3 start
+Thread tid: 3005, arg: 4 start
+Thread tid: 3006, arg: 5 start
+Thread tid: 3007, arg: 6 start
+Thread tid: 3008, arg: 7 start
+Thread tid: 3009, arg: 8 start
+Thread tid: 3010, arg: 9 start
+Thread tid: 30Thread tid: 3012, arg: 11 start
+Thread tid: 3013, arg: 12 start
+Thread tid: 3014, arg: 13 start
+ThreThread tid: 3016, arg: 15 start
+Thread tid: 3017, arg: 16 start
+Thread tid: 3018, arg: 17 start
+Thread tid: Thread tid: 3020, arg: 19 start
+ tid: 3001, arg: 0 start
+11, arg: 10 start
+a3019, arg: 18 start
+d tid: 3015, arg: 14 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 3021, arg: 0 start
+Thread tid: 3022, arg: 1 startThread tid: 3023, arg: 2 start
+Thread tid: 3024, arg: 3 start
+Thread tid: 3025, arg: 4 start
+Thread tidThread tid: 3027, arg: 6 start
+Thread tid: 3028, arg: 7 start
+Thread tid: 3029, arg: 8 start
+Thread tid: 3030, arg: 9 start
+Thread tid: 3031, arg: 10 start
+Thread tid: 3032, arg: 11 start
+Thread tid: 3033,Thread tid: 3034, arg: 13 start
+Thread tid: 3035, arg: 14 start
+Thread tid: 3036, arg: 15 start
+Thread ti
+: 3026, arg: 5 start
+ arg: 12 start
+d: 3037, arg: 16 start
+Thread tid: 3038, arg: 17 start
+Thread tid: 3039, arg: 18 start
+Thread tid: 3040, arg: 19 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: Thread tid: 3042, arg: 1 start
+Thread tid: 3043, arg: 2 start
+Thread tid: 3044, arg: 3 start
+Thread tid: 3045, arg: 4 start
+Thread tid: 3046, arg: 5 start
+Thread tid: 3047, arg: 6 start
+Thread tid: 3048, arg: 7 start
+Thread tid: 3049, arg: 8 start
+Thread tid: 3050, arg: 9 start
+ThreThread tid: 3052, arg: 11 start
+Thread tid: 3053, arg: 12 start
+Thread tid: 3054, arg: 13 start
+Thread tid: 3055, arg: 14 start
+Thread tid: 3056, arg: 15 start
+Thread tid: 3057, arg: 16 start
+ThreadThread tid: 3059, arg: 18 start
+Thread tid: 3060, arg: 19 start
+3041, arg: 0 start
+ad tid: 3051, arg: 10 start
+ tid: 3058, arg: 17 start
+Thread tid: 3052, arg: 11 found 12, j: 0
+Test failed!
+Thread tid: 3053, arg: 12 found 11, j: 13242
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 3061, arg: 0 start
+Thread tid: 3062, arg: 1 start
+Thread tid: 3063, arg: 2 start
+Thread tid: 3064, arg: 3 start
+Thread tid: 3065Thread tid: 3066, arg: 5 start
+Thread tid: 3067, arg: 6 start
+Thread tid: 3068, arg: 7 start
+Thread tid: 3069, arg: 8 start
+Thread tid: 3070, arg: 9 start
+Thread tid: 3071, arg: 10 start
+Thread tid: 3072, arg: 11 start
+Thread tid: 3073, arg: 12 start
+Thread tid: 3074, arg: 13 start
+Thread tid: 3075, arg: 14 start
+Thread tid: 3076, arg: 15 start
+Thread tid: 3077, arg: 16 start
+ThThread tid: 3079, arg: 18 start
+Thread tid: 3080, arg: 19 start
+, arg: 4 start
+read tid: 3078, arg: 17 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 3081, arThread tid: 3082, arg: 1 start
+Thread tid: 3083, arg: 2 start
+Thread tid: 3084, arg: 3 start
+Thread tid: 3085, aThread tid: 3086, arg: 5 start
+Thread tid: 3087, arg: 6 start
+Thread tid: 3088, arg: 7 start
+Thread tid: 30g: 0 start
+rg: 4 start
+89, arg: 8 start
+Thread tid: 3090, arg: 9 start
+ThreaThread tid: 3092, arg: 11 start
+Thread tid: 3093, arg: 12 start
+Thread tid: 3094, arg: 13 start
+Thread tid: Thread tid: 3096, arg: 15 start
+Thread tid: 3097, arg: 16 start
+Thread tid: 3098, arg: 17 start
+ThreThread tid: 3100, arg: 19 start
+d tid: 3091, arg: 10 start
+3095, arg: 14 start
+ad tid: 3099, arg: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 3101, arg: 0 start
+Thread tid: 3102, arg: 1 start
+Thread tid: 3103, arThread tid: 3104, arg: 3 start
+Thread tid: 3105, arg: 4 start
+Thread tid: 3106, arg: 5 start
+Thread tid: 3107, arg: 6 start
+Thread tid: 3108, arg: 7 start
+Thread tid: 3109, arg: 8 start
+Thread tid: 3110, arg: 9 start
+Thread tid: 3111, arg: 10 start
+Thread tid: 3112, arg: 11 start
+Thrg: 2 start
+ead tid: 3113, arg: 12 start
+Thread tid: 3114, arg: 13 start
+Thread tid: 3115, arg: 14 start
+Thread tid: 3116, arg: 15 start
+Thread tid: 3117, arg: 16 start
+ThreThread tid: 3119, arg: 18 start
+Thread tid: 3120, arg: 19 start
+ad tid: 3118, arg: 17 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 3121, arg: 0 start
+Thread tid: 3122, arg: 1 start
+Thread tid: 3123, arg: 2 start
+Thread tid: 3124, arg: 3 start
+Thread tid: 3125, arg: 4 start
+Thread Thread tid: 3127, arg: 6 start
+Thread tid: 3128, arg: 7 start
+Thread tid: 3129, arg: 8 start
+Thread tid: 313Thread tid: 3131, arg: 10 start
+Thread tid: 3132, arg: 11 start
+Thread tid: 3133, arg: 12 start
+Thread tid: 3134, arg: 13 start
+Thread tid: 3135, arg: 14 start
+Thread tid: 3136, arg: 15 start
+ThreThread tid: 3138, arg: 17 start
+Thread tid: 3139, arg: 18 start
+Thread tid: 3140, arg: 19 start
+tid: 0, arg: 9 start
+ad tid: 3137, arg: 16 start
+3126, arg: 5 start
+Thread tid: 3136, arg: 15 found 16, j: 0
+Test failed!
+Thread tid: 3137, arg: 16 found 15, j: 15702
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: Thread tid: 3142, arg: 1 start
+Thread tid: 3143, arg: 2 start
+Thread tid: 3144, arg: 3 start
+Thread tid: 3146, arg: 5 start
+Thread tid: 3147, arg: 6 start
+Thread tid: 3148, arg: 7 start
+Thread tid: 3149, arg: 8 start
+Thread tid: 3150, arg: 9 start
+Thread tid: 3151, arg: 10 start
+3141, arg: 0 start
+Thread tid: 3145, arg: 4 start
+Thread tid: 3152, arg: 11 start
+Thread tid: 3153, arg: 12 start
+Thread tid: 3154, arg: 13 start
+Thread tid: 3155, arg: 14 start
+Thread tid: 3156, arg: 15 start
+Thread tid: 3157, arg: 16Thread tid: 3158, arg: 17 start
+Thread tid: 3159, arg: 18 start
+Thread tid: 3160, arg: 19 start start
+
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 3161, arg: 0 start
+Thread tid: 3162, arg: 1 start
+ThThread tid: 3164, arg: 3 start
+Thread tid: 3165, arg: 4 start
+Thread tid: 3166, arg: 5 start
+Thread tid: 3168, arg: 7 start
+Thread tid: 3169, arg: 8 start
+Thread tid: 3170, arg: 9 start
+ThreThread tid: 3172, arg: 11 start
+Thread tid: 3173, arg: 12 start
+Thread tid: 3174, arg: 13 start
+Thread tThread tid: 3176, arg: 15 start
+Thread tid: 3177, arg: 16 start
+Thread tid: 3178, arg: 17 start
+ThreaThread tid: 3180, arg: 19 start
+read tid: 3163, arg: 2 start
+Thread tid: 3167, arg: 6 start
+ad tid: 3171, arg: 10 start
+id: 3175, arg: 14 start
+d tid: 3179, arg: 18 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread tid: 3181, Thread tid: 3182, arg: 1 start
+Thread tid: 3183, arg: 2 start
+Thread tid: 3184, arg: 3 start
+ThreThread tid: 3186, arg: 5 start
+Thread tid: 3187, arg: 6 start
+Thread tid: 3188, arg: 7 start
+ThreThread tid: 3190, arg: 9 start
+Thread tid: 3191, arg: 10 start
+Thread tid: 3192, arg: 11 start
+Threaad tid: 3185, arg: 4 start
+ad tid: 3189, arg: 8 start
+d tid: 3193, arg: 12 start
+Thread tid: 3194Thread tid: 3195, arg: 14 start
+Thread tid: 3196, arg: 15 start
+Thread tid: 3197, arg: 16 start
+Thread tiThread tid: 3199, arg: 18 start
+Thread tid: 3200, arg: 19 start
+arg: 0 start
+, arg: 13 start
+d: 3198, arg: 17 start

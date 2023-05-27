@@ -1,0 +1,634 @@
+# 해결! tid 1이 종료된 후, 나머지는 while (ptr != 0) 이 라인에 계속 남아있음 
+# 무한루프인 나머지를 기다리며 join 대기하는 상황. 그래서 안끝남 데드락 아님 ㅎㅎ
+$ thread_test
+Test 3: Sbrk test
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Thread 0 start
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 9, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 9, tid: 17 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 9, tid: 18 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 9, tid: 19 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 9, tid: 20 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 9, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 9, tid: 17 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 9, tid: 18 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 9, tid: 19 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 9, tid: 20 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 9, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 9, tid: 17 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 9, tid: 18 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 9, tid: 19 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 9, tid: 20 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 9, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 9, tid: 17 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 9, tid: 18 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 9, tid: 19 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 9, tid: 20 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+----------------------------------------------------------------------
+# 무한루프 위치 확인 1번 쓰레드 외 나머지 쓰레드 whie (ptr != 0) 에서 무한루프
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 starThread 3 start
+Thread 4 start
+t
+pid 56 tid 262 thread_test: trap 14 err 4 on cpu 0 eip 0x118 addr 0x3d84b4--kill pcpid 56 tid 263 thread_test: trap 14 err 4 on cpu 0 eip 0x118 addr 0x3da4b4--kill pcThread 1 returned 0, but expected 1
+pid 56 tid 0 thread_test: trap 14 err 4 on cpu 0 eip 0x118 addr 0x3d4478--kill procTest 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 staThread 4 start
+rt
+pid 57 tid 267 thread_test: trap 14 err 4 on cpu 0 eip 0x118 addr 0x3d84b4--kill pcpid 57 tid 268 thread_test: trap 13 err 0 on cpu 0 eip 0x122 addr 0x3d84b4--kill pcpid 57 tid 269 thread_test: trap 14 err 4 on cpu 0 eip 0x118 addr 0x3dc4b4--kill pcThread 1 returned 0, but expected 1
+pid 57 tid 270 thread_test: trap 13 err 0 on cpu 0 eip 0x122 addr 0x3dc4b4--kill pcpid 57 tid 0 thread_test: trap 14 err 4 on cpu 0 eip 0x118 addr 0x3d4478--kill procTest 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+# run, runble 상황 체크.
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 run    thread_test
+pid: 58, tid: 273 runble thread_test
+pid: 58, tid: 274 runble thread_test
+pid: 58, tid: 275 runble thread_test
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<
+
+
+>======procdmp start======<
+pid: 1, tid: 0 sleep  init 80104813 80105eb9 8010745d 8010714a
+pid: 2, tid: 0 sleep  sh 80104813 80105eb9 8010745d 8010714a
+pid: 3, tid: 0 sleep  p2_script 80104813 80105eb9 8010745d 8010714a
+pid: 58, tid: 0 sleep  thread_test 80105617 8010710d 80105eb9 8010745d 8010714a
+pid: 58, tid: 272 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 273 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 274 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+pid: 58, tid: 275 sleep  thread_test 801048fc 80106d12 80105eb9 8010745d 8010714a
+
+>======procdmp finish======<

@@ -1,0 +1,5705 @@
+$ p2_script 3 3
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread Thread 4 start
+3 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+TThread 3 start
+Thread 4 start
+hread 2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+TThread 2 start
+Thread 3 start
+Thread 4 start
+hread 1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+ start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+ThreadThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+ 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 starThread 2 start
+Thread 3 start
+Thread 4 start
+t
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 staThread 3 start
+Thread 4 start
+rt
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 startThread 4 start
+
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+ThreThread 2 start
+Thread 3 start
+Thread 4 start
+ad 1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 stThread 3 start
+Thread 4 start
+art
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 starThread 3 start
+Thread 4 start
+t
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+ThreThread 4 start
+ad 3 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+ThreaThread 2 start
+Thread 3 start
+Thread 4 start
+d 1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+ThreaThread 3 start
+Thread 4 start
+d 2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Thread 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Thread 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread Thread 3 start
+Thread 4 start
+2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread Thread 2 start
+Thread 3 start
+Thread 4 start
+1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+ThreaThread 2 start
+Thread 3 start
+Thread 4 start
+d 1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 Thread 2 start
+Thread 3 start
+Thread 4 start
+start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+ThreadThread 3 start
+Thread 4 start
+ 2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+pid 65 tid 307 thread_test: trap 14 err 5 on cpu 0 eip 0xb5 addr 0x18004--kill proc
+pid 65 tid 308 thread_test: trap 14 err 5 on cpu 0 eip 0xb5 addr 0x1a004--kill proc
+pid 65 tid 309 thread_test: trap 14 err 5 on cpu 0 eip 0xb5 addr 0x1c004--kill proc
+Thread 4 start
+pid 65 tid 310 thread_test: trap 14 err 7 on cpu 0 eip 0x10e addr 0x16000--kill proc
+pid 65 tid 306 thread_test: trap 14 err 7 on cpu 0 eip 0x160 addr 0x16000--kill proc
+Thread 1 returned 0, but expected 1
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+ start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 Thread 4 start
+start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+ThThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+read 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 sThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+tart
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+ThreadThread 2 start
+Thread 3 start
+Thread 4 start
+ 1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+ThThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+read 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 sThread 3 start
+Thread 4 start
+tart
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+pid 80 tid 384 thread_test: trap 14 err 5 on cpu 0 eip 0xb5 addr 0x1c004--kill proc
+Thread 4 start
+pid 80 tid 385 thread_test: trap 14 err 7 on cpu 0 eip 0x10e addr 0x1a000--kill proc
+pid 80 tid 381 thread_test: trap 14 err 7 on cpu 0 eip 0x160 addr 0x1a000--kill proc
+Thread 3 returned 0, but expected 3
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 stThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+art
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2Thread 3 start
+Thread 4 start
+ start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+TThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+hread 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+ start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 staThread 3 start
+Thread 4 start
+rt
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 3 start
+Thread 4 start
+Thread 2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread Thread 2 start
+Thread 3 start
+Thread 4 start
+1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+ start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+ThreThread 3 start
+Thread 4 start
+ad 2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+ThThread 4 start
+read 3 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+ThreThread 4 start
+ad 3 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+ThreaThread 2 start
+Thread 3 start
+Thread 4 start
+d 1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+TThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+hread 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+pid 136 tid 664 thread_test: trap 14 err 5 on cpu 0 eip 0xb5 addr 0x1c004--kill proc
+Thread 4 start
+pid 136 tid 665 thread_test: trap 14 err 7 on cpu 0 eip 0x10e addr 0x1a000--kill proc
+pid 136 tid 661 thread_test: trap 14 err 7 on cpu 0 eip 0x160 addr 0x1a000--kill proc
+Thread 3 returned 0, but expected 3
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Thread 3 found 2, j: 0
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 starThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+t
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+TThread 2 start
+Thread 3 start
+Thread 4 start
+hread 1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+ThreThread 2 start
+Thread 3 start
+Thread 4 start
+ad 1 start
+Thread 0 found 1, j: 0
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+TThread 3 start
+Thread 4 start
+hread 2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+ start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+ThreadThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+ 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+ThreadThread 2 start
+Thread 3 start
+Thread 4 start
+ 1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 stThread 2 start
+Thread 3 start
+Thread 4 start
+art
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 staThread 4 start
+rt
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+ThreadThread 4 start
+ 3 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+ThThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+read 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+ThThread 4 start
+read 3 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 sThread 2 start
+Thread 3 start
+Thread 4 start
+tart
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 staThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+rt
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 sThread 3 start
+Thread 4 start
+tart
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+ThreaThread 3 start
+Thread 4 start
+d 2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+ start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+ThreadThread 4 start
+ 3 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread Thread 2 start
+Thread 3 start
+Thread 4 start
+1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 starThread 2 start
+Thread 3 start
+Thread 4 start
+t
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread Thread 3 start
+Thread 4 start
+2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread Thread 2 start
+Thread 3 start
+Thread 4 start
+1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 starThread 4 start
+t
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 startThread 2 start
+Thread 3 start
+Thread 4 start
+
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 starThread 4 start
+t
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1Thread 2 start
+Thread 3 start
+Thread 4 start
+ start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+ThrThread 2 start
+Thread 3 start
+Thread 4 start
+ead 1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+pid 230 tid 1134 thread_test: trap 14 err 7 on cpu 0 eip 0x10e addr 0x1c000--kill proc
+Thread 4 start
+pid 230 tid 1135 thread_test: trap 14 err 7 on cpu 0 eip 0x10e addr 0x1c000--kill proc
+pid 230 tid 1131 thread_test: trap 14 err 7 on cpu 0 eip 0x160 addr 0x1c000--kill proc
+Thread 3 returned 0, but expected 3
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 startThread 2 start
+Thread 3 start
+Thread 4 start
+
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+pid 234 tid 1153 thread_test: trap 14 err 7 on cpu 0 eip 0x10e addr 0x1a000--kill proc
+pid 234 tid 1154 thread_test: trap 14 err 5 on cpu 0 eip 0xb5 addr 0x1c004--kill proc
+Thread 4 start
+pid 234 tid 1155 thread_test: trap 14 err 7 on cpu 0 eip 0x10e addr 0x1a000--kill proc
+pid 234 tid 1151 thread_test: trap 14 err 7 on cpu 0 eip 0x160 addr 0x1a000--kill proc
+Thread 2 returned 0, but expected 2
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 startThread 3 start
+Thread 4 start
+
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+ThreaThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+d 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 Thread 3 start
+Thread 4 start
+start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread Thread 2 start
+Thread 3 start
+Thread 4 start
+1 start
+Thread 1 found 0, j: 0
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+ThrThread 3 start
+Thread 4 start
+ead 2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 staThread 3 start
+Thread 4 start
+rt
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 startThread 2 start
+Thread 3 start
+Thread 4 start
+
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 Thread 3 start
+Thread 4 start
+start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+ThreThread 4 start
+ad 3 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+ThreadThread 4 start
+ 3 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 startThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 startThread 4 start
+
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+ThrThread 3 start
+Thread 4 start
+ead 2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+TThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+hread 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+ThrThread 2 start
+Thread 3 start
+Thread 4 start
+ead 1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+ThreadThread 4 start
+ 3 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Thread 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 starThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+t
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+ThreaThread 2 start
+Thread 3 start
+Thread 4 start
+d 1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 sThread 2 start
+Thread 3 start
+Thread 4 start
+tart
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 sThread 4 start
+tart
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 startThread 4 start
+
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 sThread 4 start
+tart
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 startThread 4 start
+
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread Thread 4 start
+3 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread Thread 4 start
+3 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+ThreThread 3 start
+Thread 4 start
+ad 2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 starThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+t
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+pid 338 tid 1673 thread_test: trap 14 err 7 on cpu 0 eip 0x10e addr 0x1a000--kill proc
+pid 338 tid 1674 thread_test: trap 14 err 5 on cpu 0 eip 0xb5 addr 0x1c004--kill proc
+Thread 4 start
+pid 338 tid 1675 thread_test: trap 14 err 7 on cpu 0 eip 0x10e addr 0x1a000--kill proc
+pid 338 tid 1671 thread_test: trap 14 err 7 on cpu 0 eip 0x160 addr 0x1a000--kill proc
+Thread 2 returned 0, but expected 2
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+ThreaThread 2 start
+Thread 3 start
+Thread 4 start
+d 1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+TThread 3 start
+Thread 4 start
+hread 2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+ThreaThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+d 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+TThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+hread 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 starThread 4 start
+t
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 staThread 2 start
+Thread 3 start
+Thread 4 start
+rt
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+ThrThread 4 start
+ead 3 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 starThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+t
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+ThThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+read 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread Thread 2 start
+Thread 3 start
+Thread 4 start
+1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+ start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 stThread 2 start
+Thread 3 start
+Thread 4 start
+art
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+ThreadThread 2 start
+Thread 3 start
+Thread 4 start
+ 1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+pid 395 tid 1957 thread_test: trap 14 err 5 on cpu 0 eip 0xb5 addr 0x18004--kill proc
+pid 395 tid 1958 thread_test: trap 14 err 5 on cpu 0 eip 0xb5 addr 0x1a004--kill proc
+pid 395 tid 1959 thread_test: trap 14 err 5 on cpu 0 eip 0xb5 addr 0x1c004--kill proc
+Thread 4 start
+pid 395 tid 1960 thread_test: trap 14 err 7 on cpu 0 eip 0x10e addr 0x16000--kill proc
+pid 395 tid 1956 thread_test: trap 14 err 7 on cpu 0 eip 0x160 addr 0x16000--kill proc
+Thread 1 returned 0, but expected 1
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 startThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+TThread 3 start
+Thread 4 start
+hread 2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+ThreadThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+ 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 Thread 2 start
+Thread 3 start
+Thread 4 start
+start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+ThreadThread 4 start
+ 3 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 staThread 2 start
+Thread 3 start
+Thread 4 start
+rt
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+ThreaThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+d 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 sThread 3 start
+Thread 4 start
+tart
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 startThread 3 start
+Thread 4 start
+
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3Thread 4 start
+ start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 3 start
+Thread 4 start
+Thread 2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+TThread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+hread 0 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 Thread 3 start
+Thread 4 start
+start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+ThreThread 3 start
+Thread 4 start
+ad 2 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+ThreaThread 2 start
+Thread 3 start
+Thread 4 start
+d 1 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+pid 428 tid 2125 thread_test: trap 14 err 7 on cpu 0 eip 0x10e addr 0x1c000--kill proc
+pid 428 tid 2121 thread_test: trap 14 err 7 on cpu 0 eip 0x160 addr 0x1c000--kill proc
+Thread 4 returned 0, but expected 4
+Test failed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 staThread 3 start
+Thread 4 start
+rt
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 stThread 4 start
+art
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+Thread 3 start
+Thread 4 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test
+Thread 0 start
+Thread 1 start
+Thread 2 start
+ThreadThread 4 start
+ 3 start
+Test 3 passed
+
+All tests passed!
+Test 3 end
+
+
+Test 3 start
+Test 3: Sbrk test

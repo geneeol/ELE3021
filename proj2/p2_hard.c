@@ -131,7 +131,16 @@ racingthreadmain(void *arg)
   int i;
   int tmp;
   // sleep(100);
+  // 원본 10000000 루프
+  // TODO: 왜 레이싱이 발생 안하는지 고민해보기.
+
+  printf(1, "tid: %d, g_cnt addr: 0x%x, i addr: 0x%x, tmp addr: 0x%x\n", tid, (uint)&gcnt, (uint)&i, (uint)&tmp);
   for (i = 0; i < 10000000; i++){
+    // if (i % 10000 == 0)
+    //   bp_tracer("break point");
+
+    // if (i % 1000 == 0)
+    //   sleep(1);
 
     // #pragma GCC diagnostic push
     // #pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
@@ -144,10 +153,12 @@ racingthreadmain(void *arg)
 
     tmp = gcnt;
     tmp++;
-	nop();
+    nop();
 	// asm volatile("call %P0"::"i"(nop)); // "nop();
     // nop();
     gcnt = tmp;
+    // if (i % 10000 == 0)
+    //   bp_tracer("break point");
   }
   thread_exit((void *)(tid+1));
   return (0);
