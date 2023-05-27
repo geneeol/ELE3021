@@ -217,6 +217,6 @@ void            clearpteu(pde_t *pgdir, char *uva);
 // number of elements in fixed-size array
 #define NELEM(x) (sizeof(x)/sizeof((x)[0]))
 
-// TODO: 시스템콜 헤더 추가
+// 시스템콜추가: 시스템콜 헤더 추가
 // prac_syscall.c
 int				safeprint(char *);

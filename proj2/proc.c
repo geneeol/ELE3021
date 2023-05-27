@@ -1040,7 +1040,6 @@ thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
   return (0);
 }
 
-// TODO: 테케: 메인 쓰레드 thread_exit, 다른 쓰레드에서 thread_join 하는 경우
 void
 thread_exit(void *retval)
 {
