@@ -179,10 +179,8 @@ userinit(void)
   release(&ptable.lock);
 }
 
-// sbrk는 힙과 관련된 영역이므로 n_stackpage값 변경하지 않는게 타당.
-
 //h sbrk를 호출하면 해당 함수를 통해 프로세스의 heap에 추가적인 메모리를 할당한다.
-//  프로세스의 heap 사이즈와 페이지 테이블을 업데이트한다.
+// 프로세스의 heap 사이즈와 페이지 테이블을 업데이트한다.
 // 해당 함수는 sys_sbrk에서 호출되는데 함수 내부로 들어오기 전 항상 락을 잡고 진입한다.
 // Grow current process's memory by n bytes.
 // Return 0 on success, -1 on failure.
@@ -193,15 +191,12 @@ growproc(int n)
   struct proc *curproc = myproc();
   struct proc *main;
 
-  // 락을 sys_sbrk 함수에서 걸고 들어옴.
-
   main = curproc->main;
   sz = main->sz;
-  //h mem_limit보다 늘렸을 때의 프로세스 메모리 사이즈가 작은지 체크
-  //  uint + int 랑 int 자료형 비교하지만 문제 되진 않는듯.
-  //  (애초에 limit이 int형 자료형이고 n도 int형) 
 
   // 쓰레드의 mem_limit이 아닌 main 쓰레드의 mem_limit과 비교한다
+  //  uint + int 랑 int 자료형 비교하지만 문제 되진 않는듯.
+  //  (애초에 limit이 int형 자료형이고 n도 int형) 
   if (sz + n > main->mem_limit)
     return -1;
   if(n > 0)
@@ -259,7 +254,6 @@ fork(void)
   if((np = allocproc()) == 0){
     return -1;
   }
-
   // 복사할 때 락으로 보호해주는게 타당함.
   // 기존 코드에서 보호 안한 이유는
   // 현재 프로세스의 sz값을 바꿀 수 있는게 자기 자신뿐이므로 레이스 컨디션 발생 x
@@ -286,18 +280,14 @@ fork(void)
   np->parent = curproc;
   release(&ptable.lock);
 
-  // TODO: np embryo, 해결 불가
+  // TODO: (미해결) np embryo
   // 이 공간 사이에서 np가 embryo 상태로 붕 떠버릴 수 있음.
   // thread_create와 마찬가지로 이 공간 사이에 현재 프로세스가 exit될 수 있음.
   // 예를 들어 쓰레드 그룹이 정리된다면 현재 fork를 수행하던 프로세스가 종료됨.
   // 그러면 embryo np단계에서 멈춘 녀석을 회수해줄 프로세스가 없다!
 
-  // (X) thread_create에서 붕 뜬 np는 kill_and_retrieve에서 회수 가능.
-  // (X) 그러나 fork는 np->main = self 이므로 여기서 회수가 안됨!!!
-  // (thread_create에서 붕 뜬 np도 일단 회수하지 않기로 결정)
-  // 현재 구현에서 np가 initproc에 인계됨. 그러면 wait으로 회수하긴 해야하는데,
-  // 문제는 wait은 ZOMBIE상태 프로세스만 회수함.
-  // 그렇다고 wait에서 EMBRYO도 회수하게 하는 건 더더욱 말이 안됨.
+  // 고아 embryo도 init에 인계한 후,
+  // wait에서 embryo를 회수하게 하는 건 심각한 오류 야기 가능
 
   *np->tf = *curproc->tf;
 
@@ -321,7 +311,7 @@ fork(void)
   return pid;
 }
 
-// TODO: np EMBRYO 처리: 그냥 아예 회수를 하지 말자..
+// np EMBRYO 처리: 그냥 아예 회수를 하지 말자..
 // 어차피 파일 자원 회수 불가능.
 void
 kill_and_retrieve_threads(struct proc *main)
@@ -362,6 +352,7 @@ kill_and_retrieve_threads(struct proc *main)
 // 1번의 경우 init_proc에 쓰레드에 의해 생성된 프로세스를 인계한다.
 // 2번의 경우 메인 쓰레드가 exit하면 서브쓰레드가 thread_exit을 호출한다.
 // 따라서 결국 1번의 상황으로 귀결된다.
+
 //h 모든 프로세스는 종료전 exit을 명시적으로 호출해야한다.
 // Exit the current process.  Does not return.
 // An exited process remains in the zombie state
@@ -378,8 +369,6 @@ exit(void)
 
   acquire(&ptable.lock);
 
-  // 디버깅 할 때 꼭 출력해야하는 부분
-  // cprintf("exit pid:%d, tid: %d\n", curproc->pid, curproc->tid);
   if (!curproc->is_main)
   {
     curproc->already_call_exit = 1; // thread_exit이 재귀적으로 호출되는 것을 방지
@@ -615,7 +604,8 @@ sleep(void *chan, struct spinlock *lk) // 커널에서 프로세스를 재울 �
     acquire(&ptable.lock);  //DOC: sleeplock1
     release(lk);
     //h sleeplock인 경우 lk가 ptable.lock과 다름. 이 경우 sleep하기 전에 release 필요
-    //h release가 필요한 이유. 1. 데드락 방지 2. 비지웨잇 막기 위해?
+    //h release가 필요한 이유. 1. lk를 잡고 sleep하면 데드락에 빠질 수 있기 때문.
+    //  이는 xv6 공식 문서에 자세히 설명돼있다.
   }
   // Go to sleep.
   p->chan = chan;
@@ -685,8 +675,6 @@ kill(int pid)
   invalid_pid = 1;
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
   {
-    //h 모든 쓰레드를 kill 하는 게 더 타당해보이긴 함.
-    // 왜냐하면 메인 쓰레드만 kill할 경우 쓰레드가 kill 됐음에도 불구하고 코드진행 가능
     // 그러나 멀티태스킹의 미덕을 생각하면 메인 쓰레드만 kill 괜찮을듯.
     if(p->pid == pid && p->is_main)
     {
@@ -848,16 +836,10 @@ schedulerUnlock(int password)
 /***** system calls for project2 *****/
 
 
-// sbrk가 호출될 때, 메인이 호출하면 당연히 main의 mem_limit을 이용해야함.
-// 쓰레드가 호출하더라도 main의 mem_limit을 봐야함. 
-// 실제 프로세스 메모리 주소공간은 메인이 관리하기 때문
-
-// 디자인: main 쓰레드의 sz값만 의미있다고 판단.
-// 메인 쓰레드의 sz이 증가하더라도 쓰레드의 sz값까지 업데이트하기에는 오버헤드가 크다.
-// 실제로 메인쓰레드와 쓰레드는 같은 주소공간을 공유하므로 두개의 sz을 분리하는게 의미 없다.
-// sbrk를 호출시에도 메인쓰레드의 sz값을 이용해야함. 메모리 관련은 전부 메인쓰레드가 담당.
-// 따라서 메인 쓰레드의 mem_limit값만 관리하자
-// 즉 전체 쓰레드는 main쓰레드의 mem_limit과 sz을 이용함. 
+// 디자인: main 쓰레드가 전체 프로세스의 메모리를 관리를 책임지도록 함.
+// 실제로 메인쓰레드와 쓰레드는 같은 주소공간을 공유하므로,
+// 메인쓰레드의 sz값과 mem_limit값만 관리하면 된다.
+// 따라서 해당 함수에서 main 쓰레드의 limit 값만을 업데이트한다.
 int
 setmemorylimit(int pid, int limit)
 {
@@ -952,13 +934,14 @@ thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
   // 스택 사이즈에 맞게 align 작업 필요함.
   sz = PGROUNDUP(main->sz);
 
-  // 쓰레드는 메인 쓰레드와 페이지디렉토리(첫번째 페이지 테이블)를 공유한다.
+  // 쓰레드는 메인 쓰레드와 페이지디렉토리(1번 페이지 테이블)를 공유한다.
   // 해당 테이블(주소공간)에 해당하는 쓰레드의 유저 스택을 할당한다.
+
   // 쓰레드 스택 사이즈에 대한 디자인:
   // 현재 메인 쓰레드의 스택 사이즈가 클지라도 쓰레드가 클 이유는 없다.
   // 일반적으로 쓰레드는 서브태스크를 수행하기에,
   // 요구하는 스택사이즈가 그리 크지 않을 것이다.
-  // 따라서 쓰레드의 스택사이즈는 4096kb로 고정한다.
+  // 따라서 쓰레드의 스택사이즈는 4k로 고정한다.
   if ((sz = allocuvm(main->pgdir, sz, sz + 2 * PGSIZE)) == 0)
   {
     // 쓰레드 스택 할당에 실패한 경우이니 쓰레드 유저스택 회수할 필요 없음.
@@ -970,26 +953,24 @@ thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
   clearpteu(main->pgdir, (char*)(sz - 2*PGSIZE));
   np->pgdir = main->pgdir;
 
-  // 안전하게 이 부분 통째로 락 안으로
-  np->tid = nexttid++; //h tid 공유변수에 대한 레이스 컨디션 고려해야함..!
+  // 이 부분또한 락으로 보호한다.
+  np->tid = nexttid++;
   np->main = main;
   np->is_main = 0;
   np->pid = main->pid;
-
 
   // mem_limit 정보는 메인쓰레드에서만 의미있는 값임.
   // 따라서 쓰레드의 mem_limit값은 초기화 하지 않음.  
   // np->mem_limit = main->mem_limit;
 
-  //h 여기서 레이스 컨디션 발생했었음!!! main의 sz 보호 안돼서.
   // main의 쓰레드 맴버변수는 락을 통해 보호되어야 한다.
   main->sz = sz;
   main->n_stackpage++; // 쓰레드가 하나 생성되면 main의 스택페이지개수를 늘려준다.
-  // 프로세스의 스택페이지 개수는 결국 쓰레드의 스택페이지 개수를 포함하는 것이므로
+  // 프로세스의 스택페이지 개수는 결국 쓰레드의 스택페이지 개수를 포함한다.
   *thread = np->tid; // 쓰레드 id할당도 tid를 보호해서 해야함
 
 
-  // 이 부분도 그냥 안전하게 임계 영역 안에 넣자
+  // 해당 부분도 그냥 안전하게 임계 영역 안에 넣음
   // np값은 runnable로 바꿀 때만 락을 잡으면 되는듯하지만 방어적 코드 작성
   np->sz = sz;
   np->parent = main->parent;
@@ -1008,8 +989,7 @@ thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
 
   release(&ptable.lock);
 
-  // np가 EMBRYO 상태로 붕 뜨는 문제 발생
-  // 만약 락을 풀어둔 이 사이에 현재 쓰레드 그룹이 exit하거나 exec가 일어나면?
+  // TODO: (미해결) np가 EMBRYO 상태로 붕 뜨는 문제 발생
   // 1. 메인 쓰레드가 exit하는 상황.
   // 2. exec가 일어나서 main쓰레드가 바뀌는 상황.
   // 특히 embryo의 file자원 관련 회수가 상당히 까다로움.
@@ -1054,7 +1034,6 @@ thread_exit(void *retval)
 
   // 현재 디자인: main 쓰레드가 thread_exit을 호출하면
   // exit 호출을 통해 모든 쓰레드가 정리되고 종료됨.
-  // 조교님피셜 메인 쓰레드는 thread_exit을 호출하지 않는다고 함.
   // 실제: pthread에서는 메인 쓰레드가 thread_exit을 호출해서,
   // 다른 쓰레드들 작업이 계속 진행되게 할 수 있는듯.
   if (curproc->is_main)
@@ -1081,15 +1060,11 @@ thread_exit(void *retval)
   curproc->main->n_stackpage--;
 
   // Parent might be sleeping in wait().
-  // 여기 조건문 필요 없을듯.
-  // if (!curproc->is_main)
-  //   wakeup1(curproc->main);
   wakeup_pid1(curproc->pid);
 
   // 현재 종료되는 쓰레드가 누군가의 부모일 수 있다.
   // 따라서 해당 프로세스(쓰레드)의 자식을 initproc에 인계한다.
   // 이로써 고아프로세스를 initproc가 회수한다.
-  // 아래 for문 주석처리 하면 쓰레드에서 fork한 자식들이 고아가 됨.
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
   {
     if(p->parent == curproc)
@@ -1105,7 +1080,7 @@ thread_exit(void *retval)
   panic("zombie exit");
 }
 
-// TODO: 데드락이 감지된 경우 에러 처리 (이 부분은 구현 못할듯)
+// TODO: (미해결) 데드락이 감지된 경우 에러 처리 (이 부분은 구현 못할듯)
 // 가령 쓰레드1이 쓰레드 2 join, 쓰레드 2는 쓰레드 1 join
 int
 thread_join(thread_t thread, void **retval)
@@ -1114,7 +1089,7 @@ thread_join(thread_t thread, void **retval)
   int foundthread;
   struct proc *curproc = myproc();
   
-  // thread id가 자기 자신인 경우, tid가 0인 경우 예외처리
+  // thread id가 자기 자신인 경우, 회수하려는 자원의 tid가 0인 경우 예외처리
   if (curproc->tid == thread || thread == 0)
     return (-1);
   acquire(&ptable.lock);
@@ -1150,24 +1125,17 @@ thread_join(thread_t thread, void **retval)
     // 이 부분이 pthread와 다른 점인듯.
     if (curproc->killed)
     {
-      // cprintf("I'm killed pid: %d, tid: %d?\n", curproc->pid, curproc->tid);
       release(&ptable.lock);
-      return (0); // 이상하긴 하지만 join을 결국 성공하긴 할것이므로 0 리턴하게.
+      return (0); // 자원회수를 결국 성공할 것이므로 0 리턴하도록 함.
     }
-    // No point waiting if we don't have any children.
-    // 현재 프로세스가 이미 kill 됐으면 쓰레드 그룹이 전부 kill됐을 거임.
-    // kill 되었더라도 루프를 한번더 돌고 자원 회수가능하면 회수
     if(!foundthread)
     {
-      // cprintf("no thread left pid: %d, tid: %d\n", curproc->pid, curproc->tid);
       release(&ptable.lock);
       return -1;
     }
 
-    // Wait for children to exit.  (See wakeup1 call in proc_exit.)
     sleep(curproc, &ptable.lock);  //DOC: wait-sleep
-    //h 만약 curproc가 sleep중에 kill됐으면 여기서 깨어날 수 있음
-    //  killed 상태일지라도 루프를 한번 더 돌며 타깃이 좀비면 회수
+    // 만약 curproc가 sleep중에 kill됐으면 여기서 깨어날 수 있음
   }
 }
 

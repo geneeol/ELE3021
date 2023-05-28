@@ -61,7 +61,6 @@ change_main_thread(struct proc *curproc, struct proc *old_main)
   // old_main은 어차피 죽을 프로세스. 쓰레드 그룹이 정리되기 전에 
   // main변수 바꾸면 curproc가 exit에 의해 죽는 경우 발생
   // 따라서 아래부분 주석처리.
-
   // old_main->main = curproc;
 
   old_main->is_main = 0;
@@ -93,7 +92,6 @@ exec(char *path, char **argv)
   struct proc *old_main;
 
   acquire(&ptable.lock);
-  // cprintf("exec pid: %d, tid: %d\n", curproc->pid, curproc->tid);
 
   // 현재 쓰레드가 메인 쓰레드가 아닌 경우 자원을 2단계로 나누어서 회수한다.
   // 1. 메인쓰레드를 현재 쓰레드로 바꾼후 old_main을 기준으로 서브 쓰레드를
@@ -144,7 +142,7 @@ exec(char *path, char **argv)
       goto bad;
     if(ph.vaddr + ph.memsz < ph.vaddr)
       goto bad;
-    // 코드, 데이터 영역에 해당하는 메모리 할당. 프로세스마다 해당 크기가 상이하다.
+    //h 코드, 데이터 영역에 해당하는 메모리 할당. 프로세스마다 해당 크기가 상이하다.
     if((sz = allocuvm(pgdir, sz, ph.vaddr + ph.memsz)) == 0)
       goto bad;
     if(ph.vaddr % PGSIZE != 0)

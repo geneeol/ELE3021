@@ -183,27 +183,30 @@ UPROGS=\
 	_sh\
 	_stressfs\
 	_wc\
+	_pmanager \
 	_zombie\
 	_hello_thread \
 	_thread_exec \
 	_thread_exit \
 	_thread_kill \
 	_thread_test \
-	_p2_script \
-	_p2_fork_nowait \
-	_p2_hard \
-	_p2_join_exit \
-	_p2_main_exec \
-	_p2_th_call_join \
-	# _p2_t2 \
-	# _p2_fork_sbrk \
 	# _p2_fork \
-	# _pmanager \
-	# _usertests\
-	# 아래 p2_testname은 간단한 테스트 코드 \
+	# _p2_fork_sbrk \
+	# _p2_free_access \
+	# _p2_null \
 	# _p2_test1 \
 	# _p2_sbrk \
-	# _p2_null \
+	# _p2_t2 \
+	# _p2_script \
+	# _p2_fork_nowait \
+	# _p2_hard \
+	# _p2_join_exit \
+	# _p2_main_exec \
+	# _p2_racing \
+	# _p2_th_call_join \
+	# p2 구분선 \
+	# 구분선 \
+	# _usertests\
 	# _test_origin1\
 	# _test_lock\
 	# _test_lock2\
@@ -292,8 +295,8 @@ EXTRA=\
 	test_lock2.c test_mlfq3.c test_origin1.c test_interrupt.c\
 	pmanager.c p2_test1.c p2_fork.c p2_t2.c\
 	p2_sbrk.c p2_hard.c p2_fork_sbrk.c p2_fork_nowait.c hello_thread.c \
-	p2_null.c p2_join_exit.c p2_script.c p2_main_exec.c\
-	p2_th_call_join.c \
+	p2_null.c p2_join_exit.c p2_script.c p2_main_exec.c p2_racing.c\
+	p2_th_call_join.c p2_free_access.c\
 	thread_exec.c thread_exit.c thread_kill.c thread_test.c\
 	README dot-bochsrc *.pl toc.* runoff runoff1 runoff.list\
 	.gdbinit.tmpl gdbutil\
