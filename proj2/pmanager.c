@@ -46,6 +46,8 @@ pm_kill(char *buf, int cmd_len)
   pid = atoi(buf + arg1_idx);
   if (kill(pid))
     printf(2, "pmanger: kill failed\n");
+  else
+    printf(1, "pmanger: kill success\n");
   return (0);
 
 }
@@ -126,6 +128,8 @@ pm_memlim(char *buf, int cmd_len)
   limit = atoi(buf + arg2_idx);
   if (setmemorylimit(pid, limit))
     printf(2, "pmanager: memlim failed\n");
+  else
+    printf(1, "pmanager: memlim success\n");
   return (0);
 }
 
