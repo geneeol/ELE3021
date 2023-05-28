@@ -194,7 +194,6 @@ growproc(int n)
   struct proc *main;
 
   // 락을 sys_sbrk 함수에서 걸고 들어옴.
-  // acquire(&ptable.lock);
 
   main = curproc->main;
   sz = main->sz;
@@ -230,6 +229,7 @@ clean_proc_slot(struct proc *p, int is_thread)
   // 한 프로세스가 0x80000000까지의 논리주소를 모두 사용하는 경우는 극히 드뭄. 
   if (is_thread)
     deallocuvm(p->pgdir, p->sz, p->sz - 2 * PGSIZE);
+  p->sz = 0;
   p->pid = 0;
   p->parent = 0;
   p->name[0] = 0;
@@ -941,14 +941,16 @@ thread_create(thread_t *thread, void *(*start_routine)(void *), void *arg)
   }
   curproc = myproc();
 
-
   // 메인 쓰레드와 pgdir을 공유하기 위해 락이 필요함
   // 락을 걸지 않으면 pgdir에 대한 레이스 컨디션 발생 가능
   acquire(&ptable.lock);
   
   nextpid--;
   main = curproc->main;
-  sz = main->sz;
+
+  // 동적할당으로 sz값이 '애매하게' 바뀌었을 경우,
+  // 스택 사이즈에 맞게 align 작업 필요함.
+  sz = PGROUNDUP(main->sz);
 
   // 쓰레드는 메인 쓰레드와 페이지디렉토리(첫번째 페이지 테이블)를 공유한다.
   // 해당 테이블(주소공간)에 해당하는 쓰레드의 유저 스택을 할당한다.
@@ -1104,6 +1106,7 @@ thread_exit(void *retval)
 }
 
 // TODO: 데드락이 감지된 경우 에러 처리 (이 부분은 구현 못할듯)
+// 가령 쓰레드1이 쓰레드 2 join, 쓰레드 2는 쓰레드 1 join
 int
 thread_join(thread_t thread, void **retval)
 {

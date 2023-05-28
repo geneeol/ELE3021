@@ -63,9 +63,8 @@ struct proc {
   struct proc *main;
   int is_main;
   void *retval;
-  int already_call_exit;
+  int already_call_exit; // thread_exit의 재귀 호출을 방지
   int n_stackpage;
-  int n_thread; // 메인 쓰레드의 경우만 의미있는 값을 가짐
 };
 
 // Process memory is laid out contiguously, low addresses first:

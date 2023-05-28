@@ -51,7 +51,7 @@ morecore(uint nu)
 
   if(nu < 4096)
     nu = 4096;
-  // printf(1, "malloc call sbrk: %d\n", nu * sizeof(Header));
+  // sbrk 리턴값을 사용하는 유일한 부분
   p = sbrk(nu * sizeof(Header));
   if(p == (char*)-1)
     return 0;
@@ -85,8 +85,7 @@ malloc(uint nbytes)
       freep = prevp;
       // 힙에 빈 공간 있으면 sbrk호출 없이 그냥 할당하는듯..
       // 대개의 경우 아래 if문으로 진입하지 않음.
-      // 이 라인 때문에 같은 주소공간 할당받아서 생기는 문제 아닐까?
-      // printf(1, "malloc don't call sbrk: %x\n", (void*)(p + 1));
+      // 이 라인 때문에 같은 주소공간 할당받아서 생기는 문제.
       return (void*)(p + 1);
     }
     if(p == freep)
