@@ -198,7 +198,7 @@ writetest1(void) //h makefile에서 유저프로그램 개수가 달라지면 �
   }
 
   // 여기서 블락 개수가 맥스파일만큼 존재하지 않아서 터지는게 정상인듯
-  for(i = 0; i < MAXFILE; i++){
+  for(i = 0; i < 32 * 1024 /*MAXFILE*/ ; i++){
     ((int*)buf)[0] = i;
     if(write(fd, buf, 512) != 512){
       printf(stdout, "error: write big file failed\n", i);
