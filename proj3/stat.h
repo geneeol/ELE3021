@@ -1,6 +1,8 @@
+// TODO: symlink 타입 추가
 #define T_DIR  1   // Directory
 #define T_FILE 2   // File
 #define T_DEV  3   // Device
+#define T_SYMLINK 4 // Symbolic Link
 
 struct stat {
   short type;  // Type of file

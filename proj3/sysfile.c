@@ -114,6 +114,7 @@ sys_fstat(void)
   return filestat(f, st);
 }
 
+// 현재 link는 하드링크로 inode를 새로 생성하지 않는다.
 // Create the path new as a link to the same inode as old.
 int
 sys_link(void)
