@@ -181,7 +181,8 @@ UPROGS=\
 	_stressfs\
 	_wc\
 	_zombie\
-	_p3_bigfile \
+	_p3_bigfile\
+	_usertests\
 	# _prac_myuserapp\
 	# _myapp\
 	# _prac2_usercall\
@@ -221,7 +222,7 @@ QEMUGDB = $(shell if $(QEMU) -help | grep -q '^-gdb'; \
 	then echo "-gdb tcp::$(GDBPORT)"; \
 	else echo "-s -p $(GDBPORT)"; fi)
 ifndef CPUS
-CPUS := 2
+CPUS := 1
 endif
 QEMUOPTS = -drive file=fs.img,index=1,media=disk,format=raw -drive file=xv6.img,index=0,media=disk,format=raw -smp $(CPUS) -m 512 $(QEMUEXTRA)
 
@@ -255,7 +256,7 @@ EXTRA=\
 	mkfs.c ulib.c user.h cat.c echo.c forktest.c grep.c kill.c\
 	ln.c ls.c mkdir.c rm.c stressfs.c wc.c zombie.c\
 	printf.c umalloc.c _prac_myuserapp.c _myapp.c _prac2_usercall.c\
-	p3_bigfile.c\
+	usertests.c p3_bigfile.c\
 	README dot-bochsrc *.pl toc.* runoff runoff1 runoff.list\
 	.gdbinit.tmpl gdbutil\
 
