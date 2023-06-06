@@ -25,7 +25,9 @@ struct inode {
   short minor;
   short nlink;
   uint size;
-  uint addrs[NDIRECT+1];
+  // 블락포인터를 uint로 관리중.
+  // addrs에 +3은 3개의 인덱스 블락을 의미함
+  uint addrs[NDIRECT+3];
 };
 
 // table mapping major device number to

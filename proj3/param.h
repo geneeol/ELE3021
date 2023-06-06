@@ -10,7 +10,10 @@
 #define MAXOPBLOCKS  10  // max # of blocks any FS op writes
 #define LOGSIZE      (MAXOPBLOCKS*3)  // max data blocks in on-disk log
 #define NBUF         (MAXOPBLOCKS*3)  // size of disk block cache
-#define FSSIZE       1000  // size of file system in blocks
+
+// 16mb / 512b = 31250, 6mb / 512b = 12288
+// 즉 FSSIZE 50000정도로 두면 넉넉함.
+#define FSSIZE       50000  // size of file system in blocks
 
 //h FSSIZE값 무조건 바꿀것
 //h FSSIZE위에 두개는 버퍼 사이즈래
