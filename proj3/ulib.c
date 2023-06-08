@@ -73,7 +73,8 @@ stat(const char *n, struct stat *st)
   int fd;
   int r;
 
-  fd = open(n, O_RDONLY);
+  // stat에서 open시 파일의 메타데이터 정보를 얻기 위해 NOFOLLOW 옵션으로 연다.
+  fd = open(n, O_RDONLY | O_NOFOLLOW);
   if(fd < 0)
     return -1;
   r = fstat(fd, st);

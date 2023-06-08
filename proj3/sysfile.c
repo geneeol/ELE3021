@@ -16,6 +16,8 @@
 #include "file.h"
 #include "fcntl.h"
 
+static struct inode* create(char *path, short type, short major, short minor);
+
 // Fetch the nth word-sized system call argument as a file descriptor
 // and return both the descriptor and the corresponding struct file.
 static int
@@ -165,6 +167,40 @@ bad:
   return -1;
 }
 
+//h 맥os 기준 ln -s old new 할 때 old가 존재하지 않아도 new 생성
+// Create the path new as a link to the same inode as old.
+int
+sys_symlink(void)
+{
+  char *new, *old;
+  struct inode *ip;
+  uint bytes;
+
+  if(argstr(0, &old) < 0 || argstr(1, &new) < 0)
+    return -1;
+
+  begin_op();
+  if ((ip = create(new, T_SYMLINK, 0, 0)) == 0)
+  {
+    end_op();
+    return (-1);
+  }
+
+  // create에서 ilock을 잡기 때문에 굳이 잡지 않아도 됨...
+  bytes = strlen(old) + 1;
+  // 원본파일 경로를 inode에 기록
+  if (writei(ip, old, 0, bytes) != bytes) 
+  {
+    iunlockput(ip);
+    end_op();
+    return (-1);
+  }
+  iunlockput(ip);
+  end_op();
+
+  return (0);
+}
+
 // Is the directory dp empty except for "." and ".." ?
 static int
 isdirempty(struct inode *dp)
@@ -289,28 +325,64 @@ int
 sys_open(void)
 {
   char *path;
+  char path2[128];
   int fd, omode;
   struct file *f;
   struct inode *ip;
+  int n_link;
 
   if(argstr(0, &path) < 0 || argint(1, &omode) < 0)
     return -1;
 
   begin_op();
 
-  if(omode & O_CREATE){
+  //h create 모드라면 기존 파일이 있든 없든 무조건 새로 만든다. (기존코드) 
+  if(omode & O_CREATE)
+  {
     ip = create(path, T_FILE, 0, 0);
-    if(ip == 0){
+    if(ip == 0)
+    {
       end_op();
       return -1;
     }
-  } else {
-    if((ip = namei(path)) == 0){
+  }
+  else
+  {
+    if((ip = namei(path)) == 0)
+    {
       end_op();
       return -1;
     }
     ilock(ip);
-    if(ip->type == T_DIR && omode != O_RDONLY){
+
+    /*** 추가한 부분 ***/
+    n_link = 0;
+    // omode가 O_NOFOLLOW가 아니고, ip가 심볼릭 링크이면 원본파일 inode까지 찾아감
+    while ((omode & O_NOFOLLOW) == 0 && ip->type == T_SYMLINK && n_link < 10)
+    {
+      readi(ip, path2, 0, ip->size);
+      iunlockput(ip);
+      if ((ip = namei(path2)) == 0)
+      {
+        end_op();
+        return (-1);
+      }
+      n_link++;
+      // 루프 마지막에 항상 락을 잡아서 루프에 진입할 때, 탈출할 때 모두 ilock 상태임
+      ilock(ip);
+      memset(path2, 0, sizeof(path2));
+    }
+    // link 길이가 10이 넘어가면 사이클로 간주.
+    if (n_link == 10)
+    {
+      iunlockput(ip);
+      end_op();
+      return (-1);
+    }
+    /*** 추가한 부분 ***/
+
+    if(ip->type == T_DIR && (omode & O_RDONLY) != 0)
+    {
       iunlockput(ip);
       end_op();
       return -1;

@@ -38,3 +38,6 @@ void* memset(void*, int, uint);
 void* malloc(uint);
 void free(void*);
 int atoi(const char*);
+
+// project3 시스템콜
+int symlink(const char*, const char*);

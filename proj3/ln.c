@@ -3,12 +3,6 @@
 #include "user.h"
 
 int
-symlink(char *oldpath, char *newpath)
-{
-  return link(oldpath, newpath);
-}
-
-int
 main(int argc, char *argv[])
 {
   if(argc != 4)
