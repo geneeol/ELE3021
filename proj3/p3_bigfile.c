@@ -44,20 +44,21 @@ main(int argc, char *argv[])
     printf(1, "\n");
     close(fd);
 
-    // 6mb 파일 하나 더 만드는 부분
-    fd = open(path2, O_CREATE | O_RDWR);
-    for(i = 0; i < BUF_PER_FILE2; i++){
-        if (i % 100 == 0){
-            printf(1, "%d bytes written\n", i * BUFSIZE);
-        }
-        if ((r = write(fd, data, sizeof(data))) != sizeof(data)){
-            printf(1, "write returned %d : failed\n", r);
-            exit();
-        }
-    }
-    printf(1, "\n%d bytes written\n", BUF_PER_FILE2 * BUFSIZE);
-    printf(1, "\n");
-    close(fd);
+    (void)path2;
+    // // 6mb 파일 하나 더 만드는 부분
+    // fd = open(path2, O_CREATE | O_RDWR);
+    // for(i = 0; i < BUF_PER_FILE2; i++){
+    //     if (i % 100 == 0){
+    //         printf(1, "%d bytes written\n", i * BUFSIZE);
+    //     }
+    //     if ((r = write(fd, data, sizeof(data))) != sizeof(data)){
+    //         printf(1, "write returned %d : failed\n", r);
+    //         exit();
+    //     }
+    // }
+    // printf(1, "\n%d bytes written\n", BUF_PER_FILE2 * BUFSIZE);
+    // printf(1, "\n");
+    // close(fd);
 
 
     printf(1, "2. read test\n");
