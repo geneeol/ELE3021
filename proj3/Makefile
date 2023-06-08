@@ -183,6 +183,8 @@ UPROGS=\
 	_zombie\
 	_p3_bigfile\
 	_usertests\
+	_p3_symlink\
+	_p3_symlink2\
 	# _prac_myuserapp\
 	# _myapp\
 	# _prac2_usercall\
@@ -256,7 +258,7 @@ EXTRA=\
 	mkfs.c ulib.c user.h cat.c echo.c forktest.c grep.c kill.c\
 	ln.c ls.c mkdir.c rm.c stressfs.c wc.c zombie.c\
 	printf.c umalloc.c _prac_myuserapp.c _myapp.c _prac2_usercall.c\
-	usertests.c p3_bigfile.c\
+	usertests.c p3_bigfile.c p3_symlink.c p3_symlink2.c\
 	README dot-bochsrc *.pl toc.* runoff runoff1 runoff.list\
 	.gdbinit.tmpl gdbutil\
 
