@@ -330,6 +330,7 @@ sys_open(void)
   struct file *f;
   struct inode *ip;
   int n_link;
+  int tmp;
 
   if(argstr(0, &path) < 0 || argint(1, &omode) < 0)
     return -1;
@@ -381,7 +382,9 @@ sys_open(void)
     }
     /*** 추가한 부분 ***/
 
-    if(ip->type == T_DIR && (omode & O_RDONLY) != 0)
+    // if(ip->type == T_DIR && omode != O_RDONLY){
+    tmp = omode & ~O_NOFOLLOW;
+    if(ip->type == T_DIR && tmp != O_RDONLY)
     {
       iunlockput(ip);
       end_op();
