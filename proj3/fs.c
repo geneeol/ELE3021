@@ -593,6 +593,8 @@ writei(struct inode *ip, char *src, uint off, uint n)
     m = min(n - tot, BSIZE - off%BSIZE);
     memmove(bp->data + off%BSIZE, src, m);
     log_write(bp);
+    //h brelse 때문에 begin_op에서 commit 해야함
+    //  문제는 bfree는 begin_op, end_op로 감싸져 있지 않다는 점..
     brelse(bp);
   }
 

@@ -35,6 +35,23 @@ struct {
   struct buf head;
 } bcache;
 
+struct logheader {
+  int n;
+  int block[LOGSIZE];
+};
+
+struct log {
+  struct spinlock lock;
+  int start;
+  int size;
+  int outstanding; // how many FS sys calls are executing.
+  int committing;  // in commit(), please wait.
+  int dev;
+  struct logheader lh;
+};
+
+extern struct log log;
+
 void
 binit(void)
 {
@@ -142,3 +159,56 @@ brelse(struct buf *b)
 //PAGEBREAK!
 // Blank page.
 
+int 
+count_dirty_buf()
+{
+  struct buf *b;
+  int n_dirty_buf;
+
+  acquire(&bcache.lock);
+
+  n_dirty_buf = 0;
+  for(b = bcache.head.prev; b != &bcache.head; b = b->prev)
+  {
+    if ((b->flags & B_DIRTY) != 0)
+      n_dirty_buf++;
+  }
+  
+  release(&bcache.lock);
+  return (n_dirty_buf);
+}
+
+int 
+buf_is_full()
+{
+  return (count_dirty_buf() + SPARESIZE >= NBUF);
+}
+
+int
+log_write_all()
+{
+  struct buf *b;
+  int n_dirty_buf;
+  int i;
+
+  acquire(&bcache.lock);
+
+  n_dirty_buf = 0;
+  for (b = bcache.head.prev; b != &bcache.head; b = b->prev)
+  {
+    if ((b->flags & B_DIRTY) != 0)
+    {
+      for (i = 0; i < log.lh.n; i++) {
+        if (log.lh.block[i] == b->blockno)   // log absorbtion
+          break;
+      }
+      log.lh.block[i] = b->blockno;
+      if (i == log.lh.n)
+        log.lh.n++;
+      n_dirty_buf++;
+    }
+  }
+
+  release(&bcache.lock);
+  return (n_dirty_buf);
+}

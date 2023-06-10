@@ -8,13 +8,14 @@
 #define ROOTDEV       1  // device number of file system root disk
 #define MAXARG       32  // max exec arguments
 #define MAXOPBLOCKS  10  // max # of blocks any FS op writes
+// 두개는 버퍼 사이즈
 #define LOGSIZE      (MAXOPBLOCKS*3)  // max data blocks in on-disk log
 #define NBUF         (MAXOPBLOCKS*3)  // size of disk block cache
-
 // 16mb / 512b = 31250, 6mb / 512b = 12288
-// 즉 FSSIZE 50000정도로 두면 넉넉함.
-#define FSSIZE       50000  // size of file system in blocks
+// 즉 FSSIZE 50000 이상으로 두면 넉넉함.
+#define FSSIZE       100000  // size of file system in blocks
 
-//h FSSIZE값 무조건 바꿀것
-//h FSSIZE위에 두개는 버퍼 사이즈래
+// 추가한 값
+#define SPARESIZE    5
+
 

@@ -15,6 +15,10 @@ void            binit(void);
 struct buf*     bread(uint, uint);
 void            brelse(struct buf*);
 void            bwrite(struct buf*);
+// 추가한 함수
+int 			count_dirty_buf();
+int				buf_is_full();
+int				log_write_all();
 
 // console.c
 void            consoleinit(void);
