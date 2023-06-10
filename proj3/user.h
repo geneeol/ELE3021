@@ -41,3 +41,4 @@ int atoi(const char*);
 
 // project3 시스템콜
 int symlink(const char*, const char*);
+int sync(void);

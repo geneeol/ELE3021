@@ -22,3 +22,4 @@
 #define SYS_close  21
 #define SYS_myfunction 22 // user defined system call
 #define SYS_symlink 23
+#define SYS_sync   24

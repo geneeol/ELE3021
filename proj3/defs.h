@@ -193,5 +193,4 @@ void            clearpteu(pde_t *pgdir, char *uva);
 int				myfunction(char *);
 
 // sysfile.c
-// proj3 시스템콜 추가
-int				sys_symlink(void);
+int				sync(void);
