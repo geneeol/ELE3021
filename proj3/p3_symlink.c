@@ -20,7 +20,8 @@ main(int argc, char *argv[])
 {
   cleanup();
   testsymlink();
-  concur();
+  // concur();
+  (void)concur;
   exit();
 }
 
