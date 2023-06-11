@@ -115,6 +115,9 @@ bread(uint dev, uint blockno)
 {
   struct buf *b;
 
+  // TODO: stress test ... 1에서 에러 발생
+  // itrunc에서 호출한 bread에서 에러 발생하는듯
+  // 이 상황에 모든 버퍼가 dirty로 마킹돼서 bget실패
   b = bget(dev, blockno);
   if((b->flags & B_VALID) == 0) {
     iderw(b);

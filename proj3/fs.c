@@ -338,6 +338,7 @@ iput(struct inode *ip)
     release(&icache.lock);
     if(r == 1){
       // inode has no links and no other references: truncate and free.
+      // TODO: 추후 itrunc에서 bget실패하는 현상 수정
       itrunc(ip);
       ip->type = 0;
       iupdate(ip);
