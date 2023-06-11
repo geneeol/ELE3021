@@ -168,7 +168,6 @@ bad:
 }
 
 //h 맥os 기준 ln -s old new 할 때 old가 존재하지 않아도 new 생성
-// Create the path new as a link to the same inode as old.
 int
 sys_symlink(void)
 {

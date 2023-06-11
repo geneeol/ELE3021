@@ -17,5 +17,3 @@
 
 // 추가한 값
 #define SPARESIZE    5
-
-

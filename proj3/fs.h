@@ -21,15 +21,12 @@ struct superblock {
   uint bmapstart;    // Block number of first free map block
 };
 
-//h NDIRECT 10으로 수정 후 나머지 2개 각각 Double, Triple Indirect로 수정
 #define NDIRECT 10
 #define NINDIRECT (BSIZE / sizeof(uint))
 
 #define NDINDIRECT (NINDIRECT * NINDIRECT)
 #define NTINDIRECT (NINDIRECT * NINDIRECT * NINDIRECT)
 #define MAXFILE (NDIRECT + NINDIRECT + NDINDIRECT + NTINDIRECT)
-
-//h addr 수정, NINDIRECT 수정
 
 // On-disk inode structure
 struct dinode {
