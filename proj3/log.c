@@ -132,13 +132,6 @@ begin_op(void)
     //h 로그에 데이터를 못쓰는 상태면 sleep
     if(log.committing)
       sleep(&log, &log.lock);
-    // 버퍼가 꽉 찼을 때만 로그를 쓴다. 따라서 로그기록이 존재하면 버퍼가 꽉 찬것
-    else if (log.lh.n > 0)
-    {
-      release(&log.lock);
-      commit();
-      acquire(&log.lock);
-    }
     else
     {
       log.outstanding += 1; //h 파일 시스템에 뭔가 쓴다고 선언
@@ -161,8 +154,8 @@ end_op(void)
   log.outstanding -= 1;
   if(log.committing) //h 다른 사람이 로그에 쓰지 않음
     panic("log.committing");
-  // 커밋할 내용을 다 모았으면 do commit
-  if(log.outstanding == 0){ //h 나도 안쓰고 다른 사람도 안씀 즉 flush 가능
+  // 로그가 존재하면 버퍼를 비워야 함. 로그 기록은 버퍼가 가득 찼을 때만 함
+  if(log.outstanding == 0 && log.lh.n > 0) {
     do_commit = 1;
     log.committing = 1;
   } else {
@@ -175,8 +168,8 @@ end_op(void)
   if(do_commit){
     // call commit w/o holding locks, since not allowed
     // to sleep with locks.
-    //h 기존에 여기에서 flush
-    // commit();
+    //h commit을 통해 flush
+    commit();
     acquire(&log.lock);
     log.committing = 0;
     wakeup(&log);
