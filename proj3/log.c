@@ -47,6 +47,8 @@ struct log {
 };
 struct log log;
 
+// int n_buffered = 0;
+
 static void recover_from_log(void);
 static void commit();
 
@@ -211,10 +213,26 @@ int sync(void)
 {
   int ret;
 
+  // ret = log_write_reserved();
   ret = log_write_all();
   commit();
   return (ret);
 }
+
+// void
+// log_write(struct buf *b)
+// {
+//   // 동시성등 복잡한 상황을 고려하지 않아도 되므로 로그에 쓰지 않더라도
+//   // 버퍼에 블록을 읽어들이고 수정했다면 버퍼를 dirty로 바로 마킹
+//   n_buffered++;
+
+//   b->flags |= B_RESERVED;
+//   if (n_buffered + SPARESIZE >= NBUF)
+//   {
+//     log_write_reserved();
+//     n_buffered = 0;
+//   }
+// }
 
 //h 기존: log_write를 통해 데이터 변경하면 바로바로 로그 버퍼에 기록
 //  현재: log_write에서 버퍼가 가득찼을 때만 로그 버퍼에 기록

@@ -187,6 +187,37 @@ buf_is_full()
   return (count_dirty_buf() + SPARESIZE >= NBUF);
 }
 
+// int
+// log_write_reserved()
+// {
+//   struct buf *b;
+//   int n_reserved_buf;
+//   int i;
+
+//   acquire(&bcache.lock);
+
+//   n_reserved_buf = 0;
+//   for (b = bcache.head.prev; b != &bcache.head; b = b->prev)
+//   {
+//     if ((b->flags & B_RESERVED) != 0)
+//     {
+//       b->flags &= ~B_RESERVED;
+//       for (i = 0; i < log.lh.n; i++) {
+//         if (log.lh.block[i] == b->blockno)   // log absorbtion
+//           break;
+//       }
+//       log.lh.block[i] = b->blockno;
+//       if (i == log.lh.n)
+//         log.lh.n++;
+//       b->flags |= B_DIRTY;
+//       n_reserved_buf++;
+//     }
+//   }
+
+//   release(&bcache.lock);
+//   return (n_reserved_buf);
+// }
+
 int
 log_write_all()
 {

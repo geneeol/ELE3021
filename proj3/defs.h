@@ -18,6 +18,7 @@ void            bwrite(struct buf*);
 // 추가한 함수
 int 			count_dirty_buf();
 int				buf_is_full();
+// int				log_write_reserved();
 int				log_write_all();
 
 // console.c
