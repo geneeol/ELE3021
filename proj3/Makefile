@@ -181,15 +181,16 @@ UPROGS=\
 	_stressfs\
 	_wc\
 	_zombie\
-	_sync\
-	_p3_bigfile\
-	_p3_bigfile2\
-	_usertests\
-	_p3_symlink\
-	_p3_symlink2\
-	_usertests\
-	_p3_sync\
-	_p3_sync2\
+	# _p3_bigfile\
+	# _sync\
+	# _usertests\
+	# _p3_symlink\
+	# _p3_symlink2\
+	# _p3_sync\
+	# _p3_sync2\
+	# _p3_bigfile2\
+	# _p3_sync3\
+	# TODO: 파일 개수 따라 stress 테스트 결과가 달라지는듯 \
 	# _prac_myuserapp\
 	# _myapp\
 	# _prac2_usercall\
@@ -264,7 +265,7 @@ EXTRA=\
 	ln.c ls.c mkdir.c rm.c stressfs.c wc.c zombie.c\
 	printf.c umalloc.c _prac_myuserapp.c _myapp.c _prac2_usercall.c\
 	usertests.c p3_bigfile.c p3_symlink.c p3_symlink2.c p3_bigfile2.c\
-	p3_sync.c sync.c p3_sync2.c\
+	p3_sync.c sync.c p3_sync2.c p3_sync3.c\
 	README dot-bochsrc *.pl toc.* runoff runoff1 runoff.list\
 	.gdbinit.tmpl gdbutil\
 

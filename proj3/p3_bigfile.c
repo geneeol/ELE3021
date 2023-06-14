@@ -42,7 +42,11 @@ main(int argc, char *argv[])
     }
     printf(1, "\n%d bytes written\n", BUF_PER_FILE * BUFSIZE);
     printf(1, "\n");
+    // sync();
     close(fd);
+
+    // sync();
+    // exit();
 
     (void)path2;
     // // 6mb 파일 하나 더 만드는 부분
@@ -58,7 +62,9 @@ main(int argc, char *argv[])
     // }
     // printf(1, "\n%d bytes written\n", BUF_PER_FILE2 * BUFSIZE);
     // printf(1, "\n");
+    // sync();
     // close(fd);
+    // exit();
 
 
     printf(1, "2. read test\n");
